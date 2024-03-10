@@ -212,6 +212,23 @@
         "type": "github"
       }
     },
+    "nix-secrets": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1710096420,
+        "narHash": "sha256-LQVpAd/KT7VEXQhguazFbA43c+iWW/beSxtHSQImtQ0=",
+        "ref": "main",
+        "rev": "5a9b727a92dc3011ce9434b2c1a69686d5d5504a",
+        "revCount": 1,
+        "type": "git",
+        "url": "ssh://git@github.com/ultomnis/nix-secrets.git"
+      },
+      "original": {
+        "ref": "main",
+        "type": "git",
+        "url": "ssh://git@github.com/ultomnis/nix-secrets.git"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1703013332,
@@ -283,6 +300,7 @@
         "disko": "disko",
         "home-manager": "home-manager_2",
         "hyprland": "hyprland",
+        "nix-secrets": "nix-secrets",
         "nixpkgs": "nixpkgs_4"
       }
     },
