@@ -41,7 +41,6 @@
     home-manager,
     hyprland,
     nixpkgs,
-    nix-secrets,
     ...
   }:
   
