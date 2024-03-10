@@ -28,7 +28,7 @@
 
     # Personal, private repo
     nix-secrets = {
-      url = "git+ssh://git@github.com/ultomnis/nix-secrets.git";
+      url = "git+ssh://git@github.com/ultomnis/nix-secrets.git?ref=main";
       flake = false;
     };
   };
