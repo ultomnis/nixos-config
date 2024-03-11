@@ -1,9 +1,6 @@
-{ nix-secrets, ... }:
-
 {
   imports = [
     ../../home
-    "${nix-secrets}/git-canopus.nix"
   ];
 
   home = {
