@@ -54,16 +54,12 @@
     nixosConfigurations = {
       ${desktop} = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        specialArgs = { inherit inputs nix-secrets; };
+        specialArgs = { inherit agenix inputs nix-secrets; };
         modules = [
           ./hosts/sirius
 
           agenix.nixosModules.default
           disko.nixosModules.disko
-
-          {
-            environment.systemPackages = [ agenix.packages."x86_64-linux".default ];
-          }
           
           home-manager.nixosModules.home-manager {
             home-manager = {
@@ -74,7 +70,7 @@
                   ./hosts/sirius/home.nix
                 ];
               };
-              extraSpecialArgs = { inherit inputs; };
+              extraSpecialArgs = { inherit inputs nix-secrets; };
             };
           }
         ];
@@ -82,16 +78,12 @@
 
       ${laptop} = nixpkgs.lib.nixosSystem {
         system = "aarch64-linux";
-        specialArgs = { inherit inputs nix-secrets; };
+        specialArgs = { inherit agenix inputs nix-secrets; };
         modules = [
           ./hosts/canopus
 
           agenix.nixosModules.default
           apple-silicon.nixosModules.default # Apple silicon support
-
-          {
-            environment.systemPackages = [ agenix.packages."aarch64-linux".default ];
-          }
           
           home-manager.nixosModules.home-manager {
             home-manager = {
@@ -102,7 +94,7 @@
                   ./hosts/canopus/home.nix
                 ];
               };
-              extraSpecialArgs = { inherit inputs; };
+              extraSpecialArgs = { inherit inputs nix-secrets; };
             };
           }
         ];

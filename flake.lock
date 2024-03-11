@@ -215,11 +215,11 @@
     "nix-secrets": {
       "flake": false,
       "locked": {
-        "lastModified": 1710096420,
-        "narHash": "sha256-LQVpAd/KT7VEXQhguazFbA43c+iWW/beSxtHSQImtQ0=",
+        "lastModified": 1710163973,
+        "narHash": "sha256-Vw0yA5XrIwSxO0AeNCJVb3LL6T7W2e+deI5JRMGsbBM=",
         "ref": "main",
-        "rev": "5a9b727a92dc3011ce9434b2c1a69686d5d5504a",
-        "revCount": 1,
+        "rev": "28e912c72530ad30463905df8b805fd4902ba8ec",
+        "revCount": 7,
         "type": "git",
         "url": "ssh://git@github.com/ultomnis/nix-secrets.git"
       },
