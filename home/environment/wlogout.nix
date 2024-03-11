@@ -62,6 +62,7 @@
 
       button:active, button:hover {
         background-color: rgba(240, 240, 240, 0.3);
+        border: none;
         outline-style: none;
       }
 
