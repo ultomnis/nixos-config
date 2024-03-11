@@ -41,6 +41,7 @@
     home-manager,
     hyprland,
     nixpkgs,
+    nix-secrets,
     ...
   }:
   
@@ -53,7 +54,7 @@
     nixosConfigurations = {
       ${desktop} = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        specialArgs = { inherit inputs; };
+        specialArgs = { inherit inputs nix-secrets; };
         modules = [
           ./hosts/sirius
 
@@ -81,7 +82,7 @@
 
       ${laptop} = nixpkgs.lib.nixosSystem {
         system = "aarch64-linux";
-        specialArgs = { inherit inputs; };
+        specialArgs = { inherit inputs nix-secrets; };
         modules = [
           ./hosts/canopus
 
