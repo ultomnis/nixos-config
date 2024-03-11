@@ -1,6 +1,7 @@
 { nix-secrets, ... }:
 
 {
+  # Secrets from private repo
   imports = [
     "${nix-secrets}/syncthing.nix"
   ];
