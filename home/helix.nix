@@ -18,7 +18,7 @@
     themes = {
       default_transparent = {
         "inherits" = "default";
-        "ui.background" = "";
+        "ui.background" = { };
       };
     };
   };
