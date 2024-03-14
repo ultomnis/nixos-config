@@ -21,11 +21,6 @@
       };
     };
 
-    # Map aliases to command strings
-    shellAliases = {
-      shx = "sudo -E hx";
-    };
-
     # Empty the greeting text
     interactiveShellInit = ''
       set -g fish_greeting
