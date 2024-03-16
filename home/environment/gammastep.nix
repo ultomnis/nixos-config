@@ -8,6 +8,11 @@
   # Adjusts color temperature of the screen
   services.gammastep = {
     enable = true;
-    tray = true;
+
+    settings = {
+      general = {
+        adjustment-method = "wayland";
+      };
+    };
   };
 }
