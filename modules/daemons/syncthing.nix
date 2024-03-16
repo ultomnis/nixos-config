@@ -1,7 +1,13 @@
+{ nix-secrets, ... }:
+
 let 
   username = "user";
 
 in {
+  imports = [
+    "${nix-secrets}/syncthing.nix"
+  ];
+
   # P2P file synchronization
   services.syncthing = {
     enable = true;
