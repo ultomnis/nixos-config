@@ -59,7 +59,7 @@
           ./hosts/sirius
 
           agenix.nixosModules.default
-          disko.nixosModules.disko
+          disko.nixosModules.default
           
           home-manager.nixosModules.home-manager {
             home-manager = {
