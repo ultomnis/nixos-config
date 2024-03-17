@@ -1,4 +1,4 @@
-{ agenix, pkgs, ... }:
+{ inputs, pkgs, ... }:
 
 {
   imports = [
@@ -25,6 +25,6 @@
   system.stateVersion = "23.11";
 
   environment.systemPackages = [
-    agenix.packages."x86_64-linux".default
+    inputs.agenix.packages."x86_64-linux".default
   ];
 }

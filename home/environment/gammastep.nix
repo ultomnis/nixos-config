@@ -1,8 +1,8 @@
-{ nix-secrets, ... }:
+{ inputs, ... }:
 
 {
   imports = [
-    "${nix-secrets}/gammastep.nix"
+    "${inputs.nix-secrets}/gammastep.nix"
   ];
 
   # Adjusts color temperature of the screen

@@ -54,7 +54,7 @@
     nixosConfigurations = {
       ${desktop} = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        specialArgs = { inherit agenix inputs nix-secrets; };
+        specialArgs = { inherit inputs; };
         modules = [
           ./hosts/sirius
 
@@ -70,7 +70,7 @@
                   ./hosts/sirius/home.nix
                 ];
               };
-              extraSpecialArgs = { inherit inputs nix-secrets; };
+              extraSpecialArgs = { inherit inputs; };
             };
           }
         ];
@@ -78,7 +78,7 @@
 
       ${laptop} = nixpkgs.lib.nixosSystem {
         system = "aarch64-linux";
-        specialArgs = { inherit agenix inputs nix-secrets; };
+        specialArgs = { inherit inputs; };
         modules = [
           ./hosts/canopus
 
@@ -94,7 +94,7 @@
                   ./hosts/canopus/home.nix
                 ];
               };
-              extraSpecialArgs = { inherit inputs nix-secrets; };
+              extraSpecialArgs = { inherit inputs; };
             };
           }
         ];

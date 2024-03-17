@@ -1,4 +1,4 @@
-{ agenix, ... }:
+{ inputs, ... }:
 
 {
   imports = [
@@ -20,7 +20,7 @@
   system.stateVersion = "24.05";
 
   environment.systemPackages = [
-    agenix.packages."aarch64-linux".default
+    inputs.agenix.packages."aarch64-linux".default
   ];
 
   # GPU

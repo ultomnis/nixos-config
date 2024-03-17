@@ -1,11 +1,11 @@
-{ nix-secrets, ... }:
+{ inputs, ... }:
 
 let 
   username = "user";
 
 in {
   imports = [
-    "${nix-secrets}/syncthing.nix"
+    "${inputs.nix-secrets}/syncthing.nix"
   ];
 
   # P2P file synchronization
