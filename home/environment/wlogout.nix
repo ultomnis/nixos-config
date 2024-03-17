@@ -15,19 +15,19 @@
       }
       {
         label = "logout";
-        action = "loginctl terminate-user $USER";
+        action = "${pkgs.systemd}/bin/loginctl terminate-user $USER";
         text = "Log Out";
         keybind = "e";
       }
       {
         label = "reboot";
-        action = "systemctl reboot";
+        action = "${pkgs.systemd}/bin/systemctl reboot";
         text = "Restart";
         keybind = "r";
       }
       {
         label = "shutdown";
-        action = "systemctl poweroff";
+        action = "${pkgs.systemd}/bin/systemctl poweroff";
         text = "Shut Down";
         keybind = "s";
       }

@@ -13,7 +13,7 @@
         "${pkgs.waybar}/bin/waybar"
         "${pkgs.swayidle}/bin/swayidle -w"
         "${pkgs.libsForQt5.polkit-kde-agent}/libexec/polkit-kde-authentication-agent-1"
-        "${pkgs.swww}/bin/swww init ; sleep 1 && ${pkgs.swww}/bin/swww img $HOME/.config/wallpaper"
+        "${pkgs.swww}/bin/swww init ; ${pkgs.coreutils}/bin/sleep 1 && ${pkgs.swww}/bin/swww img $HOME/.config/wallpaper"
       ];
 
       # Environment variables
