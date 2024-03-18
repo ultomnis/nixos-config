@@ -70,11 +70,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1710427903,
-        "narHash": "sha256-sV0Q5ndvfjK9JfCg/QM/HX/fcittohvtq8dD62isxdM=",
+        "lastModified": 1710724748,
+        "narHash": "sha256-aXlifKr6Brg0SBUBgRNEBaZf3JLUeGhM9BX2gam+vvo=",
         "owner": "nix-community",
         "repo": "disko",
-        "rev": "21d89b333ca300bef82c928c856d48b94a9f997c",
+        "rev": "c09c3a9639690f94ddff44c3dd25c85602e5aeb2",
         "type": "github"
       },
       "original": {
@@ -126,11 +126,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1710532761,
-        "narHash": "sha256-SUXGZNrXX05YA9G6EmgupxhOr3swI1gcxLUeDMUhrEY=",
+        "lastModified": 1710714957,
+        "narHash": "sha256-eZCxuF58YWgaJMMRrn8oRkwRhxooe5kBS/s2wRVr9PA=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "206f457fffdb9a73596a4cb2211a471bd305243d",
+        "rev": "7b3fca5adcf6c709874a8f2e0c364fe9c58db989",
         "type": "github"
       },
       "original": {
@@ -196,11 +196,11 @@
         "xdph": "xdph"
       },
       "locked": {
-        "lastModified": 1710691739,
-        "narHash": "sha256-kVNankkoucgBba+rTsDuaEPJKEgOfgGK+D/81lyEsc8=",
+        "lastModified": 1710779722,
+        "narHash": "sha256-oc7gQLp2FigE8SCKUeKRg/yM1NaE+cdGRD7XX3RMwNk=",
         "owner": "hyprwm",
         "repo": "Hyprland",
-        "rev": "30c5911718c02e0215bf0006faa6aa229558a501",
+        "rev": "5eb33ff4d866ab64e5db33725473dc020fe355c1",
         "type": "github"
       },
       "original": {
@@ -349,11 +349,11 @@
         "systems": "systems_5"
       },
       "locked": {
-        "lastModified": 1710690277,
-        "narHash": "sha256-bhep83LkF7tGERJquZ8J54XTFj0GLLXXMJP0EY/5/7o=",
+        "lastModified": 1710774279,
+        "narHash": "sha256-aGnhvtuGvjRus7CGT9s7wkXl47BAaAdTwo0wpFKYCRs=",
         "owner": "hyprwm",
         "repo": "hyprlock",
-        "rev": "2ae79757d5e5c48de2f4284992a6bfa265853a2d",
+        "rev": "1356f113cce5e87e7e8409a9c45d3bf8fa36f39d",
         "type": "github"
       },
       "original": {
@@ -384,11 +384,11 @@
     "nix-secrets": {
       "flake": false,
       "locked": {
-        "lastModified": 1710593618,
+        "lastModified": 1710782792,
         "narHash": "sha256-5pD7FNzNJWZhcLCVMY2ka5708d/qS4d2/3jansUKMx0=",
         "ref": "main",
-        "rev": "3a5821383818acfe2a8842f296a0f920d7715381",
-        "revCount": 11,
+        "rev": "6258904222a142f5800201a353755ee3be9dc32a",
+        "revCount": 13,
         "type": "git",
         "url": "ssh://git@github.com/ultomnis/nix-secrets.git"
       },
