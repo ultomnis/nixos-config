@@ -9,7 +9,7 @@
     layout = [
       {
         label = "lock";
-        action = "${pkgs.swaylock-effects}/bin/swaylock";
+        action = "${pkgs.systemd}/bin/loginctl lock-session";
         text = "Lock Screen";
         keybind = "l";
       }

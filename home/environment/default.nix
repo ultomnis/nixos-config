@@ -5,10 +5,10 @@
     ./fuzzel.nix
     ./gammastep.nix
     ./gnome.nix
+    ./hypridle.nix
     ./hyprland.nix
+    ./hyprlock.nix
     ./hyprpaper.nix
-    ./swayidle.nix
-    ./swaylock.nix
     ./waybar.nix
     ./wlogout.nix
   ];

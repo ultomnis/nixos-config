@@ -20,8 +20,14 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # Hypridle
+    hypridle.url = "github:hyprwm/hypridle";
+
     # Hyprland
     hyprland.url = "github:hyprwm/Hyprland";
+
+    # Hyprlock
+    hyprlock.url = "github:hyprwm/hyprlock";
 
     # Hyprpaper
     hyprpaper.url = "github:hyprwm/hyprpaper";
@@ -42,7 +48,9 @@
     apple-silicon,
     disko,
     home-manager,
+    hypridle,
     hyprland,
+    hyprlock,
     hyprpaper,
     nixpkgs,
     nix-secrets,
@@ -73,6 +81,8 @@
                 imports = [
                   ./hosts/sirius/home.nix
 
+                  hypridle.homeManagerModules.default
+                  hyprlock.homeManagerModules.default
                   hyprpaper.homeManagerModules.default
                 ];
               };
@@ -99,6 +109,8 @@
                 imports = [
                   ./hosts/canopus/home.nix
 
+                  hypridle.homeManagerModules.default
+                  hyprlock.homeManagerModules.default
                   hyprpaper.homeManagerModules.default
                 ];
               };

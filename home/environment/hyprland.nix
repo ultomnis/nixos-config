@@ -11,7 +11,6 @@
       # Execute on launch
       exec-once = [
         "${pkgs.waybar}/bin/waybar"
-        "${pkgs.swayidle}/bin/swayidle -w"
         "${pkgs.libsForQt5.polkit-kde-agent}/libexec/polkit-kde-authentication-agent-1"
       ];
 
