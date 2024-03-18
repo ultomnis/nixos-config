@@ -23,6 +23,9 @@
     # Hyprland
     hyprland.url = "github:hyprwm/Hyprland";
 
+    # Hyprpaper
+    hyprpaper.url = "github:hyprwm/hyprpaper";
+
     # Nixpkgs
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
@@ -40,6 +43,7 @@
     disko,
     home-manager,
     hyprland,
+    hyprpaper,
     nixpkgs,
     nix-secrets,
     ...
@@ -68,6 +72,8 @@
               users.${username} = {
                 imports = [
                   ./hosts/sirius/home.nix
+
+                  hyprpaper.homeManagerModules.default
                 ];
               };
               extraSpecialArgs = { inherit inputs; };
@@ -92,6 +98,8 @@
               users.${username} = {
                 imports = [
                   ./hosts/canopus/home.nix
+
+                  hyprpaper.homeManagerModules.default
                 ];
               };
               extraSpecialArgs = { inherit inputs; };

@@ -6,6 +6,7 @@
     ./gammastep.nix
     ./gnome.nix
     ./hyprland.nix
+    ./hyprpaper.nix
     ./swayidle.nix
     ./swaylock.nix
     ./waybar.nix

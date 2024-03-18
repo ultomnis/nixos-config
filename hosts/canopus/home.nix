@@ -8,7 +8,7 @@
     homeDirectory = "/home/user";
     stateVersion = "24.05";
     # Source the wallpaper file
-    file.".config/wallpaper".source = ../../assets/wallpapers/matt-wang-FaFZCtl1yug-unsplash.jpg;
+    file.".config/wallpaper.jpg".source = ../../assets/wallpapers/matt-wang-FaFZCtl1yug-unsplash.jpg;
   };
 
   programs.home-manager.enable = true;
