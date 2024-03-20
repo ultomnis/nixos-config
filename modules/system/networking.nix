@@ -5,13 +5,4 @@
 
   # network-manager-applet
   programs.nm-applet.enable = true;
-
-  # OpenSSH
-  services.openssh = {
-    enable = true;
-
-    settings = {
-      PasswordAuthentication = false;
-    };
-  };
 }
