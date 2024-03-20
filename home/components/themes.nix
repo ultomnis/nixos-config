@@ -6,14 +6,8 @@
     enable = true;
 
     theme = {
-      name = "Breeze-Dark";
-      package = pkgs.libsForQt5.breeze-gtk;
+      name = "Adwaita-dark";
+      package = pkgs.gnome.gnome-themes-extra;
     };
-  };
-
-  # Configure the theme for Qt applications
-  qt = {
-    enable = true;
-    platformTheme = "gtk";
   };
 }

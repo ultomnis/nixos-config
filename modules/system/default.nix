@@ -8,6 +8,7 @@
     ./printing.nix
     ./security.nix
     ./settings.nix
+    ./themes.nix
     ./users.nix
   ];
 }
