@@ -6,5 +6,6 @@
     ardour
     keepassxc
     libsForQt5.polkit-kde-agent
+    protonvpn-gui
   ];
 }
