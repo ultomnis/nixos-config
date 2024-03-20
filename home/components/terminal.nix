@@ -9,6 +9,5 @@
     playerctl
     slurp
     tectonic
-    wireguard-tools
   ];
 }
