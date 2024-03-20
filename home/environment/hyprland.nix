@@ -11,7 +11,7 @@
       # Execute on launch
       exec-once = [
         "${pkgs.waybar}/bin/waybar"
-        "${pkgs.libsForQt5.polkit-kde-agent}/libexec/polkit-kde-authentication-agent-1"
+        "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1"
       ];
 
       # Environment variables

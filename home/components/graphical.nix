@@ -5,7 +5,7 @@
   home.packages = with pkgs; [
     ardour
     keepassxc
-    libsForQt5.polkit-kde-agent
+    polkit_gnome
     protonvpn-gui
     qbittorrent
   ];
