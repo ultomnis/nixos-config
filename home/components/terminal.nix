@@ -8,7 +8,6 @@
     grim
     playerctl
     slurp
-    swww
     tectonic
   ];
 }
