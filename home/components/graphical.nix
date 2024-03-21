@@ -7,6 +7,6 @@
     keepassxc
     polkit_gnome
     protonvpn-gui
-    qbittorrent
+    transmission-gtk
   ];
 }
