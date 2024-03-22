@@ -8,6 +8,12 @@
     package = inputs.hyprland.packages.${pkgs.system}.hyprland;
 
     settings = {
+      # Configure monitors
+      monitor = [
+        "DP-3, 1920x1080@144, 0x0, 1"
+        "eDP-1, 2560x1600@60, 0x0, 1.6"
+      ];
+      
       # Execute on launch
       exec-once = [
         "${pkgs.waybar}/bin/waybar"

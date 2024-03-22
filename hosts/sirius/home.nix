@@ -14,10 +14,4 @@
   };
 
   programs.home-manager.enable = true;
-
-  # Hyprland
-  wayland.windowManager.hyprland.settings = {
-    # Configure monitor
-    monitor = "DP-3, 1920x1080@144, 0x0, 1";
-  };
 }
