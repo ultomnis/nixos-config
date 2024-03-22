@@ -1,9 +1,6 @@
-{ inputs, ... }:
+{ inputs, userConfig, ... }:
 
-let 
-  username = "user";
-
-in {
+{
   imports = [
     "${inputs.nix-secrets}/syncthing.nix"
   ];
@@ -12,9 +9,9 @@ in {
   services.syncthing = {
     enable = true;
 
-    user = "${username}";
+    user = "${userConfig.username}";
     group = "users";
-    dataDir = "/home/${username}/Sync";
+    dataDir = "/home/${userConfig.username}/Sync";
 
     overrideDevices = true;
     overrideFolders = true;

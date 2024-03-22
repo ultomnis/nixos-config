@@ -60,13 +60,17 @@
   let
     desktop = "sirius";
     laptop = "canopus";
-    username = "user";
+    userConfig = {
+      username = "user";
+      gitName = "ultomnis";
+      gitEmail = "125839032+ultomnis@users.noreply.github.com";
+    };
 
   in {
     nixosConfigurations = {
       ${desktop} = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        specialArgs = { inherit inputs; };
+        specialArgs = { inherit inputs userConfig; };
         modules = [
           ./hosts/sirius
 
@@ -77,7 +81,7 @@
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
-              users.${username} = {
+              users.${userConfig.username} = {
                 imports = [
                   ./hosts/sirius/home.nix
 
@@ -86,7 +90,7 @@
                   hyprpaper.homeManagerModules.default
                 ];
               };
-              extraSpecialArgs = { inherit inputs; };
+              extraSpecialArgs = { inherit inputs userConfig; };
             };
           }
         ];
@@ -94,7 +98,7 @@
 
       ${laptop} = nixpkgs.lib.nixosSystem {
         system = "aarch64-linux";
-        specialArgs = { inherit inputs; };
+        specialArgs = { inherit inputs userConfig; };
         modules = [
           ./hosts/canopus
 
@@ -105,7 +109,7 @@
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
-              users.${username} = {
+              users.${userConfig.username} = {
                 imports = [
                   ./hosts/canopus/home.nix
 
@@ -114,7 +118,7 @@
                   hyprpaper.homeManagerModules.default
                 ];
               };
-              extraSpecialArgs = { inherit inputs; };
+              extraSpecialArgs = { inherit inputs userConfig; };
             };
           }
         ];

@@ -1,9 +1,11 @@
+{ userConfig, ... }:
+
 {
   programs.git = {
     enable = true;
 
-    userName = "ultomnis";
-    userEmail = "125839032+ultomnis@users.noreply.github.com";
+    userName = "${userConfig.gitName}";
+    userEmail = "${userConfig.gitEmail}";
 
     # Define git aliases
     aliases = {
