@@ -6,6 +6,5 @@
     isNormalUser = true;
     description = "user";
     extraGroups = [ "wheel" ];
-    hashedPasswordFile = config.age.secrets.user-password.path;
   };
 }

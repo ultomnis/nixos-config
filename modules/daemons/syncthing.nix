@@ -1,10 +1,6 @@
-{ inputs, userConfig, ... }:
+{ userConfig, ... }:
 
 {
-  imports = [
-    "${inputs.nix-secrets}/syncthing.nix"
-  ];
-
   # P2P file synchronization
   services.syncthing = {
     enable = true;
