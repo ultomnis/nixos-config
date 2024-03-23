@@ -9,5 +9,6 @@
     ./logitech.nix
     ./steam.nix
     ./virt-manager.nix
+    ./xdg.nix
   ];
 }
