@@ -13,9 +13,6 @@
     };
   };
 
-  # GNOME Keyring
-  services.gnome-keyring.enable = true;
-
   # Configure the theme for GTK applications
   gtk = {
     enable = true;
