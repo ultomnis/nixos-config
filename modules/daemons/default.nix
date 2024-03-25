@@ -1,6 +1,5 @@
 {
   imports = [
-    ./avahi.nix
     ./fwupd.nix
     ./gnome-keyring.nix
     ./greetd.nix
