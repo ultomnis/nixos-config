@@ -1,8 +1,13 @@
 { userConfig, ... }:
 
 {
-  # Enable networking
-  networking.networkmanager.enable = true;
+  networking = {
+    # Enable NetworkManager
+    networkmanager.enable = true;
+    
+    # rp_filter
+    firewall.checkReversePath = "loose";
+  };
   users.users.${userConfig.username}.extraGroups = [ "networkmanager" ];
 
   # network-manager-applet
