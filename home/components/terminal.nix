@@ -9,5 +9,6 @@
     playerctl
     slurp
     tectonic
+    wf-recorder
   ];
 }
