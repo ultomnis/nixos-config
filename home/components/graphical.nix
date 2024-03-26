@@ -7,7 +7,5 @@
     keepassxc
     networkmanagerapplet
     polkit_gnome
-    protonvpn-gui
-    transmission-gtk
   ];
 }
