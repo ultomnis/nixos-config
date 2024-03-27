@@ -7,6 +7,6 @@
     gnome-secrets
     networkmanagerapplet
     polkit_gnome
-    reaper
+    zrythm
   ];
 }
