@@ -18,7 +18,10 @@
   system.stateVersion = "24.05";
 
   # GPU
-  hardware.asahi.useExperimentalGPUDriver = true;
+  hardware.asahi = {
+    useExperimentalGPUDriver = true;
+    experimentalGPUInstallMode = "overlay";
+  };
 
   # Sound
   sound.enable = true;
