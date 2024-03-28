@@ -1,3 +1,5 @@
+{ inputs, ... }:
+
 {
   imports = [
     ./hardware-configuration.nix # Include the results of the hardware scan
@@ -17,10 +19,11 @@
   # and migrated your data accordingly.
   system.stateVersion = "24.05";
 
-  # GPU
+  # GPU/Firmware
   hardware.asahi = {
     useExperimentalGPUDriver = true;
     experimentalGPUInstallMode = "overlay";
+    peripheralFirmwareDirectory = "${inputs.nix-secrets}/firmware";
   };
 
   # Sound
