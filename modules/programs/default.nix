@@ -6,7 +6,6 @@
     ./logitech.nix
     ./steam.nix
     ./unfree.nix
-    ./virt-manager.nix
     ./xdg.nix
   ];
 }
