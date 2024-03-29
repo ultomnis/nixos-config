@@ -3,7 +3,7 @@
 {
   # GUI programs
   home.packages = with pkgs; [
-    gnome-secrets
+    keepassxc
     networkmanagerapplet
     polkit_gnome
     zrythm
