@@ -6,6 +6,6 @@
     keepassxc
     networkmanagerapplet
     polkit_gnome
-    zrythm
+    reaper
   ];
 }
