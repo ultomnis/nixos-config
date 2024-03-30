@@ -103,7 +103,7 @@
         "$mainMod, P, pseudo"
         "$mainMod, S, togglesplit"
         "$mainMod, F, fullscreen"
-        "$mainMod, Print, exec, ${pkgs.grim}/bin/grim -g \"$(${pkgs.slurp}/bin/slurp)\""
+        "$mainMod SHIFT, Space, exec, ${pkgs.grim}/bin/grim -g \"$(${pkgs.slurp}/bin/slurp)\""
 
         # Focus binds
         "$mainMod, left, movefocus, l"
