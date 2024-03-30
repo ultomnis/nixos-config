@@ -3,7 +3,7 @@
 {
   # GUI programs
   home.packages = with pkgs; [
+    ardour
     keepassxc
-    reaper
   ];
 }
