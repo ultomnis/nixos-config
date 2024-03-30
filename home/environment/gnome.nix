@@ -21,4 +21,7 @@
       gtk-application-prefer-dark-theme = true;
     };
   };
+
+  # Network Manager applet
+  services.network-manager-applet.enable = true;
 }

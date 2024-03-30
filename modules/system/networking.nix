@@ -12,7 +12,4 @@
     firewall.checkReversePath = "loose";
   };
   users.users.${userConfig.username}.extraGroups = [ "networkmanager" ];
-
-  # network-manager-applet
-  programs.nm-applet.enable = true;
 }
