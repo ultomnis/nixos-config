@@ -5,12 +5,6 @@
     "org/gnome/desktop/interface" = {
       color-scheme = "prefer-dark";
     };
-  
-    # Add default QEMU/KVM hypervisor for virt-manager
-    "org/virt-manager/virt-manager/connections" = {
-      autoconnect = ["qemu:///system"];
-      uris = ["qemu:///system"];
-    };
   };
 
   # Configure the theme for GTK applications
