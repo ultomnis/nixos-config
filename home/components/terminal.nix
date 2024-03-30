@@ -5,7 +5,6 @@
   home.packages = with pkgs; [
     brightnessctl
     ffmpeg
-    playerctl
     tectonic
   ];
 }
