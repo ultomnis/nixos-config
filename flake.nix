@@ -8,12 +8,6 @@
     # Apple silicon
     apple-silicon.url = "github:tpwrules/nixos-apple-silicon";
 
-    # Disko
-    disko = {
-      url = "github:nix-community/disko";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     # Home manager
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -46,7 +40,6 @@
     self,
     agenix,
     apple-silicon,
-    disko,
     home-manager,
     hypridle,
     hyprland,
@@ -75,7 +68,6 @@
           ./hosts/sirius
 
           agenix.nixosModules.default
-          disko.nixosModules.default
           
           home-manager.nixosModules.home-manager {
             home-manager = {
