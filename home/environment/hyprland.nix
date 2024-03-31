@@ -36,7 +36,7 @@
         border_size = 1;
         "col.active_border" = "rgba(f0f0f0aa)";
         layout = "dwindle";
-        allow_tearing = true;
+        # allow_tearing = true;
       };
 
       decoration = {
@@ -88,7 +88,7 @@
       # Windowrules
       windowrulev2 = [
         "suppressevent maximize, class:.*"
-        "immediate, class:^(cs2)$"
+        # "immediate, class:^(cs2)$"
       ];
 
       # SUPER key
