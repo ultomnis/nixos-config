@@ -4,5 +4,6 @@
     ./graphical.nix
     ./settings.nix
     ./terminal.nix
+    ./themes.nix
   ];
 }
