@@ -5,7 +5,7 @@
       greetd.enableGnomeKeyring = true;
     
       # Hyprlock PAM authentication
-      hyprlock = { };
+      hyprlock = {};
     };
 
     # Realtime policy and watchdog daemon
