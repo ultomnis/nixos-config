@@ -5,6 +5,7 @@
     ./filesystem.nix
     ./locale.nix
     ./networking.nix
+    ./printing.nix
     ./security.nix
     ./settings.nix
     ./users.nix
