@@ -1,15 +1,14 @@
 { lib, userConfig, ... }:
 
 {
-  networking = {
-    # Enable NetworkManager
-    networkmanager = {
-      enable = true;
-      plugins = lib.mkForce [];
+  # iNet wireless daemon
+  networking.wireless.iwd = {
+    enable = true;
+    settings = {
+      General = {
+        EnableNetworkConfiguration = true;
+      };
     };
-    
-    # rp_filter
-    firewall.checkReversePath = "loose";
   };
   users.users.${userConfig.username}.extraGroups = [ "networkmanager" ];
 }
