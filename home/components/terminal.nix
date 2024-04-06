@@ -7,5 +7,6 @@
     ffmpeg
     tectonic
     unzip
+    wireguard-tools
   ];
 }
