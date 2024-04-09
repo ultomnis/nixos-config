@@ -17,10 +17,25 @@
       }
     ];
 
+    input-fields = [
+      {
+        size = {
+          width = 300;
+        };
+
+        rounding = 4;
+        fail_text = "<i>$FAIL <b>[$ATTEMPTS]</b></i>";
+
+        position = {
+          y = -80;
+        };
+      }
+    ];
+
     labels = [
       {
         text = "$TIME";
-        font_size = 50;
+        font_size = 60;
       }
     ];
   }; 
