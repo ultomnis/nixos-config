@@ -1,5 +1,3 @@
-{ lib, userConfig, ... }:
-
 {
   # iNet wireless daemon
   networking.wireless.iwd = {
