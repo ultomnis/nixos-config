@@ -5,10 +5,10 @@
   home.packages = with pkgs; [
     bc
     brightnessctl
-    exiftool
     ffmpeg
     jmtpfs
     libnatpmp
+    mat2
     tectonic
     unzip
     wireguard-tools
