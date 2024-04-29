@@ -51,7 +51,7 @@
   }:
   
   let
-    desktop = "sirius";
+    deck = "alpha-centauri";
     laptop = "canopus";
     userConfig = {
       username = "user";
@@ -61,11 +61,11 @@
 
   in {
     nixosConfigurations = {
-      ${desktop} = nixpkgs.lib.nixosSystem {
+      ${deck} = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit inputs userConfig; };
         modules = [
-          ./hosts/sirius
+          ./hosts/alpha-centauri
 
           agenix.nixosModules.default
           
@@ -75,7 +75,7 @@
               useUserPackages = true;
               users.${userConfig.username} = {
                 imports = [
-                  ./hosts/sirius/home.nix
+                  ./hosts/alpha-centauri/home.nix
 
                   hypridle.homeManagerModules.default
                   hyprlock.homeManagerModules.default
