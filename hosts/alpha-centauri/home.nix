@@ -10,7 +10,7 @@
     homeDirectory = "/home/${userConfig.username}";
     stateVersion = "23.11";
     # Source the wallpaper
-    file.".config/sky.jpg".source = ../../assets/wallpapers/michael-diane-weidner-u8X0HCV2X1Y-unsplash.jpg;
+    file.".config/ocean.jpg".source = ../../assets/wallpapers/johannes-plenio-DKix6Un55mw-unsplash.jpg;
   };
 
   programs.home-manager.enable = true;
@@ -29,11 +29,11 @@
     enable = true;
 
     preloads = [
-      "~/.config/sky.jpg"
+      "~/.config/ocean.jpg"
     ];
 
     wallpapers = [
-      "eDP-1,~/.config/sky.jpg"
+      "eDP-1,~/.config/ocean.jpg"
     ];
   };
 }
