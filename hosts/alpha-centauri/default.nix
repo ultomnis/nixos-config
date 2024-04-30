@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, userConfig, ... }:
 
 {
   imports = [
@@ -8,9 +8,6 @@
   ];
 
   boot = {
-    # Linux kernel
-    kernelPackages = pkgs.linuxPackages_latest;
-
     # Bootloader
     loader = {
       systemd-boot.enable = true;
@@ -24,9 +21,25 @@
   # and migrated your data accordingly.
   system.stateVersion = "23.11";
 
-  # Steam client
-  programs.steam = {
-    enable = true;
-    remotePlay.openFirewall = true; # Steam Remote Play
+  # Jovian NixOS
+  jovian = {
+    # Steam Deck
+    devices.steamdeck.enable = true;
+
+    # Steam
+    steam = {
+      enable = true;
+      user = "${userConfig.username}";
+      desktopSession = "hyprland";
+      autoStart = true;
+    };
   };
+
+  environment.systemPackages = with pkgs; [
+    # Clean up Wayland sockets on exit
+    (pkgs.writeShellScriptBin "hyprexit" ''
+      ${hyprland}/bin/hyprctl dispatch exit
+      ${systemd}/bin/loginctl terminate-user ${userConfig.username}
+    '')
+  ];
 }

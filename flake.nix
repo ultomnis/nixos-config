@@ -26,6 +26,9 @@
     # Hyprpaper
     hyprpaper.url = "github:hyprwm/hyprpaper";
 
+    # Jovian NixOS
+    jovian-nixos.url = "github:Jovian-Experiments/Jovian-NixOS";
+
     # Nixpkgs
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
@@ -45,6 +48,7 @@
     hyprland,
     hyprlock,
     hyprpaper,
+    jovian-nixos,
     nixpkgs,
     nix-secrets,
     ...
@@ -68,6 +72,7 @@
           ./hosts/alpha-centauri
 
           agenix.nixosModules.default
+          jovian-nixos.nixosModules.default # Steam Deck support
           
           home-manager.nixosModules.home-manager {
             home-manager = {
