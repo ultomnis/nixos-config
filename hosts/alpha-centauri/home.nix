@@ -17,9 +17,17 @@
 
   wayland.windowManager.hyprland = {
     settings = {
+      # Touchscreen input
+      input = {
+        touchdevice = {
+          transform = 3;
+        };
+      };
+      
       # Monitor configuration
       monitor = [
         "eDP-1, 800x1280@60, 0x0, 1, transform, 3"
+        "DP-1, 1920x1080@165, 1280x0, 1"
       ];
     };
   };
@@ -34,6 +42,7 @@
 
     wallpapers = [
       "eDP-1,~/.config/ocean.jpg"
+      "DP-1,~/.config/ocean.jpg"
     ];
   };
 }
