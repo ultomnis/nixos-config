@@ -1,11 +1,16 @@
+{ lib, pkgs, userConfig, ... }:
+
 {
-  # iNet wireless daemon
-  networking.wireless.iwd = {
-    enable = true;
-    settings = {
-      General = {
-        EnableNetworkConfiguration = true;
-      };
+  networking = {
+    # Enable NetworkManager
+    networkmanager = {
+      enable = true;
+      plugins = lib.mkForce [
+        pkgs.networkmanager-openvpn
+      ];
     };
   };
+  users.users.${userConfig.username}.extraGroups = [ "networkmanager" ];
+
+  programs.nm-applet.enable = true;
 }
