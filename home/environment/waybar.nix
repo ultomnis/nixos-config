@@ -15,7 +15,7 @@
         # Order of modules
         modules-left = [ "hyprland/workspaces" ];
         modules-center = [ "clock" ];
-        modules-right = [ "tray" "network" "pulseaudio" "backlight" "battery" ];
+        modules-right = [ "tray" "pulseaudio" "backlight" "battery" ];
 
         # Modules configuration
         "hyprland/workspaces" = {
@@ -45,12 +45,6 @@
         "tray" = {
           icon-size = 16;
           spacing = 4;
-        };
-
-        "network" = {
-          format-wifi = "";
-          format-ethernet = "";
-          format-disconnected = "";
         };
 
         "pulseaudio" = {
@@ -125,7 +119,6 @@
 
       #clock,
       #tray,
-      #network,
       #pulseaudio,
       #backlight,
       #battery {
