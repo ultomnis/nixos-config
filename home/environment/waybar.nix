@@ -15,7 +15,7 @@
         # Order of modules
         modules-left = [ "hyprland/workspaces" ];
         modules-center = [ "clock" ];
-        modules-right = [ "tray" "pulseaudio" "backlight" "battery" ];
+        modules-right = [ "tray" "custom/keyboard" "pulseaudio" "backlight" "battery" ];
 
         # Modules configuration
         "hyprland/workspaces" = {
@@ -45,6 +45,11 @@
         "tray" = {
           icon-size = 16;
           spacing = 4;
+        };
+
+        "custom/keyboard" = {
+          format = "";
+          on-click = "${pkgs.killall}/bin/killall -34 ${pkgs.wvkbd}/bin/wvkbd-mobintl";
         };
 
         "pulseaudio" = {
@@ -119,6 +124,7 @@
 
       #clock,
       #tray,
+      #custom-keyboard,
       #pulseaudio,
       #backlight,
       #battery {

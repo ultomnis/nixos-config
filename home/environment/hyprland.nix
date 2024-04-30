@@ -10,8 +10,9 @@
     settings = {
       # Execute on launch
       exec-once = [
-        "${pkgs.waybar}/bin/waybar"
         "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1"
+        "${pkgs.waybar}/bin/waybar"
+        "${pkgs.wvkbd}/bin/wvkbd-mobintl"
       ];
 
       # Environment variables
