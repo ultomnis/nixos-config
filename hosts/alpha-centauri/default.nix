@@ -29,9 +29,9 @@
     # Steam
     steam = {
       enable = true;
+      autoStart = true;
       user = "${userConfig.username}";
       desktopSession = "hyprland";
-      autoStart = true;
     };
   };
 
@@ -41,5 +41,7 @@
       ${hyprland}/bin/hyprctl dispatch exit
       ${systemd}/bin/loginctl terminate-user ${userConfig.username}
     '')
+    jupiter-dock-updater-bin
+    steamdeck-firmware
   ];
 }
