@@ -1,4 +1,4 @@
-{ userConfig, ... }:
+{ pkgs, userConfig, ... }:
 
 {
   imports = [
@@ -17,6 +17,11 @@
 
   wayland.windowManager.hyprland = {
     settings = {
+      # Execute on launch
+      exec-once = [
+        "${pkgs.wvkbd}/bin/wvkbd-mobintl & ${pkgs.coreutils}/bin/sleep 5 && ${pkgs.killall}/bin/killall -34 ${pkgs.wvkbd}/bin/wvkbd-mobintl"
+      ];
+    
       # Touchscreen input
       input = {
         touchdevice = {
