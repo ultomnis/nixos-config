@@ -12,7 +12,7 @@
       exec-once = [
         "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1"
         "${pkgs.waybar}/bin/waybar"
-        "${pkgs.wvkbd}/bin/wvkbd-mobintl"
+        "${pkgs.wvkbd}/bin/wvkbd-mobintl & ${pkgs.coreutils}/bin/sleep 5 && ${pkgs.killall}/bin/killall -34 ${pkgs.wvkbd}/bin/wvkbd-mobintl"
       ];
 
       # Environment variables
