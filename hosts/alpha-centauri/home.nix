@@ -20,6 +20,7 @@
       # Execute on launch
       exec-once = [
         "${pkgs.wvkbd}/bin/wvkbd-mobintl & ${pkgs.coreutils}/bin/sleep 5 && ${pkgs.killall}/bin/killall -34 ${pkgs.wvkbd}/bin/wvkbd-mobintl"
+        "${pkgs.coreutils}/bin/sleep 5 && ${pkgs.xorg.xrandr}/bin/xrandr --output DP-1 --primary"
       ];
     
       # Touchscreen input
