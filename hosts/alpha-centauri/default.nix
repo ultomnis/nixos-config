@@ -36,11 +36,6 @@
   };
 
   environment.systemPackages = with pkgs; [
-    # Clean up Wayland sockets on exit
-    (pkgs.writeShellScriptBin "hyprexit" ''
-      ${hyprland}/bin/hyprctl dispatch exit
-      ${systemd}/bin/loginctl terminate-user ${userConfig.username}
-    '')
     jupiter-dock-updater-bin
     steamdeck-firmware
   ];
