@@ -11,5 +11,6 @@
     mat2
     tectonic
     unzip
+    xorg.xrandr
   ];
 }
