@@ -17,13 +17,8 @@
 
   wayland.windowManager.hyprland = {
     settings = {
-      # Execute on launch
-      exec-once = [
-        "${pkgs.coreutils}/bin/sleep 10 && ${pkgs.xorg.xrandr}/bin/xrandr --output DP-1 --primary"
-      ];
-    
-      # Touchscreen input
       input = {
+        # Touchscreen input
         touchdevice = {
           transform = 3;
         };
