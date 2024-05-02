@@ -19,7 +19,7 @@
     settings = {
       # Execute on launch
       exec-once = [
-        "${pkgs.coreutils}/bin/sleep 5 && ${pkgs.xorg.xrandr}/bin/xrandr --output DP-1 --primary"
+        "${pkgs.coreutils}/bin/sleep 10 && ${pkgs.xorg.xrandr}/bin/xrandr --output DP-1 --primary"
       ];
     
       # Touchscreen input
