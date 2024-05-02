@@ -13,6 +13,13 @@
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
     };
+
+    # Initial ramdisk
+    initrd = {
+      availableKernelModules = [ "evdev" ];
+      systemd.enable = true;
+      unl0kr.enable = true; # On-screen keyboard to unlock LUKS
+    };
   };
 
   networking.hostName = "alpha-centauri"; # Define your hostname
