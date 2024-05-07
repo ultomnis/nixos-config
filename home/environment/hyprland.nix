@@ -17,6 +17,7 @@
 
       # Environment variables
       env = [
+        "QT_STYLE_OVERRIDE,adwaita-dark"
         "XCURSOR_SIZE,24"
       ];
 

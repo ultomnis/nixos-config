@@ -10,6 +10,15 @@
     };
   };
 
+  # Configure the theme for Qt applications
+  qt = {
+    enable = true;
+
+    style = {
+      name = "adwaita-dark";
+    };
+  };
+
   # Cursor configuration
   home.pointerCursor = {
     name = "Adwaita";
