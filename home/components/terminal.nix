@@ -9,6 +9,7 @@
     jmtpfs
     libnatpmp
     mat2
+    nvtopPackages.amd
     tectonic
     unzip
     xorg.xrandr
