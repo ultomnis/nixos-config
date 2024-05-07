@@ -7,7 +7,7 @@
     keepassxc
     networkmanagerapplet
     protonvpn-gui
+    qbittorrent
     ryujinx
-    transmission-gtk
   ];
 }
