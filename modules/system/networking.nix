@@ -1,14 +1,15 @@
-{ lib, pkgs, userConfig, ... }:
+{ lib, userConfig, ... }:
 
 {
   networking = {
     # Enable NetworkManager
     networkmanager = {
       enable = true;
-      plugins = lib.mkForce [
-        pkgs.networkmanager-openvpn
-      ];
+      plugins = lib.mkForce [];
     };
+
+    # Reverse path filtering
+    firewall.checkReversePath = "loose";
   };
   users.users.${userConfig.username}.extraGroups = [ "networkmanager" ];
 
