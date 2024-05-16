@@ -85,6 +85,7 @@
         "blur, launcher"
         "blur, logout_dialog"
         "blur, waybar"
+        "ignorezero, waybar"
       ];
 
       # Windowrules
@@ -105,6 +106,7 @@
         "$mainMod, P, pseudo"
         "$mainMod, S, togglesplit"
         "$mainMod, F, fullscreen"
+        "$mainMod, H, exec, ${pkgs.killall}/bin/killall -SIGUSR1 .waybar-wrapped"
         "$mainMod SHIFT, Space, exec, ${pkgs.procps}/bin/pidof ${pkgs.slurp}/bin/slurp || ${pkgs.grim}/bin/grim -g \"$(${pkgs.slurp}/bin/slurp)\""
 
         # Focus binds
