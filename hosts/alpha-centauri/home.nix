@@ -36,13 +36,17 @@
   services.hyprpaper = {
     enable = true;
 
-    preloads = [
-      "~/.config/ocean.jpg"
-    ];
+    settings = {
+      preload = [
+        "~/.config/ocean.jpg"
+      ];
 
-    wallpapers = [
-      "eDP-1,~/.config/ocean.jpg"
-      "DP-1,~/.config/ocean.jpg"
-    ];
+      wallpaper = [
+        "eDP-1,~/.config/ocean.jpg"
+        "DP-1,~/.config/ocean.jpg"
+      ];
+
+      splash = false;
+    };
   };
 }

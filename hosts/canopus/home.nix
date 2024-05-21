@@ -28,12 +28,14 @@
   services.hyprpaper = {
     enable = true;
 
-    preloads = [
-      "~/.config/mountains.jpg"
-    ];
+    settings = {
+      preload = [
+        "~/.config/mountains.jpg"
+      ];
 
-    wallpapers = [
-      "eDP-1,~/.config/mountains.jpg"
-    ];
+      wallpaper = [
+        "eDP-1,~/.config/mountains.jpg"
+      ];
+    };
   };
 }

@@ -14,17 +14,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # Hypridle
-    hypridle.url = "github:hyprwm/hypridle";
-
     # Hyprland
-    hyprland.url = "github:hyprwm/Hyprland";
-
-    # Hyprlock
-    hyprlock.url = "github:hyprwm/hyprlock";
-
-    # Hyprpaper
-    hyprpaper.url = "github:hyprwm/hyprpaper";
+    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
 
     # Jovian NixOS
     jovian-nixos.url = "github:Jovian-Experiments/Jovian-NixOS";
@@ -44,10 +35,7 @@
     agenix,
     apple-silicon,
     home-manager,
-    hypridle,
     hyprland,
-    hyprlock,
-    hyprpaper,
     jovian-nixos,
     nixpkgs,
     nix-secrets,
@@ -81,10 +69,6 @@
               users.${userConfig.username} = {
                 imports = [
                   ./hosts/alpha-centauri/home.nix
-
-                  hypridle.homeManagerModules.default
-                  hyprlock.homeManagerModules.default
-                  hyprpaper.homeManagerModules.default
                 ];
               };
               extraSpecialArgs = { inherit inputs userConfig; };
@@ -109,10 +93,6 @@
               users.${userConfig.username} = {
                 imports = [
                   ./hosts/canopus/home.nix
-
-                  hypridle.homeManagerModules.default
-                  hyprlock.homeManagerModules.default
-                  hyprpaper.homeManagerModules.default
                 ];
               };
               extraSpecialArgs = { inherit inputs userConfig; };
