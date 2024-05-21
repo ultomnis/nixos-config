@@ -36,6 +36,8 @@
       wallpaper = [
         "eDP-1,~/.config/mountains.jpg"
       ];
+
+      splash = false;
     };
   };
 }
