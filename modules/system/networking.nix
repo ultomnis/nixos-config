@@ -3,10 +3,7 @@
 {
   networking = {
     # Enable NetworkManager
-    networkmanager = {
-      enable = true;
-      plugins = lib.mkForce [];
-    };
+    networkmanager.enable = true;
 
     # Reverse path filtering
     firewall.checkReversePath = "loose";
