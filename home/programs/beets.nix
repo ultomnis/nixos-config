@@ -5,7 +5,7 @@
 
     # beets configuration
     settings = {
-      asciify_paths = true;
+      asciify_paths = "yes";
       original_date = "yes";
     };
   };
