@@ -31,6 +31,17 @@
       ];
     };
   };
+
+  # Screen locking utility
+  programs.hyprlock = {
+    settings = {
+      background = [
+        {
+          path = "~/.config/ocean.jpg";
+        }
+      ];
+    };
+  };
   
   # Wallpaper utility
   services.hyprpaper = {

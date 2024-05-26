@@ -24,6 +24,17 @@
     };
   };
 
+  # Screen locking utility
+  programs.hyprlock = {
+    settings = {
+      background = [
+        {
+          path = "~/.config/mountains.jpg";
+        }
+      ];
+    };
+  };
+
   # Wallpaper utility
   services.hyprpaper = {
     enable = true;
