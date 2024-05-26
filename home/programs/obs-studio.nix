@@ -5,8 +5,9 @@
     enable = true;
 
     # Optional plugins
-    plugins = with pkgs; [
-      obs-studio-plugins.obs-tuna
+    plugins = with pkgs.obs-studio-plugins; [
+      advanced-scene-switcher
+      obs-tuna
     ];
   };
 }
