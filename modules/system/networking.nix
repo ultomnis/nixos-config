@@ -1,4 +1,4 @@
-{ lib, userConfig, ... }:
+{ userConfig, ... }:
 
 {
   networking = {
