@@ -22,7 +22,6 @@
   # GPU/Firmware
   hardware.asahi = {
     useExperimentalGPUDriver = true;
-    experimentalGPUInstallMode = "overlay";
     peripheralFirmwareDirectory = "${inputs.nix-secrets}/firmware";
   };
 
