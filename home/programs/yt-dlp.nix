@@ -4,8 +4,8 @@
 
     # yt-dlp configuration
     settings = {
-      embed-metadata = true;
-      embed-thumbnail = true;
+      extract-audio = true;
+      output = "~/Audio/%(title)s.%(ext)s";
     };
   };
 }
