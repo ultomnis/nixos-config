@@ -5,6 +5,13 @@
 
     # beets configuration
     settings = {
+      plugins = [
+        "embedart"
+        "fetchart"
+        "fromfilename"
+        "scrub"
+      ];
+    
       asciify_paths = "yes";
       original_date = "yes";
     };
