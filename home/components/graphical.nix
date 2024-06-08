@@ -6,6 +6,7 @@
     ardour
     keepassxc
     networkmanagerapplet
+    protonvpn-gui
     qbittorrent
     ryujinx
   ];
