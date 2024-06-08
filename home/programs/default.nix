@@ -1,6 +1,5 @@
 {
   imports = [
-    ./beets.nix
     ./firefox.nix
     ./foot.nix
     ./git.nix
