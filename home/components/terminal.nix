@@ -5,6 +5,7 @@
   home.packages = with pkgs; [
     bc
     brightnessctl
+    exiftool
     ffmpeg
     jmtpfs
     nvtopPackages.amd
