@@ -7,7 +7,6 @@
     brightnessctl
     ffmpeg
     jmtpfs
-    mat2
     nvtopPackages.amd
     tectonic
     unzip
