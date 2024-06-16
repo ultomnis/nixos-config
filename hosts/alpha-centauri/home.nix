@@ -1,4 +1,4 @@
-{ pkgs, userConfig, ... }:
+{ userConfig, ... }:
 
 {
   imports = [
@@ -10,7 +10,7 @@
     homeDirectory = "/home/${userConfig.username}";
     stateVersion = "23.11";
     # Source the wallpaper
-    file.".config/ocean.jpg".source = ../../assets/wallpapers/johannes-plenio-DKix6Un55mw-unsplash.jpg;
+    file.".config/wallpaper.jpg".source = ../../assets/wallpapers/johannes-plenio-DKix6Un55mw-unsplash.jpg;
   };
 
   programs.home-manager.enable = true;
@@ -31,33 +31,14 @@
       ];
     };
   };
-
-  # Screen locking utility
-  programs.hyprlock = {
-    settings = {
-      background = [
-        {
-          path = "~/.config/ocean.jpg";
-        }
-      ];
-    };
-  };
   
   # Wallpaper utility
   services.hyprpaper = {
-    enable = true;
-
     settings = {
-      preload = [
-        "~/.config/ocean.jpg"
-      ];
-
       wallpaper = [
-        "eDP-1,~/.config/ocean.jpg"
-        "DP-1,~/.config/ocean.jpg"
+        "eDP-1,/home/${userConfig.username}/.config/wallpaper.jpg"
+        "DP-1,/home/${userConfig.username}/.config/wallpaper.jpg"
       ];
-
-      splash = false;
     };
   };
 }

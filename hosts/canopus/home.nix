@@ -10,7 +10,7 @@
     homeDirectory = "/home/${userConfig.username}";
     stateVersion = "24.05";
     # Source the wallpaper
-    file.".config/mountains.jpg".source = ../../assets/wallpapers/matt-wang-FaFZCtl1yug-unsplash.jpg;
+    file.".config/wallpaper.jpg".source = ../../assets/wallpapers/matt-wang-FaFZCtl1yug-unsplash.jpg;
   };
 
   programs.home-manager.enable = true;
@@ -24,31 +24,12 @@
     };
   };
 
-  # Screen locking utility
-  programs.hyprlock = {
-    settings = {
-      background = [
-        {
-          path = "~/.config/mountains.jpg";
-        }
-      ];
-    };
-  };
-
   # Wallpaper utility
   services.hyprpaper = {
-    enable = true;
-
     settings = {
-      preload = [
-        "~/.config/mountains.jpg"
-      ];
-
       wallpaper = [
-        "eDP-1,~/.config/mountains.jpg"
+        "eDP-1,/home/${userConfig.username}/.config/wallpaper.jpg"
       ];
-
-      splash = false;
     };
   };
 }

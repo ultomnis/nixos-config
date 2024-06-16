@@ -1,9 +1,17 @@
+{ userConfig, ... }:
+
 {
   # Screen locking utility
   programs.hyprlock = {
     enable = true;
 
     settings = {
+      background = [
+        {
+          path = "/home/${userConfig.username}/.config/wallpaper.jpg";
+        }
+      ];
+    
       general = {
         hide_cursor  = true;
         grace = 5;
