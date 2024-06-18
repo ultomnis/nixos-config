@@ -17,9 +17,6 @@
     # Hyprland
     hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
 
-    # Jovian NixOS
-    jovian-nixos.url = "github:Jovian-Experiments/Jovian-NixOS";
-
     # Nixpkgs
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
@@ -36,14 +33,12 @@
     apple-silicon,
     home-manager,
     hyprland,
-    jovian-nixos,
     nixpkgs,
     nix-secrets,
     ...
   }:
   
   let
-    deck = "alpha-centauri";
     laptop = "canopus";
     userConfig = {
       username = "user";
@@ -53,30 +48,6 @@
 
   in {
     nixosConfigurations = {
-      ${deck} = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = { inherit inputs userConfig; };
-        modules = [
-          ./hosts/alpha-centauri
-
-          agenix.nixosModules.default
-          jovian-nixos.nixosModules.default # Steam Deck support
-          
-          home-manager.nixosModules.home-manager {
-            home-manager = {
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              users.${userConfig.username} = {
-                imports = [
-                  ./hosts/alpha-centauri/home.nix
-                ];
-              };
-              extraSpecialArgs = { inherit inputs userConfig; };
-            };
-          }
-        ];
-      };
-
       ${laptop} = nixpkgs.lib.nixosSystem {
         system = "aarch64-linux";
         specialArgs = { inherit inputs userConfig; };
