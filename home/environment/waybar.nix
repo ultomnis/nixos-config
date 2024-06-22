@@ -45,6 +45,7 @@
         "tray" = {
           icon-size = 16;
           spacing = 4;
+          reverse-direction = true;
         };
 
         "custom/keyboard" = {
