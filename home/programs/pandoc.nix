@@ -1,4 +1,5 @@
 {
+  # Markup converter
   programs.pandoc = {
     enable = true;
 
