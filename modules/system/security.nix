@@ -8,7 +8,12 @@
 
       # Realtime priority
       loginLimits = [
-        { domain = "@users"; item = "rtprio"; type = "-"; value = 1; }
+        {
+          domain = "@users";
+          item = "rtprio";
+          type = "-";
+          value = 1;
+        }
       ];
     };
 
