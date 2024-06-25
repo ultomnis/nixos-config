@@ -1,15 +1,23 @@
 { inputs, pkgs, ... }:
 
 {
-  # XDG Desktop Portal
-  xdg.portal = {
-    enable = true;
+  xdg = {
+    # SVG-based theme engine
+    configFile."Kvantum/kvantum.kvconfig".text = ''
+      [General]
+      theme=KvGnomeDark
+    '';
     
-    extraPortals = [
-      pkgs.xdg-desktop-portal-hyprland
-      pkgs.xdg-desktop-portal-gtk
-    ];
+    # XDG Desktop Portal
+    portal = {
+      enable = true;
     
-    configPackages = [ inputs.hyprland.packages.${pkgs.system}.hyprland ];
+      extraPortals = [
+        pkgs.xdg-desktop-portal-hyprland
+        pkgs.xdg-desktop-portal-gtk
+      ];
+    
+      configPackages = [ inputs.hyprland.packages.${pkgs.system}.hyprland ];
+    };
   };
 }

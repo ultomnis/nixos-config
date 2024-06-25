@@ -15,7 +15,7 @@
     enable = true;
 
     style = {
-      name = "adwaita-dark";
+      name = "kvantum";
     };
   };
 
