@@ -86,15 +86,9 @@
 
         # Search engine configuration
         search = {
-          default = "SearXNG";
-          privateDefault = "SearXNG";
+          default = "DuckDuckGo";
+          privateDefault = "DuckDuckGo";
           force = true;
-          engines = {
-            "SearXNG" = {
-              urls = [{ template = "https://searx.be/search?q={searchTerms}"; }];
-              definedAliases = [ "@searxng" ];
-            };
-          };
         };
       };
     };
