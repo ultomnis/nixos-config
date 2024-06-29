@@ -39,6 +39,7 @@
   }:
   
   let
+    desktop = "sirius";
     laptop = "canopus";
     userConfig = {
       username = "user";
@@ -48,6 +49,29 @@
 
   in {
     nixosConfigurations = {
+      ${desktop} = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = { inherit inputs userConfig; };
+        modules = [
+          ./hosts/sirius
+
+          agenix.nixosModules.default
+          
+          home-manager.nixosModules.home-manager {
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              users.${userConfig.username} = {
+                imports = [
+                  ./hosts/sirius/home.nix
+                ];
+              };
+              extraSpecialArgs = { inherit inputs userConfig; };
+            };
+          }
+        ];
+      };
+
       ${laptop} = nixpkgs.lib.nixosSystem {
         system = "aarch64-linux";
         specialArgs = { inherit inputs userConfig; };
