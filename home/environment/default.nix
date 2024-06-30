@@ -3,7 +3,6 @@
     ./dconf.nix
     ./fish.nix
     ./fuzzel.nix
-    ./gammastep.nix
     ./gnome-keyring.nix
     ./hypridle.nix
     ./hyprland.nix
