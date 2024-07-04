@@ -2,9 +2,6 @@
   description = "ultomnis' NixOS configuration";
 
   inputs = {
-    # Agenix
-    agenix.url = "github:ryantm/agenix";
-  
     # Apple silicon
     apple-silicon.url = "github:tpwrules/nixos-apple-silicon";
 
@@ -29,7 +26,6 @@
 
   outputs = inputs@{
     self,
-    agenix,
     apple-silicon,
     home-manager,
     hyprland,
@@ -54,8 +50,6 @@
         specialArgs = { inherit inputs userConfig; };
         modules = [
           ./hosts/sirius
-
-          agenix.nixosModules.default
           
           home-manager.nixosModules.home-manager {
             home-manager = {
@@ -77,8 +71,6 @@
         specialArgs = { inherit inputs userConfig; };
         modules = [
           ./hosts/canopus
-
-          agenix.nixosModules.default
           apple-silicon.nixosModules.default # Apple silicon support
           
           home-manager.nixosModules.home-manager {

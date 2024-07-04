@@ -4,6 +4,5 @@
     ./fwupd.nix
     ./greetd.nix
     ./openssh.nix
-    ./syncthing.nix
   ];
 }

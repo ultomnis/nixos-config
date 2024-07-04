@@ -4,7 +4,6 @@
   imports = [
     ./hardware-configuration.nix # Include the results of the hardware scan
     ../../modules
-    ../../secrets
   ];
 
   boot = {
