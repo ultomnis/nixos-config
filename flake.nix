@@ -17,7 +17,7 @@
     # Nixpkgs
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
-    # Personal, private repo
+    # Private repo
     nix-secrets = {
       url = "git+ssh://git@github.com/ultomnis/nix-secrets.git?ref=main";
       flake = false;
