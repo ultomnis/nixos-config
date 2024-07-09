@@ -2,6 +2,9 @@
   security = {
     pam = {
       services = {
+        # Automatically unlock keyring
+        greetd.enableGnomeKeyring = true;
+        
         # Hyprlock PAM authentication
         hyprlock = {};
       };
