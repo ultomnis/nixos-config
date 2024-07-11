@@ -216,23 +216,6 @@
         "type": "github"
       }
     },
-    "nix-secrets": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1720115689,
-        "narHash": "sha256-g/tEibY3xZURURx9UoanXEbXDzIGSVWAMdDkBIiBGtY=",
-        "ref": "main",
-        "rev": "be8ba1a7d2375a50e534d3c059575d9607506735",
-        "revCount": 29,
-        "type": "git",
-        "url": "ssh://git@github.com/ultomnis/nix-secrets.git"
-      },
-      "original": {
-        "ref": "main",
-        "type": "git",
-        "url": "ssh://git@github.com/ultomnis/nix-secrets.git"
-      }
-    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1718318537,
@@ -286,7 +269,6 @@
         "apple-silicon": "apple-silicon",
         "home-manager": "home-manager",
         "hyprland": "hyprland",
-        "nix-secrets": "nix-secrets",
         "nixpkgs": "nixpkgs_3"
       }
     },
