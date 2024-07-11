@@ -1,5 +1,3 @@
-{ inputs, ... }:
-
 {
   imports = [
     ./hardware-configuration.nix # Include the results of the hardware scan
@@ -21,7 +19,6 @@
   # GPU/Firmware
   hardware.asahi = {
     useExperimentalGPUDriver = true;
-    peripheralFirmwareDirectory = "${inputs.nix-secrets}/firmware";
   };
 
   # Sound

@@ -16,12 +16,6 @@
 
     # Nixpkgs
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-
-    # Private repo
-    nix-secrets = {
-      url = "git+ssh://git@github.com/ultomnis/nix-secrets.git?ref=main";
-      flake = false;
-    };
   };
 
   outputs = inputs@{
@@ -30,7 +24,6 @@
     home-manager,
     hyprland,
     nixpkgs,
-    nix-secrets,
     ...
   }:
   
