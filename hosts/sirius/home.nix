@@ -33,7 +33,7 @@
   services.hyprpaper = {
     settings = {
       wallpaper = [
-        "DP-2,~/.config/wallpaper.jpg"
+        "DP-2,/home/${userConfig.username}/.config/wallpaper.jpg"
       ];
     };
   };
