@@ -106,7 +106,7 @@
       }
 
       #workspaces button:hover {
-        color: #00ffff;
+        color: #00cccc;
         box-shadow: inherit;
         text-shadow: inherit;
       }
@@ -115,12 +115,8 @@
         box-shadow: inset 0 -2px #f0f0f0;
       }
 
-      #workspaces button.focused {
-        color: #4682b4;
-      }
-
       #workspaces button.urgent {
-        color: #dc143c;
+        color: #cc0000;
       }
 
       #clock,
@@ -147,11 +143,11 @@
       }
 
       #battery.charging, #battery.plugged {
-        color: #00ff7f;
+        color: #00cc00;
       }
 
       #battery.critical:not(.charging) {
-        color: #dc143c;
+        color: #cc0000;
       }
     '';
   };
