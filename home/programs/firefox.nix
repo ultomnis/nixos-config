@@ -71,6 +71,11 @@
           Value = false;
           Status = "locked";
         };
+
+        "dom.private-attribution.submission.enabled" = {
+          Value = false;
+          Status = "locked";
+        };
         
         "dom.security.https_only_mode" = {
           Value = true;
