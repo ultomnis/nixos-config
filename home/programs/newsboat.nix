@@ -7,11 +7,15 @@
     urls = [
       {
         tags = [ "linux" ];
-        url = "https://asahilinux.org/blog/index.xml";
+        url = "https://nixos.org/blog/announcements-rss.xml";
       }
       {
         tags = [ "linux" ];
-        url = "https://nixos.org/blog/announcements-rss.xml";
+        url = "https://www.phoronix.com/rss.php";
+      }
+      {
+        tags = [ "linux" ];
+        url = "https://social.treehouse.systems/@AsahiLinux.rss";
       }
     ];
   };
