@@ -99,15 +99,16 @@
 
       bind = [
         "$mainMod, Return, exec, ${pkgs.foot}/bin/foot"
-        "$mainMod SHIFT, Q, killactive"
-        "$mainMod SHIFT, L, exec, ${pkgs.procps}/bin/pidof ${pkgs.wlogout}/bin/wlogout || ${pkgs.wlogout}/bin/wlogout -b 2"
+        "$mainMod, Q, killactive"
+        "$mainMod SHIFT, L, exec, ${pkgs.systemd}/bin/loginctl lock-session"
+        "$mainMod SHIFT, E, exec, ${pkgs.systemd}/bin/loginctl terminate-user $USER"
         "$mainMod, Space, togglefloating"
         "$mainMod, R, exec, ${pkgs.fuzzel}/bin/fuzzel"
         "$mainMod, P, pseudo"
-        "$mainMod, S, togglesplit"
+        "$mainMod, T, togglesplit"
         "$mainMod, F, fullscreen"
         "$mainMod, H, exec, ${pkgs.killall}/bin/killall -SIGUSR1 .waybar-wrapped"
-        "$mainMod SHIFT, Space, exec, ${pkgs.procps}/bin/pidof ${pkgs.slurp}/bin/slurp || ${pkgs.grim}/bin/grim -g \"$(${pkgs.slurp}/bin/slurp)\""
+        "$mainMod, S, exec, ${pkgs.procps}/bin/pidof ${pkgs.slurp}/bin/slurp || ${pkgs.grim}/bin/grim -g \"$(${pkgs.slurp}/bin/slurp)\""
 
         # Focus binds
         "$mainMod, left, movefocus, l"
