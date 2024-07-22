@@ -44,30 +44,28 @@
 
         "tray" = {
           icon-size = 16;
-          spacing = 4;
+          spacing = 10;
           reverse-direction = true;
         };
 
         "custom/keyboard" = {
-          format = "";
+          format = "󰌌";
           on-click = "${pkgs.killall}/bin/killall -34 ${pkgs.wvkbd}/bin/wvkbd-mobintl";
         };
 
         "pulseaudio" = {
           format = "{icon} {volume}% {format_source}";
           scroll-step = 1;
-          on-click = "${pkgs.wireplumber}/bin/wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
-          on-click-right = "${pkgs.wireplumber}/bin/wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle";
-          format-muted = " {format_source}";
+          on-click = "${pkgs.pavucontrol}/bin/pavucontrol";
+          on-click-right = "${pkgs.wireplumber}/bin/wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
+          format-muted = " {format_source}";
           format-source = " {volume}%";
           format-source-muted = "";
-          format-icons = {
-            default = "";
-          };
+          format-icons = [ "" "" "" ];
         };
 
         "backlight" = {
-          format = " {percent}%";
+          format = "󰃠 {percent}%";
         };
 
         "battery" = {
@@ -77,7 +75,7 @@
           warning = 20;
             critical = 10;
           };
-          format-charging = " {capacity}%";
+          format-charging = " {capacity}%";
           format-plugged = " {capacity}%";
           format-icons = [ "" "" "" "" "" ];
         };
@@ -101,7 +99,7 @@
       }
 
       #workspaces button {
-        padding: 0 8px;
+        padding: 0 6px;
         color: #f0f0f0;
       }
 
@@ -125,7 +123,7 @@
       #pulseaudio,
       #backlight,
       #battery {
-        padding: 0 4px;
+        padding: 0 6px;
         color: #f0f0f0;
       }
 
