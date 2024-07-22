@@ -40,6 +40,7 @@
 
         "clock" = {
           format = "{:%a %b %d %H:%M}";
+          tooltip = false;
         };
 
         "tray" = {
