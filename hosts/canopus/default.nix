@@ -20,8 +20,5 @@
   hardware.asahi = {
     useExperimentalGPUDriver = true;
   };
-
-  # Sound
-  sound.enable = true;
 }
 
