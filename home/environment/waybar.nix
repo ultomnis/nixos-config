@@ -15,7 +15,7 @@
         # Order of modules
         modules-left = [ "hyprland/workspaces" ];
         modules-center = [ "clock" ];
-        modules-right = [ "tray" "custom/keyboard" "pulseaudio" "backlight" "battery" ];
+        modules-right = [ "tray" "pulseaudio" "backlight" "battery" ];
 
         # Modules configuration
         "hyprland/workspaces" = {
@@ -48,19 +48,14 @@
           reverse-direction = true;
         };
 
-        "custom/keyboard" = {
-          format = "󰌌";
-          on-click = "${pkgs.killall}/bin/killall -34 ${pkgs.wvkbd}/bin/wvkbd-mobintl";
-        };
-
         "pulseaudio" = {
           format = "{icon} {volume}% {format_source}";
           scroll-step = 1;
           on-click = "${pkgs.pavucontrol}/bin/pavucontrol";
           on-click-right = "${pkgs.wireplumber}/bin/wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
-          format-muted = " {format_source}";
+          format-muted = "  {format_source}";
           format-source = " {volume}%";
-          format-source-muted = "";
+          format-source-muted = " ";
           format-icons = [ "" "" "" ];
         };
 
@@ -77,7 +72,7 @@
           };
           format-charging = " {capacity}%";
           format-plugged = " {capacity}%";
-          format-icons = [ "" "" "" "" "" ];
+          format-icons = [ " " " " " " " " " " ];
         };
       };
     };
@@ -119,7 +114,6 @@
 
       #clock,
       #tray,
-      #custom-keyboard,
       #pulseaudio,
       #backlight,
       #battery {

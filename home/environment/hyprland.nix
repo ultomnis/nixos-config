@@ -12,7 +12,6 @@
       exec-once = [
         "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1"
         "${pkgs.waybar}/bin/waybar"
-        "${pkgs.wvkbd}/bin/wvkbd-mobintl --hidden"
       ];
 
       # Environment variables
