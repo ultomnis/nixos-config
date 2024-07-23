@@ -7,7 +7,6 @@
     brightnessctl
     exiftool
     ffmpeg
-    jmtpfs
     nvtopPackages.amd
     tectonic
     unzip
