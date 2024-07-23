@@ -8,7 +8,6 @@
     exiftool
     ffmpeg
     nvtopPackages.amd
-    tectonic
     unzip
     xorg.xrandr
   ];
