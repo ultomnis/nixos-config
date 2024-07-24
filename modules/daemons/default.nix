@@ -5,5 +5,6 @@
     ./greetd.nix
     ./gvfs.nix
     ./openssh.nix
+    ./syncthing.nix
   ];
 }
