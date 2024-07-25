@@ -7,6 +7,10 @@
 
     package = inputs.hyprland.packages.${pkgs.system}.hyprland;
 
+    plugins = with pkgs.hyprlandPlugins; [
+      csgo-vulkan-fix
+    ];
+
     settings = {
       # Execute on launch
       exec-once = [
@@ -19,6 +23,15 @@
         "QT_STYLE_OVERRIDE,kvantum"
         "XCURSOR_SIZE,24"
       ];
+
+      # Plugins
+      plugin = {
+        csgo-vulkan-fix = {
+          res_w = 1680;
+          res_h = 1050;
+          class = "cs2";
+        };
+      };
 
       input = {
         kb_layout = "us";
