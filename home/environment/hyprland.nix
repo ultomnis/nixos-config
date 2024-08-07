@@ -98,9 +98,8 @@
 
       bind = [
         "$mainMod, Return, exec, ${pkgs.foot}/bin/foot"
-        "$mainMod, Q, killactive"
+        "$mainMod SHIFT, Q, killactive"
         "$mainMod SHIFT, L, exec, ${pkgs.systemd}/bin/loginctl lock-session"
-        "$mainMod SHIFT, E, exec, ${pkgs.systemd}/bin/loginctl terminate-user $USER"
         "$mainMod, Space, togglefloating"
         "$mainMod, R, exec, ${pkgs.fuzzel}/bin/fuzzel"
         "$mainMod, P, pseudo"
