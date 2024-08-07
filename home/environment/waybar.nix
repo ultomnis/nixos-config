@@ -127,19 +127,19 @@
 
     # CSS
     style = ''
-      window#waybar {
-        background-color: rgba(0, 0, 0, 0.1);
+      menu {
+        border-radius: 4px;
+        background: #000011;
         color: #f0f0f0;
       }
 
-      menu {
-	      border-radius: 4px;
-	      background: #000011;
-	      color: #f0f0f0;
-      }
-      
       menuitem {
-	      border-radius: 4px;
+        border-radius: 4px;
+      }
+    
+      window#waybar {
+        background-color: rgba(0, 0, 0, 0.1);
+        color: #f0f0f0;
       }
 
       button {
