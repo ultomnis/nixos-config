@@ -13,11 +13,51 @@
         spacing = 5;
 
         # Order of modules
-        modules-left = [ "hyprland/workspaces" ];
+        modules-left = [ "custom/power" "hyprland/workspaces" ];
         modules-center = [ "clock" ];
         modules-right = [ "tray" "network" "pulseaudio" "backlight" "battery" ];
 
         # Modules configuration
+        "custom/power" = {
+          format = "";
+          tooltip = false;
+          menu = "on-click";
+          menu-file = pkgs.writeText "power_menu.xml"
+            ''
+              <?xml version="1.0" encoding="UTF-8"?>
+              <interface>
+                <object class="GtkMenu" id="menu">
+                  <child>
+                    <object class="GtkMenuItem" id="lock">
+                      <property name="label">Lock</property>
+                    </object>
+                  </child>
+                  <child>
+                    <object class="GtkMenuItem" id="logout">
+                      <property name="label">Logout</property>
+                    </object>
+                  </child>
+                  <child>
+                    <object class="GtkMenuItem" id="reboot">
+                      <property name="label">Reboot</property>
+                    </object>
+                  </child>
+                  <child>
+                    <object class="GtkMenuItem" id="shutdown">
+                      <property name="label">Shutdown</property>
+                    </object>
+                  </child>
+                </object>
+              </interface>
+            '';
+          menu-actions = {
+            "lock" = "${pkgs.systemd}/bin/loginctl lock-session";
+            "logout" = "${pkgs.systemd}/bin/loginctl terminate-user $USER";
+            "reboot" = "${pkgs.systemd}/bin/systemctl reboot";
+            "shutdown" = "${pkgs.systemd}/bin/systemctl poweroff";
+          };
+        };
+        
         "hyprland/workspaces" = {
           format = "{icon}";
           all-outputs = true;
@@ -92,6 +132,16 @@
         color: #f0f0f0;
       }
 
+      menu {
+	      border-radius: 4px;
+	      background: #000011;
+	      color: #f0f0f0;
+      }
+      
+      menuitem {
+	      border-radius: 4px;
+      }
+
       button {
         border: none;
         border-radius: 0;
@@ -120,6 +170,7 @@
         color: #cc0000;
       }
 
+      #custom-power,
       #clock,
       #tray,
       #network,
