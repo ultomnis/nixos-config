@@ -44,8 +44,8 @@
         rounding = 4;
         blur = {
           enabled = true;
-          size = 8;
-          passes = 2;
+          size = 10;
+          passes = 4;
           vibrancy = 0.2;
         };
         drop_shadow = false;
