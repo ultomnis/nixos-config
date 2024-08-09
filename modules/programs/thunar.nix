@@ -10,4 +10,7 @@
       thunar-volman
     ];
   };
+
+  # Mounting and trash functionality
+  services.gvfs.enable = true;
 }

@@ -1,3 +1,5 @@
+{ pkgs, ... }:
+
 {
   # Low-level configuration system
   dconf.settings = {
@@ -12,5 +14,7 @@
       uris = ["qemu:///system"];
     };
   };
-}
 
+  # GNOME Keyring
+  services.gnome-keyring.enable = true;
+}

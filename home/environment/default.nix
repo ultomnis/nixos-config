@@ -1,9 +1,8 @@
 {
   imports = [
-    ./dconf.nix
     ./fish.nix
     ./fuzzel.nix
-    ./gnome-keyring.nix
+    ./gnome.nix
     ./hypridle.nix
     ./hyprland.nix
     ./hyprlock.nix
