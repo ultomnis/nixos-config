@@ -10,7 +10,7 @@
     homeDirectory = "/home/${userConfig.username}";
     stateVersion = "24.05";
     # Source the wallpaper
-    file.".config/wallpaper.jpg".source = ../../assets/wallpapers/matt-wang-FaFZCtl1yug-unsplash.jpg;
+    file.".config/wallpaper.jpg".source = ../../assets/wallpapers/eugene-ga-CvhUptBLZT8-unsplash.jpg;
   };
 
   programs.home-manager.enable = true;
