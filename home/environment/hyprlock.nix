@@ -20,7 +20,12 @@
       input-field = [
         {
           size = "300, 50";
+          outline_thickness = 0;
+          inner_color = "rgba(0, 0, 0, 0.5)";
+          font_color = "rgb(240, 240, 240)";
+          placeholder_text = "<i><span foreground='##f0f0f0'>Enter Password</span></i>";
           rounding = -1;
+          fail_text = "<i><span foreground='##f0f0f0'>$FAIL <b>[$ATTEMPTS]</b></span></i>";
           position = "0, -80";
           halign = "center";
           valign = "center";
