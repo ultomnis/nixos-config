@@ -29,15 +29,15 @@
         "*" = {
           installation_mode = "blocked";
         };
+
+        "78272b6fa58f4a1abaac99321d503a20@proton.me" = {
+          installation_mode = "force_installed";
+          install_url = "https://addons.mozilla.org/firefox/downloads/latest/proton-pass/latest.xpi";
+        };
         
         "addon@darkreader.org" = {
           installation_mode = "force_installed";
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/darkreader/latest.xpi";
-        };
-
-        "keepassxc-browser@keepassxc.org" = {
-          installation_mode = "force_installed";
-          install_url = "https://addons.mozilla.org/firefox/downloads/latest/keepassxc-browser/latest.xpi";
         };
         
         "uBlock0@raymondhill.net" = {
