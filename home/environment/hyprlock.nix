@@ -40,6 +40,13 @@
           halign = "center";
           valign = "center";
         }
+        {
+          text = "cmd[update:1000] echo -e \"$(date +\"%A, %B %d\")\"";
+          font_size = 30;
+          position = "0, 160";
+          halign = "center";
+          valign = "center";
+        }
       ];
     };
   }; 
