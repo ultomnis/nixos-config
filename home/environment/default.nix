@@ -2,6 +2,7 @@
   imports = [
     ./fish.nix
     ./fuzzel.nix
+    ./gammastep.nix
     ./gnome.nix
     ./hypridle.nix
     ./hyprland.nix
