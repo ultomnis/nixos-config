@@ -6,5 +6,6 @@
     ardour
     mullvad-browser
     protonvpn-gui
+    qbittorrent
   ];
 }
