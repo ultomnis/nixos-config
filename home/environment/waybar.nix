@@ -15,7 +15,7 @@
         # Order of modules
         modules-left = [ "custom/power" "hyprland/workspaces" ];
         modules-center = [ "clock" ];
-        modules-right = [ "tray" "network" "pulseaudio" "backlight" "battery" ];
+        modules-right = [ "tray" "pulseaudio" "backlight" "battery" ];
 
         # Modules configuration
         "custom/power" = {
@@ -89,13 +89,6 @@
           reverse-direction = true;
         };
 
-        "network" = {
-          format-wifi = "󰖩";
-          format-ethernet = "󰈀";
-          format-disconnected = "";
-          tooltip-format = "{essid}";
-        };
-
         "pulseaudio" = {
           format = "{icon} {volume}% {format_source}";
           scroll-step = 1;
@@ -163,7 +156,6 @@
       #custom-power,
       #clock,
       #tray,
-      #network,
       #pulseaudio,
       #backlight,
       #battery {

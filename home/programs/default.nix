@@ -8,6 +8,7 @@
     ./mangohud.nix
     ./mpv.nix
     ./newsboat.nix
+    ./nm-applet.nix
     ./obs-studio.nix
     ./yt-dlp.nix
   ];
