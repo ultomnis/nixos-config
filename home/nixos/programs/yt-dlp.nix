@@ -1,4 +1,4 @@
-{ userConfig, ... }:
+{ config, ... }:
 
 {
   programs.yt-dlp = {
@@ -8,7 +8,7 @@
     settings = {
       embed-metadata = true;
       embed-thumbnail = true;
-      output = "/home/${userConfig.username}/Downloads/%(title)s.%(ext)s";
+      output = "${config.home.homeDirectory}/Downloads/%(title)s.%(ext)s";
     };
   };
 }

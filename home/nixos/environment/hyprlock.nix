@@ -1,4 +1,4 @@
-{ userConfig, ... }:
+{ config, ... }:
 
 {
   # Screen locking utility
@@ -8,7 +8,7 @@
     settings = {
       background = [
         {
-          path = "/home/${userConfig.username}/.config/wallpaper.jpg";
+          path = "${config.home.homeDirectory}/.config/wallpaper.jpg";
         }
       ];
     

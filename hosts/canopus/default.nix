@@ -1,24 +1,18 @@
+{ pkgs, ... }:
+
 {
   imports = [
-    ./hardware-configuration.nix # Include the results of the hardware scan
-    ../../modules
+    ../../modules/darwin
   ];
 
-  # Bootloader
-  boot.loader = {
-    systemd-boot.enable = true;
-    efi.canTouchEfiVariables = false;
+  # Networking
+  networking  = {
+    computerName = "canopus";
+    hostName = "canopus"; # Define your hostname
   };
-
-  networking.hostName = "canopus"; # Define your hostname
 
   # Do NOT change this value unless you have manually inspected all the changes it would make to your configuration,
   # and migrated your data accordingly.
-  system.stateVersion = "24.05";
-
-  # GPU/Firmware
-  hardware.asahi = {
-    useExperimentalGPUDriver = true;
-  };
+  system.stateVersion = 4;
 }
 

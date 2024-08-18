@@ -1,4 +1,4 @@
-{ userConfig, ... }:
+{ config, userConfig, ... }:
 
 {
   programs.git = {
@@ -18,7 +18,7 @@
     extraConfig = {
       commit.gpgsign = true;
       gpg.format = "ssh";
-      user.signingkey = "/home/${userConfig.username}/.ssh/id_ed25519.pub";
+      user.signingkey = "${config.home.homeDirectory}/.ssh/id_ed25519.pub";
     };
   };
 }

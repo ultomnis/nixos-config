@@ -1,8 +1,9 @@
-{ userConfig, ... }:
+{ config, userConfig, ... }:
 
 {
   imports = [
-    ../../home
+    ../../home/common
+    ../../home/nixos
   ];
 
   home = {
@@ -33,7 +34,7 @@
   services.hyprpaper = {
     settings = {
       wallpaper = [
-        "DP-2,/home/${userConfig.username}/.config/wallpaper.jpg"
+        "DP-2,${config.home.homeDirectory}/.config/wallpaper.jpg"
       ];
     };
   };

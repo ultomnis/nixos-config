@@ -13,10 +13,5 @@
       profile = "high-quality";
       vo = "gpu-next";
     };
-
-    # mpv scripts
-    scripts = with pkgs; [
-      mpvScripts.mpris
-    ];
   };
 }

@@ -1,4 +1,4 @@
-{ userConfig, ... }:
+{ config, ... }:
 
 {
   # Wallpaper utility
@@ -7,7 +7,7 @@
 
     settings = {
       preload = [
-        "/home/${userConfig.username}/.config/wallpaper.jpg"
+        "${config.home.homeDirectory}/.config/wallpaper.jpg"
       ];
 
       splash = false;

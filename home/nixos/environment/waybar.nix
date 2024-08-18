@@ -15,7 +15,7 @@
         # Order of modules
         modules-left = [ "custom/power" "hyprland/workspaces" ];
         modules-center = [ "clock" ];
-        modules-right = [ "tray" "pulseaudio" "backlight" "battery" ];
+        modules-right = [ "tray" "pulseaudio" ];
 
         # Modules configuration
         "custom/power" = {
@@ -99,22 +99,6 @@
           format-source-muted = "󰍭";
           format-icons = [ "󰕿" "󰖀" "󰕾" ];
         };
-
-        "backlight" = {
-          format = "󰃠 {percent}%";
-        };
-
-        "battery" = {
-          format = "{icon} {capacity}%";
-          interval = 60;
-          states = {
-          warning = 20;
-            critical = 10;
-          };
-          format-charging = "󱐋 {capacity}%";
-          format-plugged = "󰚥 {capacity}%";
-          format-icons = [ "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹" ];
-        };
       };
     };
 
@@ -156,9 +140,7 @@
       #custom-power,
       #clock,
       #tray,
-      #pulseaudio,
-      #backlight,
-      #battery {
+      #pulseaudio {
         padding: 0 6px;
         color: #f0f0f0;
       }
@@ -174,14 +156,6 @@
 
       .modules-right > widget:last-child > #workspaces {
         margin-right: 0;
-      }
-
-      #battery.charging, #battery.plugged {
-        color: #00cc00;
-      }
-
-      #battery.critical:not(.charging) {
-        color: #cc0000;
       }
     '';
   };
