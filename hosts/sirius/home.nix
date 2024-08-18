@@ -18,11 +18,6 @@
 
   wayland.windowManager.hyprland = {
     settings = {
-      # Environment variables
-      env = [
-        "WLR_DRM_NO_ATOMIC,1"
-      ];
-      
       # Monitor configuration
       monitor = [
         "DP-2, 1920x1080@165, 0x0, 1"
