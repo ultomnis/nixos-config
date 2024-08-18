@@ -15,6 +15,7 @@
       "aerospace"
       "mullvad-browser"
       "protonvpn"
+      "qbittorrent"
       "steam"
     ];
 
