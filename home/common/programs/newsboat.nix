@@ -13,10 +13,6 @@
         tags = [ "linux" ];
         url = "https://www.phoronix.com/rss.php";
       }
-      {
-        tags = [ "linux" ];
-        url = "https://social.treehouse.systems/@AsahiLinux.rss";
-      }
     ];
   };
 }
