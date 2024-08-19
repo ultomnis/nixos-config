@@ -6,7 +6,7 @@
     # Configuration
     settings = {
       main = {
-        font = "monospace:size=12";
+        font = "monospace:size=11";
       };
 
       mouse = {
