@@ -21,7 +21,7 @@
     ];
 
     taps = [
-      "nikitabobko/aerospace"
+      "nikitabobko/tap"
     ];
   };
 }
