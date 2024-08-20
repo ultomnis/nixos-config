@@ -20,6 +20,10 @@
       AppleShowAllFiles = true; # show hidden files
     };
 
+    NSGlobalDomain = {
+      NSWindowShouldDragOnGesture = true;
+    };
+
     spaces = {
       spans-displays = true; # disable displays have separate spaces
     };
