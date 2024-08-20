@@ -1,4 +1,5 @@
 {
+  # macOS tiling window manager
   home.file.".aerospace.toml".text = ''
     start-at-login = true
   
