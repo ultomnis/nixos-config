@@ -13,6 +13,7 @@
 
     casks = [
       "aerospace"
+      "iterm2"
       "lulu"
       "mullvad-browser"
       "protonvpn"
