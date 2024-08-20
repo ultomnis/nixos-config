@@ -106,6 +106,7 @@
         "$mainMod, T, togglesplit"
         "$mainMod, F, fullscreen"
         "$mainMod, H, exec, ${pkgs.killall}/bin/killall -SIGUSR1 .waybar-wrapped"
+        "$mainMod, N, exec, ${pkgs.hyprshade}/bin/hyprshade toggle blue-light-filter"
         "$mainMod, S, exec, ${pkgs.procps}/bin/pidof ${pkgs.slurp}/bin/slurp || ${pkgs.grim}/bin/grim -g \"$(${pkgs.slurp}/bin/slurp)\""
 
         # Focus binds

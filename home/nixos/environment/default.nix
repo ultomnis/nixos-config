@@ -1,7 +1,6 @@
 {
   imports = [
     ./fuzzel.nix
-    ./gammastep.nix
     ./gnome.nix
     ./hypridle.nix
     ./hyprland.nix
