@@ -1,12 +1,15 @@
 {
   # macOS tiling window manager
   home.file.".aerospace.toml".text = ''
+    after-startup-command = ['exec-and-forget borders active_color=0xaaf0f0f0 width=4.0']
+  
     start-at-login = true
   
     enable-normalization-flatten-containers = true
     enable-normalization-opposite-orientation-for-nested-containers = true
   
     on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
+    on-focus-changed = ['move-mouse window-lazy-center']
 
     [gaps]
     inner.horizontal = 5
