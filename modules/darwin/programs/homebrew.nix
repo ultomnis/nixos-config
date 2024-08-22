@@ -6,11 +6,6 @@
     onActivation.cleanup = "zap";
     onActivation.upgrade = true;
 
-    brews = [
-      "mpv"
-      "yt-dlp"
-    ];
-
     casks = [
       "aerospace"
       "lulu"
