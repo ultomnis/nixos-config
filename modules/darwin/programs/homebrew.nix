@@ -7,7 +7,6 @@
     onActivation.upgrade = true;
 
     brews = [
-      "borders"
       "mpv"
       "yt-dlp"
     ];
@@ -24,7 +23,6 @@
     ];
 
     taps = [
-      "felixkratz/formulae"
       "nikitabobko/tap"
     ];
   };
