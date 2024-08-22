@@ -8,6 +8,10 @@
     gtk3.extraConfig = {
       gtk-application-prefer-dark-theme = true;
     };
+
+    gtk4.extraConfig = {
+      gtk-application-prefer-dark-theme = true;
+    };
   };
 
   # Configure the theme for Qt applications
