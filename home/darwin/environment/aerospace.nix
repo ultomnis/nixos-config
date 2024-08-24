@@ -17,7 +17,7 @@
     outer.right = 10
 
     [mode.main.binding]
-    alt-enter = 'exec-and-forget open -n /System/Applications/Utilities/Terminal.app'
+    alt-enter = 'exec-and-forget open -na alacritty'
 
     alt-left = 'focus left'
     alt-down = 'focus down'
