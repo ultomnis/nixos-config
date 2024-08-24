@@ -6,6 +6,6 @@
     inactive_color = "0x00000000";
     
     hidpi = true;
-    width = 4.0;
+    width = 3.0;
   };
 }
