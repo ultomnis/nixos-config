@@ -1,5 +1,3 @@
-{ pkgs, ... }:
-
 {
   # Media player
   programs.mpv = {
