@@ -13,6 +13,8 @@
       mru-spaces = false;
       show-recents = false;
       static-only = true;
+      wvous-bl-corner = 11; # Launchpad
+      wvous-br-corner = 2; # Mission Control
     };
 
     finder = {
