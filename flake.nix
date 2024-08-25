@@ -19,6 +19,9 @@
 
     # Nixpkgs
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+
+    # Nix user repository
+    nur.url = "github:nix-community/NUR";
   };
 
   outputs = inputs@{
@@ -27,6 +30,7 @@
     hyprland,
     nix-darwin,
     nixpkgs,
+    nur,
     ...
   }:
   
@@ -54,6 +58,7 @@
               users.${userConfig.username} = {
                 imports = [
                   ./hosts/sirius/home.nix
+                  nur.hmModules.nur
                 ];
               };
               extraSpecialArgs = { inherit inputs userConfig; };
@@ -77,6 +82,7 @@
               users.${userConfig.username} = {
                 imports = [
                   ./hosts/canopus/home.nix
+                  nur.hmModules.nur
                 ];
               };
               extraSpecialArgs = { inherit inputs userConfig; };
