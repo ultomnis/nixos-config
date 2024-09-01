@@ -4,9 +4,6 @@
       services = {
         # Automatically unlock keyring
         greetd.enableGnomeKeyring = true;
-        
-        # Swaylock PAM authentication
-        swaylock = {};
       };
 
       # Realtime priority
