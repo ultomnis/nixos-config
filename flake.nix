@@ -8,9 +8,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # Hyprland
-    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
-
     # Nix-darwin
     nix-darwin = {
       url = "github:LnL7/nix-darwin";
@@ -20,6 +17,12 @@
     # Nixpkgs
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
+    # Nipkgs-wayland
+    nixpkgs-wayland = {
+      url = "github:nix-community/nixpkgs-wayland";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # Nix user repository
     nur.url = "github:nix-community/NUR";
   };
@@ -27,9 +30,9 @@
   outputs = inputs@{
     self,
     home-manager,
-    hyprland,
     nix-darwin,
     nixpkgs,
+    nixpkgs-wayland,
     nur,
     ...
   }:

@@ -8,13 +8,17 @@
 
   boot = {
     # Linux kernel
-    kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.linuxPackages_testing;
 
     # Bootloader
     loader = {
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
     };
+  };
+
+  environment.variables = {
+    "QT_STYLE_OVERRIDE" = "kvantum";
   };
 
   networking.hostName = "sirius"; # Define your hostname

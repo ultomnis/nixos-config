@@ -5,8 +5,8 @@
         # Automatically unlock keyring
         greetd.enableGnomeKeyring = true;
         
-        # Hyprlock PAM authentication
-        hyprlock = {};
+        # Swaylock PAM authentication
+        swaylock = {};
       };
 
       # Realtime priority

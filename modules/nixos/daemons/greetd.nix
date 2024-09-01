@@ -7,8 +7,8 @@
 
     settings = {
       default_session = {
-        # tuigreet command to run Hyprland
-        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd ${pkgs.hyprland}/bin/Hyprland";
+        # tuigreet command to run
+        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd ${pkgs.sway}/bin/sway";
       };
     };
   };

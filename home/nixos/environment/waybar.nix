@@ -13,7 +13,7 @@
         spacing = 5;
 
         # Order of modules
-        modules-left = [ "custom/power" "hyprland/workspaces" ];
+        modules-left = [ "custom/power" "sway/workspaces" ];
         modules-center = [ "clock" ];
         modules-right = [ "tray" "pulseaudio" ];
 
@@ -58,12 +58,11 @@
           };
         };
         
-        "hyprland/workspaces" = {
-          format = "{icon}";
+        "sway/workspaces" = {
+          disable-scroll = true;
           all-outputs = true;
-          on-scroll-up = "${pkgs.hyprland}/bin/hyprctl dispatch workspace e+1";
-          on-scroll-down = "${pkgs.hyprland}/bin/hyprctl dispatch workspace e-1";
-          on-click = "activate";
+          warp-on-scroll = false;
+          format = "{icon}";
           format-icons = {
             "1" = "I";
             "2" = "II";
@@ -129,7 +128,7 @@
         text-shadow: inherit;
       }
 
-      #workspaces button.active {
+      #workspaces button.focused {
         box-shadow: inset 0 -2px #f0f0f0;
       }
 
