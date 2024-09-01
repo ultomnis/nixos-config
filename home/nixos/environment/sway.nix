@@ -57,7 +57,7 @@
         focused = {
           background = "#285577";
           border = "#4c7899";
-          childBorder = "#ffffff";
+          childBorder = "#f0f0f0";
           indicator = "#2e9ef4";
           text = "#ffffff";
         };
