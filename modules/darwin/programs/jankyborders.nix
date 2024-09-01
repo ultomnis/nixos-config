@@ -2,10 +2,10 @@
   services.jankyborders = {
     enable = true;
 
-    active_color = "0xaaf0f0f0";
-    inactive_color = "0x00000000";
+    active_color = "0xfff0f0f0";
+    inactive_color = "0x00ffffff";
     
     hidpi = true;
-    width = 3.0;
+    width = 2.0;
   };
 }
