@@ -19,7 +19,7 @@
       ];
 
       input = {
-        pointer = {
+        "type:pointer" = {
           accel_profile = "flat";
           pointer_accel = "0";
         };
