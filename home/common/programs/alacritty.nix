@@ -10,8 +10,7 @@
           y = 4;
         };
         decorations = "Buttonless";
-        opacity = 0.5;
-        blur = true;
+        opacity = 0.8;
       };
 
       font = {
