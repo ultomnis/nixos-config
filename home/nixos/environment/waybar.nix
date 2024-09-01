@@ -51,7 +51,7 @@
               </interface>
             '';
           menu-actions = {
-            "lock" = "${pkgs.systemd}/bin/loginctl lock-session";
+            "lock" = "${pkgs.swaylock}/bin/swaylock -f";
             "logout" = "${pkgs.systemd}/bin/loginctl terminate-user $USER";
             "reboot" = "${pkgs.systemd}/bin/systemctl reboot";
             "shutdown" = "${pkgs.systemd}/bin/systemctl poweroff";
