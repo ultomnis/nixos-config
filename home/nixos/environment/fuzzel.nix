@@ -12,7 +12,7 @@
       };
 
       colors = {
-        background = "00000080";
+        background = "000000cc";
       };
     };
   };
