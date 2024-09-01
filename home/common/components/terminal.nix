@@ -8,6 +8,5 @@
     exiftool
     ffmpeg
     unzip
-    xorg.xrandr
   ];
 }
