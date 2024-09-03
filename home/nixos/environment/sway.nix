@@ -16,6 +16,9 @@
         {
           command = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
         }
+        {
+          command = "${pkgs.wl-gammarelay-rs}/bin/wl-gammarelay-rs";
+        }
       ];
 
       input = {
@@ -46,6 +49,9 @@
         modifier = config.wayland.windowManager.sway.config.modifier;
       in lib.mkOptionDefault {
         "${modifier}+Print" = "exec ${pkgs.procps}/bin/pidof ${pkgs.slurp}/bin/slurp || ${pkgs.grim}/bin/grim -g \"$(${pkgs.slurp}/bin/slurp)\"";
+        "${modifier}+Shift+l" = "exec ${pkgs.swaylock}/bin/swaylock -f";
+        "${modifier}+Shift+m" = "exec ${pkgs.systemd}/bin/busctl --user set-property rs.wl-gammarelay / rs.wl.gammarelay Temperature q 6500";
+        "${modifier}+Shift+n" = "exec ${pkgs.systemd}/bin/busctl --user set-property rs.wl-gammarelay / rs.wl.gammarelay Temperature q 3400";
       };
 
       gaps = {
