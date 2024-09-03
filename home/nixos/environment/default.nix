@@ -7,7 +7,6 @@
     ./swaylock.nix
     ./mako.nix
     ./waybar.nix
-    ./wlsunset.nix
     ./xdg.nix
   ];
 }
