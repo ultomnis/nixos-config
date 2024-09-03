@@ -5,6 +5,11 @@
   gtk = {
     enable = true;
 
+    iconTheme = {
+      package = pkgs.papirus-icon-theme;
+      name = "Papirus";
+    };
+
     gtk3.extraConfig = {
       gtk-application-prefer-dark-theme = true;
     };
