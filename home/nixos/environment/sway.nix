@@ -36,6 +36,12 @@
               instance = "cs2";
             };
           }
+          {
+            command = "floating on, resize set 800 400, move position cursor, move down 30 px";
+            criteria = {
+              app_id = "pavucontrol";
+            };
+          }
         ];
       };
 
