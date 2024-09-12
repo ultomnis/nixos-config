@@ -1,5 +1,6 @@
 {
   security = {
+    # Pluggable Authentication Modules
     pam = {
       services = {
         # Automatically unlock keyring
