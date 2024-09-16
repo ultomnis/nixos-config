@@ -1,3 +1,5 @@
+{ userConfig, ... }:
+
 {
   security = {
     # Pluggable Authentication Modules
@@ -20,5 +22,14 @@
 
     # Realtime policy and watchdog daemon
     rtkit.enable = true;
+
+    # Trusted Platform Module
+    tpm2 = {
+      enable = true;
+      pkcs11.enable = true;
+      tctiEnvironment.enable = true;
+    };
   };
+
+  users.users.${userConfig.username}.extraGroups = [ "tss" ];
 }
