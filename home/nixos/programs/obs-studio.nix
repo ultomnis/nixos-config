@@ -6,7 +6,7 @@
 
     # Optional plugins
     plugins = with pkgs.obs-studio-plugins; [
-      advanced-scene-switcher
+      obs-backgroundremoval
       obs-tuna
     ];
   };
