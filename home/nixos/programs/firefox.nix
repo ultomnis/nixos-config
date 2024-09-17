@@ -1,76 +1,98 @@
-{ config, ... }:
-
 {
   programs.firefox = {
     enable = true;
+
+    # Set firefox policies
+    policies = {
+      DisableFirefoxAccounts = true;
+      DisableFirefoxScreenshots = true;
+      DisableFirefoxStudies = true;
+      DisableFormHistory = true;
+      DisablePocket = true;
+      DisableTelemetry = true;
+      DisplayBookmarksToolbar = "never";
+      NoDefaultBookmarks = true;
+      OfferToSaveLogins = false;
+      SearchSuggestEnabled = false;
+
+      # Configure tracking protection
+      EnableTrackingProtection = {
+        Value = true;
+        Locked = true;
+        Cryptomining = true;
+        Fingerprinting = true;
+      };
+
+      # Manage extensions
+      ExtensionSettings = {
+        "*" = {
+          installation_mode = "blocked";
+        };
+
+        "78272b6fa58f4a1abaac99321d503a20@proton.me" = {
+          installation_mode = "force_installed";
+          install_url = "https://addons.mozilla.org/firefox/downloads/latest/proton-pass/latest.xpi";
+        };
+        
+        "addon@darkreader.org" = {
+          installation_mode = "force_installed";
+          install_url = "https://addons.mozilla.org/firefox/downloads/latest/darkreader/latest.xpi";
+        };
+        
+        "uBlock0@raymondhill.net" = {
+          installation_mode = "force_installed";
+          install_url = "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
+        };
+      };
+
+      # Customize the home page
+      FirefoxHome = {
+        TopSites = false;
+        SponsoredTopSites = false;
+        Highlights = false;
+        Pocket = false;
+        SponsoredPocket = false;
+        Snippets = false;
+        Locked = true;
+      };
+
+      # Firefox Suggest
+      FirefoxSuggest = {
+        WebSuggestions = false;
+        SponsoredSuggestions = false;
+        ImproveSuggest = false;
+        Locked = true;
+      };
+
+      # Set and lock preferences
+      Preferences = {
+        "browser.crashReports.unsubmittedCheck.autoSubmit2" = {
+          Value = false;
+          Status = "locked";
+        };
+
+        "dom.private-attribution.submission.enabled" = {
+          Value = false;
+          Status = "locked";
+        };
+        
+        "dom.security.https_only_mode" = {
+          Value = true;
+          Status = "locked";
+        };
+      };
+    };
 
     # Attribute set of profiles
     profiles = {
       default = {
         id = 0; # Set default profile
 
-        # Firefox add-ons
-        extensions = with config.nur.repos.rycee.firefox-addons; [
-          darkreader
-          proton-pass
-          ublock-origin
-        ];
-
         # Search engine configuration
         search = {
           default = "DuckDuckGo";
           privateDefault = "DuckDuckGo";
           force = true;
-        };
-
-        # Firefox preferences
-        settings = {
-          "app.update.auto" = false; # AppAutoUpdate
-          "browser.crashReports.unsubmittedCheck.autoSubmit2" = false; # Allow Firefox to send backlogged crash reports
-          "browser.formfill.enable" = false; # DisableFormHistory
-
-          # DisableFirefoxStudies
-          "browser.newtabpage.activity-stream.asrouter.userprefs.cfr.addons" = false;
-          "browser.newtabpage.activity-stream.asrouter.userprefs.cfr.features" = false;
-
-          # FirefoxHome
-          "browser.newtabpage.activity-stream.feeds.section.highlights" = false;
-          "browser.newtabpage.activity-stream.feeds.section.topstories" = false;
-          "browser.newtabpage.activity-stream.feeds.topsites" = false;
-          "browser.newtabpage.activity-stream.showSearch" = true;
-          "browser.newtabpage.activity-stream.showSponsored" = false;
-          "browser.newtabpage.activity-stream.showSponsoredTopSites" = false;
-
-          # SearchSuggestEnabled
-          "browser.search.suggest.enabled" = false;
-          "browser.urlbar.suggest.searches" = false;
-          
-          "browser.toolbars.bookmarks.visibility" = "never"; # DisplayBookmarksToolbar
-
-          # FirefoxSuggest
-          "browser.urlbar.quicksuggest.dataCollection.enabled" = false;
-          "browser.urlbar.suggest.quicksuggest.nonsponsored" = false;
-          "browser.urlbar.suggest.quicksuggest.sponsored" = false;
-          
-          # DisableTelemetry
-          "datareporting.healthreport.uploadEnabled" = false;
-          "datareporting.policy.dataSubmissionEnabled" = false;
-          "toolkit.telemetry.archive.enabled" = false;
-          
-          "dom.private-attribution.submission.enabled" = false; # Allow websites to perform privacy-preserving ad measurement
-          "dom.security.https_only_mode" = true; # HttpsOnlyMode
-          "extensions.pocket.enabled" = false; # DisablePocket
-          "extensions.screenshots.disabled" = true; # DisableFirefoxScreenshots
-          "extensions.update.enabled" = false; # ExtensionUpdate
-          "identity.fxaccounts.enabled" = false; # DisableFirefoxAccounts
-
-          # EnableTrackingProtection
-          "privacy.trackingprotection.enabled" = true;
-          "privacy.trackingprotection.cryptomining.enabled" = true;
-          "privacy.trackingprotection.fingerprinting.enabled" = true;
-          "privacy.trackingprotection.pbmode.enabled" = true;
-          
-          "signon.rememberSignons" = false; # OfferToSaveLogins
         };
       };
     };

@@ -348,21 +348,6 @@
         "type": "github"
       }
     },
-    "nur": {
-      "locked": {
-        "lastModified": 1726506390,
-        "narHash": "sha256-bEu2Q3CxKWlWWkkkS9EpXu5NItrf0ovigTsNvcOCQmM=",
-        "owner": "nix-community",
-        "repo": "NUR",
-        "rev": "1d543deea4db6156e6d78dae784c3fa36747d4e8",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-community",
-        "repo": "NUR",
-        "type": "github"
-      }
-    },
     "pre-commit-hooks-nix": {
       "inputs": {
         "flake-compat": [
@@ -396,8 +381,7 @@
         "lanzaboote": "lanzaboote",
         "nix-darwin": "nix-darwin",
         "nixpkgs": "nixpkgs",
-        "nixpkgs-wayland": "nixpkgs-wayland",
-        "nur": "nur"
+        "nixpkgs-wayland": "nixpkgs-wayland"
       }
     },
     "rust-overlay": {
