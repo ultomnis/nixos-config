@@ -16,7 +16,6 @@
 
     casks = [
       "aerospace"
-      "firefox"
       "lulu"
       "mullvad-browser"
       "protonvpn"
