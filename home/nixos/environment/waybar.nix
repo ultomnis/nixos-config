@@ -91,8 +91,8 @@
         "pulseaudio" = {
           format = "{icon} {volume}% {format_source}";
           scroll-step = 1;
-          on-click = "${pkgs.pavucontrol}/bin/pavucontrol";
-          on-click-right = "${pkgs.wireplumber}/bin/wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
+          on-click = "${pkgs.wireplumber}/bin/wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
+          on-click-right = "${pkgs.wireplumber}/bin/wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle";
           format-muted = "󰸈 {format_source}";
           format-source = "󰍬 {volume}%";
           format-source-muted = "󰍭";
