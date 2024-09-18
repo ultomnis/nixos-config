@@ -84,7 +84,7 @@
 
         "tray" = {
           icon-size = 16;
-          spacing = 10;
+          spacing = 15;
           reverse-direction = true;
         };
 
@@ -118,7 +118,7 @@
       }
 
       #workspaces button {
-        padding: 0 6px;
+        padding: 0 5px;
         color: #f0f0f0;
       }
 
@@ -140,13 +140,13 @@
       #clock,
       #tray,
       #pulseaudio {
-        padding: 0 6px;
+        padding: 0 5px;
         color: #f0f0f0;
       }
 
       #window,
       #workspaces {
-        margin: 0 4px;
+        margin: 0 2px;
       }
 
       .modules-left > widget:first-child > #workspaces {
