@@ -28,6 +28,9 @@
       url = "github:nix-community/nixpkgs-wayland";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # Nix user repository
+    nur.url = "github:nix-community/NUR";
   };
 
   outputs = inputs@{
@@ -37,6 +40,7 @@
     nix-darwin,
     nixpkgs,
     nixpkgs-wayland,
+    nur,
     ...
   }:
   
@@ -65,6 +69,7 @@
               users.${userConfig.username} = {
                 imports = [
                   ./hosts/sirius/home.nix
+                  nur.hmModules.nur
                 ];
               };
               extraSpecialArgs = { inherit inputs userConfig; };
@@ -88,6 +93,7 @@
               users.${userConfig.username} = {
                 imports = [
                   ./hosts/canopus/home.nix
+                  nur.hmModules.nur
                 ];
               };
               extraSpecialArgs = { inherit inputs userConfig; };
