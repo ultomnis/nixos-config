@@ -19,6 +19,7 @@
       "firefox"
       "lulu"
       "mullvad-browser"
+      "mullvadvpn"
       "steam"
     ];
 
