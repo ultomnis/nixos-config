@@ -19,7 +19,6 @@
       "firefox"
       "lulu"
       "mullvad-browser"
-      "protonvpn"
       "steam"
     ];
 
