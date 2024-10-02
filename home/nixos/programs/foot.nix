@@ -6,7 +6,7 @@
     # Configuration
     settings = {
       main = {
-        font = "monospace:size=11";
+        font = "Hack Nerd Font Mono:size=11";
       };
 
       mouse = {
