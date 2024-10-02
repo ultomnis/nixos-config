@@ -6,8 +6,8 @@
     enable = true;
 
     iconTheme = {
-      package = pkgs.whitesur-icon-theme;
-      name = "WhiteSur";
+      package = pkgs.papirus-icon-theme;
+      name = "Papirus";
     };
 
     gtk3.extraConfig = {
