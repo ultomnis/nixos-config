@@ -19,7 +19,7 @@
 
         # Modules configuration
         "custom/power" = {
-          format = "";
+          format = "<span font='11'></span>";
           tooltip = false;
           menu = "on-click";
           menu-file = pkgs.writeText "power_menu.xml"
@@ -89,20 +89,25 @@
         };
 
         "pulseaudio" = {
-          format = "{icon} {volume}% {format_source}";
+          format = "<span font='10'>{icon}</span> {volume}%  {format_source}";
           scroll-step = 1;
           on-click = "${pkgs.wireplumber}/bin/wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
           on-click-right = "${pkgs.wireplumber}/bin/wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle";
-          format-muted = "󰸈 {format_source}";
-          format-source = "󰍬 {volume}%";
-          format-source-muted = "󰍭";
-          format-icons = [ "󰕿" "󰖀" "󰕾" ];
+          format-muted = "<span font='10'></span> {format_source}";
+          format-source = "<span font='10'></span> {volume}%";
+          format-source-muted = "<span font='10'></span>";
+          format-icons = [ "" "" "" ];
         };
       };
     };
 
     # CSS
     style = ''
+      * {
+        font-family: 'Hack Nerd Font Propo';
+        font-size: 14px;
+      }
+      
       window#waybar {
         background-color: rgba(0, 0, 0, 0.1);
         color: #f0f0f0;
@@ -118,7 +123,7 @@
       }
 
       #workspaces button {
-        padding: 0 5px;
+        padding: 2px 5px 0;
         color: #f0f0f0;
       }
 
