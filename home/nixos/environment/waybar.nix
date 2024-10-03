@@ -129,7 +129,7 @@
       }
 
       #workspaces button {
-        padding: 2px 5px 0;
+        padding: 2px 6px 0;
         color: #f0f0f0;
       }
 
@@ -154,19 +154,6 @@
       #pulseaudio.input {
         padding: 0 8px;
         color: #f0f0f0;
-      }
-
-      #window,
-      #workspaces {
-        margin: 0 2px;
-      }
-
-      .modules-left > widget:first-child > #workspaces {
-        margin-left: 0;
-      }
-
-      .modules-right > widget:last-child > #workspaces {
-        margin-right: 0;
       }
     '';
   };
