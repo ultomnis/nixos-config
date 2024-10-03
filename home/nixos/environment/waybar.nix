@@ -10,12 +10,12 @@
       mainBar = {
         layer = "top";
         height = 30;
-        spacing = 5;
+        spacing = 0;
 
         # Order of modules
         modules-left = [ "custom/power" "sway/workspaces" ];
         modules-center = [ "clock" ];
-        modules-right = [ "tray" "pulseaudio" ];
+        modules-right = [ "tray" "pulseaudio#output" "pulseaudio#input" ];
 
         # Modules configuration
         "custom/power" = {
@@ -84,19 +84,25 @@
 
         "tray" = {
           icon-size = 16;
-          spacing = 15;
+          spacing = 16;
           reverse-direction = true;
         };
 
-        "pulseaudio" = {
-          format = "<span font='10'>{icon}</span> {volume}%  {format_source}";
+        "pulseaudio#output" = {
+          format = "<span font='10'>{icon}</span> {volume}%";
+          format-muted = "<span font='10'></span>";
+          format-icons = [ "" "" "" ];
           scroll-step = 1;
           on-click = "${pkgs.wireplumber}/bin/wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
-          on-click-right = "${pkgs.wireplumber}/bin/wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle";
-          format-muted = "<span font='10'></span> {format_source}";
+        };
+
+        "pulseaudio#input" = {
+          format = "{format_source}";
           format-source = "<span font='10'></span> {volume}%";
           format-source-muted = "<span font='10'></span>";
-          format-icons = [ "" "" "" ];
+          on-scroll-up = "${pkgs.wireplumber}/bin/wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 1%+";
+          on-scroll-down = "${pkgs.wireplumber}/bin/wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 1%-";
+          on-click = "${pkgs.wireplumber}/bin/wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle";
         };
       };
     };
@@ -144,8 +150,9 @@
       #custom-power,
       #clock,
       #tray,
-      #pulseaudio {
-        padding: 0 5px;
+      #pulseaudio.output,
+      #pulseaudio.input {
+        padding: 0 8px;
         color: #f0f0f0;
       }
 
