@@ -129,7 +129,7 @@
       }
 
       #workspaces button {
-        padding: 2px 6px 0;
+        padding: 2px 7px 0;
         color: #f0f0f0;
       }
 
@@ -152,7 +152,7 @@
       #tray,
       #pulseaudio.output,
       #pulseaudio.input {
-        padding: 0 8px;
+        padding: 0 7px;
         color: #f0f0f0;
       }
     '';
