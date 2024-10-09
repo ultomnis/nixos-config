@@ -19,15 +19,6 @@
     };
   };
 
-  # Configure the theme for Qt applications
-  qt = {
-    enable = true;
-
-    style = {
-      name = "kvantum";
-    };
-  };
-
   # Cursor configuration
   home.pointerCursor = {
     package = pkgs.bibata-cursors;
