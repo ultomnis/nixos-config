@@ -2,6 +2,7 @@
   imports = [
     ./adb.nix
     ./fish.nix
+    ./kdeconnect.nix
     ./logitech.nix
     ./mullvad-vpn.nix
     ./steam.nix
