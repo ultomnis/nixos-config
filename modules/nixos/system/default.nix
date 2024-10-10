@@ -10,5 +10,6 @@
     ./security.nix
     ./settings.nix
     ./users.nix
+    ./variables.nix
   ];
 }
