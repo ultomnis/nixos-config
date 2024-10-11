@@ -7,6 +7,7 @@
     cmus
     exiftool
     ffmpeg
+    jmtpfs
     unzip
   ];
 }
