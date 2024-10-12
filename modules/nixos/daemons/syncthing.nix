@@ -24,6 +24,11 @@
           path = "/home/${userConfig.username}/Sync/KeePass";
           devices = [ "desktop" "mac" "phone" ];
         };
+
+        "Media" = {
+          path = "/home/${userConfig.username}/Sync/Media";
+          devices = [ "desktop" "mac" "phone" ];
+        };
       };
     };
   };
