@@ -18,7 +18,7 @@
     outer.right = 5
 
     [mode.main.binding]
-    alt-enter = 'exec-and-forget open -na alacritty'
+    alt-enter = 'exec-and-forget open -n /Applications/iTerm.app'
 
     alt-left = 'focus left'
     alt-down = 'focus down'
