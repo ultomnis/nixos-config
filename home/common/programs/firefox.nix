@@ -15,7 +15,6 @@
         extensions = with config.nur.repos.rycee.firefox-addons; [
           darkreader
           duckduckgo-privacy-essentials
-          keepassxc-browser
           ublock-origin
         ];
 
