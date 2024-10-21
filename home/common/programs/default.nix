@@ -1,6 +1,5 @@
 {
   imports = [
-    ./alacritty.nix
     ./cmus.nix
     ./firefox.nix
     ./fish.nix
