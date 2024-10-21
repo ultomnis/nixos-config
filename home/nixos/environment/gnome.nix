@@ -1,5 +1,3 @@
-{ pkgs, ... }:
-
 {
   # Low-level configuration system
   dconf.settings = {
