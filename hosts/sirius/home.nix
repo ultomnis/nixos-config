@@ -11,7 +11,7 @@
     homeDirectory = "/home/${userConfig.username}";
     stateVersion = "24.05";
     # Source the wallpaper
-    file.".config/wallpaper.jpg".source = ../../assets/wallpapers/michael-diane-weidner-u8X0HCV2X1Y-unsplash.jpg;
+    file.".config/wallpaper.jpg".source = ../../assets/wallpapers/ernest-brillo-JNe3j45DzOU-unsplash.jpg;
   };
 
   programs.home-manager.enable = true;
