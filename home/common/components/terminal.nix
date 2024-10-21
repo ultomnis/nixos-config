@@ -6,7 +6,6 @@
     bc
     exiftool
     ffmpeg
-    jmtpfs
     unzip
   ];
 }
