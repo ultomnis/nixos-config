@@ -14,31 +14,31 @@
       };
 
       cursor = {
-        color = "191724 e0def4";
+        color = "282a36 f8f8f2";
       };
 
       colors = {
-        # rose-pine
-        background = "191724";
-        foreground = "e0def4";
+        # dracula
+        foreground="f8f8f2";
+        background="282a36";
         
-        regular0 = "26233a"; # black
-        regular1 = "eb6f92"; # red
-        regular2 = "31748f"; # green
-        regular3 = "f6c177"; # yellow
-        regular4 = "9ccfd8"; # blue
-        regular5 = "c4a7e7"; # magenta
-        regular6 = "ebbcba"; # cyan
-        regular7 = "e0def4"; # white
-
-        bright0 = "6e6a86"; # bright black
-        bright1 = "eb6f92"; # bright red
-        bright2 = "31748f"; # bright green
-        bright3 = "f6c177"; # bright yellow
-        bright4 = "9ccfd8"; # bright blue
-        bright5 = "c4a7e7"; # bright magenta
-        bright6 = "ebbcba"; # bright cyan
-        bright7 = "e0def4"; # bright white
+        regular0="000000"; # black
+        regular1="ff5555"; # red
+        regular2="50fa7b"; # green
+        regular3="f1fa8c"; # yellow
+        regular4="bd93f9"; # blue
+        regular5="ff79c6"; # magenta
+        regular6="8be9fd"; # cyan
+        regular7="bfbfbf"; # white
+        
+        bright0="4d4d4d"; # bright black
+        bright1="ff6e67"; # bright red
+        bright2="5af78e"; # bright green
+        bright3="f4f99d"; # bright yellow
+        bright4="caa9fa"; # bright blue
+        bright5="ff92d0"; # bright magenta
+        bright6="9aedfe"; # bright cyan
+        bright7="e6e6e6"; # bright white
       };
     };
   };
