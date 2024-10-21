@@ -5,17 +5,19 @@
   gtk = {
     enable = true;
 
+    theme = {
+      package = pkgs.rose-pine-gtk-theme;
+      name = "rose-pine";
+    };
+
     iconTheme = {
       package = pkgs.papirus-icon-theme;
       name = "Papirus";
     };
 
-    gtk3.extraConfig = {
-      gtk-application-prefer-dark-theme = true;
-    };
-
-    gtk4.extraConfig = {
-      gtk-application-prefer-dark-theme = true;
+    font = {
+      name = "Hack Nerd Font";
+      size = 11;
     };
   };
 
