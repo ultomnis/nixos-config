@@ -6,19 +6,11 @@
 
     # Helix configuration
     settings = {
-      theme = "default_transparent";
+      theme = "dracula";
 
       editor = {
         line-number = "relative";
         lsp.display-messages = true;
-      };
-    };
-
-    # Helix theme
-    themes = {
-      default_transparent = {
-        "inherits" = "default";
-        "ui.background" = {};
       };
     };
   };
