@@ -13,6 +13,7 @@
 
         # Firefox add-ons
         extensions = with config.nur.repos.rycee.firefox-addons; [
+          bitwarden
           darkreader
           duckduckgo-privacy-essentials
           ublock-origin
