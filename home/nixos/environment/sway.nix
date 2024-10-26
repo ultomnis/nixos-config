@@ -51,8 +51,9 @@
         "--no-repeat ${modifier}+Print" = "exec ${pkgs.grim}/bin/grim -g \"$(${pkgs.slurp}/bin/slurp)\"";
         
         "${modifier}+Shift+l" = "exec ${pkgs.swaylock}/bin/swaylock -f";
-        "${modifier}+Shift+m" = "exec ${pkgs.systemd}/bin/busctl --user set-property rs.wl-gammarelay / rs.wl.gammarelay Temperature q 6500";
-        "${modifier}+Shift+n" = "exec ${pkgs.systemd}/bin/busctl --user set-property rs.wl-gammarelay / rs.wl.gammarelay Temperature q 3400";
+        
+        "--locked ${modifier}+Shift+m" = "exec ${pkgs.systemd}/bin/busctl --user set-property rs.wl-gammarelay / rs.wl.gammarelay Temperature q 6500";
+        "--locked ${modifier}+Shift+n" = "exec ${pkgs.systemd}/bin/busctl --user set-property rs.wl-gammarelay / rs.wl.gammarelay Temperature q 3400";
 
         "--locked XF86AudioMute" = "exec ${pkgs.wireplumber}/bin/wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
         "--locked XF86AudioLowerVolume" = "exec ${pkgs.wireplumber}/bin/wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-";
