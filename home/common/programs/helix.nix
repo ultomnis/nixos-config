@@ -6,7 +6,7 @@
 
     # Helix configuration
     settings = {
-      theme = "dracula";
+      theme = "rose_pine";
 
       editor = {
         line-number = "relative";
