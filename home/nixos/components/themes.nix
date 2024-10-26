@@ -6,13 +6,13 @@
     enable = true;
 
     theme = {
-      package = pkgs.dracula-theme;
-      name = "Dracula";
+      package = pkgs.rose-pine-gtk-theme;
+      name = "rose-pine";
     };
 
     iconTheme = {
-      package = pkgs.papirus-icon-theme;
-      name = "Papirus";
+      package = pkgs.rose-pine-icon-theme;
+      name = "rose-pine";
     };
 
     font = {
@@ -23,13 +23,13 @@
 
   # Cursor configuration
   home.pointerCursor = {
-    package = pkgs.bibata-cursors;
-    name = "Bibata-Modern-Ice";
+    package = pkgs.rose-pine-cursor;
+    name = "BreezeX-RosePine-Linux";
     size = 24;
     gtk.enable = true;
     x11 = {
       enable = true;
-      defaultCursor = "Adwaita";
+      defaultCursor = "BreezeX-RosePine-Linux";
     };
   };
 }
