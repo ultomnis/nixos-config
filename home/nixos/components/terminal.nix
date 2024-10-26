@@ -5,5 +5,6 @@
   home.packages = with pkgs; [
     nvtopPackages.amd
     sbctl
+    wl-screenrec
   ];
 }
