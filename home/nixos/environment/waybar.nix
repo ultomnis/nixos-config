@@ -15,7 +15,7 @@
         # Order of modules
         modules-left = [ "custom/power" "sway/workspaces" ];
         modules-center = [ "clock" ];
-        modules-right = [ "tray" "pulseaudio#output" "pulseaudio#input" ];
+        modules-right = [ "tray" "network" "pulseaudio#output" "pulseaudio#input" ];
 
         # Modules configuration
         "custom/power" = {
@@ -88,6 +88,12 @@
           reverse-direction = true;
         };
 
+        "network" = {
+          format-wifi = "";
+          format-ethernet = "";
+          format-disconnected = "";
+        };
+
         "pulseaudio#output" = {
           format = "<span font='10'>{icon}</span> {volume}%";
           format-muted = "<span font='10'></span>";
@@ -152,6 +158,7 @@
       #custom-power,
       #clock,
       #tray,
+      #network,
       #pulseaudio.output,
       #pulseaudio.input {
         padding: 0 7px;
