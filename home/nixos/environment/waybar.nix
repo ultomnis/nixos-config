@@ -84,7 +84,7 @@
 
         "tray" = {
           icon-size = 16;
-          spacing = 16;
+          spacing = 8;
           reverse-direction = true;
         };
 
@@ -117,52 +117,20 @@
 
     # CSS
     style = ''
-      * {
-        font-family: 'Hack Nerd Font Propo';
-        font-size: 14px;
-      }
-      
-      window#waybar {
-        background-color: rgba(0, 0, 0, 0.1);
-        color: #f0f0f0;
-      }
-
       button {
         border: none;
         border-radius: 0;
       }
 
-      button:hover {
-        background: inherit;
-      }
-
       #workspaces button {
-        padding: 2px 7px 0;
-        color: #f0f0f0;
-      }
-
-      #workspaces button:hover {
-        color: #00cccc;
-        box-shadow: inherit;
-        text-shadow: inherit;
-      }
-
-      #workspaces button.focused {
-        box-shadow: inset 0 -2px #f0f0f0;
-      }
-
-      #workspaces button.urgent {
-        color: #cc0000;
+        padding: 3px 5px 0;
       }
 
       #custom-power,
-      #clock,
       #tray,
-      #network,
       #pulseaudio.output,
       #pulseaudio.input {
-        padding: 0 7px;
-        color: #f0f0f0;
+        padding: 0 5px;
       }
     '';
   };

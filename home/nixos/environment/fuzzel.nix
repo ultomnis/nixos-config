@@ -10,10 +10,6 @@
       main = {
         terminal = "${pkgs.foot}/bin/foot";
       };
-
-      colors = {
-        background = "000000cc";
-      };
     };
   };
 }

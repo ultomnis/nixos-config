@@ -6,8 +6,6 @@
 
     # Helix configuration
     settings = {
-      theme = "rose_pine";
-
       editor = {
         line-number = "relative";
         lsp.display-messages = true;

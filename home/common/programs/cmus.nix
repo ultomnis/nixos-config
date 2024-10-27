@@ -1,6 +1,6 @@
 {
   programs.cmus = {
     enable = true;
-    theme = "green";
+    theme = "default";
   };
 }

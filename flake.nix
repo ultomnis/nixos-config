@@ -31,6 +31,9 @@
 
     # Nix user repository
     nur.url = "github:nix-community/NUR";
+
+    # Stylix
+    stylix.url = "github:danth/stylix";
   };
 
   outputs = inputs@{
@@ -41,6 +44,7 @@
     nixpkgs,
     nixpkgs-wayland,
     nur,
+    stylix,
     ...
   }:
   
@@ -61,6 +65,7 @@
         modules = [
           ./hosts/sirius
           lanzaboote.nixosModules.lanzaboote
+          stylix.nixosModules.stylix
           
           home-manager.nixosModules.home-manager {
             home-manager = {
