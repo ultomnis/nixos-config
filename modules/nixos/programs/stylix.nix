@@ -22,6 +22,11 @@
         package = pkgs.nerdfonts.override { fonts = [ "Hack" ]; };
         name = "Hack Nerd Font Mono";
       };
+
+      sizes = {
+        desktop = 11;
+        popups = 11;
+      };
     };
   };
 }
