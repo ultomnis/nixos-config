@@ -33,7 +33,7 @@
           {
             command = "allow_tearing yes";
             criteria = {
-              instance = "cs2";
+              class = "cs2";
             };
           }
         ];
