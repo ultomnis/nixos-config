@@ -24,7 +24,6 @@
     casks = [
       "aerospace"
       "firefox"
-      "iterm2"
       "lulu"
       "mullvad-browser"
       "mullvadvpn"

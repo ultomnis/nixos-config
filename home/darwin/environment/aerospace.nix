@@ -18,7 +18,7 @@
     outer.right = 5
 
     [mode.main.binding]
-    alt-enter = 'exec-and-forget open -n /Applications/iTerm.app'
+    alt-enter = 'exec-and-forget open -n /System/Applications/Utilities/Terminal.app'
 
     alt-left = 'focus left'
     alt-down = 'focus down'
