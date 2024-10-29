@@ -10,12 +10,12 @@
     on-focus-changed = ['move-mouse window-lazy-center']
 
     [gaps]
-    inner.horizontal = 5
-    inner.vertical = 5
-    outer.left = 5
-    outer.bottom = 5
-    outer.top = 5
-    outer.right = 5
+    inner.horizontal = 10
+    inner.vertical = 10
+    outer.left = 10
+    outer.bottom = 10
+    outer.top = 10
+    outer.right = 10
 
     [mode.main.binding]
     alt-enter = 'exec-and-forget open -n /System/Applications/Utilities/Terminal.app'
