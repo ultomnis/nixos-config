@@ -25,7 +25,6 @@
       "aerospace"
       "firefox"
       "iterm2"
-      "keepassxc"
       "lulu"
       "mullvad-browser"
       "mullvadvpn"
