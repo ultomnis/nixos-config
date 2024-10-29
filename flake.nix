@@ -90,6 +90,7 @@
         specialArgs = { inherit inputs userConfig; };
         modules = [
           ./hosts/canopus
+          stylix.darwinModules.stylix
 
           home-manager.darwinModules.home-manager {
             home-manager = {
