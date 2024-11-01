@@ -37,7 +37,7 @@
       let
         modifier = config.wayland.windowManager.sway.config.modifier;
       in lib.mkOptionDefault {
-        "--no-repeat ${modifier}+Print" = "exec ${pkgs.grim}/bin/grim -g \"$(${pkgs.slurp}/bin/slurp)\"";
+        "--no-repeat ${modifier}+Print" = ''exec ${pkgs.grim}/bin/grim -g "$(${pkgs.slurp}/bin/slurp)"'';
         
         "${modifier}+Shift+l" = "exec ${pkgs.swaylock}/bin/swaylock -f";
         
