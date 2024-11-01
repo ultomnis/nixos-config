@@ -2,7 +2,6 @@
   # Terminal file manager
   programs.yazi = {
     enable = true;
-    enableFishIntegration = true;
 
     # yazi configuration
     settings = {
