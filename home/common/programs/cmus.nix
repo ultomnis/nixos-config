@@ -1,6 +1,10 @@
 {
   programs.cmus = {
     enable = true;
-    theme = "default";
+
+    extraConfig = ''
+      set mouse=true
+      set show_hidden=true
+    '';
   };
 }
