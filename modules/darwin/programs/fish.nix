@@ -10,9 +10,5 @@
     '';
   };
 
-  environment.shells = [ pkgs.fish ];
-
-  users.users.${userConfig.username} = {
-    shell = pkgs.fish;
-  };
+  users.users.${userConfig.username}.shell = pkgs.fish;
 }

@@ -1,11 +1,4 @@
 {
-  environment.variables = {
-    HOMEBREW_NO_ANALYTICS = "1";
-  };
-
-  # sudo authentication with Touch ID
-  security.pam.enableSudoTouchIdAuth = true;
-
   # macOS settings
   system.defaults = {
     dock = {

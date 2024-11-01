@@ -1,7 +1,4 @@
 {
-  # Auto upgrade nix package and the daemon service
-  services.nix-daemon.enable = true;
-
   nix = {
     # Experimental features
     settings.experimental-features = "nix-command flakes";
