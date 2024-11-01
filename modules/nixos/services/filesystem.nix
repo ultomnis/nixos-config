@@ -1,7 +1,4 @@
 {
-  # Compression
-  fileSystems."/".options = [ "compress=zstd" ];
-
   # Btrfs automatic scrubbing
   services.btrfs.autoScrub = {
     enable = true;

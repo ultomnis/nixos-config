@@ -1,6 +1,7 @@
 {
   imports = [
     ./avahi.nix
+    ./filesystem.nix
     ./greetd.nix
     ./mullvad-vpn.nix
     ./pipewire.nix
