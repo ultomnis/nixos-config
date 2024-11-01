@@ -21,9 +21,8 @@
       };
     };
 
-    # Empty the greeting text
     interactiveShellInit = ''
-      set -g fish_greeting
+      set fish_greeting # Disable greeting
     '';
   };
 }
