@@ -22,16 +22,11 @@
     ];
 
     casks = [
-      "aerospace"
       "firefox"
       "lulu"
       "mullvad-browser"
       "mullvadvpn"
       "steam"
-    ];
-
-    taps = [
-      "nikitabobko/tap"
     ];
   };
 }
