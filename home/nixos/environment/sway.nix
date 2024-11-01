@@ -28,17 +28,6 @@
         };
       };
 
-      window = {
-        commands = [
-          {
-            command = "allow_tearing yes";
-            criteria = {
-              class = "cs2";
-            };
-          }
-        ];
-      };
-
       focus = {
         mouseWarping = "container";
         wrapping = "yes";
@@ -74,7 +63,6 @@
       bars = [
         {
           command = "${pkgs.waybar}/bin/waybar";
-          position = "top";
         }
       ];
     };
