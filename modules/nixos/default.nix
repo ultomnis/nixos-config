@@ -1,7 +1,7 @@
 {
   imports = [
-    ./daemons
     ./programs
+    ./services
     ./system
   ];
 }
