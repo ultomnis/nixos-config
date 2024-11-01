@@ -1,7 +1,6 @@
 {
   imports = [
     ./fuzzel.nix
-    ./gnome-keyring.nix
     ./sway.nix
     ./swayidle.nix
     ./swaylock.nix
