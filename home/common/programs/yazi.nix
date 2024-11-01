@@ -9,6 +9,16 @@
         sort_by = "natural";
         show_hidden = true;
       };
+
+      opener = {
+        edit = [
+          {
+            run = ''hx "$@"'';
+            block = true;
+            for = "unix";
+          }
+        ];
+      };
     };
   };
 }
