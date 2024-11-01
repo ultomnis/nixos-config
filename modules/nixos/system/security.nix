@@ -23,6 +23,10 @@
     # Realtime policy and watchdog daemon
     rtkit.enable = true;
 
+    sudo.extraConfig = ''
+      Defaults passprompt="What? Make it yourself:"
+    '';
+
     # Trusted Platform Module
     tpm2 = {
       enable = true;
