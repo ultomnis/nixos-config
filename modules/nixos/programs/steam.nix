@@ -2,6 +2,7 @@
   # Steam client
   programs.steam = {
     enable = true;
-    remotePlay.openFirewall = true; # Steam Remote Play
+    localNetworkGameTransfers.openFirewall = true;
+    remotePlay.openFirewall = true;
   };
 }
