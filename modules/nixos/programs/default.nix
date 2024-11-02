@@ -5,7 +5,6 @@
     ./steam.nix
     ./stylix.nix
     ./sway.nix
-    ./unfree.nix
   ];
 }
 
