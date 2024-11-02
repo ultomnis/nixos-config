@@ -5,7 +5,4 @@
     interval = "monthly";
     fileSystems = [ "/" ];
   };
-
-  # zram swap space
-  zramSwap.enable = true;
 }

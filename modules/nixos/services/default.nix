@@ -1,7 +1,7 @@
 {
   imports = [
     ./avahi.nix
-    ./filesystem.nix
+    ./btrfs.nix
     ./gc.nix
     ./greetd.nix
     ./mullvad-vpn.nix
@@ -9,5 +9,6 @@
     ./printing.nix
     ./ratbagd.nix
     ./syncthing.nix
+    ./zram.nix
   ];
 }
