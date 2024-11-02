@@ -3,7 +3,7 @@
 {
   nix = {
     settings = {
-      # Experimental features
+      auto-optimise-store = true;
       experimental-features = [ "nix-command" "flakes" ];
 
       # Binary caches

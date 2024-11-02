@@ -1,7 +1,9 @@
 {
   nix = {
-    # Experimental features
-    settings.experimental-features = "nix-command flakes";
+    settings = {
+      auto-optimise-store = true;
+      experimental-features = "nix-command flakes";
+    };
 
     # Garbage collection
     gc = {
