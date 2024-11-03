@@ -7,7 +7,6 @@
     ./mullvad-vpn.nix
     ./pipewire.nix
     ./printing.nix
-    ./syncthing.nix
     ./zram.nix
   ];
 }
