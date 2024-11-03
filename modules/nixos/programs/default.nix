@@ -5,6 +5,7 @@
     ./steam.nix
     ./stylix.nix
     ./sway.nix
+    ./virt-manager.nix
   ];
 }
 
