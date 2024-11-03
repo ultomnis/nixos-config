@@ -3,7 +3,7 @@
 {
   boot = {
     # Linux kernel
-    kernelPackages = pkgs.linuxPackages_testing;
+    kernelPackages = pkgs.linuxPackages_latest;
 
     # Secure boot
     lanzaboote = {
