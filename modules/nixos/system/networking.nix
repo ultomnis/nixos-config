@@ -1,12 +1,7 @@
-{
-  # iNet wireless daemon
-  networking.wireless.iwd = {
-    enable = true;
+{ userConfig, ... }:
 
-    settings = {
-      General = {
-        AddressRandomization = "network";
-      };
-    };
-  };
+{
+  # Enable NetworkManager
+  networking.networkmanager.enable = true;
+  users.users.${userConfig.username}.extraGroups = [ "networkmanager" ];
 }
