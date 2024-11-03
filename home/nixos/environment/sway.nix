@@ -28,6 +28,17 @@
         };
       };
 
+      window = {
+        commands = [
+          {
+            command = "floating on, resize set 1000 800, move position cursor, move down 30 px";
+            criteria = {
+              app_id = "pavucontrol";
+            };
+          }
+        ];
+      };
+
       focus = {
         mouseWarping = "container";
         wrapping = "yes";
