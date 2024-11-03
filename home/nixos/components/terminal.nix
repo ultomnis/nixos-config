@@ -6,6 +6,5 @@
     bitwarden-cli
     quickemu
     sbctl
-    wl-screenrec
   ];
 }
