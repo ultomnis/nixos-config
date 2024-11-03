@@ -16,6 +16,7 @@
 
     casks = [
       "firefox"
+      "localsend"
       "lulu"
       "mullvad-browser"
       "mullvadvpn"
