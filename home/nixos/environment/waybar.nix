@@ -99,7 +99,7 @@
           format-muted = "<span font='10'></span>";
           format-icons = [ "" "" "" ];
           scroll-step = 1;
-          on-click = "${pkgs.foot}/bin/foot ${pkgs.ncpamixer}/bin/ncpamixer";
+          on-click = "${pkgs.pavucontrol}/bin/pavucontrol";
           on-click-right = "${pkgs.wireplumber}/bin/wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
         };
 
@@ -109,7 +109,7 @@
           format-source-muted = "<span font='10'></span>";
           on-scroll-up = "${pkgs.wireplumber}/bin/wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 1%+";
           on-scroll-down = "${pkgs.wireplumber}/bin/wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 1%-";
-          on-click = "${pkgs.foot}/bin/foot ${pkgs.ncpamixer}/bin/ncpamixer";
+          on-click = "${pkgs.pavucontrol}/bin/pavucontrol";
           on-click-right = "${pkgs.wireplumber}/bin/wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle";
         };
       };
