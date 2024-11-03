@@ -23,12 +23,6 @@
     # Nixpkgs
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
-    # Nipkgs-wayland
-    nixpkgs-wayland = {
-      url = "github:nix-community/nixpkgs-wayland";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     # Nix user repository
     nur.url = "github:nix-community/NUR";
 
@@ -42,7 +36,6 @@
     lanzaboote,
     nix-darwin,
     nixpkgs,
-    nixpkgs-wayland,
     nur,
     stylix,
     ...
