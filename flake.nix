@@ -8,12 +8,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # Lanzaboote (Secure Boot)
-    lanzaboote = {
-      url = "github:nix-community/lanzaboote";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     # Nix-darwin
     nix-darwin = {
       url = "github:LnL7/nix-darwin";
@@ -33,7 +27,6 @@
   outputs = inputs@{
     self,
     home-manager,
-    lanzaboote,
     nix-darwin,
     nixpkgs,
     nur,
@@ -57,7 +50,6 @@
         specialArgs = { inherit inputs userConfig; };
         modules = [
           ./hosts/sirius
-          lanzaboote.nixosModules.lanzaboote
           stylix.nixosModules.stylix
           
           home-manager.nixosModules.home-manager {
