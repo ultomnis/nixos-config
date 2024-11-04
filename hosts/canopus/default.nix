@@ -10,7 +10,7 @@
   };
 
   stylix = {
-    image = ../../assets/wallpapers/leonardo-yip-QTkIjCkshkc-unsplash.jpg;
+    image = ../../assets/wallpapers/peter-f-fibrknjbpUo-unsplash.jpg;
   };
 
   # Do NOT change this value unless you have manually inspected all the changes it would make to your configuration,
