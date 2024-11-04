@@ -2,6 +2,12 @@
   description = "ultomnis' NixOS and nix-darwin configurations";
 
   inputs = {
+    # Disko
+    disko = {
+      url = "github:nix-community/disko/latest";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+  
     # Home manager
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -26,6 +32,7 @@
 
   outputs = inputs@{
     self,
+    disko,
     home-manager,
     nix-darwin,
     nixpkgs,
@@ -50,6 +57,7 @@
         specialArgs = { inherit inputs userConfig; };
         modules = [
           ./hosts/sirius
+          disko.nixosModules.disko
           stylix.nixosModules.stylix
           
           home-manager.nixosModules.home-manager {

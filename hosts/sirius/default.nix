@@ -1,6 +1,6 @@
 {
   imports = [
-    ./hardware-configuration.nix # Include the results of the hardware scan
+    ./disko-config.nix
     ../../modules/nixos
   ];
 
