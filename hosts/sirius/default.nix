@@ -1,6 +1,6 @@
 {
   imports = [
-    ./disko-config.nix
+    ./disk-config.nix
     ../../modules/nixos
   ];
 
