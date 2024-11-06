@@ -1,7 +1,7 @@
 {
   # Terminal file manager
   programs.yazi = {
-    # enable = true;
+    enable = true;
 
     # yazi configuration
     settings = {
