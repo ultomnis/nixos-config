@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 
 {
   # Wayland status bar
@@ -15,7 +15,14 @@
         # Order of modules
         modules-left = [ "custom/power" "sway/workspaces" ];
         modules-center = [ "clock" ];
-        modules-right = [ "tray" "network" "pulseaudio#output" "pulseaudio#input" ];
+        modules-right = [
+          "tray"
+          "network"
+          "pulseaudio#output"
+          "pulseaudio#input"
+          "custom/wl-gammarelay-temperature"
+          "custom/wl-gammarelay-brightness"
+        ];
 
         # Modules configuration
         "custom/power" = {
@@ -84,7 +91,7 @@
 
         "tray" = {
           icon-size = 16;
-          spacing = 8;
+          spacing = 12;
           reverse-direction = true;
         };
 
@@ -112,25 +119,47 @@
           on-click = "${pkgs.pavucontrol}/bin/pavucontrol";
           on-click-right = "${pkgs.wireplumber}/bin/wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle";
         };
+
+        "custom/wl-gammarelay-temperature" = {
+          format = " {}";
+          exec = "${pkgs.wl-gammarelay-rs}/bin/wl-gammarelay-rs watch {t}";
+          on-scroll-up = "${pkgs.systemd}/bin/busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateTemperature n +100";
+          on-scroll-down = "${pkgs.systemd}/bin/busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateTemperature n -100";
+        };
+        
+        "custom/wl-gammarelay-brightness" = {
+          format = " {}%";
+          exec = "${pkgs.wl-gammarelay-rs}/bin/wl-gammarelay-rs watch {bp}";
+          on-scroll-up = "${pkgs.systemd}/bin/busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateBrightness d +0.02";
+          on-scroll-down = "${pkgs.systemd}/bin/busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateBrightness d -0.02";
+        };
       };
     };
 
     # CSS
-    style = ''
+    style = lib.mkAfter ''
       button {
         border: none;
         border-radius: 0;
       }
 
       #workspaces button {
-        padding: 3px 5px 0;
+        padding: 2px 7px;
+      }
+
+      .modules-left #workspaces button.focused {
+        border-bottom: 2px solid @base05;
       }
 
       #custom-power,
+      #clock,
       #tray,
+      #network,
       #pulseaudio.output,
-      #pulseaudio.input {
-        padding: 0 5px;
+      #pulseaudio.input,
+      #custom-wl-gammarelay-temperature,
+      #custom-wl-gammarelay-brightness {
+        padding: 0 7px;
       }
     '';
   };
