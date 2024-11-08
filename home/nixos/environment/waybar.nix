@@ -124,7 +124,7 @@
         };
 
         "custom/wl-gammarelay-temperature" = {
-          format = " {}";
+          format = " {}K";
           tooltip = false;
           exec = "${pkgs.wl-gammarelay-rs}/bin/wl-gammarelay-rs watch {t}";
           on-scroll-up = "${pkgs.systemd}/bin/busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateTemperature n +100";
