@@ -99,12 +99,14 @@
           format-wifi = "";
           format-ethernet = "";
           format-disconnected = "";
+          tooltip = false;
         };
 
         "pulseaudio#output" = {
           format = "<span font='10'>{icon}</span> {volume}%";
           format-muted = "<span font='10'></span>";
           format-icons = [ "" "" "" ];
+          tooltip = false;
           scroll-step = 1;
           on-click = "${pkgs.pavucontrol}/bin/pavucontrol";
           on-click-right = "${pkgs.wireplumber}/bin/wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
@@ -114,6 +116,7 @@
           format = "{format_source}";
           format-source = "<span font='10'></span> {volume}%";
           format-source-muted = "<span font='10'></span>";
+          tooltip = false;
           on-scroll-up = "${pkgs.wireplumber}/bin/wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 1%+";
           on-scroll-down = "${pkgs.wireplumber}/bin/wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 1%-";
           on-click = "${pkgs.pavucontrol}/bin/pavucontrol";
@@ -122,16 +125,22 @@
 
         "custom/wl-gammarelay-temperature" = {
           format = " {}";
+          tooltip = false;
           exec = "${pkgs.wl-gammarelay-rs}/bin/wl-gammarelay-rs watch {t}";
           on-scroll-up = "${pkgs.systemd}/bin/busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateTemperature n +100";
           on-scroll-down = "${pkgs.systemd}/bin/busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateTemperature n -100";
+          on-click = "${pkgs.systemd}/bin/busctl --user set-property rs.wl-gammarelay / rs.wl.gammarelay Temperature q 6500";
+          on-click-right = "${pkgs.systemd}/bin/busctl --user set-property rs.wl-gammarelay / rs.wl.gammarelay Temperature q 3400";
         };
         
         "custom/wl-gammarelay-brightness" = {
           format = " {}%";
+          tooltip = false;
           exec = "${pkgs.wl-gammarelay-rs}/bin/wl-gammarelay-rs watch {bp}";
           on-scroll-up = "${pkgs.systemd}/bin/busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateBrightness d +0.02";
           on-scroll-down = "${pkgs.systemd}/bin/busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateBrightness d -0.02";
+          on-click = "${pkgs.systemd}/bin/busctl --user set-property rs.wl-gammarelay / rs.wl.gammarelay Brightness d 1";
+          on-click-right = "${pkgs.systemd}/bin/busctl --user set-property rs.wl-gammarelay / rs.wl.gammarelay Brightness d 0.5";
         };
       };
     };
