@@ -47,12 +47,15 @@
       let
         modifier = config.wayland.windowManager.sway.config.modifier;
       in lib.mkOptionDefault {
-        "--no-repeat ${modifier}+Print" = ''exec ${pkgs.grim}/bin/grim -g "$(${pkgs.slurp}/bin/slurp)"'';
+        "--no-repeat ${modifier}+p" = ''exec ${pkgs.grim}/bin/grim -g "$(${pkgs.slurp}/bin/slurp)"'';
         
-        "${modifier}+Shift+l" = "exec ${pkgs.swaylock}/bin/swaylock -f";
+        "${modifier}+Escape" = "exec ${pkgs.swaylock}/bin/swaylock -f";
         
-        "--locked ${modifier}+Shift+m" = "exec ${pkgs.systemd}/bin/busctl --user set-property rs.wl-gammarelay / rs.wl.gammarelay Temperature q 6500";
-        "--locked ${modifier}+Shift+n" = "exec ${pkgs.systemd}/bin/busctl --user set-property rs.wl-gammarelay / rs.wl.gammarelay Temperature q 3400";
+        "--locked ${modifier}+bracketright" = "exec ${pkgs.systemd}/bin/busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateTemperature n +100";
+        "--locked ${modifier}+bracketleft" = "exec ${pkgs.systemd}/bin/busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateTemperature n -100";
+
+        "--locked ${modifier}+period" = "exec ${pkgs.systemd}/bin/busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateBrightness d +0.02";
+        "--locked ${modifier}+comma" = "exec ${pkgs.systemd}/bin/busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateBrightness d -0.02";
 
         "--locked XF86AudioMute" = "exec ${pkgs.wireplumber}/bin/wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
         "--locked XF86AudioLowerVolume" = "exec ${pkgs.wireplumber}/bin/wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-";
