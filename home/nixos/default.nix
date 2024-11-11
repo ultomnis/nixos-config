@@ -1,7 +1,7 @@
 {
   imports = [
     ./components
-    ./environment
     ./programs
+    ./services
   ];
 }
