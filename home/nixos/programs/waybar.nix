@@ -20,8 +20,8 @@
           "network"
           "pulseaudio#output"
           "pulseaudio#input"
-          "custom/wl-gammarelay-temperature"
           "custom/wl-gammarelay-brightness"
+          "custom/wl-gammarelay-temperature"
         ];
 
         # Modules configuration
@@ -123,16 +123,6 @@
           on-click-right = "${pkgs.wireplumber}/bin/wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle";
         };
 
-        "custom/wl-gammarelay-temperature" = {
-          format = "󰽥 {}K";
-          tooltip = false;
-          exec = "${pkgs.wl-gammarelay-rs}/bin/wl-gammarelay-rs watch {t}";
-          on-scroll-up = "${pkgs.systemd}/bin/busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateTemperature n +100";
-          on-scroll-down = "${pkgs.systemd}/bin/busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateTemperature n -100";
-          on-click = "${pkgs.systemd}/bin/busctl --user set-property rs.wl-gammarelay / rs.wl.gammarelay Temperature q 6500";
-          on-click-right = "${pkgs.systemd}/bin/busctl --user set-property rs.wl-gammarelay / rs.wl.gammarelay Temperature q 3400";
-        };
-        
         "custom/wl-gammarelay-brightness" = {
           format = "󰃟 {}%";
           tooltip = false;
@@ -141,6 +131,16 @@
           on-scroll-down = "${pkgs.systemd}/bin/busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateBrightness d -0.02";
           on-click = "${pkgs.systemd}/bin/busctl --user set-property rs.wl-gammarelay / rs.wl.gammarelay Brightness d 1";
           on-click-right = "${pkgs.systemd}/bin/busctl --user set-property rs.wl-gammarelay / rs.wl.gammarelay Brightness d 0.5";
+        };
+
+        "custom/wl-gammarelay-temperature" = {
+          format = "󰽥 {}K";
+          tooltip = false;
+          exec = "${pkgs.wl-gammarelay-rs}/bin/wl-gammarelay-rs watch {t}";
+          on-scroll-up = "${pkgs.systemd}/bin/busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateTemperature n +100";
+          on-scroll-down = "${pkgs.systemd}/bin/busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateTemperature n -100";
+          on-click = "${pkgs.systemd}/bin/busctl --user set-property rs.wl-gammarelay / rs.wl.gammarelay Temperature q 6500";
+          on-click-right = "${pkgs.systemd}/bin/busctl --user set-property rs.wl-gammarelay / rs.wl.gammarelay Temperature q 3400";
         };
       };
     };
@@ -166,8 +166,8 @@
       #network,
       #pulseaudio.output,
       #pulseaudio.input,
-      #custom-wl-gammarelay-temperature,
-      #custom-wl-gammarelay-brightness {
+      #custom-wl-gammarelay-brightness,
+      #custom-wl-gammarelay-temperature {
         padding: 0 7px;
       }
     '';
