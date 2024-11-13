@@ -6,5 +6,6 @@
     exiftool
     ffmpeg
     libqalculate
+    unar
   ];
 }
