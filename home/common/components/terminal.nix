@@ -6,6 +6,5 @@
     exiftool
     ffmpeg
     libqalculate
-    unzip
   ];
 }
