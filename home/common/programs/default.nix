@@ -6,7 +6,6 @@
     ./helix.nix
     ./htop.nix
     ./mpv.nix
-    ./newsboat.nix
     ./yazi.nix
     ./yt-dlp.nix
   ];
