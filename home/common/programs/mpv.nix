@@ -6,7 +6,7 @@
     enable = true;
 
     config = {
-      deband = "no";
+      border = "no";
       keep-open = "yes";
       osd-bar = "no";
       profile = "high-quality";
@@ -15,6 +15,7 @@
     };
 
     scripts = with pkgs.mpvScripts; [
+      thumbfast
       uosc
     ];
   };
