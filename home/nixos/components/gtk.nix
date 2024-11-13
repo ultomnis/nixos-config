@@ -7,7 +7,7 @@
 
     iconTheme = {
       package = pkgs.rose-pine-icon-theme;
-      name = "rose-pine";
+      name = "rose-pine-moon";
     };
   };
 }
