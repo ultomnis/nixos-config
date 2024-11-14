@@ -2,6 +2,11 @@
   # Enable support for Bluetooth
   hardware.bluetooth = {
     enable = true;
-    powerOnBoot = false;
+
+    settings = {
+      General = {
+        FastConnectable = true;
+      };
+    };
   };
 }
