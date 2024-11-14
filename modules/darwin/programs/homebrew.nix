@@ -19,7 +19,6 @@
       "localsend"
       "lulu"
       "mullvad-browser"
-      "mullvadvpn"
       "obs"
       "steam"
     ];
