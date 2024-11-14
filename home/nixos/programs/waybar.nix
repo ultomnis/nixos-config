@@ -96,16 +96,16 @@
         };
 
         "network" = {
-          format-wifi = "󰖩";
-          format-ethernet = "󰈀";
+          format-wifi = "";
+          format-ethernet = "";
           format-disconnected = "";
           tooltip = false;
         };
 
         "pulseaudio#output" = {
-          format = "<span font='12'>{icon}</span> {volume}%";
-          format-muted = "<span font='12'>󰸈</span>";
-          format-icons = [ "󰕿" "󰖀" "󰕾" ];
+          format = "{icon} {volume}%";
+          format-muted = "";
+          format-icons = [ "" "" "" ];
           tooltip = false;
           scroll-step = 2;
           on-click = "${pkgs.pavucontrol}/bin/pavucontrol";
@@ -114,8 +114,8 @@
 
         "pulseaudio#input" = {
           format = "{format_source}";
-          format-source = "<span font='12'>󰍬</span> {volume}%";
-          format-source-muted = "<span font='12'>󰍭</span>";
+          format-source = " {volume}%";
+          format-source-muted = "";
           tooltip = false;
           on-scroll-up = "${pkgs.wireplumber}/bin/wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 2%+";
           on-scroll-down = "${pkgs.wireplumber}/bin/wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 2%-";
@@ -124,7 +124,7 @@
         };
 
         "custom/wl-gammarelay-brightness" = {
-          format = "󰃟 {}%";
+          format = " {}%";
           tooltip = false;
           exec = "${pkgs.wl-gammarelay-rs}/bin/wl-gammarelay-rs watch {bp}";
           on-scroll-up = "${pkgs.systemd}/bin/busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateBrightness d +0.02";
@@ -134,7 +134,7 @@
         };
 
         "custom/wl-gammarelay-temperature" = {
-          format = "󰽥 {}K";
+          format = " {}K";
           tooltip = false;
           exec = "${pkgs.wl-gammarelay-rs}/bin/wl-gammarelay-rs watch {t}";
           on-scroll-up = "${pkgs.systemd}/bin/busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateTemperature n +100";
