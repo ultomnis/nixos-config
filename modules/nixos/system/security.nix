@@ -4,11 +4,6 @@
   security = {
     # Pluggable Authentication Modules
     pam = {
-      services = {
-        # Automatically unlock keyring
-        greetd.enableGnomeKeyring = true;
-      };
-
       # Realtime priority
       loginLimits = [
         {
