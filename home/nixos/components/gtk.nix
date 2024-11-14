@@ -6,8 +6,8 @@
     enable = true;
 
     iconTheme = {
-      package = pkgs.rose-pine-icon-theme;
-      name = "rose-pine-moon";
+      package = pkgs.kora-icon-theme;
+      name = "kora";
     };
   };
 }
