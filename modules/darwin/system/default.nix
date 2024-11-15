@@ -1,7 +1,7 @@
 {
   imports = [
     ./environment.nix
-    ./nix-settings.nix
+    ./nix-config.nix
     ./security.nix
     ./system-defaults.nix
     ./users.nix

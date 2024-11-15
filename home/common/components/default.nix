@@ -2,7 +2,7 @@
   imports = [
     ./fonts.nix
     ./graphical.nix
-    ./nix-gc.nix
+    ./nix-config.nix
     ./terminal.nix
   ];
 }
