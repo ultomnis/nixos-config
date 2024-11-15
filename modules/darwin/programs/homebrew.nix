@@ -21,6 +21,7 @@
       "mullvad-browser"
       "obs"
       "steam"
+      "utm"
     ];
 
     masApps = {
