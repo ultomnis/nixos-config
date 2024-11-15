@@ -15,7 +15,7 @@
       ];
     };
 
-    # Realtime policy and watchdog daemon
+    # Realtime priority
     rtkit.enable = true;
 
     sudo.extraConfig = ''
