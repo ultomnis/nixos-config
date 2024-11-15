@@ -4,7 +4,7 @@
   security = {
     # Pluggable Authentication Modules
     pam = {
-      # Realtime priority
+      # Realtime process scheduling
       loginLimits = [
         {
           domain = "@users";
@@ -15,20 +15,11 @@
       ];
     };
 
-    # Realtime priority
+    # RealtimeKit
     rtkit.enable = true;
 
     sudo.extraConfig = ''
       Defaults passprompt="What? Make it yourself:"
     '';
-
-    # Trusted Platform Module
-    tpm2 = {
-      enable = true;
-      pkcs11.enable = true;
-      tctiEnvironment.enable = true;
-    };
   };
-
-  users.users.${userConfig.username}.extraGroups = [ "tss" ];
 }
