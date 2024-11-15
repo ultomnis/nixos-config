@@ -13,11 +13,15 @@
         spacing = 0;
 
         # Order of modules
-        modules-left = [ "custom/power" "sway/workspaces" ];
-        modules-center = [ "clock" ];
+        modules-left = [
+          "custom/power"
+          "sway/workspaces"
+        ];
+        modules-center = [
+          "clock"
+        ];
         modules-right = [
           "tray"
-          "network"
           "pulseaudio#output"
           "pulseaudio#input"
           "custom/wl-gammarelay-brightness"
@@ -95,13 +99,6 @@
           reverse-direction = true;
         };
 
-        "network" = {
-          format-wifi = "";
-          format-ethernet = "";
-          format-disconnected = "";
-          tooltip = false;
-        };
-
         "pulseaudio#output" = {
           format = "{icon} {volume}%";
           format-muted = "";
@@ -163,7 +160,6 @@
       #custom-power,
       #clock,
       #tray,
-      #network,
       #pulseaudio.output,
       #pulseaudio.input,
       #custom-wl-gammarelay-brightness,
