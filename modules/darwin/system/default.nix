@@ -1,9 +1,9 @@
 {
   imports = [
     ./environment.nix
+    ./nix-settings.nix
     ./security.nix
-    ./settings.nix
-    ./macos.nix
+    ./system-defaults.nix
     ./users.nix
   ];
 }

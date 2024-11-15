@@ -22,5 +22,6 @@
       '';
     };
   };
+
   users.users.${userConfig.username}.extraGroups = [ "networkmanager" ];
 }

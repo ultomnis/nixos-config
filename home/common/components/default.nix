@@ -1,8 +1,8 @@
 {
   imports = [
     ./fonts.nix
-    ./gc.nix
     ./graphical.nix
+    ./nix-gc.nix
     ./terminal.nix
   ];
 }

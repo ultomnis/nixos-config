@@ -3,8 +3,8 @@
     ./boot.nix
     ./locale.nix
     ./networking.nix
+    ./nix-settings.nix
     ./security.nix
-    ./settings.nix
     ./users.nix
   ];
 }

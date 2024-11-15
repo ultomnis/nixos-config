@@ -1,10 +1,10 @@
 {
   imports = [
     ./avahi.nix
-    ./gc.nix
     ./greetd.nix
+    ./nix-gc.nix
     ./pipewire.nix
     ./printing.nix
-    ./zram.nix
+    ./zramswap.nix
   ];
 }
