@@ -5,11 +5,13 @@
     # Enable NetworkManager
     networkmanager.enable = true;
 
-    firewall = rec {
+    firewall = {
       allowedTCPPorts = [
         53317 # LocalSend
       ];
-      allowedUDPPorts = allowedTCPPorts;
+      allowedUDPPorts = [
+        53317 # LocalSend
+      ];
 
       # WireGuard traffic
       extraCommands = ''
