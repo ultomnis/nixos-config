@@ -1,0 +1,7 @@
+{
+  environment = {
+    variables = {
+      EDITOR = "hx";
+    };
+  };
+}
