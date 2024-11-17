@@ -12,6 +12,8 @@
       allowedUDPPorts = [
         53317 # LocalSend
       ];
+
+      checkReversePath = "loose";
     };
   };
 
