@@ -1,10 +1,9 @@
 {
   imports = [
     ./foot.nix
-    ./fuzzel.nix
-    ./sway.nix
-    ./swaylock.nix
-    ./waybar.nix
+    ./mangohud.nix
+    ./nm-applet.nix
+    ./obs-studio.nix
   ];
 }
 

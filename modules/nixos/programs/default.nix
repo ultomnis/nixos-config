@@ -2,10 +2,10 @@
   imports = [
     ./adb.nix
     ./fish.nix
-    ./obs-studio.nix
+    ./hyprland.nix
+    ./logitech.nix
     ./steam.nix
-    ./stylix.nix
-    ./sway.nix
+    ./unfree.nix
     ./virt-manager.nix
   ];
 }

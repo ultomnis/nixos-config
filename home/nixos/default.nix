@@ -1,7 +1,7 @@
 {
   imports = [
     ./components
+    ./desktop
     ./programs
-    ./services
   ];
 }

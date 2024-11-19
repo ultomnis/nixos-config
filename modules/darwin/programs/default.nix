@@ -1,7 +1,8 @@
 {
   imports = [
+    ./aerospace.nix
     ./fish.nix
     ./homebrew.nix
-    ./stylix.nix
+    ./jankyborders.nix
   ];
 }

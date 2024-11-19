@@ -15,7 +15,7 @@
         # Order of modules
         modules-left = [
           "custom/power"
-          "sway/workspaces"
+          "hyprland/workspaces"
         ];
         modules-center = [
           "clock"
@@ -24,8 +24,6 @@
           "tray"
           "pulseaudio#output"
           "pulseaudio#input"
-          "custom/wl-gammarelay-brightness"
-          "custom/wl-gammarelay-temperature"
         ];
 
         # Modules configuration
@@ -69,10 +67,7 @@
           };
         };
         
-        "sway/workspaces" = {
-          disable-scroll = true;
-          all-outputs = true;
-          warp-on-scroll = false;
+        "hyprland/workspaces" = {
           format = "{icon}";
           format-icons = {
             "1" = "I";
@@ -119,52 +114,55 @@
           on-click = "${pkgs.pavucontrol}/bin/pavucontrol";
           on-click-right = "${pkgs.wireplumber}/bin/wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle";
         };
-
-        "custom/wl-gammarelay-brightness" = {
-          format = " {}%";
-          tooltip = false;
-          exec = "${pkgs.wl-gammarelay-rs}/bin/wl-gammarelay-rs watch {bp}";
-          on-scroll-up = "${pkgs.systemd}/bin/busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateBrightness d +0.02";
-          on-scroll-down = "${pkgs.systemd}/bin/busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateBrightness d -0.02";
-          on-click = "${pkgs.systemd}/bin/busctl --user set-property rs.wl-gammarelay / rs.wl.gammarelay Brightness d 1";
-          on-click-right = "${pkgs.systemd}/bin/busctl --user set-property rs.wl-gammarelay / rs.wl.gammarelay Brightness d 0.5";
-        };
-
-        "custom/wl-gammarelay-temperature" = {
-          format = " {}K";
-          tooltip = false;
-          exec = "${pkgs.wl-gammarelay-rs}/bin/wl-gammarelay-rs watch {t}";
-          on-scroll-up = "${pkgs.systemd}/bin/busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateTemperature n +100";
-          on-scroll-down = "${pkgs.systemd}/bin/busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateTemperature n -100";
-          on-click = "${pkgs.systemd}/bin/busctl --user set-property rs.wl-gammarelay / rs.wl.gammarelay Temperature q 6500";
-          on-click-right = "${pkgs.systemd}/bin/busctl --user set-property rs.wl-gammarelay / rs.wl.gammarelay Temperature q 3400";
-        };
       };
     };
 
     # CSS
     style = lib.mkAfter ''
+      * {
+        font-family: 'Hack Nerd Font Propo';
+        font-size: 14px;
+      }
+
+      window#waybar {
+        background-color: rgba (15, 15, 15, 0.1);
+        color: #f0f0f0;
+      }
+      
       button {
+        box-shadow: inset 0 -2px transparent;
         border: none;
         border-radius: 0;
       }
 
-      #workspaces button {
-        padding: 2px 7px;
+      button:hover {
+        background: inherit;
       }
 
-      .modules-left #workspaces button.focused {
-        border-bottom: 2px solid @base05;
+      #workspaces button {
+        padding: 0 7px;
+        color: #f0f0f0;
+      }
+
+      #workspaces button:hover {
+        background: rgba (240, 240, 240, 0.1);
+      }
+
+      #workspaces button.active {
+        box-shadow: inset 0 -2px #f0f0f0;
+      }
+
+      #workspaces button.urgent {
+        color: #cc0000;
       }
 
       #custom-power,
       #clock,
       #tray,
       #pulseaudio.output,
-      #pulseaudio.input,
-      #custom-wl-gammarelay-brightness,
-      #custom-wl-gammarelay-temperature {
+      #pulseaudio.input {
         padding: 0 7px;
+        color: #f0f0f0;
       }
     '';
   };

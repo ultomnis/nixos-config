@@ -14,6 +14,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # Hyprland
+    hyprland.url = "github:hyprwm/Hyprland";
+
     # Nix-darwin
     nix-darwin = {
       url = "github:LnL7/nix-darwin";
@@ -25,19 +28,16 @@
 
     # Nix user repository
     nur.url = "github:nix-community/NUR";
-
-    # Stylix
-    stylix.url = "github:danth/stylix";
   };
 
   outputs = inputs@{
     self,
     disko,
     home-manager,
+    hyprland,
     nix-darwin,
     nixpkgs,
     nur,
-    stylix,
     ...
   }:
   
@@ -58,7 +58,6 @@
         modules = [
           ./hosts/sirius
           disko.nixosModules.disko
-          stylix.nixosModules.stylix
           
           home-manager.nixosModules.home-manager {
             home-manager = {
@@ -83,7 +82,6 @@
         specialArgs = { inherit inputs userConfig; };
         modules = [
           ./hosts/canopus
-          stylix.darwinModules.stylix
 
           home-manager.darwinModules.home-manager {
             home-manager = {

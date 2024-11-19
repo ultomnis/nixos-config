@@ -10,6 +10,16 @@
       main = {
         terminal = "${pkgs.foot}/bin/foot";
       };
+
+      border = {
+        width = 2;
+        radius = 4;
+      };
+
+      colors = {
+        background = "0f0f0f80";
+        border = "f0f0f0cc";
+      };
     };
   };
 }
