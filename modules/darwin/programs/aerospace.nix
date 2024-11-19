@@ -4,8 +4,8 @@
     enable = true;
 
     settings = {  
-      enable-normalization-flatten-containers = false;
-      enable-normalization-opposite-orientation-for-nested-containers = false;
+      enable-normalization-flatten-containers = true;
+      enable-normalization-opposite-orientation-for-nested-containers = true;
   
       on-focused-monitor-changed = [ "move-mouse monitor-lazy-center" ];
       on-focus-changed = [ "move-mouse window-lazy-center" ];
@@ -26,14 +26,19 @@
         alt-down = "focus down";
         alt-up = "focus up";
         alt-right = "focus right";
+        alt-h = "focus left";
+        alt-j = "focus down";
+        alt-k = "focus up";
+        alt-l = "focus right";
 
-        alt-shift-left = "move left";
-        alt-shift-down = "move down";
-        alt-shift-up = "move up";
-        alt-shift-right = "move right";
-
-        alt-b = "split horizontal";
-        alt-v = "split vertical";
+        alt-shift-left = [ "move left" "join-with left" "mode main" ];
+        alt-shift-down = [ "move down" "join-with down" "mode main" ];
+        alt-shift-up = [ "move up" "join-with up" "mode main" ];
+        alt-shift-right = [ "move right" "join-with right" "mode main" ];
+        alt-shift-h = [ "move left" "join-with left" "mode main" ];
+        alt-shift-j = [ "move down" "join-with down" "mode main" ];
+        alt-shift-k = [ "move up" "join-with up" "mode main" ];
+        alt-shift-l = [ "move right" "join-with right" "mode main" ];
 
         alt-f = "fullscreen";
 
@@ -75,6 +80,10 @@
         down = "resize height +50";
         up = "resize height -50";
         right = "resize width +50";
+        h = "resize width -50";
+        j = "resize height +50";
+        k = "resize height -50";
+        l = "resize width +50";
         enter = "mode main";
         esc = "mode main";
       };
