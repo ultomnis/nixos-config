@@ -100,8 +100,8 @@
           format-ethernet = "";
           format-disconnected = "";
           tooltip = false;
-          on-click = "${pkgs.foot}/bin/foot ${pkgs.networkmanager}/bin/nmtui-connect";
-          on-click-right = "${pkgs.foot}/bin/foot ${pkgs.networkmanager}/bin/nmtui-edit";
+          on-click = "${pkgs.foot}/bin/foot -a nmtui ${pkgs.networkmanager}/bin/nmtui-connect";
+          on-click-right = "${pkgs.foot}/bin/foot -a nmtui ${pkgs.networkmanager}/bin/nmtui-edit";
         };
 
         "pulseaudio#output" = {
