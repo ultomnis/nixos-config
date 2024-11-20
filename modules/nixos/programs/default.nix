@@ -2,7 +2,7 @@
   imports = [
     ./adb.nix
     ./fish.nix
-    ./logitech.nix
+    ./peripherals.nix
     ./steam.nix
     ./sway.nix
     ./unfree.nix
