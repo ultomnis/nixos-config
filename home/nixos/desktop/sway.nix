@@ -18,16 +18,16 @@
         }
       ];
 
-      output = {
-        "*" = {
-          bg = "${config.home.homeDirectory}/.config/wallpaper.jpg fill";
-        };
-      };
-
       input = {
         "type:pointer" = {
           accel_profile = "flat";
           pointer_accel = "0";
+        };
+      };
+
+      output = {
+        "*" = {
+          bg = "${config.home.homeDirectory}/.config/wallpaper.jpg fill";
         };
       };
 
