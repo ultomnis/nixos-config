@@ -17,7 +17,7 @@
       };
 
       colors = {
-        background = "0f0f0f80";
+        background = "0f0f0fcc";
         border = "f0f0f0cc";
       };
     };

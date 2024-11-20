@@ -18,7 +18,7 @@
       };
 
       colors = {
-        alpha = "0.5";
+        alpha = "0.8";
         background = "0f0f0f";
       };
     };
