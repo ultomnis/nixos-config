@@ -2,7 +2,7 @@
   security = {
     # Pluggable Authentication Modules
     pam = {
-      services.hyprlock = {};
+      services.swaylock = {};
     };
 
     sudo.extraConfig = ''

@@ -1,10 +1,9 @@
 {
   imports = [
     ./fuzzel.nix
-    ./hypridle.nix
-    ./hyprland.nix
-    ./hyprlock.nix
-    ./hyprpaper.nix
+    ./sway.nix
+    ./swayidle.nix
+    ./swaylock.nix
     ./mako.nix
     ./waybar.nix
   ];

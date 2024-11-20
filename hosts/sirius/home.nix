@@ -16,21 +16,16 @@
 
   programs.home-manager.enable = true;
 
-  wayland.windowManager.hyprland = {
-    settings = {
+  wayland.windowManager.sway = {
+    config = {
       # Monitor configuration
-      monitor = [
-        "DP-2, 1920x1080@165, 0x0, 1"
-      ];
-    };
-  };
-
-  # Wallpaper utility
-  services.hyprpaper = {
-    settings = {
-      wallpaper = [
-        "DP-2,${config.home.homeDirectory}/.config/wallpaper.jpg"
-      ];
+      output = {
+        DP-2 = {
+          allow_tearing = "yes";
+          max_render_time = "off";
+          mode = "1920x1080@165Hz";
+        };
+      };
     };
   };
 }

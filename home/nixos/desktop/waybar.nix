@@ -15,7 +15,7 @@
         # Order of modules
         modules-left = [
           "custom/power"
-          "hyprland/workspaces"
+          "sway/workspaces"
         ];
         modules-center = [
           "clock"
@@ -67,7 +67,7 @@
           };
         };
         
-        "hyprland/workspaces" = {
+        "sway/workspaces" = {
           format = "{icon}";
           format-icons = {
             "1" = "I";
@@ -148,7 +148,7 @@
         background: rgba (240, 240, 240, 0.1);
       }
 
-      #workspaces button.active {
+      #workspaces button.focused {
         box-shadow: inset 0 -2px #f0f0f0;
       }
 
