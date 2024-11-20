@@ -27,12 +27,20 @@
 
       output = {
         "*" = {
+          allow_tearing = "yes";
           bg = "${config.home.homeDirectory}/.config/wallpaper.jpg fill";
+          max_render_time = "off";
         };
       };
 
       window = {
         commands = [
+          {
+            command = "allow_tearing yes";
+            criteria = {
+              class = "cs2";
+            };
+          }
           {
             command = "floating on, resize set 800 600, move position cursor, move down 30 px";
             criteria = {

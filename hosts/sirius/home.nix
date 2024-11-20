@@ -21,8 +21,6 @@
       # Monitor configuration
       output = {
         DP-2 = {
-          allow_tearing = "yes";
-          max_render_time = "off";
           mode = "1920x1080@165Hz";
         };
       };
