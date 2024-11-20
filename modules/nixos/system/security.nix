@@ -2,7 +2,10 @@
   security = {
     # Pluggable Authentication Modules
     pam = {
-      services.swaylock = {};
+      services = {
+        greetd.enableGnomeKeyring = true;
+        swaylock = {};
+      };
     };
 
     sudo.extraConfig = ''
