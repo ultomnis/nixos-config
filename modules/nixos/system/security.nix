@@ -3,8 +3,7 @@
     # Pluggable Authentication Modules
     pam = {
       services = {
-        greetd.enableGnomeKeyring = true;
-        swaylock = {};
+        ly.enableGnomeKeyring = true;
       };
     };
 
