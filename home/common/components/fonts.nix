@@ -5,7 +5,7 @@
   fonts.fontconfig.enable = true;
 
   home.packages = with pkgs; [
-    nerdfonts
+    (nerdfonts.override { fonts = [ "Hack" ]; })
     noto-fonts
   ];
 }
