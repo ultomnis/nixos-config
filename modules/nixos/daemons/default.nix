@@ -2,7 +2,7 @@
   imports = [
     ./avahi.nix
     ./bluetooth.nix
-    ./greetd.nix
+    ./ly.nix
     ./networking.nix
     ./pipewire.nix
     ./printing.nix
