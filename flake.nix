@@ -14,9 +14,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # Hyprland
-    hyprland.url = "github:hyprwm/Hyprland";
-
     # Nix-darwin
     nix-darwin = {
       url = "github:LnL7/nix-darwin";
@@ -34,7 +31,6 @@
     self,
     disko,
     home-manager,
-    hyprland,
     nix-darwin,
     nixpkgs,
     nur,
