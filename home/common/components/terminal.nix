@@ -6,6 +6,7 @@
     exiftool
     ffmpeg
     libqalculate
+    libsecret
     unar
   ];
 }
