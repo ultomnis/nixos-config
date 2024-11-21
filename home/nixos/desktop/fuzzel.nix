@@ -13,7 +13,7 @@
 
       border = {
         width = 2;
-        radius = 4;
+        radius = 0;
       };
 
       colors = {
