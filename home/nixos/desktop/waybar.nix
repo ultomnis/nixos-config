@@ -29,7 +29,7 @@
 
         # Modules configuration
         "custom/power" = {
-          format = "";
+          format = "<span color=\"#aaaaaa\">PWR</span>";
           tooltip = false;
           menu = "on-click";
           menu-file = pkgs.writeText "power_menu.xml"
@@ -96,8 +96,8 @@
         };
 
         "network" = {
-          format-wifi = "";
-          format-ethernet = "";
+          format-wifi = "<span color=\"#aaaaaa\">WIFI</span>";
+          format-ethernet = "<span color=\"#aaaaaa\">ETH</span>";
           format-disconnected = "";
           tooltip = false;
           on-click = "${pkgs.foot}/bin/foot -a nmtui ${pkgs.networkmanager}/bin/nmtui-connect";
@@ -105,9 +105,8 @@
         };
 
         "pulseaudio#output" = {
-          format = "{icon} {volume}%";
-          format-muted = "";
-          format-icons = [ "" "" "" ];
+          format = "<span color=\"#aaaaaa\">VOL</span> {volume}%";
+          format-muted = "<span color=\"#aaaaaa\">VOL MUTE</span>";
           tooltip = false;
           scroll-step = 2;
           on-click = "${pkgs.pavucontrol}/bin/pavucontrol";
@@ -116,8 +115,8 @@
 
         "pulseaudio#input" = {
           format = "{format_source}";
-          format-source = " {volume}%";
-          format-source-muted = "";
+          format-source = "<span color=\"#aaaaaa\">MIC</span> {volume}%";
+          format-source-muted = "<span color=\"#aaaaaa\">MIC MUTE</span>";
           tooltip = false;
           on-scroll-up = "${pkgs.wireplumber}/bin/wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 2%+";
           on-scroll-down = "${pkgs.wireplumber}/bin/wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 2%-";
