@@ -19,7 +19,7 @@
 
       colors = {
         alpha = "0.8";
-        background = "0f0f0f";
+        background = "000000";
       };
     };
   };

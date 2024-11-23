@@ -89,9 +89,9 @@
         focused = {
           background = "#285577";
           border = "#4c7899";
-          childBorder = "#f0f0f0cc";
+          childBorder = "#ffffffcc";
           indicator = "#2e9ef4";
-          text = "#f0f0f0";
+          text = "#ffffff";
         };
 
         focusedInactive = {
@@ -99,7 +99,7 @@
           border = "#333333";
           childBorder = "#ffffff00";
           indicator = "#484e50";
-          text = "#f0f0f0";
+          text = "#ffffff";
         };
 
         unfocused = {

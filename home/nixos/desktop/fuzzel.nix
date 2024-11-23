@@ -17,8 +17,8 @@
       };
 
       colors = {
-        background = "0f0f0fcc";
-        border = "f0f0f0cc";
+        background = "000000cc";
+        border = "ffffffcc";
       };
     };
   };

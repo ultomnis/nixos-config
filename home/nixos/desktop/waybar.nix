@@ -1,4 +1,4 @@
-{ lib, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   # Wayland status bar
@@ -29,7 +29,7 @@
 
         # Modules configuration
         "custom/power" = {
-          format = "<span color=\"#aaaaaa\">PWR</span>";
+          format = "<span color=\"#cccccc\">PWR</span>";
           tooltip = false;
           menu = "on-click";
           menu-file = pkgs.writeText "power_menu.xml"
@@ -96,8 +96,8 @@
         };
 
         "network" = {
-          format-wifi = "<span color=\"#aaaaaa\">WIFI</span>";
-          format-ethernet = "<span color=\"#aaaaaa\">ETH</span>";
+          format-wifi = "<span color=\"#cccccc\">WIFI</span>";
+          format-ethernet = "<span color=\"#cccccc\">ETH</span>";
           format-disconnected = "";
           tooltip = false;
           on-click = "${pkgs.foot}/bin/foot -a nmtui ${pkgs.networkmanager}/bin/nmtui-connect";
@@ -105,8 +105,8 @@
         };
 
         "pulseaudio#output" = {
-          format = "<span color=\"#aaaaaa\">VOL</span> {volume}%";
-          format-muted = "<span color=\"#aaaaaa\">VOL MUTE</span>";
+          format = "<span color=\"#cccccc\">VOL</span> {volume}%";
+          format-muted = "<span color=\"#cccccc\">VOL MUTE</span>";
           tooltip = false;
           scroll-step = 2;
           on-click = "${pkgs.pavucontrol}/bin/pavucontrol";
@@ -115,8 +115,8 @@
 
         "pulseaudio#input" = {
           format = "{format_source}";
-          format-source = "<span color=\"#aaaaaa\">MIC</span> {volume}%";
-          format-source-muted = "<span color=\"#aaaaaa\">MIC MUTE</span>";
+          format-source = "<span color=\"#cccccc\">MIC</span> {volume}%";
+          format-source-muted = "<span color=\"#cccccc\">MIC MUTE</span>";
           tooltip = false;
           on-scroll-up = "${pkgs.wireplumber}/bin/wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 2%+";
           on-scroll-down = "${pkgs.wireplumber}/bin/wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 2%-";
@@ -127,15 +127,15 @@
     };
 
     # CSS
-    style = lib.mkAfter ''
+    style = ''
       * {
         font-family: 'Hack Nerd Font Propo';
         font-size: 14px;
       }
 
       window#waybar {
-        background-color: rgba (15, 15, 15, 0.1);
-        color: #f0f0f0;
+        background-color: rgba (0, 0, 0, 0.1);
+        color: #ffffff;
       }
       
       button {
@@ -150,19 +150,19 @@
 
       #workspaces button {
         padding: 0 7px;
-        color: #f0f0f0;
+        color: #ffffff;
       }
 
       #workspaces button:hover {
-        background: rgba (240, 240, 240, 0.1);
+        background: rgba (255, 255, 255, 0.1);
       }
 
       #workspaces button.focused {
-        box-shadow: inset 0 -2px #f0f0f0;
+        box-shadow: inset 0 -2px #ffffff;
       }
 
       #workspaces button.urgent {
-        color: #cc0000;
+        color: #cc3333;
       }
 
       #custom-power,
@@ -172,7 +172,7 @@
       #pulseaudio.output,
       #pulseaudio.input {
         padding: 0 7px;
-        color: #f0f0f0;
+        color: #ffffff;
       }
     '';
   };

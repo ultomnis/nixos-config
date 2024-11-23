@@ -2,8 +2,8 @@
   # Notification daemon
   services.mako = {
     enable = true;
-    backgroundColor = "#0f0f0fcc";
-    borderColor = "#f0f0f0cc";
+    backgroundColor = "#000000cc";
+    borderColor = "#ffffffcc";
     defaultTimeout = 5000;
   };
 }
