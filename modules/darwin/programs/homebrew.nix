@@ -16,7 +16,6 @@
 
     casks = [
       "firefox"
-      "localsend"
       "lulu"
       "mullvad-browser"
       "obs"
