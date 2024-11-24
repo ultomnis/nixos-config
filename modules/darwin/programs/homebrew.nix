@@ -18,7 +18,6 @@
       "firefox"
       "lulu"
       "mullvad-browser"
-      "obs"
       "steam"
       "utm"
     ];
