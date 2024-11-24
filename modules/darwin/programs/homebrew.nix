@@ -3,7 +3,7 @@
   homebrew = {
     enable = true;
 
-    # Behavior of brew bundle command
+    # Behavior of brew bundle command during system activation
     onActivation = {
       cleanup = "zap";
       upgrade = true;
