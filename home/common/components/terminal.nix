@@ -8,5 +8,6 @@
     libqalculate
     libsecret
     unar
+    wireguard-tools
   ];
 }
