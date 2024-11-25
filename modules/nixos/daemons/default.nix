@@ -2,6 +2,7 @@
   imports = [
     ./avahi.nix
     ./bluetooth.nix
+    ./davfs2.nix
     ./ly.nix
     ./networking.nix
     ./pipewire.nix
