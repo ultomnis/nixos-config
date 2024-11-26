@@ -9,4 +9,7 @@
       };
     };
   };
+
+  # Bluetooth manager
+  services.blueman.enable = true;
 }
