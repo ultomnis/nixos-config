@@ -14,7 +14,7 @@
 
         # Order of modules
         modules-left = [
-          "custom/power"
+          "custom/menu"
           "sway/workspaces"
         ];
         modules-center = [
@@ -27,44 +27,10 @@
         ];
 
         # Modules configuration
-        "custom/power" = {
+        "custom/menu" = {
           format = "";
           tooltip = false;
-          menu = "on-click";
-          menu-file = pkgs.writeText "power_menu.xml"
-            ''
-              <?xml version="1.0" encoding="UTF-8"?>
-              <interface>
-                <object class="GtkMenu" id="menu">
-                  <child>
-                    <object class="GtkMenuItem" id="lock">
-                      <property name="label">Lock</property>
-                    </object>
-                  </child>
-                  <child>
-                    <object class="GtkMenuItem" id="logout">
-                      <property name="label">Logout</property>
-                    </object>
-                  </child>
-                  <child>
-                    <object class="GtkMenuItem" id="reboot">
-                      <property name="label">Reboot</property>
-                    </object>
-                  </child>
-                  <child>
-                    <object class="GtkMenuItem" id="shutdown">
-                      <property name="label">Shutdown</property>
-                    </object>
-                  </child>
-                </object>
-              </interface>
-            '';
-          menu-actions = {
-            "lock" = "${pkgs.swaylock}/bin/swaylock -f";
-            "logout" = "${pkgs.systemd}/bin/loginctl terminate-user $USER";
-            "reboot" = "${pkgs.systemd}/bin/systemctl reboot";
-            "shutdown" = "${pkgs.systemd}/bin/systemctl poweroff";
-          };
+          on-click = "${pkgs.fuzzel}/bin/fuzzel --anchor top-left";
         };
         
         "sway/workspaces" = {
@@ -156,7 +122,7 @@
         color: #cc3333;
       }
 
-      #custom-power,
+      #custom-menu,
       #clock,
       #tray,
       #pulseaudio.output,
