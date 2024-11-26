@@ -1,6 +1,5 @@
 {
   imports = [
-    ./avahi.nix
     ./bluetooth.nix
     ./ly.nix
     ./networking.nix
