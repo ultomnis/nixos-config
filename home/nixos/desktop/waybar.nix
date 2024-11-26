@@ -28,7 +28,7 @@
 
         # Modules configuration
         "custom/power" = {
-          format = "<span color=\"#cccccc\">PWR</span>";
+          format = "";
           tooltip = false;
           menu = "on-click";
           menu-file = pkgs.writeText "power_menu.xml"
@@ -95,8 +95,9 @@
         };
 
         "pulseaudio#output" = {
-          format = "<span color=\"#cccccc\">VOL</span> {volume}%";
-          format-muted = "<span color=\"#cccccc\">VOL MUTE</span>";
+          format = "{icon} {volume}%";
+          format-muted = "";
+          format-icons = [ "" "" "" ];
           tooltip = false;
           scroll-step = 2;
           on-click = "${pkgs.pavucontrol}/bin/pavucontrol";
@@ -105,8 +106,8 @@
 
         "pulseaudio#input" = {
           format = "{format_source}";
-          format-source = "<span color=\"#cccccc\">MIC</span> {volume}%";
-          format-source-muted = "<span color=\"#cccccc\">MIC MUTE</span>";
+          format-source = " {volume}%";
+          format-source-muted = "";
           tooltip = false;
           on-scroll-up = "${pkgs.wireplumber}/bin/wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 2%+";
           on-scroll-down = "${pkgs.wireplumber}/bin/wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 2%-";
