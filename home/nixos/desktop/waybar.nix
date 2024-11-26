@@ -22,7 +22,6 @@
         ];
         modules-right = [
           "tray"
-          "network"
           "pulseaudio#output"
           "pulseaudio#input"
         ];
@@ -95,15 +94,6 @@
           reverse-direction = true;
         };
 
-        "network" = {
-          format-wifi = "<span color=\"#cccccc\">WIFI</span>";
-          format-ethernet = "<span color=\"#cccccc\">ETH</span>";
-          format-disconnected = "";
-          tooltip = false;
-          on-click = "${pkgs.foot}/bin/foot -a nmtui ${pkgs.networkmanager}/bin/nmtui-connect";
-          on-click-right = "${pkgs.foot}/bin/foot -a nmtui ${pkgs.networkmanager}/bin/nmtui-edit";
-        };
-
         "pulseaudio#output" = {
           format = "<span color=\"#cccccc\">VOL</span> {volume}%";
           format-muted = "<span color=\"#cccccc\">VOL MUTE</span>";
@@ -168,7 +158,6 @@
       #custom-power,
       #clock,
       #tray,
-      #network,
       #pulseaudio.output,
       #pulseaudio.input {
         padding: 0 7px;
