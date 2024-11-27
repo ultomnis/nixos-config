@@ -9,7 +9,7 @@
     config = {
       modifier = "Mod4";
       terminal = "${pkgs.foot}/bin/foot";
-      menu = "${pkgs.fuzzel}/bin/fuzzel";
+      menu = "${pkgs.fuzzel}/bin/fuzzel --icon-theme=kora";
       defaultWorkspace = "workspace number 1";
 
       startup = [

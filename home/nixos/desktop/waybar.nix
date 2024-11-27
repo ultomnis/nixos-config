@@ -30,7 +30,7 @@
         "custom/menu" = {
           format = "";
           tooltip = false;
-          on-click = "${pkgs.fuzzel}/bin/fuzzel --anchor top-left";
+          on-click = "${pkgs.fuzzel}/bin/fuzzel --anchor top-left --icon-theme=kora";
         };
         
         "sway/workspaces" = {
