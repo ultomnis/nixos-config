@@ -16,7 +16,6 @@
 
     casks = [
       "firefox"
-      "lulu"
       "mullvad-browser"
       "steam"
       "utm"
