@@ -19,7 +19,6 @@
       "lulu"
       "mullvad-browser"
       "steam"
-      "tailscale"
       "utm"
     ];
   };
