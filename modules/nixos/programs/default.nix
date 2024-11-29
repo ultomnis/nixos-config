@@ -9,4 +9,3 @@
     ./virt-manager.nix
   ];
 }
-
