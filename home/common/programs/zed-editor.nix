@@ -28,6 +28,21 @@
         version = "2";
       };
 
+      "experimental.theme_overrides" = {
+        "background.appearance" = "transparent";
+        "background" = "#000000cc";
+        "editor.background" = "#ffffff00";
+        "editor.gutter.background" = "#ffffff00";
+        "panel.background" = "#ffffff00";
+        "status_bar.background" = "#ffffff00";
+        "tab_bar.background" = "#ffffff00";
+        "tab.active_background" = "#ffffff1a";
+        "tab.inactive_background" = "#ffffff00";
+        "terminal.background" = "#ffffff00";
+        "title_bar.background" = "#000000cc";
+        "toolbar.background" = "#ffffff00";
+      };
+
       languages = {
         "Nix" = {
           language_servers = [
