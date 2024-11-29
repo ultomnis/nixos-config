@@ -15,10 +15,10 @@
     };
 
     casks = [
-      "firefox"
       "mullvad-browser"
       "steam"
       "utm"
+      "zen-browser"
     ];
   };
 }
