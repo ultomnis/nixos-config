@@ -4,7 +4,7 @@
   ];
 
   # Networking
-  networking  = {
+  networking = {
     computerName = "canopus";
     hostName = "canopus"; # Define your hostname
   };
@@ -13,4 +13,3 @@
   # and migrated your data accordingly.
   system.stateVersion = 4;
 }
-
