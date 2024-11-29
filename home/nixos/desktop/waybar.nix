@@ -32,7 +32,7 @@
           tooltip = false;
           on-click = "${pkgs.fuzzel}/bin/fuzzel --anchor top-left --icon-theme=kora";
         };
-        
+
         "sway/workspaces" = {
           format = "{icon}";
           format-icons = {
@@ -63,7 +63,11 @@
         "pulseaudio#output" = {
           format = "{icon} {volume}%";
           format-muted = "";
-          format-icons = [ "" "" "" ];
+          format-icons = [
+            ""
+            ""
+            ""
+          ];
           tooltip = false;
           scroll-step = 2;
           on-click = "${pkgs.pavucontrol}/bin/pavucontrol";
@@ -94,7 +98,7 @@
         background-color: rgba (0, 0, 0, 0.1);
         color: #ffffff;
       }
-      
+
       button {
         box-shadow: inset 0 -2px transparent;
         border: none;

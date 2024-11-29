@@ -24,7 +24,7 @@
           provider = "ollama";
           model = "qwen2.5-coder:latest";
         };
-        
+
         version = "2";
       };
 

@@ -12,7 +12,7 @@
       bell = {
         urgent = "yes";
       };
-      
+
       mouse = {
         hide-when-typing = "yes";
       };

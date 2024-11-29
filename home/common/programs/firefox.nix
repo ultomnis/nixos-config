@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   programs.firefox = {
@@ -47,19 +52,19 @@
           # SearchSuggestEnabled
           "browser.search.suggest.enabled" = false;
           "browser.urlbar.suggest.searches" = false;
-          
+
           "browser.toolbars.bookmarks.visibility" = "never"; # DisplayBookmarksToolbar
 
           # FirefoxSuggest
           "browser.urlbar.quicksuggest.dataCollection.enabled" = false;
           "browser.urlbar.suggest.quicksuggest.nonsponsored" = false;
           "browser.urlbar.suggest.quicksuggest.sponsored" = false;
-          
+
           # DisableTelemetry
           "datareporting.healthreport.uploadEnabled" = false;
           "datareporting.policy.dataSubmissionEnabled" = false;
           "toolkit.telemetry.archive.enabled" = false;
-          
+
           "dom.private-attribution.submission.enabled" = false; # Allow websites to perform privacy-preserving ad measurement
           "dom.security.https_only_mode" = true; # HttpsOnlyMode
           "extensions.pocket.enabled" = false; # DisablePocket
@@ -72,7 +77,7 @@
           "privacy.trackingprotection.cryptomining.enabled" = true;
           "privacy.trackingprotection.fingerprinting.enabled" = true;
           "privacy.trackingprotection.pbmode.enabled" = true;
-          
+
           "signon.rememberSignons" = false; # OfferToSaveLogins
         };
       };

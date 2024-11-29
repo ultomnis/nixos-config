@@ -8,4 +8,3 @@
     ./wlsunset.nix
   ];
 }
-

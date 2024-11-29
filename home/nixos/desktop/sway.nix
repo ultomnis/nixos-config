@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   # Wayland tiling compositor
@@ -59,23 +64,24 @@
       };
 
       keybindings =
-      let
-        modifier = config.wayland.windowManager.sway.config.modifier;
-      in lib.mkOptionDefault {
-        "--no-repeat ${modifier}+Print" = ''exec ${pkgs.grim}/bin/grim -g "$(${pkgs.slurp}/bin/slurp)"'';
-        
-        "${modifier}+Escape" = "exec ${pkgs.swaylock}/bin/swaylock -f";
+        let
+          modifier = config.wayland.windowManager.sway.config.modifier;
+        in
+        lib.mkOptionDefault {
+          "--no-repeat ${modifier}+Print" = ''exec ${pkgs.grim}/bin/grim -g "$(${pkgs.slurp}/bin/slurp)"'';
 
-        "--locked XF86AudioMute" = "exec ${pkgs.wireplumber}/bin/wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
-        "--locked XF86AudioLowerVolume" = "exec ${pkgs.wireplumber}/bin/wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-";
-        "--locked XF86AudioRaiseVolume" = "exec ${pkgs.wireplumber}/bin/wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+";
-        "--locked XF86AudioMicMute" = "exec ${pkgs.wireplumber}/bin/wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle";
+          "${modifier}+Escape" = "exec ${pkgs.swaylock}/bin/swaylock -f";
 
-        "--locked XF86AudioPrev" = "exec ${pkgs.playerctl}/bin/playerctl previous";
-        "--locked XF86AudioNext" = "exec ${pkgs.playerctl}/bin/playerctl next";
-        "--locked XF86AudioPlay" = "exec ${pkgs.playerctl}/bin/playerctl play-pause";
-        "--locked XF86AudioStop" = "exec ${pkgs.playerctl}/bin/playerctl stop";
-      };
+          "--locked XF86AudioMute" = "exec ${pkgs.wireplumber}/bin/wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
+          "--locked XF86AudioLowerVolume" = "exec ${pkgs.wireplumber}/bin/wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-";
+          "--locked XF86AudioRaiseVolume" = "exec ${pkgs.wireplumber}/bin/wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+";
+          "--locked XF86AudioMicMute" = "exec ${pkgs.wireplumber}/bin/wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle";
+
+          "--locked XF86AudioPrev" = "exec ${pkgs.playerctl}/bin/playerctl previous";
+          "--locked XF86AudioNext" = "exec ${pkgs.playerctl}/bin/playerctl next";
+          "--locked XF86AudioPlay" = "exec ${pkgs.playerctl}/bin/playerctl play-pause";
+          "--locked XF86AudioStop" = "exec ${pkgs.playerctl}/bin/playerctl stop";
+        };
 
       gaps = {
         inner = 5;
@@ -107,7 +113,7 @@
           text = "#888888";
         };
       };
-      
+
       bars = [
         {
           command = "${pkgs.waybar}/bin/waybar";

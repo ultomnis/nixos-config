@@ -7,4 +7,3 @@
     defaultTimeout = 5000;
   };
 }
-
