@@ -7,7 +7,7 @@
       url = "github:nix-community/disko/latest";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-  
+
     # Home manager
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -27,73 +27,85 @@
     nur.url = "github:nix-community/NUR";
   };
 
-  outputs = inputs@{
-    self,
-    disko,
-    home-manager,
-    nix-darwin,
-    nixpkgs,
-    nur,
-    ...
-  }:
-  
-  let
-    desktop = "sirius";
-    laptop = "canopus";
-    userConfig = {
-      username = "user";
-      gitName = "ultomnis";
-      gitEmail = "125839032+ultomnis@users.noreply.github.com";
-    };
+  outputs =
+    inputs@{
+      self,
+      disko,
+      home-manager,
+      nix-darwin,
+      nixpkgs,
+      nur,
+      ...
+    }:
 
-  in {
-    nixosConfigurations = {
-      ${desktop} = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = { inherit inputs userConfig; };
-        modules = [
-          ./hosts/sirius
-          disko.nixosModules.disko
-          
-          home-manager.nixosModules.home-manager {
-            home-manager = {
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              users.${userConfig.username} = {
-                imports = [
-                  ./hosts/sirius/home.nix
-                  nur.hmModules.nur
-                ];
+    let
+      desktop = "sirius";
+      laptop = "canopus";
+      userConfig = {
+        username = "user";
+        gitName = "ultomnis";
+        gitEmail = "125839032+ultomnis@users.noreply.github.com";
+      };
+
+    in
+    {
+      nixosConfigurations = {
+        ${desktop} = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs = {
+            inherit inputs userConfig;
+          };
+          modules = [
+            ./hosts/sirius
+            disko.nixosModules.disko
+
+            home-manager.nixosModules.home-manager
+            {
+              home-manager = {
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                users.${userConfig.username} = {
+                  imports = [
+                    ./hosts/sirius/home.nix
+                    nur.hmModules.nur
+                  ];
+                };
+                extraSpecialArgs = {
+                  inherit inputs userConfig;
+                };
               };
-              extraSpecialArgs = { inherit inputs userConfig; };
-            };
-          }
-        ];
+            }
+          ];
+        };
+      };
+
+      darwinConfigurations = {
+        ${laptop} = nix-darwin.lib.darwinSystem {
+          system = "aarch64-darwin";
+          specialArgs = {
+            inherit inputs userConfig;
+          };
+          modules = [
+            ./hosts/canopus
+
+            home-manager.darwinModules.home-manager
+            {
+              home-manager = {
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                users.${userConfig.username} = {
+                  imports = [
+                    ./hosts/canopus/home.nix
+                    nur.hmModules.nur
+                  ];
+                };
+                extraSpecialArgs = {
+                  inherit inputs userConfig;
+                };
+              };
+            }
+          ];
+        };
       };
     };
-
-    darwinConfigurations = {
-      ${laptop} = nix-darwin.lib.darwinSystem {
-        system = "aarch64-darwin";
-        specialArgs = { inherit inputs userConfig; };
-        modules = [
-          ./hosts/canopus
-
-          home-manager.darwinModules.home-manager {
-            home-manager = {
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              users.${userConfig.username} = {
-                imports = [
-                  ./hosts/canopus/home.nix
-                  nur.hmModules.nur
-                ];
-              };
-              extraSpecialArgs = { inherit inputs userConfig; };
-            };
-          }
-        ];
-      };
-    };
-  };
 }
