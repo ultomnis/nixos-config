@@ -36,7 +36,7 @@
       output = {
         "*" = {
           allow_tearing = "yes";
-          bg = "${config.home.homeDirectory}/.config/wallpaper.jpg fill";
+          bg = "${../../../assets/wallpapers/wallpaper.jpg} fill";
           max_render_time = "off";
         };
       };

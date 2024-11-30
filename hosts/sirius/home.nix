@@ -10,8 +10,6 @@
     username = "${userConfig.username}";
     homeDirectory = "/home/${userConfig.username}";
     stateVersion = "24.05";
-    # Source the wallpaper
-    file.".config/wallpaper.jpg".source = ../../assets/wallpapers/ernest-brillo-JNe3j45DzOU-unsplash.jpg;
   };
 
   programs.home-manager.enable = true;
