@@ -59,6 +59,8 @@
             ./hosts/sirius
             disko.nixosModules.disko
 
+            { nixpkgs.overlays = [ nur.overlay ]; }
+
             home-manager.nixosModules.home-manager
             {
               home-manager = {
@@ -67,7 +69,6 @@
                 users.${userConfig.username} = {
                   imports = [
                     ./hosts/sirius/home.nix
-                    nur.hmModules.nur
                   ];
                 };
                 extraSpecialArgs = {
@@ -88,6 +89,8 @@
           modules = [
             ./hosts/canopus
 
+            { nixpkgs.overlays = [ nur.overlay ]; }
+
             home-manager.darwinModules.home-manager
             {
               home-manager = {
@@ -96,7 +99,6 @@
                 users.${userConfig.username} = {
                   imports = [
                     ./hosts/canopus/home.nix
-                    nur.hmModules.nur
                   ];
                 };
                 extraSpecialArgs = {

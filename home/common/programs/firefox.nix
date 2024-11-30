@@ -1,9 +1,4 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
-}:
+{ lib, pkgs, ... }:
 
 {
   programs.firefox = {
@@ -17,7 +12,7 @@
         id = 0; # Set default profile
 
         # Firefox add-ons
-        extensions = with config.nur.repos.rycee.firefox-addons; [
+        extensions = with pkgs.nur.repos.rycee.firefox-addons; [
           darkreader
           duckduckgo-privacy-essentials
           keepassxc-browser
