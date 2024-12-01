@@ -6,11 +6,6 @@
     enable = true;
     defaultEditor = true;
 
-    extraPackages = with pkgs; [
-      nixd
-      nixfmt-rfc-style
-    ];
-
     # Helix configuration
     settings = {
       theme = "default_transparent";
@@ -33,7 +28,7 @@
     languages = {
       language-server = {
         nixd = {
-          command = "nixd";
+          command = "${pkgs.nixd}/bin/nixd";
         };
       };
 
@@ -43,7 +38,7 @@
           auto-format = true;
           language-servers = [ "nixd" ];
           formatter = {
-            command = "nixfmt";
+            command = "${pkgs.nixfmt-rfc-style}/bin/nixfmt";
           };
         }
       ];
