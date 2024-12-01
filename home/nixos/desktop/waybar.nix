@@ -22,13 +22,14 @@
         ];
         modules-right = [
           "tray"
+          "network"
           "pulseaudio#output"
           "pulseaudio#input"
         ];
 
         # Modules configuration
         "custom/menu" = {
-          format = "";
+          format = "<span color=\"#cccccc\">APPS</span>";
           tooltip = false;
           on-click = "${pkgs.fuzzel}/bin/fuzzel --anchor top-left --icon-theme=kora";
         };
@@ -60,14 +61,18 @@
           reverse-direction = true;
         };
 
+        "network" = {
+          format-wifi = "<span color=\"#cccccc\">WIFI</span>";
+          format-ethernet = "<span color=\"#cccccc\">ETH</span>";
+          format-disconnected = "";
+          tooltip = false;
+          on-click = "${pkgs.foot}/bin/foot -a nmtui ${pkgs.networkmanager}/bin/nmtui-connect";
+          on-click-right = "${pkgs.foot}/bin/foot -a nmtui ${pkgs.networkmanager}/bin/nmtui-edit";
+        };
+
         "pulseaudio#output" = {
-          format = "{icon} {volume}%";
-          format-muted = "";
-          format-icons = [
-            ""
-            ""
-            ""
-          ];
+          format = "<span color=\"#cccccc\">VOL</span> {volume}%";
+          format-muted = "<span color=\"#cccccc\">VOL MUTE</span>";
           tooltip = false;
           scroll-step = 2;
           on-click = "${pkgs.pavucontrol}/bin/pavucontrol";
@@ -76,8 +81,8 @@
 
         "pulseaudio#input" = {
           format = "{format_source}";
-          format-source = " {volume}%";
-          format-source-muted = "";
+          format-source = "<span color=\"#cccccc\">MIC</span> {volume}%";
+          format-source-muted = "<span color=\"#cccccc\">MIC MUTE</span>";
           tooltip = false;
           on-scroll-up = "${pkgs.wireplumber}/bin/wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 2%+";
           on-scroll-down = "${pkgs.wireplumber}/bin/wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 2%-";
@@ -129,6 +134,7 @@
       #custom-menu,
       #clock,
       #tray,
+      #network,
       #pulseaudio.output,
       #pulseaudio.input {
         padding: 0 7px;
