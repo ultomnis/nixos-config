@@ -1,7 +1,7 @@
 {
   environment = {
     variables = {
-      EDITOR = "zeditor";
+      EDITOR = "hx";
     };
   };
 }
