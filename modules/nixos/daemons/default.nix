@@ -2,7 +2,7 @@
   imports = [
     ./bluetooth.nix
     ./davfs2.nix
-    ./ly.nix
+    ./greetd.nix
     ./networking.nix
     ./ollama.nix
     ./pipewire.nix
