@@ -8,6 +8,5 @@
     ./pipewire.nix
     ./printing.nix
     ./tailscale.nix
-    ./udev.nix
   ];
 }
