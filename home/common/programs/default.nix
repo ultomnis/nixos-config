@@ -7,6 +7,5 @@
     ./helix.nix
     ./mpv.nix
     ./yt-dlp.nix
-    ./zed-editor.nix
   ];
 }
