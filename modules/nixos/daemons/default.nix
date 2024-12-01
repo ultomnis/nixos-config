@@ -7,6 +7,7 @@
     ./ollama.nix
     ./pipewire.nix
     ./printing.nix
+    ./ratbagd.nix
     ./tailscale.nix
   ];
 }
