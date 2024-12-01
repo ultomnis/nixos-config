@@ -4,7 +4,7 @@
   programs.firefox = {
     enable = true;
 
-    package = lib.mkIf pkgs.stdenv.isDarwin null;
+    package = lib.mkIf pkgs.stdenv.isDarwin pkgs.firefox-unwrapped;
 
     # Attribute set of profiles
     profiles = {
