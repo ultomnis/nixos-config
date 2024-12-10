@@ -93,6 +93,7 @@
           };
           modules = [
             ./hosts/canopus
+            stylix.darwinModules.stylix
 
             { nixpkgs.overlays = [ nur.overlay ]; }
 
