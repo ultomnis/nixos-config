@@ -1,9 +1,7 @@
 {
   imports = [
-    ./cursors.nix
-    ./dconf.nix
     ./graphical.nix
+    ./stylix.nix
     ./terminal.nix
-    ./gtk.nix
   ];
 }

@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 
 {
   # Wayland status bar
@@ -14,7 +14,6 @@
 
         # Order of modules
         modules-left = [
-          "custom/menu"
           "sway/workspaces"
         ];
         modules-center = [
@@ -28,12 +27,6 @@
         ];
 
         # Modules configuration
-        "custom/menu" = {
-          format = "<span color=\"#cccccc\">APPS</span>";
-          tooltip = false;
-          on-click = "${pkgs.fuzzel}/bin/fuzzel --anchor top-left --icon-theme=kora";
-        };
-
         "sway/workspaces" = {
           format = "{icon}";
           format-icons = {
@@ -62,8 +55,8 @@
         };
 
         "network" = {
-          format-wifi = "<span color=\"#cccccc\">WIFI</span>";
-          format-ethernet = "<span color=\"#cccccc\">ETH</span>";
+          format-wifi = "";
+          format-ethernet = "";
           format-disconnected = "";
           tooltip = false;
           on-click = "${pkgs.foot}/bin/foot -a nmtui ${pkgs.networkmanager}/bin/nmtui-connect";
@@ -71,8 +64,13 @@
         };
 
         "pulseaudio#output" = {
-          format = "<span color=\"#cccccc\">VOL</span> {volume}%";
-          format-muted = "<span color=\"#cccccc\">VOL MUTE</span>";
+          format = "{icon} {volume}%";
+          format-muted = "";
+          format-icons = [
+            ""
+            ""
+            ""
+          ];
           tooltip = false;
           scroll-step = 2;
           on-click = "${pkgs.pavucontrol}/bin/pavucontrol";
@@ -81,8 +79,8 @@
 
         "pulseaudio#input" = {
           format = "{format_source}";
-          format-source = "<span color=\"#cccccc\">MIC</span> {volume}%";
-          format-source-muted = "<span color=\"#cccccc\">MIC MUTE</span>";
+          format-source = " {volume}%";
+          format-source-muted = "";
           tooltip = false;
           on-scroll-up = "${pkgs.wireplumber}/bin/wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 2%+";
           on-scroll-down = "${pkgs.wireplumber}/bin/wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 2%-";
@@ -93,52 +91,22 @@
     };
 
     # CSS
-    style = ''
-      * {
-        font-family: 'Hack Nerd Font Propo';
-        font-size: 14px;
-      }
-
-      window#waybar {
-        background-color: rgba (0, 0, 0, 0.1);
-        color: #ffffff;
-      }
-
+    style = lib.mkAfter ''
       button {
-        box-shadow: inset 0 -2px transparent;
         border: none;
         border-radius: 0;
       }
 
-      button:hover {
-        background: inherit;
-      }
-
       #workspaces button {
         padding: 0 7px;
-        color: #ffffff;
       }
 
-      #workspaces button:hover {
-        background: rgba (255, 255, 255, 0.1);
-      }
-
-      #workspaces button.focused {
-        box-shadow: inset 0 -2px #ffffff;
-      }
-
-      #workspaces button.urgent {
-        color: #cc3333;
-      }
-
-      #custom-menu,
       #clock,
       #tray,
       #network,
       #pulseaudio.output,
       #pulseaudio.input {
         padding: 0 7px;
-        color: #ffffff;
       }
     '';
   };

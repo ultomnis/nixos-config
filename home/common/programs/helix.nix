@@ -8,8 +8,6 @@
 
     # Helix configuration
     settings = {
-      theme = "default_transparent";
-
       editor = {
         cursor-shape = {
           normal = "block";
@@ -42,14 +40,6 @@
           };
         }
       ];
-    };
-
-    # Helix theme
-    themes = {
-      default_transparent = {
-        "inherits" = "default";
-        "ui.background" = { };
-      };
     };
   };
 }

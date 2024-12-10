@@ -15,11 +15,6 @@
         width = 2;
         radius = 0;
       };
-
-      colors = {
-        background = "000000cc";
-        border = "ffffffcc";
-      };
     };
   };
 }

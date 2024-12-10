@@ -33,7 +33,6 @@
       output = {
         "*" = {
           allow_tearing = "yes";
-          bg = "${../../../assets/wallpapers/wallpaper.jpg} fill";
           max_render_time = "off";
         };
       };
@@ -89,32 +88,6 @@
       gaps = {
         inner = 5;
         smartBorders = "on";
-      };
-
-      colors = {
-        focused = {
-          background = "#285577";
-          border = "#4c7899";
-          childBorder = "#ffffffcc";
-          indicator = "#2e9ef4";
-          text = "#ffffff";
-        };
-
-        focusedInactive = {
-          background = "#5f676a";
-          border = "#333333";
-          childBorder = "#ffffff00";
-          indicator = "#484e50";
-          text = "#ffffff";
-        };
-
-        unfocused = {
-          background = "#222222";
-          border = "#333333";
-          childBorder = "#ffffff00";
-          indicator = "#292d2e";
-          text = "#888888";
-        };
       };
 
       bars = [
