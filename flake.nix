@@ -64,7 +64,7 @@
             disko.nixosModules.disko
             stylix.nixosModules.stylix
 
-            { nixpkgs.overlays = [ nur.overlay ]; }
+            { nixpkgs.overlays = [ nur.overlays.default ]; }
 
             home-manager.nixosModules.home-manager
             {
@@ -95,7 +95,7 @@
             ./hosts/canopus
             stylix.darwinModules.stylix
 
-            { nixpkgs.overlays = [ nur.overlay ]; }
+            { nixpkgs.overlays = [ nur.overlays.default ]; }
 
             home-manager.darwinModules.home-manager
             {
