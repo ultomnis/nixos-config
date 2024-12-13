@@ -8,7 +8,7 @@
   networking.hostName = "sirius"; # Define your hostname
 
   stylix = {
-    image = ../../assets/wallpapers/nathan-anderson-daYZ8ixAn8g-unsplash.jpg;
+    image = ../../assets/wallpapers/kemo-sahab-4V0tz5FEvTc-unsplash.jpg;
   };
 
   # Do NOT change this value unless you have manually inspected all the changes it would make to your configuration,
