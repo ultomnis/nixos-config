@@ -4,9 +4,9 @@
   stylix = {
     iconTheme = {
       enable = true;
-      package = pkgs.kora-icon-theme;
-      dark = "kora";
-      light = "kora";
+      package = pkgs.papirus-icon-theme;
+      dark = "Papirus-Dark";
+      light = "Papirus-Light";
     };
   };
 }

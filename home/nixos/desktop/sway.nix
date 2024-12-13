@@ -14,7 +14,7 @@
     config = {
       modifier = "Mod4";
       terminal = "${pkgs.foot}/bin/foot";
-      menu = "${pkgs.fuzzel}/bin/fuzzel --icon-theme=kora";
+      menu = "${pkgs.fuzzel}/bin/fuzzel --icon-theme=Papirus";
       defaultWorkspace = "workspace number 1";
 
       startup = [
@@ -74,10 +74,14 @@
 
           "${modifier}+Escape" = "exec ${pkgs.swaylock}/bin/swaylock -f";
 
-          "--locked XF86AudioMute" = "exec ${pkgs.wireplumber}/bin/wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
-          "--locked XF86AudioLowerVolume" = "exec ${pkgs.wireplumber}/bin/wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-";
-          "--locked XF86AudioRaiseVolume" = "exec ${pkgs.wireplumber}/bin/wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+";
-          "--locked XF86AudioMicMute" = "exec ${pkgs.wireplumber}/bin/wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle";
+          "--locked XF86AudioMute" =
+            "exec ${pkgs.wireplumber}/bin/wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
+          "--locked XF86AudioLowerVolume" =
+            "exec ${pkgs.wireplumber}/bin/wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-";
+          "--locked XF86AudioRaiseVolume" =
+            "exec ${pkgs.wireplumber}/bin/wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+";
+          "--locked XF86AudioMicMute" =
+            "exec ${pkgs.wireplumber}/bin/wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle";
 
           "--locked XF86AudioPrev" = "exec ${pkgs.playerctl}/bin/playerctl previous";
           "--locked XF86AudioNext" = "exec ${pkgs.playerctl}/bin/playerctl next";
