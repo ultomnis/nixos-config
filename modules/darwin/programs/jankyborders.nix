@@ -1,9 +1,11 @@
+{ config, ... }:
+
 {
   services.jankyborders = {
     enable = true;
 
-    active_color = "0xccffffff";
-    inactive_color = "0x00ffffff";
+    active_color = "0xff${config.lib.stylix.colors.base0D}";
+    inactive_color = "0xff${config.lib.stylix.colors.base03}";
 
     hidpi = true;
     width = 5.0;
