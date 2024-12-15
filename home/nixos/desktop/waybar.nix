@@ -108,6 +108,8 @@
 
       #workspaces button {
         padding: 0 7px;
+        transition: none;
+        color: #ffffff;
       }
 
       #workspaces button:hover {
@@ -116,6 +118,10 @@
 
       #workspaces button.focused {
         box-shadow: inset 0 -2px #ffffff;
+      }
+
+      #workspaces button.urgent {
+        color: #cc3333;
       }
 
       #clock,
