@@ -3,6 +3,5 @@
     ./aerospace.nix
     ./fish.nix
     ./homebrew.nix
-    ./jankyborders.nix
   ];
 }
