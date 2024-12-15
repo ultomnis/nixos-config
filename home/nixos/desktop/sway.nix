@@ -14,7 +14,7 @@
     config = {
       modifier = "Mod4";
       terminal = "${pkgs.foot}/bin/foot";
-      menu = "${pkgs.fuzzel}/bin/fuzzel --icon-theme=Papirus";
+      menu = "${pkgs.fuzzel}/bin/fuzzel";
       defaultWorkspace = "workspace number 1";
 
       startup = [

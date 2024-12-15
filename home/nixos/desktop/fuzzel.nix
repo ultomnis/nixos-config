@@ -9,11 +9,16 @@
     settings = {
       main = {
         terminal = "${pkgs.foot}/bin/foot";
+        icon-theme = "Papirus";
       };
 
       border = {
         width = 2;
         radius = 0;
+      };
+
+      colors = {
+        background = "000000ff";
       };
     };
   };
