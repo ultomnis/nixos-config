@@ -73,7 +73,7 @@
           ];
           tooltip = false;
           scroll-step = 2;
-          on-click = "${pkgs.pavucontrol}/bin/pavucontrol";
+          on-click = "${pkgs.pwvucontrol}/bin/pwvucontrol";
           on-click-right = "${pkgs.wireplumber}/bin/wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
         };
 
@@ -84,7 +84,7 @@
           tooltip = false;
           on-scroll-up = "${pkgs.wireplumber}/bin/wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 2%+";
           on-scroll-down = "${pkgs.wireplumber}/bin/wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 2%-";
-          on-click = "${pkgs.pavucontrol}/bin/pavucontrol";
+          on-click = "${pkgs.pwvucontrol}/bin/pwvucontrol";
           on-click-right = "${pkgs.wireplumber}/bin/wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle";
         };
       };
