@@ -8,18 +8,17 @@
     # Fuzzel configuration
     settings = {
       main = {
-        terminal = "${pkgs.foot}/bin/foot";
         icon-theme = "Papirus";
+        terminal = "${pkgs.foot}/bin/foot";
       };
 
       border = {
-        width = 2;
+        width = 0;
         radius = 0;
       };
 
       colors = {
         background = "000000ff";
-        border = "ffffff00";
       };
     };
   };
