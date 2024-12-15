@@ -3,7 +3,6 @@
     ../../modules/darwin
   ];
 
-  # Networking
   networking = {
     computerName = "canopus";
     hostName = "canopus"; # Define your hostname
