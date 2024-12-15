@@ -8,6 +8,8 @@
 
     # Helix configuration
     settings = {
+      theme = "rose_pine";
+
       editor = {
         cursor-shape = {
           normal = "block";
