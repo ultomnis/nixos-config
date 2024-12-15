@@ -120,10 +120,6 @@
         box-shadow: inset 0 -2px #ffffff;
       }
 
-      #workspaces button.urgent {
-        color: #cc3333;
-      }
-
       #clock,
       #tray,
       #network,
