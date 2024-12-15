@@ -92,6 +92,10 @@
 
     # CSS
     style = ''
+      window#waybar {
+        background-color: rgba (0, 0, 0, 0.1);
+      }
+
       button {
         box-shadow: inset 0 -2px transparent;
         border: none;
