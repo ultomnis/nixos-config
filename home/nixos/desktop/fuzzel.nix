@@ -19,6 +19,7 @@
 
       colors = {
         background = "000000ff";
+        border = "ffffff00";
       };
     };
   };
