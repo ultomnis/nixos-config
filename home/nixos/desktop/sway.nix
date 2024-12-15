@@ -91,7 +91,6 @@
 
       gaps = {
         inner = 5;
-        smartBorders = "on";
       };
 
       bars = [
