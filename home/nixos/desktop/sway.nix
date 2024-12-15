@@ -91,7 +91,6 @@
 
       gaps = {
         inner = 5;
-        smartBorders = "on";
       };
 
       bars = [
@@ -102,8 +101,8 @@
     };
 
     extraConfig = ''
-      default_border pixel 2
-      default_floating_border pixel 2
+      default_border pixel 0
+      default_floating_border pixel 0
     '';
   };
 }
