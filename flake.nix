@@ -25,9 +25,6 @@
 
     # Nix user repository
     nur.url = "github:nix-community/NUR";
-
-    # Stylix
-    stylix.url = "github:danth/stylix";
   };
 
   outputs =
@@ -38,7 +35,6 @@
       nix-darwin,
       nixpkgs,
       nur,
-      stylix,
       ...
     }:
 
@@ -62,7 +58,6 @@
           modules = [
             ./hosts/sirius
             disko.nixosModules.disko
-            stylix.nixosModules.stylix
 
             { nixpkgs.overlays = [ nur.overlays.default ]; }
 
@@ -93,7 +88,6 @@
           };
           modules = [
             ./hosts/canopus
-            stylix.darwinModules.stylix
 
             { nixpkgs.overlays = [ nur.overlays.default ]; }
 

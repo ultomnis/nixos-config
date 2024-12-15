@@ -1,4 +1,4 @@
-{ lib, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   # Wayland status bar
@@ -91,14 +91,27 @@
     };
 
     # CSS
-    style = lib.mkAfter ''
+    style = ''
       button {
+        box-shadow: inset 0 -2px transparent;
         border: none;
         border-radius: 0;
       }
 
+      button:hover {
+        background: inherit;
+      }
+
       #workspaces button {
         padding: 0 7px;
+      }
+
+      #workspaces button:hover {
+        background: rgba (255, 255, 255, 0.1);
+      }
+
+      #workspaces button.focused {
+        box-shadow: inset 0 -2px #ffffff;
       }
 
       #clock,

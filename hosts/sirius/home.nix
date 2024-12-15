@@ -18,10 +18,21 @@
     config = {
       # Monitor configuration
       output = {
+        "*" = {
+          bg = "${../../assets/wallpapers/kemo-sahab-4V0tz5FEvTc-unsplash.jpg} fill";
+        };
+
         DP-2 = {
           mode = "1920x1080@165Hz";
         };
       };
+    };
+  };
+
+  programs.swaylock = {
+    settings = {
+      image = "${../../assets/wallpapers/kemo-sahab-4V0tz5FEvTc-unsplash.jpg}";
+      scaling = "fill";
     };
   };
 }
