@@ -3,7 +3,7 @@
   services.mako = {
     enable = true;
     backgroundColor = "#000000ff";
-    borderColor = "#ffffff00";
+    borderSize = 0;
     defaultTimeout = 5000;
   };
 }
