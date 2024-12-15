@@ -13,10 +13,6 @@
         pad = "5x5";
       };
 
-      bell = {
-        urgent = "yes";
-      };
-
       mouse = {
         hide-when-typing = "yes";
       };
