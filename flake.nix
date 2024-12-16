@@ -18,8 +18,6 @@
     };
 
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-
-    nur.url = "github:nix-community/NUR";
   };
 
   outputs =
@@ -29,7 +27,6 @@
       home-manager,
       nix-darwin,
       nixpkgs,
-      nur,
       ...
     }:
 
@@ -53,8 +50,6 @@
           modules = [
             ./hosts/sirius
             disko.nixosModules.disko
-
-            { nixpkgs.overlays = [ nur.overlays.default ]; }
 
             home-manager.nixosModules.home-manager
             {
@@ -83,8 +78,6 @@
           };
           modules = [
             ./hosts/canopus
-
-            { nixpkgs.overlays = [ nur.overlays.default ]; }
 
             home-manager.darwinModules.home-manager
             {
