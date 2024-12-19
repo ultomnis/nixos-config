@@ -1,6 +1,5 @@
 {
   imports = [
-    ./bluetooth.nix
     ./davfs2.nix
     ./greetd.nix
     ./networking.nix

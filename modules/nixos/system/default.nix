@@ -1,6 +1,5 @@
 {
   imports = [
-    ./amdgpu.nix
     ./boot.nix
     ./environment.nix
     ./locale.nix
