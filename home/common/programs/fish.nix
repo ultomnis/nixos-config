@@ -1,5 +1,5 @@
 {
-  # Command line shell
+  # The friendly interactive shell
   programs.fish = {
     enable = true;
 
