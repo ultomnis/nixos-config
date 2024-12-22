@@ -5,20 +5,20 @@
   programs.waybar = {
     enable = true;
 
-    # Waybar configuration
     settings = {
       mainBar = {
         layer = "top";
         height = 30;
         spacing = 0;
 
-        # Order of modules
         modules-left = [
           "sway/workspaces"
         ];
+
         modules-center = [
           "clock"
         ];
+
         modules-right = [
           "tray"
           "network"
@@ -26,7 +26,6 @@
           "pulseaudio#input"
         ];
 
-        # Modules configuration
         "sway/workspaces" = {
           format = "{icon}";
           format-icons = {
@@ -90,7 +89,6 @@
       };
     };
 
-    # CSS
     style = ''
       window#waybar {
         background-color: rgba (0, 0, 0, 0.1);

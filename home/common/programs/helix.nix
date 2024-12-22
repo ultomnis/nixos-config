@@ -6,7 +6,6 @@
     enable = true;
     defaultEditor = true;
 
-    # Helix configuration
     settings = {
       theme = "rose_pine";
 
@@ -24,7 +23,6 @@
       };
     };
 
-    # Language-specific settings
     languages = {
       language-server = {
         nixd = {

@@ -3,7 +3,6 @@
   programs.fish = {
     enable = true;
 
-    # Basic functions
     functions = {
       fish_prompt = {
         body = ''

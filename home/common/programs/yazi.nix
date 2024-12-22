@@ -3,7 +3,6 @@
   programs.yazi = {
     enable = true;
 
-    # yazi configuration
     settings = {
       manager = {
         sort_by = "natural";

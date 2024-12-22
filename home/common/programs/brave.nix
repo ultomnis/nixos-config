@@ -1,6 +1,7 @@
 { pkgs, ... }:
 
 {
+  # Brave web browser
   programs.chromium = {
     enable = true;
     package = pkgs.brave;

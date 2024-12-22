@@ -5,7 +5,6 @@
   programs.fuzzel = {
     enable = true;
 
-    # Fuzzel configuration
     settings = {
       main = {
         icon-theme = "Papirus";

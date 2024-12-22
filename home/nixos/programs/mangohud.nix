@@ -1,4 +1,5 @@
 {
+  # Overlay for monitoring system performance
   programs.mangohud = {
     enable = true;
 

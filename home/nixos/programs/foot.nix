@@ -5,7 +5,6 @@
   programs.foot = {
     enable = true;
 
-    # Configuration
     settings = {
       main = {
         font = "Hack Nerd Font Mono:size=11";
