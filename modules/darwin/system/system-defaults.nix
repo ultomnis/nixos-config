@@ -1,35 +1,34 @@
 {
   # macOS settings
-  system.defaults = {
-    dock = {
-      autohide = true;
-      mru-spaces = false;
-      show-recents = false;
-      static-only = true;
-      wvous-bl-corner = 11; # Launchpad
-      wvous-br-corner = 2; # Mission Control
-    };
+  system = {
+    startup.chime = false; # Disable startup chime
 
-    finder = {
-      AppleShowAllExtensions = true; # show file extensions
-      AppleShowAllFiles = true; # show hidden files
-    };
+    defaults = {
+      dock = {
+        autohide = true;
+        mru-spaces = false; # Do not automatically rearrange spaces
+        show-recents = false;
+        static-only = true; # Show open applications only
+        wvous-br-corner = 1; # Disable bottom-right hot corner
+      };
 
-    NSGlobalDomain = {
-      NSWindowShouldDragOnGesture = true;
-    };
+      finder = {
+        AppleShowAllExtensions = true; # Show file extensions
+        AppleShowAllFiles = true; # Show hidden files
+      };
 
-    spaces = {
-      spans-displays = true; # disable displays have separate spaces
-    };
+      NSGlobalDomain = {
+        NSWindowShouldDragOnGesture = true; # Ctrl + Cmd + Click & Drag to move windows
+      };
 
-    trackpad = {
-      Clicking = true;
-      Dragging = true;
-    };
+      spaces = {
+        spans-displays = true; # Disable displays have separate spaces
+      };
 
-    WindowManager = {
-      GloballyEnabled = false; # stage manager
+      trackpad = {
+        Clicking = true; # Tap to click
+        Dragging = true; # Use trackpad for dragging
+      };
     };
   };
 }
