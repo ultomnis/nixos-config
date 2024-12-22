@@ -6,7 +6,7 @@
 }:
 
 {
-  # Wayland tiling compositor
+  # Tiling Wayland compositor
   wayland.windowManager.sway = {
     enable = true;
     checkConfig = false;
