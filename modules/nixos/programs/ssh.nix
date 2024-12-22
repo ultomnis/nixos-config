@@ -1,4 +1,7 @@
 {
-  # Hold private keys
-  programs.ssh.startAgent = true;
+  # Secure Shell
+  programs.ssh = {
+    # Hold private keys
+    startAgent = true;
+  };
 }
