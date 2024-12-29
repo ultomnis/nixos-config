@@ -10,9 +10,12 @@
       size = 11;
     };
 
-    theme = {
-      package = pkgs.rose-pine-gtk-theme;
-      name = "rose-pine";
+    gtk3.extraConfig = {
+      gtk-application-prefer-dark-theme = true;
+    };
+
+    gtk4.extraConfig = {
+      gtk-application-prefer-dark-theme = true;
     };
 
     iconTheme = {
