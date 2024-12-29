@@ -8,14 +8,6 @@
     userName = "${userConfig.gitName}";
     userEmail = "${userConfig.gitEmail}";
 
-    # Define git aliases
-    aliases = {
-      br = "branch";
-      ci = "commit";
-      co = "checkout";
-      st = "status";
-    };
-
     extraConfig = {
       commit.gpgsign = true;
       gpg.format = "ssh";
