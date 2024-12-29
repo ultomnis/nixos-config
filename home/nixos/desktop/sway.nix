@@ -48,12 +48,6 @@
           {
             command = "floating on, resize set 800 600, move position cursor, move down 30 px";
             criteria = {
-              app_id = "nmtui";
-            };
-          }
-          {
-            command = "floating on, resize set 800 600, move position cursor, move down 30 px";
-            criteria = {
               app_id = "pwvucontrol";
             };
           }
