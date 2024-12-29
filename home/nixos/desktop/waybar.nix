@@ -22,8 +22,7 @@
         modules-right = [
           "tray"
           "network"
-          "pulseaudio#output"
-          "pulseaudio#input"
+          "wireplumber"
         ];
 
         "sway/workspaces" = {
@@ -42,25 +41,25 @@
           };
         };
 
-        "clock" = {
+        clock = {
           format = "{:%a %b %d %H:%M}";
           tooltip = false;
         };
 
-        "tray" = {
+        tray = {
           icon-size = 16;
           spacing = 11;
           reverse-direction = true;
         };
 
-        "network" = {
+        network = {
           format-wifi = "";
           format-ethernet = "";
           format-disconnected = "";
           tooltip = false;
         };
 
-        "pulseaudio#output" = {
+        wireplumber = {
           format = "{icon} {volume}%";
           format-muted = "";
           format-icons = [
@@ -72,17 +71,6 @@
           scroll-step = 2;
           on-click = "${pkgs.pwvucontrol}/bin/pwvucontrol";
           on-click-right = "${pkgs.wireplumber}/bin/wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
-        };
-
-        "pulseaudio#input" = {
-          format = "{format_source}";
-          format-source = " {volume}%";
-          format-source-muted = "";
-          tooltip = false;
-          on-scroll-up = "${pkgs.wireplumber}/bin/wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 2%+";
-          on-scroll-down = "${pkgs.wireplumber}/bin/wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 2%-";
-          on-click = "${pkgs.pwvucontrol}/bin/pwvucontrol";
-          on-click-right = "${pkgs.wireplumber}/bin/wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle";
         };
       };
     };
@@ -119,8 +107,7 @@
       #clock,
       #tray,
       #network,
-      #pulseaudio.output,
-      #pulseaudio.input {
+      #wireplumber {
         padding: 0 7px;
       }
     '';
