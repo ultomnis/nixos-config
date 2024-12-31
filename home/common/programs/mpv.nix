@@ -10,6 +10,7 @@
       keep-open = "yes";
       osd-bar = "no";
       profile = "high-quality";
+      video-sync = "display-resample";
       vo = "gpu-next";
       volume = 50;
     };
@@ -18,5 +19,12 @@
       thumbfast
       uosc
     ];
+
+    scriptOpts = {
+      uosc = {
+        progress = "never";
+        window_border_size = 0;
+      };
+    };
   };
 }
