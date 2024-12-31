@@ -33,6 +33,7 @@
       output = {
         "*" = {
           allow_tearing = "yes";
+          bg = "${../../../assets/wallpaper.jpg} fill";
           max_render_time = "off";
         };
       };
