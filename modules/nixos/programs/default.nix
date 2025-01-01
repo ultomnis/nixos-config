@@ -2,7 +2,6 @@
   imports = [
     ./adb.nix
     ./fish.nix
-    ./ssh.nix
     ./steam.nix
     ./sway.nix
     ./unfree.nix
