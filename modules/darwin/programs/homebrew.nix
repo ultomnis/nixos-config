@@ -15,6 +15,7 @@
     };
 
     casks = [
+      "protonvpn"
       "steam"
       "utm"
     ];
