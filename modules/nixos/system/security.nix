@@ -11,6 +11,10 @@
           value = 1;
         }
       ];
+
+      services = {
+        greetd.enableGnomeKeyring = true;
+      };
     };
 
     # RealtimeKit system service
