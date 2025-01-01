@@ -15,6 +15,7 @@
     };
 
     casks = [
+      "mullvad-browser"
       "protonvpn"
       "steam"
       "utm"
