@@ -7,8 +7,7 @@
     package = pkgs.brave;
 
     extensions = [
-      { id = "bkdgflcldnnnapblkhphbgpggdiikppg"; } # DuckDuckGo
-      { id = "oboonakemofpalcgghocfoadofidjkkk"; } # KeePassXC
+      { id = "ghmbeldphafepmbegfdlkpapadhbakde"; } # Proton Pass
     ];
   };
 }
