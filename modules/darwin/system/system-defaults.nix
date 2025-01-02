@@ -22,10 +22,6 @@
         ShowAMPM = false;
       };
 
-      NSGlobalDomain = {
-        NSWindowShouldDragOnGesture = true; # Ctrl + Cmd + Click & Drag to move windows
-      };
-
       spaces = {
         spans-displays = true; # Disable displays have separate spaces
       };
