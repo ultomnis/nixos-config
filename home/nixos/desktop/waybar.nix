@@ -15,13 +15,10 @@
           "sway/workspaces"
         ];
 
-        modules-center = [
-          "clock"
-        ];
-
         modules-right = [
           "tray"
           "wireplumber"
+          "clock"
         ];
 
         "sway/workspaces" = {
@@ -38,11 +35,6 @@
             "9" = "IX";
             "10" = "X";
           };
-        };
-
-        clock = {
-          format = "{:%a %b %d %H:%M}";
-          tooltip = false;
         };
 
         tray = {
@@ -63,6 +55,11 @@
           scroll-step = 2;
           on-click = "${pkgs.pwvucontrol}/bin/pwvucontrol";
           on-click-right = "${pkgs.wireplumber}/bin/wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
+        };
+
+        clock = {
+          format = "{:%a %b%e %H:%M}";
+          tooltip = false;
         };
       };
     };
@@ -96,9 +93,9 @@
         box-shadow: inset 0 -2px #ffffff;
       }
 
-      #clock,
       #tray,
-      #wireplumber {
+      #wireplumber,
+      #clock {
         padding: 0 7px;
       }
     '';
