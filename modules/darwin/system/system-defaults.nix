@@ -17,6 +17,11 @@
         AppleShowAllFiles = true; # Show hidden files
       };
 
+      menuExtraClock = {
+        Show24Hour = true;
+        ShowAMPM = false;
+      };
+
       NSGlobalDomain = {
         NSWindowShouldDragOnGesture = true; # Ctrl + Cmd + Click & Drag to move windows
       };
