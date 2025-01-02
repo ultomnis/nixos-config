@@ -1,19 +1,23 @@
+{ config, ... }:
+
 {
   # Secure Shell
   programs.ssh = {
     enable = true;
     addKeysToAgent = "yes";
 
-    extraConfig = ''
-      Host *
-        IgnoreUnknown UseKeychain
-        UseKeychain yes
+    matchBlocks = {
+      "github.com" = {
+        hostname = "github.com";
+        identitiesOnly = true;
+        identityFile = "${config.home.homeDirectory}/.ssh/github";
+        user = "git";
+      };
+    };
 
-      Host github.com
-        HostName github.com
-        User git
-        IdentityFile ~/.ssh/github
-        IdentitiesOnly yes
+    extraConfig = ''
+      IgnoreUnknown UseKeychain
+      UseKeychain yes
     '';
   };
 }
