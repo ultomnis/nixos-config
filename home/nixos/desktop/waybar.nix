@@ -12,6 +12,7 @@
         spacing = 0;
 
         modules-left = [
+          "custom/menu"
           "sway/workspaces"
         ];
 
@@ -20,6 +21,12 @@
           "wireplumber"
           "clock"
         ];
+
+        "custom/menu" = {
+          format = "";
+          tooltip = false;
+          on-click = "${pkgs.fuzzel}/bin/fuzzel --anchor top-left";
+        };
 
         "sway/workspaces" = {
           format = "{icon}";
@@ -93,6 +100,7 @@
         box-shadow: inset 0 -2px #ffffff;
       }
 
+      #custom-menu,
       #tray,
       #wireplumber,
       #clock {
