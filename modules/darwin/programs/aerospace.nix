@@ -22,19 +22,11 @@
       mode.main.binding = {
         alt-enter = "exec-and-forget open -n /System/Applications/Utilities/Terminal.app";
 
-        alt-left = "focus --boundaries-action wrap-around-the-workspace left";
-        alt-down = "focus --boundaries-action wrap-around-the-workspace down";
-        alt-up = "focus --boundaries-action wrap-around-the-workspace up";
-        alt-right = "focus --boundaries-action wrap-around-the-workspace right";
         alt-h = "focus --boundaries-action wrap-around-the-workspace left";
         alt-j = "focus --boundaries-action wrap-around-the-workspace down";
         alt-k = "focus --boundaries-action wrap-around-the-workspace up";
         alt-l = "focus --boundaries-action wrap-around-the-workspace right";
 
-        alt-shift-left = "move left";
-        alt-shift-down = "move down";
-        alt-shift-up = "move up";
-        alt-shift-right = "move right";
         alt-shift-h = "move left";
         alt-shift-j = "move down";
         alt-shift-k = "move up";
@@ -79,10 +71,6 @@
       };
 
       mode.resize.binding = {
-        left = "resize width -50";
-        down = "resize height +50";
-        up = "resize height -50";
-        right = "resize width +50";
         h = "resize width -50";
         j = "resize height +50";
         k = "resize height -50";
