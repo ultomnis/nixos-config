@@ -1,8 +1,8 @@
-{ userConfig, ... }:
+{ self, userConfig, ... }:
 
 {
   imports = [
-    ../../home/common
+    "${self}/home/common"
   ];
 
   home = {

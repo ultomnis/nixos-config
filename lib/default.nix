@@ -21,7 +21,7 @@ in
       system = system;
 
       specialArgs = {
-        inherit inputs;
+        inherit self inputs;
         userConfig = users.${username};
       };
 
@@ -41,7 +41,7 @@ in
             };
 
             extraSpecialArgs = {
-              inherit inputs;
+              inherit self inputs;
               userConfig = users.${username};
             };
           };
@@ -61,7 +61,7 @@ in
       system = system;
 
       specialArgs = {
-        inherit inputs;
+        inherit self inputs;
         userConfig = users.${username};
       };
 
@@ -81,7 +81,7 @@ in
             };
 
             extraSpecialArgs = {
-              inherit inputs;
+              inherit self inputs;
               userConfig = users.${username};
             };
           };

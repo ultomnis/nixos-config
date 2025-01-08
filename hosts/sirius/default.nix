@@ -1,8 +1,10 @@
+{ self, ... }:
+
 {
   imports = [
     ./disk-config.nix
     ./hardware-configuration.nix
-    ../../modules/nixos
+    "${self}/modules/nixos"
   ];
 
   networking.hostName = "sirius"; # Define your hostname
