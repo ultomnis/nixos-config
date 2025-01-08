@@ -6,8 +6,8 @@
   ];
 
   home = {
-    username = "${userConfig.username}";
-    homeDirectory = "/Users/${userConfig.username}";
+    username = "${userConfig.name}";
+    homeDirectory = "/Users/${userConfig.name}";
     stateVersion = "24.05";
   };
 

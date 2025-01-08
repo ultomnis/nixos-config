@@ -2,8 +2,8 @@
 
 {
   # User configuration
-  users.users.${userConfig.username} = {
+  users.users.${userConfig.name} = {
     description = "user";
-    home = "/Users/${userConfig.username}";
+    home = "/Users/${userConfig.name}";
   };
 }

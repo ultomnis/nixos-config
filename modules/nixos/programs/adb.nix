@@ -3,5 +3,5 @@
 {
   # Android Debug Bridge
   programs.adb.enable = true;
-  users.users.${userConfig.username}.extraGroups = [ "adbusers" ];
+  users.users.${userConfig.name}.extraGroups = [ "adbusers" ];
 }

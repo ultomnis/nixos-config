@@ -2,9 +2,9 @@
 
 {
   # Define a user account. Don't forget to set a password with passwd
-  users.users.${userConfig.username} = {
+  users.users.${userConfig.name} = {
     isNormalUser = true;
-    home = "/home/${userConfig.username}";
+    home = "/home/${userConfig.name}";
     description = "user";
     extraGroups = [ "wheel" ];
   };

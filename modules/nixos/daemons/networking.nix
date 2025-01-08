@@ -3,5 +3,5 @@
 {
   # Configure network interfaces
   networking.networkmanager.enable = true;
-  users.users.${userConfig.username}.extraGroups = [ "networkmanager" ];
+  users.users.${userConfig.name}.extraGroups = [ "networkmanager" ];
 }

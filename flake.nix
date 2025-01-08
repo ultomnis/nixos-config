@@ -21,80 +21,43 @@
   };
 
   outputs =
-    inputs@{
+    {
       self,
       disko,
-      home-manager,
-      nix-darwin,
-      nixpkgs,
       ...
-    }:
+    }@inputs:
 
     let
-      desktop = "sirius";
-      laptop = "canopus";
-      userConfig = {
-        username = "user";
-        gitName = "ultomnis";
-        gitEmail = "125839032+ultomnis@users.noreply.github.com";
+      users = {
+        user = {
+          name = "user";
+          gitName = "ultomnis";
+          gitEmail = "125839032+ultomnis@users.noreply.github.com";
+        };
       };
+
+      mkLib = import ./lib {
+        inherit self inputs users;
+      };
+
+      inherit (mkLib) mkNixosConfig mkDarwinConfig;
 
     in
     {
       nixosConfigurations = {
-        ${desktop} = nixpkgs.lib.nixosSystem {
+        sirius = mkNixosConfig "sirius" {
+          username = "user";
           system = "x86_64-linux";
-          specialArgs = {
-            inherit inputs userConfig;
-          };
-          modules = [
-            ./hosts/sirius
+          extraModules = [
             disko.nixosModules.disko
-
-            home-manager.nixosModules.home-manager
-            {
-              home-manager = {
-                useGlobalPkgs = true;
-                useUserPackages = true;
-                users.${userConfig.username} = {
-                  imports = [
-                    ./hosts/sirius/home.nix
-                  ];
-                };
-                extraSpecialArgs = {
-                  inherit inputs userConfig;
-                };
-              };
-            }
           ];
         };
       };
 
       darwinConfigurations = {
-        ${laptop} = nix-darwin.lib.darwinSystem {
+        canopus = mkDarwinConfig "canopus" {
+          username = "user";
           system = "aarch64-darwin";
-          specialArgs = {
-            inherit inputs userConfig;
-          };
-          modules = [
-            ./hosts/canopus
-
-            home-manager.darwinModules.home-manager
-            {
-              home-manager = {
-                useGlobalPkgs = true;
-                useUserPackages = true;
-                users.${userConfig.username} = {
-                  imports = [
-                    ./hosts/canopus/home.nix
-                  ];
-                };
-                extraSpecialArgs = {
-                  inherit inputs userConfig;
-                };
-              };
-            }
-          ];
         };
       };
     };
