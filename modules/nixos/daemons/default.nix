@@ -1,6 +1,5 @@
 {
   imports = [
-    ./davfs2.nix
     ./greetd.nix
     ./networking.nix
     ./ollama.nix
