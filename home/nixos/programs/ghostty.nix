@@ -10,6 +10,7 @@
       font-size = 11;
       gtk-titlebar = false;
       mouse-hide-while-typing = true;
+      resize-overlay = "never";
       shell-integration-features = "no-cursor";
       theme = "rose-pine";
     };
