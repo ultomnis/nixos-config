@@ -1,6 +1,6 @@
 {
   imports = [
-    ./foot.nix
+    ./ghostty.nix
     ./gnome-keyring.nix
     ./mangohud.nix
     ./nm-applet.nix

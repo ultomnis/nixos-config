@@ -8,7 +8,7 @@
     settings = {
       main = {
         icon-theme = "Papirus";
-        terminal = "${pkgs.foot}/bin/foot";
+        terminal = "${pkgs.ghostty}/bin/ghostty -e";
       };
 
       border = {
