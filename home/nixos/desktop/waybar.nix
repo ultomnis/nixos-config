@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 
 {
   # Wayland status bar
@@ -25,7 +25,7 @@
         "custom/menu" = {
           format = "";
           tooltip = false;
-          on-click = "${pkgs.fuzzel}/bin/fuzzel --anchor top-left";
+          on-click = "${lib.getExe pkgs.fuzzel} --anchor top-left";
         };
 
         "sway/workspaces" = {
@@ -60,8 +60,8 @@
           ];
           tooltip = false;
           scroll-step = 2;
-          on-click = "${pkgs.pwvucontrol}/bin/pwvucontrol";
-          on-click-right = "${pkgs.wireplumber}/bin/wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
+          on-click = "${lib.getExe pkgs.pwvucontrol}";
+          on-click-right = "${lib.getExe' pkgs.wireplumber "wpctl"} set-mute @DEFAULT_AUDIO_SINK@ toggle";
         };
 
         clock = {

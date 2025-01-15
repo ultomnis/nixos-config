@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 
 {
   # Wayland idle management daemon
@@ -9,20 +9,20 @@
       {
         # Lock the screen after 10 minutes
         timeout = 600;
-        command = "${pkgs.swaylock}/bin/swaylock -f";
+        command = "${lib.getExe pkgs.swaylock} -f";
       }
       {
         # Turn off the screen after 15 minutes
         timeout = 900;
-        command = ''${pkgs.sway}/bin/swaymsg "output * power off"'';
-        resumeCommand = ''${pkgs.sway}/bin/swaymsg "output * power on"'';
+        command = ''${lib.getExe' pkgs.sway "swaymsg"} "output * power off"'';
+        resumeCommand = ''${lib.getExe' pkgs.sway "swaymsg"} "output * power on"'';
       }
     ];
 
     events = [
       {
         event = "before-sleep";
-        command = "${pkgs.swaylock}/bin/swaylock -f";
+        command = "${lib.getExe pkgs.swaylock} -f";
       }
     ];
   };

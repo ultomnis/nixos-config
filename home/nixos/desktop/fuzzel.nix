@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 
 {
   # Wayland application launcher
@@ -8,7 +8,7 @@
     settings = {
       main = {
         icon-theme = "Papirus";
-        terminal = "${pkgs.ghostty}/bin/ghostty -e";
+        terminal = "${lib.getExe pkgs.ghostty} -e";
       };
 
       border = {

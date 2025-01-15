@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 
 {
   # Modal text editor
@@ -26,7 +26,7 @@
     languages = {
       language-server = {
         nixd = {
-          command = "${pkgs.nixd}/bin/nixd";
+          command = "${lib.getExe pkgs.nixd}";
         };
       };
 
@@ -36,7 +36,7 @@
           auto-format = true;
           language-servers = [ "nixd" ];
           formatter = {
-            command = "${pkgs.nixfmt-rfc-style}/bin/nixfmt";
+            command = "${lib.getExe pkgs.nixfmt-rfc-style}";
           };
         }
       ];

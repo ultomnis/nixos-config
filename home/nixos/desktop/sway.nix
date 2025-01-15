@@ -14,13 +14,13 @@
 
     config = {
       modifier = "Mod4";
-      terminal = "${pkgs.ghostty}/bin/ghostty";
-      menu = "${pkgs.fuzzel}/bin/fuzzel";
+      terminal = "${lib.getExe pkgs.ghostty}";
+      menu = "${lib.getExe pkgs.fuzzel}";
       defaultWorkspace = "workspace number 1";
 
       startup = [
         {
-          command = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
+          command = "${lib.getBin pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
         }
       ];
 
@@ -31,13 +31,17 @@
         };
       };
 
-      output = {
-        "*" = {
-          allow_tearing = "yes";
-          bg = "${self}/assets/wallpaper.jpg fill";
-          max_render_time = "off";
+      output =
+        let
+          wallpaper = "${self}/assets/wallpaper.jpg";
+        in
+        {
+          "*" = {
+            allow_tearing = "yes";
+            bg = "${wallpaper} fill";
+            max_render_time = "off";
+          };
         };
-      };
 
       window = {
         commands = [
@@ -66,23 +70,23 @@
           modifier = config.wayland.windowManager.sway.config.modifier;
         in
         lib.mkOptionDefault {
-          "--no-repeat ${modifier}+Print" = ''exec ${pkgs.grim}/bin/grim -g "$(${pkgs.slurp}/bin/slurp)"'';
+          "--no-repeat ${modifier}+Print" = ''exec ${lib.getExe pkgs.grim} -g "$(${lib.getExe pkgs.slurp})"'';
 
-          "${modifier}+Escape" = "exec ${pkgs.swaylock}/bin/swaylock -f";
+          "${modifier}+Escape" = "exec ${lib.getExe pkgs.swaylock} -f";
 
           "--locked XF86AudioMute" =
-            "exec ${pkgs.wireplumber}/bin/wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
+            "exec ${lib.getExe' pkgs.wireplumber "wpctl"} set-mute @DEFAULT_AUDIO_SINK@ toggle";
           "--locked XF86AudioLowerVolume" =
-            "exec ${pkgs.wireplumber}/bin/wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-";
+            "exec ${lib.getExe' pkgs.wireplumber "wpctl"} set-volume @DEFAULT_AUDIO_SINK@ 5%-";
           "--locked XF86AudioRaiseVolume" =
-            "exec ${pkgs.wireplumber}/bin/wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+";
+            "exec ${lib.getExe' pkgs.wireplumber "wpctl"} set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+";
           "--locked XF86AudioMicMute" =
-            "exec ${pkgs.wireplumber}/bin/wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle";
+            "exec ${lib.getExe' pkgs.wireplumber "wpctl"} set-mute @DEFAULT_AUDIO_SOURCE@ toggle";
 
-          "--locked XF86AudioPrev" = "exec ${pkgs.playerctl}/bin/playerctl previous";
-          "--locked XF86AudioNext" = "exec ${pkgs.playerctl}/bin/playerctl next";
-          "--locked XF86AudioPlay" = "exec ${pkgs.playerctl}/bin/playerctl play-pause";
-          "--locked XF86AudioStop" = "exec ${pkgs.playerctl}/bin/playerctl stop";
+          "--locked XF86AudioPrev" = "exec ${lib.getExe pkgs.playerctl} previous";
+          "--locked XF86AudioNext" = "exec ${lib.getExe pkgs.playerctl} next";
+          "--locked XF86AudioPlay" = "exec ${lib.getExe pkgs.playerctl} play-pause";
+          "--locked XF86AudioStop" = "exec ${lib.getExe pkgs.playerctl} stop";
         };
 
       gaps = {
@@ -91,7 +95,7 @@
 
       bars = [
         {
-          command = "${pkgs.waybar}/bin/waybar";
+          command = "${lib.getExe pkgs.waybar}";
         }
       ];
     };

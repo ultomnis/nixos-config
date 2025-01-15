@@ -5,10 +5,14 @@
   programs.swaylock = {
     enable = true;
 
-    settings = {
-      image = "${self}/assets/wallpaper.jpg";
-      scaling = "fill";
-      show-failed-attempts = true;
-    };
+    settings =
+      let
+        wallpaper = "${self}/assets/wallpaper.jpg";
+      in
+      {
+        image = wallpaper;
+        scaling = "fill";
+        show-failed-attempts = true;
+      };
   };
 }

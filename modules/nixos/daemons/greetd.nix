@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 
 {
   # Login manager daemon
@@ -9,7 +9,7 @@
     settings = {
       default_session = {
         # Graphical console greeter
-        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --remember --cmd ${pkgs.sway}/bin/sway";
+        command = "${lib.getExe pkgs.greetd.tuigreet} --time --remember --cmd ${lib.getExe pkgs.sway}";
       };
     };
   };
