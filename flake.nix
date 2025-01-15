@@ -24,6 +24,7 @@
     {
       self,
       disko,
+      nixpkgs,
       ...
     }@inputs:
 
@@ -36,6 +37,13 @@
         };
       };
 
+      includedSystems = [
+        "aarch64-darwin"
+        "x86_64-linux"
+      ];
+
+      forEachSystem = nixpkgs.lib.genAttrs includedSystems;
+
       mkLib = import ./lib {
         inherit self inputs users;
       };
@@ -44,6 +52,8 @@
 
     in
     {
+      formatter = forEachSystem (system: nixpkgs.legacyPackages.${system}.nixfmt-rfc-style);
+
       nixosConfigurations = {
         sirius = mkNixosConfig "sirius" {
           username = "user";
