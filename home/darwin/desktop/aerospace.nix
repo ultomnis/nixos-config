@@ -1,9 +1,9 @@
 {
   # macOS tiling window manager
-  services.aerospace = {
+  programs.aerospace = {
     enable = true;
 
-    settings = {
+    userSettings = {
       enable-normalization-flatten-containers = false;
       enable-normalization-opposite-orientation-for-nested-containers = false;
 
