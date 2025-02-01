@@ -5,7 +5,12 @@
 }:
 
 let
-  inherit (inputs) home-manager nixpkgs nix-darwin;
+  inherit (inputs)
+    home-manager
+    nixpkgs
+    nix-darwin
+    nur
+    ;
 
 in
 {
@@ -27,6 +32,8 @@ in
 
       modules = [
         "${self}/hosts/${hostname}"
+
+        { nixpkgs.overlays = [ nur.overlays.default ]; }
 
         home-manager.nixosModules.home-manager
         {
@@ -67,6 +74,8 @@ in
 
       modules = [
         "${self}/hosts/${hostname}"
+
+        { nixpkgs.overlays = [ nur.overlays.default ]; }
 
         home-manager.darwinModules.home-manager
         {
