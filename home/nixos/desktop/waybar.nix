@@ -18,6 +18,7 @@
 
         modules-right = [
           "tray"
+          "network"
           "wireplumber"
           "clock"
         ];
@@ -48,6 +49,13 @@
           icon-size = 16;
           spacing = 11;
           reverse-direction = true;
+        };
+
+        network = {
+          format-wifi = "";
+          format-ethernet = "";
+          format-disconnected = "";
+          tooltip = false;
         };
 
         wireplumber = {
@@ -102,6 +110,7 @@
 
       #custom-menu,
       #tray,
+      #network,
       #wireplumber,
       #clock {
         padding: 0 7px;
