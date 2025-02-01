@@ -17,7 +17,6 @@
     casks = [
       "mullvad-browser"
       "steam"
-      "transmission"
       "utm"
     ];
   };
