@@ -1,6 +1,7 @@
 { pkgs, ... }:
 
 {
+  # Web browser
   programs.firefox = {
     enable = true;
 
