@@ -9,5 +9,7 @@
         "steam"
         "steam-unwrapped"
       ];
+
+    rocmSupport = true;
   };
 }
