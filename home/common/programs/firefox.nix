@@ -13,7 +13,6 @@
         extensions = with pkgs.nur.repos.rycee.firefox-addons; [
           bitwarden
           darkreader
-          duckduckgo-privacy-essentials
           ublock-origin
         ];
 
