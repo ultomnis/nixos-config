@@ -9,7 +9,7 @@
     # Garbage collection
     gc = {
       automatic = true;
-      user = "user";
+
       interval = {
         Hour = 0;
         Minute = 0;
