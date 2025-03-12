@@ -1,8 +1,6 @@
-{ self, ... }:
-
 {
   imports = [
-    "${self}/modules/darwin"
+    ../../modules/darwin
   ];
 
   networking = {

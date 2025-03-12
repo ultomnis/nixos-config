@@ -1,8 +1,8 @@
 {
   config,
+  inputs,
   lib,
   pkgs,
-  self,
   ...
 }:
 
@@ -33,7 +33,7 @@
 
       output =
         let
-          wallpaper = "${self}/assets/wallpaper.jpg";
+          wallpaper = "${inputs.self}/assets/wallpaper.jpg";
         in
         {
           "*" = {

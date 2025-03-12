@@ -44,17 +44,16 @@
         "x86_64-linux"
       ];
 
-      forEachSystem = nixpkgs.lib.genAttrs includedSystems;
-
       mkLib = import ./lib {
-        inherit self inputs users;
+        inherit inputs users;
       };
 
       inherit (mkLib) mkNixosConfig mkDarwinConfig;
 
     in
     {
-      formatter = forEachSystem (system: nixpkgs.legacyPackages.${system}.nixfmt-rfc-style);
+      forEachSystem = nixpkgs.lib.genAttrs includedSystems;
+      formatter = self.forEachSystem (system: nixpkgs.legacyPackages.${system}.nixfmt-rfc-style);
 
       nixosConfigurations = {
         sirius = mkNixosConfig "sirius" {

@@ -1,5 +1,4 @@
 {
-  self,
   inputs,
   users,
 }:
@@ -26,12 +25,12 @@ in
       system = system;
 
       specialArgs = {
-        inherit self inputs;
+        inherit inputs;
         userConfig = users.${username};
       };
 
       modules = [
-        "${self}/hosts/${hostname}"
+        ../hosts/${hostname}
 
         { nixpkgs.overlays = [ nur.overlays.default ]; }
 
@@ -43,12 +42,12 @@ in
 
             users.${username} = {
               imports = [
-                "${self}/hosts/${hostname}/home.nix"
+                ../hosts/${hostname}/home.nix
               ];
             };
 
             extraSpecialArgs = {
-              inherit self inputs;
+              inherit inputs;
               userConfig = users.${username};
             };
           };
@@ -68,12 +67,12 @@ in
       system = system;
 
       specialArgs = {
-        inherit self inputs;
+        inherit inputs;
         userConfig = users.${username};
       };
 
       modules = [
-        "${self}/hosts/${hostname}"
+        ../hosts/${hostname}
 
         { nixpkgs.overlays = [ nur.overlays.default ]; }
 
@@ -85,12 +84,12 @@ in
 
             users.${username} = {
               imports = [
-                "${self}/hosts/${hostname}/home.nix"
+                ../hosts/${hostname}/home.nix
               ];
             };
 
             extraSpecialArgs = {
-              inherit self inputs;
+              inherit inputs;
               userConfig = users.${username};
             };
           };

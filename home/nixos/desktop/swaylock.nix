@@ -1,4 +1,4 @@
-{ self, ... }:
+{ inputs, ... }:
 
 {
   # Wayland screen locker
@@ -7,7 +7,7 @@
 
     settings =
       let
-        wallpaper = "${self}/assets/wallpaper.jpg";
+        wallpaper = "${inputs.self}/assets/wallpaper.jpg";
       in
       {
         image = wallpaper;

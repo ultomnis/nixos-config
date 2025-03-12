@@ -1,9 +1,9 @@
-{ self, userConfig, ... }:
+{ userConfig, ... }:
 
 {
   imports = [
-    "${self}/home/common"
-    "${self}/home/darwin"
+    ../../home/common
+    ../../home/darwin
   ];
 
   home = {
