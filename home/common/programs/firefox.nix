@@ -10,10 +10,12 @@
     profiles = {
       default = {
         # Firefox add-ons
-        extensions = with pkgs.nur.repos.rycee.firefox-addons; [
-          bitwarden
-          ublock-origin
-        ];
+        extensions = {
+          packages = with pkgs.nur.repos.rycee.firefox-addons; [
+            bitwarden
+            ublock-origin
+          ];
+        };
 
         preConfig = builtins.readFile "${pkgs.arkenfox-userjs}/user.js";
 
