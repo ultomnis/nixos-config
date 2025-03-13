@@ -59,9 +59,16 @@
         sirius = mkNixosConfig "sirius" {
           username = "user";
           system = "x86_64-linux";
+
           extraModules = [
             disko.nixosModules.disko
           ];
+
+          additionalSpecialArgs = {
+            extraConfig = {
+              fontSize = 11;
+            };
+          };
         };
       };
 
@@ -69,6 +76,12 @@
         canopus = mkDarwinConfig "canopus" {
           username = "user";
           system = "aarch64-darwin";
+
+          additionalSpecialArgs = {
+            extraConfig = {
+              fontSize = 13;
+            };
+          };
         };
       };
     };

@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ extraConfig, pkgs, ... }:
 
 {
   # Configure the theme for GTK applications
@@ -7,7 +7,7 @@
 
     font = {
       name = "Hack Nerd Font Propo";
-      size = 11;
+      size = extraConfig.fontSize;
     };
 
     theme = {

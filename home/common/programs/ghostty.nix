@@ -1,13 +1,21 @@
 {
+  extraConfig,
+  lib,
+  pkgs,
+  ...
+}:
+
+{
   # Terminal emulator
   programs.ghostty = {
     enable = true;
+    package = lib.mkIf pkgs.stdenv.isDarwin null;
 
     settings = {
       cursor-style = "block";
       cursor-style-blink = false;
       font-family = "Hack Nerd Font Mono";
-      font-size = 11;
+      font-size = extraConfig.fontSize;
       gtk-titlebar = false;
       mouse-hide-while-typing = true;
       resize-overlay = "never";
