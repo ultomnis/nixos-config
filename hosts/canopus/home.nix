@@ -3,7 +3,6 @@
 {
   imports = [
     ../../home/common
-    ../../home/darwin
   ];
 
   home = {
