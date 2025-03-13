@@ -66,7 +66,33 @@
 
           additionalSpecialArgs = {
             extraConfig = {
-              fontSize = 11;
+              ghostty = {
+                font-size = 11;
+              };
+
+              gtk = {
+                font = {
+                  name = "Hack Nerd Font Propo";
+                  size = 11;
+                };
+              };
+
+              monitors = {
+                DP-2 = {
+                  allow_tearing = "yes";
+                  max_render_time = "off";
+                  mode = "1920x1080@165Hz";
+                };
+              };
+
+              windowCommands = [
+                {
+                  command = "allow_tearing yes";
+                  criteria = {
+                    class = "cs2";
+                  };
+                }
+              ];
             };
           };
         };
@@ -79,7 +105,9 @@
 
           additionalSpecialArgs = {
             extraConfig = {
-              fontSize = 13;
+              ghostty = {
+                font-size = 13;
+              };
             };
           };
         };

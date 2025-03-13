@@ -5,11 +5,6 @@
   gtk = {
     enable = true;
 
-    font = {
-      name = "Hack Nerd Font Propo";
-      size = extraConfig.fontSize;
-    };
-
     theme = {
       package = pkgs.rose-pine-gtk-theme;
       name = "rose-pine";
@@ -19,5 +14,5 @@
       package = pkgs.papirus-icon-theme;
       name = "Papirus";
     };
-  };
+  } // extraConfig.gtk or { };
 }
