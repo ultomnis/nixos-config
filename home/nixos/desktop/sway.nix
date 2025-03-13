@@ -38,7 +38,9 @@
         in
         {
           "*" = {
+            allow_tearing = "yes";
             bg = "${wallpaper} fill";
+            max_render_time = "off";
           };
         }
         // extraConfig.monitors or { };
@@ -46,12 +48,18 @@
       window = {
         commands = [
           {
+            command = "allow_tearing yes";
+            criteria = {
+              class = "cs2";
+            };
+          }
+          {
             command = "floating on, resize set 800 600, move position cursor, move down 30 px";
             criteria = {
               app_id = "pwvucontrol";
             };
           }
-        ] ++ extraConfig.windowCommands or [ ];
+        ];
       };
 
       focus = {
