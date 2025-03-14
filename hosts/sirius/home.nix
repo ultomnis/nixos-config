@@ -14,6 +14,12 @@
 
   programs.home-manager.enable = true;
 
+  programs.ghostty = {
+    settings = {
+      font-size = 11;
+    };
+  };
+
   wayland.windowManager.sway = {
     config = {
       # Monitor configuration

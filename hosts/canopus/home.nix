@@ -12,4 +12,10 @@
   };
 
   programs.home-manager.enable = true;
+
+  programs.ghostty = {
+    settings = {
+      font-size = 13;
+    };
+  };
 }
