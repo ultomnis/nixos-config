@@ -20,7 +20,7 @@
       };
 
       mode.main.binding = {
-        alt-enter = "exec-and-forget open -n /System/Applications/Utilities/Terminal.app";
+        alt-enter = "exec-and-forget open -na ghostty";
 
         alt-h = "focus --boundaries-action wrap-around-the-workspace left";
         alt-j = "focus --boundaries-action wrap-around-the-workspace down";
