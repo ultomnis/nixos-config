@@ -1,7 +1,10 @@
+{ lib, pkgs, ... }:
+
 {
   # Terminal emulator
   programs.ghostty = {
     enable = true;
+    package = lib.mkIf pkgs.stdenv.isDarwin null;
 
     settings = {
       cursor-style = "block";
