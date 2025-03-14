@@ -20,6 +20,10 @@
     };
   };
 
+  gtk = {
+    font.size = 11;
+  };
+
   wayland.windowManager.sway = {
     config = {
       # Monitor configuration

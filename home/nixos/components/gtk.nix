@@ -4,11 +4,7 @@
   # Configure the theme for GTK applications
   gtk = {
     enable = true;
-
-    font = {
-      name = "Hack Nerd Font Propo";
-      size = 11;
-    };
+    font.name = "Hack Nerd Font Propo";
 
     theme = {
       package = pkgs.rose-pine-gtk-theme;
