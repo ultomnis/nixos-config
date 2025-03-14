@@ -13,4 +13,15 @@
   };
 
   programs.home-manager.enable = true;
+
+  wayland.windowManager.sway = {
+    config = {
+      # Monitor configuration
+      output = {
+        DP-2 = {
+          mode = "1920x1080@165Hz";
+        };
+      };
+    };
+  };
 }

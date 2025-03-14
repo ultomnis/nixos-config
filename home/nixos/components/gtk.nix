@@ -1,9 +1,14 @@
-{ extraConfig, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   # Configure the theme for GTK applications
   gtk = {
     enable = true;
+
+    font = {
+      name = "Hack Nerd Font Propo";
+      size = 11;
+    };
 
     theme = {
       package = pkgs.rose-pine-gtk-theme;
@@ -14,5 +19,5 @@
       package = pkgs.papirus-icon-theme;
       name = "Papirus";
     };
-  } // extraConfig.gtk or { };
+  };
 }

@@ -1,6 +1,5 @@
 {
   config,
-  extraConfig,
   inputs,
   lib,
   pkgs,
@@ -42,8 +41,7 @@
             bg = "${wallpaper} fill";
             max_render_time = "off";
           };
-        }
-        // extraConfig.monitors or { };
+        };
 
       window = {
         commands = [

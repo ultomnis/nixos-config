@@ -59,31 +59,9 @@
         sirius = mkNixosConfig "sirius" {
           username = "user";
           system = "x86_64-linux";
-
           extraModules = [
             disko.nixosModules.disko
           ];
-
-          additionalSpecialArgs = {
-            extraConfig = {
-              ghostty = {
-                font-size = 11;
-              };
-
-              gtk = {
-                font = {
-                  name = "Hack Nerd Font Propo";
-                  size = 11;
-                };
-              };
-
-              monitors = {
-                DP-2 = {
-                  mode = "1920x1080@165Hz";
-                };
-              };
-            };
-          };
         };
       };
 
@@ -91,14 +69,6 @@
         canopus = mkDarwinConfig "canopus" {
           username = "user";
           system = "aarch64-darwin";
-
-          additionalSpecialArgs = {
-            extraConfig = {
-              ghostty = {
-                font-size = 13;
-              };
-            };
-          };
         };
       };
     };

@@ -19,7 +19,6 @@ in
       username,
       system,
       extraModules ? [ ],
-      additionalSpecialArgs ? { },
     }:
 
     nixpkgs.lib.nixosSystem {
@@ -50,7 +49,7 @@ in
             extraSpecialArgs = {
               inherit inputs;
               userConfig = users.${username};
-            } // additionalSpecialArgs;
+            };
           };
         }
       ] ++ extraModules;
@@ -62,7 +61,6 @@ in
       username,
       system,
       extraModules ? [ ],
-      additionalSpecialArgs ? { },
     }:
 
     nix-darwin.lib.darwinSystem {
@@ -93,7 +91,7 @@ in
             extraSpecialArgs = {
               inherit inputs;
               userConfig = users.${username};
-            } // additionalSpecialArgs;
+            };
           };
         }
       ] ++ extraModules;
