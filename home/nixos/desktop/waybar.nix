@@ -68,7 +68,7 @@
           ];
           tooltip = false;
           scroll-step = 2;
-          on-click = "${lib.getExe pkgs.pwvucontrol}";
+          on-click = "${lib.getExe pkgs.pavucontrol}";
           on-click-right = "${lib.getExe' pkgs.wireplumber "wpctl"} set-mute @DEFAULT_AUDIO_SINK@ toggle";
         };
 
