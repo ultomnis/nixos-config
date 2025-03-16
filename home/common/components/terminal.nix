@@ -7,6 +7,5 @@
     kew
     libqalculate
     libsecret
-    mat2
   ];
 }
