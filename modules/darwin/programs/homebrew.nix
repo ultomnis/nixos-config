@@ -18,7 +18,6 @@
       "ghostty"
       "mullvad-browser"
       "steam"
-      "tuta-mail"
       "utm"
     ];
   };
