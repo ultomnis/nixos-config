@@ -8,7 +8,6 @@ let
     home-manager
     nixpkgs
     nix-darwin
-    nur
     ;
 
 in
@@ -31,8 +30,6 @@ in
 
       modules = [
         ../hosts/${hostname}
-
-        { nixpkgs.overlays = [ nur.overlays.default ]; }
 
         home-manager.nixosModules.home-manager
         {
@@ -73,8 +70,6 @@ in
 
       modules = [
         ../hosts/${hostname}
-
-        { nixpkgs.overlays = [ nur.overlays.default ]; }
 
         home-manager.darwinModules.home-manager
         {

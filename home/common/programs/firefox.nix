@@ -5,26 +5,66 @@
   programs.firefox = {
     enable = true;
 
-    package = if pkgs.stdenv.isDarwin then pkgs.firefox-unwrapped else pkgs.firefox;
+    package = pkgs.firefox.override {
+      # Set Firefox policies
+      extraPolicies = {
+        DisableFirefoxStudies = true;
+        DisableFormHistory = true;
+        DisablePocket = true;
+        DisableTelemetry = true;
+        DisplayBookmarksToolbar = "never";
+        NoDefaultBookmarks = true;
+        OfferToSaveLogins = false;
+        SearchSuggestEnabled = false;
 
-    profiles = {
-      default = {
-        # Firefox add-ons
-        extensions = {
-          packages = with pkgs.nur.repos.rycee.firefox-addons; [
-            bitwarden
-            ublock-origin
-          ];
+        EnableTrackingProtection = {
+          Value = true;
+          Locked = true;
+          Cryptomining = true;
+          Fingerprinting = true;
         };
 
-        preConfig = builtins.readFile "${pkgs.arkenfox-userjs}/user.js";
+        ExtensionSettings =
+          {
+            "*" = {
+              installation_mode = "blocked";
+            };
+          }
+          // builtins.mapAttrs
+            (_: extension: {
+              installation_mode = "force_installed";
+              install_url = "https://addons.mozilla.org/firefox/downloads/latest/${extension}/latest.xpi";
+            })
+            {
+              "{446900e4-71c2-419f-a6a7-df9c091e268b}" = "bitwarden-password-manager";
+              "addon@darkreader.org" = "darkreader";
+              "uBlock0@raymondhill.net" = "ublock-origin";
+            };
 
-        # Search engine configuration
-        search = {
-          default = "DuckDuckGo";
-          privateDefault = "DuckDuckGo";
-          force = true;
+        FirefoxHome = {
+          TopSites = false;
+          SponsoredTopSites = false;
+          Highlights = false;
+          Pocket = false;
+          SponsoredPocket = false;
+          Snippets = false;
+          Locked = true;
         };
+
+        FirefoxSuggest = {
+          WebSuggestions = false;
+          SponsoredSuggestions = false;
+          ImproveSuggest = false;
+          Locked = true;
+        };
+      };
+    };
+
+    profiles.default = {
+      search = {
+        default = "DuckDuckGo";
+        privateDefault = "DuckDuckGo";
+        force = true;
       };
     };
   };
