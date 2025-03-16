@@ -20,7 +20,7 @@
 
       startup = [
         {
-          command = "${lib.getBin pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
+          command = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
         }
       ];
 
