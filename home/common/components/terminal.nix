@@ -8,6 +8,5 @@
     libqalculate
     libsecret
     mat2
-    unar
   ];
 }
