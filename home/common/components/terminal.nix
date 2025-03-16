@@ -6,6 +6,5 @@
     ffmpeg
     kew
     libqalculate
-    libsecret
   ];
 }
