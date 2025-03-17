@@ -7,7 +7,6 @@
     ./git.nix
     ./helix.nix
     ./mpv.nix
-    ./ollama.nix
     ./ssh.nix
   ];
 }
