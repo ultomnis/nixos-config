@@ -69,7 +69,6 @@
       };
 
       focus = {
-        mouseWarping = "container";
         wrapping = "yes";
       };
 
