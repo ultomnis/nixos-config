@@ -24,6 +24,12 @@
     font.size = 11;
   };
 
+  services.ollama = {
+    environmentVariables = {
+      HSA_OVERRIDE_GFX_VERSION = "11.0.1";
+    };
+  };
+
   wayland.windowManager.sway = {
     config = {
       # Monitor configuration
