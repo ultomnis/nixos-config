@@ -8,7 +8,6 @@
       enable-normalization-opposite-orientation-for-nested-containers = false;
 
       on-focused-monitor-changed = [ "move-mouse monitor-lazy-center" ];
-      on-focus-changed = [ "move-mouse window-lazy-center" ];
 
       gaps = {
         inner.horizontal = 10;
