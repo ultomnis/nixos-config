@@ -1,30 +1,29 @@
-{ pkgs, ... }:
-
 {
   # Media player
   programs.mpv = {
     enable = true;
 
     config = {
-      border = "no";
-      keep-open = "yes";
-      osd-bar = "no";
+      # Program behavior
       profile = "high-quality";
-      video-sync = "display-resample";
+
+      # Video
       vo = "gpu-next";
+
+      # Audio
       volume = 50;
-    };
 
-    scripts = with pkgs.mpvScripts; [
-      thumbfast
-      uosc
-    ];
+      # Window
+      keep-open = "yes";
 
-    scriptOpts = {
-      uosc = {
-        progress = "never";
-        window_border_size = 0;
-      };
+      # OSD
+      osd-bar = "no";
+
+      # GPU renderer options
+      interpolation = "yes";
+
+      # Miscellaneous
+      video-sync = "display-resample";
     };
   };
 }
