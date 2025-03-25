@@ -18,12 +18,6 @@
       menu = "${lib.getExe pkgs.fuzzel}";
       defaultWorkspace = "workspace number 1";
 
-      startup = [
-        {
-          command = "${lib.getBin pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
-        }
-      ];
-
       input = {
         "type:pointer" = {
           accel_profile = "flat";
