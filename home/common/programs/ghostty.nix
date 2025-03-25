@@ -10,8 +10,6 @@
       cursor-style = "block";
       cursor-style-blink = false;
       font-family = "Hack Nerd Font Mono";
-      gtk-titlebar = false;
-      macos-titlebar-style = "hidden";
       mouse-hide-while-typing = true;
       quit-after-last-window-closed = true;
       resize-overlay = "never";
