@@ -44,6 +44,9 @@
         };
 
       window = {
+        border = 0;
+        titlebar = false;
+
         commands = [
           {
             command = "allow_tearing yes";
@@ -52,12 +55,17 @@
             };
           }
           {
-            command = "floating on, resize set 800 600, move position cursor, move down 30 px";
+            command = "floating enable, move position center";
             criteria = {
               app_id = "pavucontrol";
             };
           }
         ];
+      };
+
+      floating = {
+        border = 0;
+        titlebar = false;
       };
 
       focus = {
@@ -99,10 +107,5 @@
         }
       ];
     };
-
-    extraConfig = ''
-      default_border pixel 0
-      default_floating_border pixel 0
-    '';
   };
 }
