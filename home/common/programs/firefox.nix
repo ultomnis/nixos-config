@@ -62,8 +62,8 @@
 
     profiles.default = {
       search = {
-        default = "DuckDuckGo";
-        privateDefault = "DuckDuckGo";
+        default = "ddg";
+        privateDefault = "ddg";
         force = true;
       };
     };
