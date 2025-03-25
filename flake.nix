@@ -33,7 +33,7 @@
         user = {
           name = "user";
           gitName = "ultomnis";
-          gitEmail = "125839032+ultomnis@users.noreply.github.com";
+          githubEmail = "125839032+ultomnis@users.noreply.github.com";
         };
       };
 

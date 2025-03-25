@@ -6,7 +6,7 @@
     enable = true;
 
     userName = "${userConfig.gitName}";
-    userEmail = "${userConfig.gitEmail}";
+    userEmail = "${userConfig.githubEmail}";
 
     extraConfig = {
       commit.gpgsign = true;
