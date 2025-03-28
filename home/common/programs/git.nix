@@ -12,7 +12,7 @@
 
     includes = [
       {
-        condition = "gitdir:~/GitHub/";
+        condition = "gitdir:${config.home.homeDirectory}/GitHub/";
 
         contents = {
           commit.gpgSign = true;
