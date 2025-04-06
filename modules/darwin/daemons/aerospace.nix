@@ -1,3 +1,5 @@
+{ lib, pkgs, ... }:
+
 {
   # macOS tiling window manager
   services.aerospace = {
@@ -19,7 +21,7 @@
       };
 
       mode.main.binding = {
-        alt-enter = "exec-and-forget open -na ghostty";
+        alt-enter = "exec-and-forget open -na ${lib.getExe pkgs.wezterm}";
 
         alt-h = "focus --boundaries-action wrap-around-the-workspace left";
         alt-j = "focus --boundaries-action wrap-around-the-workspace down";

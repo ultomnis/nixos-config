@@ -15,7 +15,6 @@
     };
 
     casks = [
-      "ghostty"
       "mullvad-browser"
       "steam"
       "utm"

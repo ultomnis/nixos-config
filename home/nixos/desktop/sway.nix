@@ -14,7 +14,7 @@
 
     config = {
       modifier = "Mod4";
-      terminal = "${lib.getExe pkgs.ghostty}";
+      terminal = "${lib.getExe pkgs.wezterm}";
       menu = "${lib.getExe pkgs.fuzzel}";
       defaultWorkspace = "workspace number 1";
 

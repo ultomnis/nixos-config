@@ -8,7 +8,7 @@
     settings = {
       main = {
         icon-theme = "Papirus";
-        terminal = "${lib.getExe pkgs.ghostty} -e";
+        terminal = "${lib.getExe pkgs.wezterm} -e";
       };
 
       border = {
