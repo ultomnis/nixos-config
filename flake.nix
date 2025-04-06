@@ -43,7 +43,7 @@
       ];
 
       mkLib = import ./lib {
-        inherit inputs users;
+        inherit inputs;
       };
 
       inherit (mkLib) mkNixosConfig mkDarwinConfig;
@@ -57,6 +57,16 @@
         sirius = mkNixosConfig "sirius" {
           username = "user";
           system = "x86_64-linux";
+
+          specialArgs = {
+            inherit inputs;
+            userConfig = users.user;
+
+            vars = {
+              fontSize = 11;
+            };
+          };
+
           extraModules = [
             disko.nixosModules.disko
           ];
@@ -67,6 +77,15 @@
         canopus = mkDarwinConfig "canopus" {
           username = "user";
           system = "aarch64-darwin";
+
+          specialArgs = {
+            inherit inputs;
+            userConfig = users.user;
+
+            vars = {
+              fontSize = 13;
+            };
+          };
         };
       };
     };

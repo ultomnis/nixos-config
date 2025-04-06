@@ -1,6 +1,5 @@
 {
   inputs,
-  users,
 }:
 
 let
@@ -17,16 +16,13 @@ in
     {
       username,
       system,
+      specialArgs,
       extraModules ? [ ],
     }:
 
     nixpkgs.lib.nixosSystem {
       system = system;
-
-      specialArgs = {
-        inherit inputs;
-        userConfig = users.${username};
-      };
+      specialArgs = specialArgs;
 
       modules = [
         ../hosts/${hostname}
@@ -43,10 +39,7 @@ in
               ];
             };
 
-            extraSpecialArgs = {
-              inherit inputs;
-              userConfig = users.${username};
-            };
+            extraSpecialArgs = specialArgs;
           };
         }
       ] ++ extraModules;
@@ -57,16 +50,13 @@ in
     {
       username,
       system,
+      specialArgs,
       extraModules ? [ ],
     }:
 
     nix-darwin.lib.darwinSystem {
       system = system;
-
-      specialArgs = {
-        inherit inputs;
-        userConfig = users.${username};
-      };
+      specialArgs = specialArgs;
 
       modules = [
         ../hosts/${hostname}
@@ -83,10 +73,7 @@ in
               ];
             };
 
-            extraSpecialArgs = {
-              inherit inputs;
-              userConfig = users.${username};
-            };
+            extraSpecialArgs = specialArgs;
           };
         }
       ] ++ extraModules;

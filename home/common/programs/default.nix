@@ -9,6 +9,7 @@
     ./mpv.nix
     ./ollama.nix
     ./ssh.nix
+    ./wezterm.nix
     ./yt-dlp.nix
   ];
 }
