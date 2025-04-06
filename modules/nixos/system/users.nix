@@ -1,10 +1,10 @@
-{ userConfig, ... }:
+{ vars, ... }:
 
 {
   # Define a user account. Don't forget to set a password with passwd
-  users.users.${userConfig.name} = {
+  users.users.${vars.userConfig.name} = {
     isNormalUser = true;
-    home = "/home/${userConfig.name}";
+    home = "/home/${vars.userConfig.name}";
     description = "user";
     extraGroups = [ "wheel" ];
   };

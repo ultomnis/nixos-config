@@ -1,10 +1,10 @@
-{ config, userConfig, ... }:
+{ config, vars, ... }:
 
 {
   # Distributed version control system
   programs.git = {
     enable = true;
-    userName = "${userConfig.gitName}";
+    userName = "${vars.userConfig.gitName}";
 
     extraConfig = {
       user.useConfigOnly = true;
@@ -19,7 +19,7 @@
           gpg.format = "ssh";
 
           user = {
-            email = "${userConfig.githubEmail}";
+            email = "${vars.userConfig.githubEmail}";
             signingKey = "${config.home.homeDirectory}/.ssh/github.pub";
           };
         };

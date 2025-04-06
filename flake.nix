@@ -29,14 +29,6 @@
     }@inputs:
 
     let
-      users = {
-        user = {
-          name = "user";
-          gitName = "ultomnis";
-          githubEmail = "125839032+ultomnis@users.noreply.github.com";
-        };
-      };
-
       includedSystems = [
         "aarch64-darwin"
         "x86_64-linux"
@@ -47,6 +39,14 @@
       };
 
       inherit (mkLib) mkNixosConfig mkDarwinConfig;
+
+      users = {
+        user = {
+          name = "user";
+          gitName = "ultomnis";
+          githubEmail = "125839032+ultomnis@users.noreply.github.com";
+        };
+      };
 
     in
     {
@@ -60,10 +60,10 @@
 
           specialArgs = {
             inherit inputs;
-            userConfig = users.user;
 
             vars = {
               fontSize = 11;
+              userConfig = users.user;
             };
           };
 
@@ -80,10 +80,10 @@
 
           specialArgs = {
             inherit inputs;
-            userConfig = users.user;
 
             vars = {
               fontSize = 13;
+              userConfig = users.user;
             };
           };
         };

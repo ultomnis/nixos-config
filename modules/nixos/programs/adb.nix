@@ -1,7 +1,7 @@
-{ userConfig, ... }:
+{ vars, ... }:
 
 {
   # Android Debug Bridge
   programs.adb.enable = true;
-  users.users.${userConfig.name}.extraGroups = [ "adbusers" ];
+  users.users.${vars.userConfig.name}.extraGroups = [ "adbusers" ];
 }

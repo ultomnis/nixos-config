@@ -1,4 +1,4 @@
-{ userConfig, ... }:
+{ vars, ... }:
 
 {
   imports = [
@@ -7,8 +7,8 @@
   ];
 
   home = {
-    username = "${userConfig.name}";
-    homeDirectory = "/home/${userConfig.name}";
+    username = "${vars.userConfig.name}";
+    homeDirectory = "/home/${vars.userConfig.name}";
     stateVersion = "24.05";
   };
 

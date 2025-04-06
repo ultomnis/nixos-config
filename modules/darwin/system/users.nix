@@ -1,13 +1,13 @@
-{ userConfig, ... }:
+{ vars, ... }:
 
 {
   # User configuration
   users = {
-    knownUsers = [ "${userConfig.name}" ];
+    knownUsers = [ "${vars.userConfig.name}" ];
 
-    users.${userConfig.name} = {
+    users.${vars.userConfig.name} = {
       description = "user";
-      home = "/Users/${userConfig.name}";
+      home = "/Users/${vars.userConfig.name}";
       uid = 501;
     };
   };
