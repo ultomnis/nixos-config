@@ -1,5 +1,5 @@
 {
   imports = [
-    ./tailscale.nix
+    ./aerospace.nix
   ];
 }
