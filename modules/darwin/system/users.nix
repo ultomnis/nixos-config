@@ -5,7 +5,6 @@
   users = {
     users.${vars.userConfig.name} = {
       home = "/Users/${vars.userConfig.name}";
-      description = "user";
     };
   };
 }

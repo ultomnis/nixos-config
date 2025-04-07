@@ -5,7 +5,6 @@
   users.users.${vars.userConfig.name} = {
     isNormalUser = true;
     home = "/home/${vars.userConfig.name}";
-    description = "user";
     extraGroups = [ "wheel" ];
   };
 }
