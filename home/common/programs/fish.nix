@@ -14,7 +14,7 @@
           )
 
           # Appearance of the command line prompt
-          printf ' %s%s%s%s > ' $nix_shell_info \
+          printf '%s%s%s%s > ' $nix_shell_info \
             (set_color $fish_color_cwd) (prompt_pwd) (set_color normal)
         '';
       };
