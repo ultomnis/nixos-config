@@ -19,9 +19,5 @@
 
     # RealtimeKit system service
     rtkit.enable = true;
-
-    sudo.extraConfig = ''
-      Defaults passprompt="What? Make it yourself:"
-    '';
   };
 }
