@@ -83,6 +83,7 @@
 
             vars = {
               fontSize = 13;
+              uid = 501;
               userConfig = users.user;
             };
           };
