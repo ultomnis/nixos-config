@@ -6,6 +6,15 @@
     enable = true;
     userName = "${vars.userConfig.gitName}";
 
+    # Syntax-highlighting pager
+    delta = {
+      enable = true;
+
+      options = {
+        syntax-theme = "base16";
+      };
+    };
+
     extraConfig = {
       user.useConfigOnly = true;
     };
