@@ -17,11 +17,11 @@
     defaultOptions = [
       "--border"
       "--layout reverse"
-      "--preview 'bat --color=always {}'"
+      "--preview '${lib.getExe pkgs.bat} --color=always {}'"
     ];
 
     changeDirWidgetOptions = [
-      "--preview 'eza --tree --level=3 --color=always --icons=always {}'"
+      "--preview '${lib.getExe pkgs.eza} --tree --level=3 --color=always --icons=always {}'"
     ];
 
     historyWidgetOptions = [
