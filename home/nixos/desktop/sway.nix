@@ -51,7 +51,7 @@
           {
             command = "floating enable, move position center";
             criteria = {
-              app_id = "pavucontrol";
+              app_id = "pwvucontrol";
             };
           }
         ];
