@@ -9,6 +9,7 @@
     ./ssh.nix
     ./thunderbird.nix
     ./wezterm.nix
+    ./yazi.nix
     ./yt-dlp.nix
   ];
 }
