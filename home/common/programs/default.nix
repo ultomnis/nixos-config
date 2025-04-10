@@ -7,6 +7,7 @@
     ./mpv.nix
     ./ollama.nix
     ./ssh.nix
+    ./thunderbird.nix
     ./wezterm.nix
     ./yt-dlp.nix
   ];
