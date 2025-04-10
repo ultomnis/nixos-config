@@ -11,7 +11,7 @@
       vo = "gpu-next";
 
       # Audio
-      volume = 50;
+      volume = 80;
 
       # Window
       keep-open = "yes";
