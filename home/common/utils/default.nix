@@ -6,6 +6,7 @@
     ./fd.nix
     ./fzf.nix
     ./ripgrep.nix
+    ./tealdeer.nix
     ./zoxide.nix
   ];
 }
