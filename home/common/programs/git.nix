@@ -17,7 +17,13 @@
     };
 
     extraConfig = {
-      user.useConfigOnly = true;
+      merge = {
+        conflictStyle = "zdiff3";
+      };
+
+      user = {
+        useConfigOnly = true;
+      };
     };
 
     includes = [
