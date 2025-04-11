@@ -11,6 +11,7 @@
       enable = true;
 
       options = {
+        navigate = true;
         syntax-theme = "base16";
       };
     };
