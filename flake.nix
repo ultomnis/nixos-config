@@ -63,6 +63,7 @@
 
             vars = {
               fontSize = 11;
+              tailscaleRouting = "client";
               userConfig = users.user;
             };
           };
