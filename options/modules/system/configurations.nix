@@ -22,9 +22,9 @@ in
 {
   options.luminosity.system.configurations = {
     boot = mkConfigurationOption "boot configuration" { };
-    darwin = mkConfigurationOption "macOS configuration" { };
+    darwin = mkConfigurationOption "macOS settings" { };
     locale = mkConfigurationOption "locale configuration" { };
-    nixConfig = mkConfigurationOption "nix settings" { };
+    nixConfig = mkConfigurationOption "Nix settings" { };
 
     primaryUser = mkConfigurationOption "user configuration" {
       name = mkOption {
@@ -40,7 +40,7 @@ in
       };
     };
 
-    security = mkConfigurationOption "security-related options" { };
+    security = mkConfigurationOption "security configuration" { };
 
     variables = mkConfigurationOption "environment variables" {
       bitwarden.sshAgent.enable = mkEnableOption "Whether to enable the Bitwarden SSH Agent.";

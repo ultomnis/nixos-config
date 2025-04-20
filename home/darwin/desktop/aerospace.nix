@@ -13,7 +13,7 @@ let
 
 in
 {
-  config = lib.mkIf (environment.aerospace.enable) {
+  config = lib.mkIf environment.aerospace.enable {
     # macOS tiling window manager
     programs.aerospace = {
       enable = true;

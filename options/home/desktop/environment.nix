@@ -11,7 +11,7 @@ let
     {
       enable = mkOption {
         type = types.bool;
-        default = osConfig.luminosity.system.selections.desktop == name;
+        default = osConfig.luminosity.system.selections.desktop == (lib.toLower name);
         description = "Whether to enable " + name + ".";
       };
     }
@@ -20,13 +20,13 @@ let
 in
 {
   options.luminosity.desktop.environment = {
-    aerospace = mkEnvironmentOption "aerospace" { };
+    aerospace = mkEnvironmentOption "AeroSpace" { };
 
-    sway = mkEnvironmentOption "sway" {
+    sway = mkEnvironmentOption "Sway" {
       output = mkOption {
         type = types.attrsOf (types.attrsOf types.str);
         default = { };
-        description = "Define sway outputs.";
+        description = "Define Sway outputs.";
       };
     };
   };

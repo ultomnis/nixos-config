@@ -20,7 +20,7 @@ let
 in
 {
   options.luminosity.system.services = {
-    bluetooth = mkServiceOption "bluetooth" { };
+    bluetooth = mkServiceOption "Bluetooth" { };
     greetd = mkServiceOption "greetd" { };
     networkmanager = mkServiceOption "Network Manager" { };
     pipewire = mkServiceOption "PipeWire" { };

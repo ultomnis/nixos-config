@@ -28,37 +28,37 @@ in
     fish = mkTerminalOption "fish" { };
     fzf = mkTerminalOption "fzf" { };
 
-    git = mkTerminalOption "git" {
+    git = mkTerminalOption "Git" {
       userName = mkOption {
         type = types.str;
         default = "";
-        description = "Default username for git.";
+        description = "Default username for Git.";
       };
 
       email = mkOption {
         type = types.str;
         default = "";
-        description = "Default email for git.";
+        description = "Default email for Git.";
       };
     };
 
-    helix = mkTerminalOption "helix" { };
+    helix = mkTerminalOption "Helix" { };
     libqalculate = mkTerminalOption "libqalculate" { };
     mat2 = mkTerminalOption "mat2" { };
 
-    ollama = mkTerminalOption "ollama" {
+    ollama = mkTerminalOption "Ollama" {
       environmentVariables = mkOption {
         type = types.attrsOf types.str;
         default = { };
-        description = "Set environment variables for ollama.";
+        description = "Set environment variables for Ollama.";
       };
     };
 
     ripgrep = mkTerminalOption "ripgrep" { };
-    ssh = mkTerminalOption "ssh" { };
+    ssh = mkTerminalOption "SSH" { };
     tealdeer = mkTerminalOption "tealdeer" { };
     unar = mkTerminalOption "unar" { };
-    yazi = mkTerminalOption "yazi" { };
+    yazi = mkTerminalOption "Yazi" { };
     yt-dlp = mkTerminalOption "yt-dlp" { };
     zoxide = mkTerminalOption "zoxide" { };
   };
