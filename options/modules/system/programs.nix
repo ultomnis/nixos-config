@@ -21,6 +21,7 @@ in
 {
   options.luminosity.system.programs = {
     adb = mkProgramOption "Android Debug Bridge" { };
+    homebrew = mkProgramOption "Homebrew" { };
     obs-studio = mkProgramOption "OBS Studio" { };
     steam = mkProgramOption "Steam" { };
     virt-manager = mkProgramOption "Virtual Machine Manager" { };

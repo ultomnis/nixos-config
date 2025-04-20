@@ -26,6 +26,8 @@
       variables.bitwarden.sshAgent.enable = true;
     };
 
+    programs.enable = true;
+
     selections = {
       desktop = "aerospace";
       editor = "hx";
