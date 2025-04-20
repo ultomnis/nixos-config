@@ -1,6 +1,6 @@
 {
   imports = [
-    ./components
     ./desktop
+    ./graphical
   ];
 }

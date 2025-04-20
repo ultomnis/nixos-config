@@ -1,7 +1,14 @@
-{ vars, ... }:
+{ config, lib, ... }:
 
+let
+  inherit (config.luminosity.system.configurations) primaryUser;
+  cfg = config.luminosity.system.programs.adb;
+
+in
 {
-  # Android Debug Bridge
-  programs.adb.enable = true;
-  users.users.${vars.userConfig.name}.extraGroups = [ "adbusers" ];
+  config = lib.mkIf cfg.enable {
+    # Android Debug Bridge
+    programs.adb.enable = true;
+    users.users.${primaryUser.name}.extraGroups = [ "adbusers" ];
+  };
 }

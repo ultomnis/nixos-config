@@ -1,10 +1,9 @@
 {
   imports = [
+    ./amdgpu.nix
     ./boot.nix
     ./locale.nix
-    ./nixpkgs-config.nix
-    ./security.nix
-    ./users.nix
+    ./sway.nix
     ./zramswap.nix
   ];
 }

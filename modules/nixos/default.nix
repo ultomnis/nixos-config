@@ -1,8 +1,7 @@
 {
   imports = [
-    ./daemons
-    ./hardware
     ./programs
+    ./services
     ./system
   ];
 }

@@ -40,14 +40,6 @@
 
       inherit (mkLib) mkNixosConfig mkDarwinConfig;
 
-      users = {
-        user = {
-          name = "user";
-          gitName = "ultomnis";
-          githubEmail = "125839032+ultomnis@users.noreply.github.com";
-        };
-      };
-
     in
     {
       forEachSystem = nixpkgs.lib.genAttrs includedSystems;
@@ -60,12 +52,6 @@
 
           specialArgs = {
             inherit inputs;
-
-            vars = {
-              fontSize = 11;
-              tailscaleRouting = "client";
-              userConfig = users.user;
-            };
           };
 
           extraModules = [
@@ -81,12 +67,6 @@
 
           specialArgs = {
             inherit inputs;
-
-            vars = {
-              fontSize = 13;
-              uid = 501;
-              userConfig = users.user;
-            };
           };
         };
       };

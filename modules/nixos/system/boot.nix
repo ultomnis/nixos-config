@@ -1,16 +1,25 @@
-{ pkgs, ... }:
-
 {
-  boot = {
-    # Linux kernel
-    kernelPackages = pkgs.linuxPackages_latest;
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
-    kernelParams = [ "console=tty1" ];
+let
+  cfg = config.luminosity.system.configurations.boot;
 
-    # Bootloader
-    loader = {
-      systemd-boot.enable = true;
-      efi.canTouchEfiVariables = true;
+in
+{
+  config = lib.mkIf cfg.enable {
+    boot = {
+      # Linux kernel
+      kernelPackages = pkgs.linuxPackages_latest;
+
+      # Bootloader
+      loader = {
+        systemd-boot.enable = true;
+        efi.canTouchEfiVariables = true;
+      };
     };
   };
 }

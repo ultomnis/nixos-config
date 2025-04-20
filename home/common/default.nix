@@ -1,7 +1,7 @@
 {
   imports = [
-    ./components
-    ./programs
-    ./utils
+    ./desktop
+    ./graphical
+    ./terminal
   ];
 }

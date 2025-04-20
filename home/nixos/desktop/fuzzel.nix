@@ -1,23 +1,34 @@
-{ lib, pkgs, ... }:
-
 {
-  # Wayland application launcher
-  programs.fuzzel = {
-    enable = true;
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
-    settings = {
-      main = {
-        icon-theme = "Papirus";
-        terminal = "${lib.getExe pkgs.wezterm} -e";
-      };
+let
+  inherit (config.luminosity.desktop) selections;
 
-      border = {
-        width = 0;
-        radius = 0;
-      };
+in
+{
+  config = lib.mkIf (selections.launcher == "fuzzel") {
+    # Wayland application launcher
+    programs.fuzzel = {
+      enable = true;
 
-      colors = {
-        background = "000000ff";
+      settings = {
+        main = {
+          icon-theme = "Papirus";
+          terminal = lib.mkIf (selections.terminal != null) "${lib.getExe pkgs.${selections.terminal}} -e";
+        };
+
+        border = {
+          width = 0;
+          radius = 0;
+        };
+
+        colors = {
+          background = "000000ff";
+        };
       };
     };
   };

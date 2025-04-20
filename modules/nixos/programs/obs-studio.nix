@@ -1,7 +1,15 @@
+{ config, lib, ... }:
+
+let
+  cfg = config.luminosity.system.programs.obs-studio;
+
+in
 {
-  # Screencasting and streaming program
-  programs.obs-studio = {
-    enable = true;
-    enableVirtualCamera = true;
+  config = lib.mkIf cfg.enable {
+    # Screencasting and streaming program
+    programs.obs-studio = {
+      enable = true;
+      enableVirtualCamera = true;
+    };
   };
 }
