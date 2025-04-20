@@ -4,5 +4,6 @@
     ./firefox.nix
     ./mpv.nix
     ./thunderbird.nix
+    ./wezterm.nix
   ];
 }
