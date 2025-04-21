@@ -22,6 +22,7 @@ in
 
   luminosity = {
     desktop = {
+      fonts.size = 13;
       selections.terminal = "wezterm";
     };
 
