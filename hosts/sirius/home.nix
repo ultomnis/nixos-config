@@ -21,7 +21,7 @@ in
 
   luminosity = {
     desktop = {
-      fonts.size = 11;
+      fonts.size = 10;
 
       selections = {
         launcher = "fuzzel";
