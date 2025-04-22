@@ -1,9 +1,5 @@
-{ osConfig, ... }:
+{ osConfig, userName, ... }:
 
-let
-  inherit (osConfig.luminosity.system.configurations) primaryUser;
-
-in
 {
   imports = [
     ../../home/common
@@ -12,8 +8,8 @@ in
   ];
 
   home = {
-    username = "${primaryUser.name}";
-    homeDirectory = "${osConfig.users.users.${primaryUser.name}.home}";
+    username = userName;
+    homeDirectory = osConfig.users.users.${userName}.home;
     stateVersion = "24.05";
     file.".hushlogin".text = "";
   };

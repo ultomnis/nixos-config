@@ -1,7 +1,11 @@
-{ config, lib, ... }:
+{
+  config,
+  lib,
+  userName,
+  ...
+}:
 
 let
-  inherit (config.luminosity.system.configurations) primaryUser;
   cfg = config.luminosity.system.programs.virt-manager;
 
 in
@@ -10,6 +14,6 @@ in
     # Manage virtual machines via libvirt
     programs.virt-manager.enable = true;
     virtualisation.libvirtd.enable = true;
-    users.users.${primaryUser.name}.extraGroups = [ "libvirtd" ];
+    users.users.${userName}.extraGroups = [ "libvirtd" ];
   };
 }

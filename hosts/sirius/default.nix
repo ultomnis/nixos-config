@@ -1,3 +1,5 @@
+{ hostName, ... }:
+
 {
   imports = [
     ./disk-config.nix
@@ -7,7 +9,7 @@
     ../../options/modules
   ];
 
-  networking.hostName = "sirius"; # Define your hostname
+  networking.hostName = hostName; # Define your hostname
 
   # Do NOT change this value unless you have manually inspected all the changes it would make to your configuration,
   # and migrated your data accordingly.
@@ -16,7 +18,6 @@
   luminosity.system = {
     configurations = {
       enable = true;
-      primaryUser.name = "user";
       variables.bitwarden.sshAgent.enable = true;
     };
 

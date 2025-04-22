@@ -1,15 +1,15 @@
 { config, lib, ... }:
 
 let
-  inherit (config.luminosity.programs.terminal) git;
+  cfg = config.luminosity.programs.terminal.git;
 
 in
 {
-  config = lib.mkIf git.enable {
+  config = lib.mkIf cfg.enable {
     # Distributed version control system
     programs.git = {
       enable = true;
-      userName = git.userName;
+      userName = cfg.userName;
 
       # Syntax-highlighting pager
       delta = {
@@ -40,7 +40,7 @@ in
             gpg.format = "ssh";
 
             user = {
-              email = git.email;
+              email = cfg.email;
               signingKey = "${config.home.homeDirectory}/.ssh/github.pub";
             };
           };

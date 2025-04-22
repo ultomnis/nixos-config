@@ -26,13 +26,7 @@ in
     locale = mkConfigurationOption "locale configuration" { };
     nixConfig = mkConfigurationOption "Nix settings" { };
 
-    primaryUser = mkConfigurationOption "user configuration" {
-      name = mkOption {
-        type = types.str;
-        default = "nix";
-        description = "Name of the primary user.";
-      };
-
+    userConfig = mkConfigurationOption "user configuration" {
       uid = mkOption {
         type = types.nullOr (types.int);
         default = null;

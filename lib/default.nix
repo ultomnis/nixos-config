@@ -12,9 +12,9 @@ let
 in
 {
   mkNixosConfig =
-    hostname:
     {
-      username,
+      hostName,
+      userName,
       system,
       specialArgs,
       extraModules ? [ ],
@@ -25,7 +25,7 @@ in
       specialArgs = specialArgs;
 
       modules = [
-        ../hosts/${hostname}
+        ../hosts/${hostName}
 
         home-manager.nixosModules.home-manager
         {
@@ -33,9 +33,9 @@ in
             useGlobalPkgs = true;
             useUserPackages = true;
 
-            users.${username} = {
+            users.${userName} = {
               imports = [
-                ../hosts/${hostname}/home.nix
+                ../hosts/${hostName}/home.nix
               ];
             };
 
@@ -46,9 +46,9 @@ in
     };
 
   mkDarwinConfig =
-    hostname:
     {
-      username,
+      hostName,
+      userName,
       system,
       specialArgs,
       extraModules ? [ ],
@@ -59,7 +59,7 @@ in
       specialArgs = specialArgs;
 
       modules = [
-        ../hosts/${hostname}
+        ../hosts/${hostName}
 
         home-manager.darwinModules.home-manager
         {
@@ -67,9 +67,9 @@ in
             useGlobalPkgs = true;
             useUserPackages = true;
 
-            users.${username} = {
+            users.${userName} = {
               imports = [
-                ../hosts/${hostname}/home.nix
+                ../hosts/${hostName}/home.nix
               ];
             };
 

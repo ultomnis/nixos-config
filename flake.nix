@@ -46,12 +46,13 @@
       formatter = self.forEachSystem (system: nixpkgs.legacyPackages.${system}.nixfmt-rfc-style);
 
       nixosConfigurations = {
-        sirius = mkNixosConfig "sirius" {
-          username = "user";
+        sirius = mkNixosConfig rec {
+          hostName = "sirius";
+          userName = "user";
           system = "x86_64-linux";
 
           specialArgs = {
-            inherit inputs;
+            inherit hostName inputs userName;
           };
 
           extraModules = [
@@ -61,12 +62,13 @@
       };
 
       darwinConfigurations = {
-        canopus = mkDarwinConfig "canopus" {
-          username = "user";
+        canopus = mkDarwinConfig rec {
+          hostName = "canopus";
+          userName = "user";
           system = "aarch64-darwin";
 
           specialArgs = {
-            inherit inputs;
+            inherit hostName inputs userName;
           };
         };
       };

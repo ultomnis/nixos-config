@@ -36,7 +36,7 @@ in
       languages = {
         language-server = {
           nixd = {
-            command = "${lib.getExe pkgs.nixd}";
+            command = lib.getExe pkgs.nixd;
           };
         };
 
@@ -46,7 +46,7 @@ in
             auto-format = true;
             language-servers = [ "nixd" ];
             formatter = {
-              command = "${lib.getExe pkgs.nixfmt-rfc-style}";
+              command = lib.getExe pkgs.nixfmt-rfc-style;
             };
           }
         ];

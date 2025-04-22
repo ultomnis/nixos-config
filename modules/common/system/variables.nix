@@ -1,4 +1,9 @@
-{ config, lib, ... }:
+{
+  config,
+  lib,
+  userName,
+  ...
+}:
 
 let
   inherit (config.luminosity.system)
@@ -11,9 +16,9 @@ in
   config = lib.mkIf configurations.variables.enable {
     environment = {
       variables = {
-        EDITOR = lib.mkIf (selections.editor != null) "${selections.editor}";
+        EDITOR = lib.mkIf (selections.editor != null) selections.editor;
         SSH_AUTH_SOCK = lib.mkIf (configurations.variables.bitwarden.sshAgent.enable) "${
-          config.users.users.${configurations.primaryUser.name}.home
+          config.users.users.${userName}.home
         }/.bitwarden-ssh-agent.sock";
       };
     };

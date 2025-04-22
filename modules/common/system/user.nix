@@ -2,11 +2,12 @@
   config,
   lib,
   pkgs,
+  userName,
   ...
 }:
 
 let
-  inherit (config.luminosity.system.configurations) primaryUser;
+  cfg = config.luminosity.system.configurations.userConfig;
 
   inherit (pkgs.stdenv)
     isDarwin
@@ -15,13 +16,13 @@ let
 
 in
 {
-  config = lib.mkIf primaryUser.enable {
+  config = lib.mkIf cfg.enable {
     users =
       {
-        users.${primaryUser.name} =
+        users.${userName} =
           {
-            home = if isDarwin then "/Users/${primaryUser.name}" else "/home/${primaryUser.name}";
-            uid = primaryUser.uid;
+            home = if isDarwin then "/Users/${userName}" else "/home/${userName}";
+            uid = cfg.uid;
           }
           // lib.optionalAttrs isLinux {
             isNormalUser = true;
@@ -30,7 +31,7 @@ in
       }
       // lib.optionalAttrs isDarwin {
         knownUsers = [
-          "${primaryUser.name}"
+          userName
         ];
       };
   };

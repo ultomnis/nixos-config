@@ -21,8 +21,8 @@ in
 
       config = {
         modifier = "Mod4";
-        terminal = lib.mkIf (selections.terminal != null) "${lib.getExe pkgs.${selections.terminal}}";
-        menu = lib.mkIf (selections.launcher != null) "${lib.getExe pkgs.${selections.launcher}}";
+        terminal = lib.mkIf (selections.terminal != null) (lib.getExe pkgs.${selections.terminal});
+        menu = lib.mkIf (selections.launcher != null) (lib.getExe pkgs.${selections.launcher});
         defaultWorkspace = "workspace number 1";
 
         input = {
@@ -99,7 +99,7 @@ in
 
         bars = [
           {
-            command = "${lib.getExe pkgs.waybar}";
+            command = lib.getExe pkgs.waybar;
           }
         ];
       };

@@ -1,15 +1,15 @@
 { config, lib, ... }:
 
 let
-  inherit (config.luminosity.programs.terminal) ollama;
+  cfg = config.luminosity.programs.terminal.ollama;
 
 in
 {
-  config = lib.mkIf ollama.enable {
+  config = lib.mkIf cfg.enable {
     # Run large language models locally
     services.ollama = {
       enable = true;
-      environmentVariables = ollama.environmentVariables;
+      environmentVariables = cfg.environmentVariables;
     };
   };
 }

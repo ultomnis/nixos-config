@@ -17,7 +17,7 @@ in
         enable = true;
       }
       // lib.optionalAttrs isLinux {
-        useRoutingFeatures = "${cfg.useRoutingFeatures}";
+        useRoutingFeatures = cfg.useRoutingFeatures;
       };
   };
 }

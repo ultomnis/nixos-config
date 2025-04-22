@@ -5,8 +5,12 @@
   ...
 }:
 
+let
+  cfg = config.luminosity.desktop.environment.sway;
+
+in
 {
-  config = lib.mkIf config.luminosity.desktop.environment.sway.enable {
+  config = lib.mkIf cfg.enable {
     # Wayland idle management daemon
     services.swayidle = {
       enable = true;

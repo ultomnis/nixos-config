@@ -1,3 +1,5 @@
+{ hostName, ... }:
+
 {
   imports = [
     ../../modules/common
@@ -6,8 +8,8 @@
   ];
 
   networking = {
-    computerName = "canopus";
-    hostName = "canopus"; # Define your hostname
+    computerName = hostName;
+    hostName = hostName; # Define your hostname
   };
 
   # Do NOT change this value unless you have manually inspected all the changes it would make to your configuration,
@@ -17,12 +19,7 @@
   luminosity.system = {
     configurations = {
       enable = true;
-
-      primaryUser = {
-        name = "user";
-        uid = 501;
-      };
-
+      userConfig.uid = 501;
       variables.bitwarden.sshAgent.enable = true;
     };
 
