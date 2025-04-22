@@ -1,4 +1,4 @@
-{ hostName, ... }:
+{ hostName, inputs, ... }:
 
 {
   imports = [
@@ -27,7 +27,10 @@
       desktop = "sway";
       editor = "hx";
       gpu = "amd";
+      launcher = "fuzzel";
       shell = "fish";
+      terminal = "wezterm";
+      wallpaper = inputs.self + "/assets/wallpapers/kemo-sahab-4V0tz5FEvTc-unsplash.jpg";
     };
 
     services = {

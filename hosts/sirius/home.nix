@@ -1,6 +1,7 @@
 {
-  inputs,
+  lib,
   osConfig,
+  pkgs,
   userName,
   ...
 }:
@@ -24,14 +25,10 @@
     desktop = {
       fonts.size = 10;
 
-      selections = {
-        launcher = "fuzzel";
-        terminal = "wezterm";
-        wallpaper = inputs.self + "/assets/wallpapers/kemo-sahab-4V0tz5FEvTc-unsplash.jpg";
-      };
+      environment = {
+        launcherCommand = "${lib.getExe pkgs.fuzzel} --anchor top-left";
 
-      environment.sway = {
-        output = {
+        swayOutput = {
           DP-2 = {
             mode = "1920x1080@165Hz";
           };

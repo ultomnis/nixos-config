@@ -1,4 +1,4 @@
-{ lib, osConfig, ... }:
+{ lib, ... }:
 
 let
   inherit (lib)
@@ -6,28 +6,19 @@ let
     types
     ;
 
-  mkEnvironmentOption =
-    name: extraOptions:
-    {
-      enable = mkOption {
-        type = types.bool;
-        default = osConfig.luminosity.system.selections.desktop == (lib.toLower name);
-        description = "Whether to enable " + name + ".";
-      };
-    }
-    // extraOptions;
-
 in
 {
   options.luminosity.desktop.environment = {
-    aerospace = mkEnvironmentOption "AeroSpace" { };
+    launcherCommand = mkOption {
+      type = types.str;
+      default = null;
+      description = "Launcher command to use when opened from a status bar.";
+    };
 
-    sway = mkEnvironmentOption "Sway" {
-      output = mkOption {
-        type = types.attrsOf (types.attrsOf types.str);
-        default = { };
-        description = "Define Sway outputs.";
-      };
+    swayOutput = mkOption {
+      type = types.attrsOf (types.attrsOf types.str);
+      default = { };
+      description = "Define Sway outputs.";
     };
   };
 }

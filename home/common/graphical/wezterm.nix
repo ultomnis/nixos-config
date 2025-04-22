@@ -1,15 +1,21 @@
-{ config, lib, ... }:
+{
+  config,
+  lib,
+  osConfig,
+  ...
+}:
 
 let
+  inherit (osConfig.luminosity.system.selections) terminal;
+
   inherit (config.luminosity.desktop)
     fonts
-    selections
     themes
     ;
 
 in
 {
-  config = lib.mkIf (selections.terminal == "wezterm") {
+  config = lib.mkIf (terminal == "wezterm") {
     # Terminal emulator
     programs.wezterm = {
       enable = true;

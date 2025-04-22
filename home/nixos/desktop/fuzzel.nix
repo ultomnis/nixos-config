@@ -1,16 +1,11 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
-}:
+{ lib, osConfig, ... }:
 
 let
-  inherit (config.luminosity.desktop) selections;
+  inherit (osConfig.luminosity.system.selections) launcher;
 
 in
 {
-  config = lib.mkIf (selections.launcher == "fuzzel") {
+  config = lib.mkIf (launcher == "fuzzel") {
     # Wayland application launcher
     programs.fuzzel = {
       enable = true;
@@ -18,7 +13,6 @@ in
       settings = {
         main = {
           icon-theme = "Papirus";
-          terminal = lib.mkIf (selections.terminal != null) "${lib.getExe pkgs.${selections.terminal}} -e";
         };
 
         border = {

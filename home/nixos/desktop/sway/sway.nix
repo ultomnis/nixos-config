@@ -1,19 +1,24 @@
 {
   config,
   lib,
+  osConfig,
   pkgs,
   ...
 }:
 
 let
-  inherit (config.luminosity.desktop)
-    environment
-    selections
+  inherit (osConfig.luminosity.system.selections)
+    desktop
+    launcher
+    terminal
+    wallpaper
     ;
+
+  inherit (config.luminosity.desktop.environment) swayOutput;
 
 in
 {
-  config = lib.mkIf environment.sway.enable {
+  config = lib.mkIf (desktop == "sway") {
     # Tiling Wayland compositor
     wayland.windowManager.sway = {
       enable = true;
@@ -21,8 +26,8 @@ in
 
       config = {
         modifier = "Mod4";
-        terminal = lib.mkIf (selections.terminal != null) (lib.getExe pkgs.${selections.terminal});
-        menu = lib.mkIf (selections.launcher != null) (lib.getExe pkgs.${selections.launcher});
+        terminal = lib.mkIf (terminal != null) (lib.getExe pkgs.${terminal});
+        menu = lib.mkIf (launcher != null) (lib.getExe pkgs.${launcher});
         defaultWorkspace = "workspace number 1";
 
         input = {
@@ -35,10 +40,10 @@ in
         output = {
           "*" = {
             allow_tearing = "yes";
-            bg = lib.mkIf (selections.wallpaper != null) "${selections.wallpaper} fill";
+            bg = lib.mkIf (wallpaper != null) "${wallpaper} fill";
             max_render_time = "off";
           };
-        } // environment.sway.output;
+        } // swayOutput;
 
         window = {
           border = 0;

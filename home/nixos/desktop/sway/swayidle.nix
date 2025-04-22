@@ -1,16 +1,16 @@
 {
-  config,
   lib,
+  osConfig,
   pkgs,
   ...
 }:
 
 let
-  cfg = config.luminosity.desktop.environment.sway;
+  inherit (osConfig.luminosity.system.selections) desktop;
 
 in
 {
-  config = lib.mkIf cfg.enable {
+  config = lib.mkIf (desktop == "sway") {
     # Wayland idle management daemon
     services.swayidle = {
       enable = true;

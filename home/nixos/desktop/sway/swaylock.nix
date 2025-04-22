@@ -1,20 +1,20 @@
-{ config, lib, ... }:
+{ lib, osConfig, ... }:
 
 let
-  inherit (config.luminosity.desktop)
-    environment
-    selections
+  inherit (osConfig.luminosity.system.selections)
+    desktop
+    wallpaper
     ;
 
 in
 {
-  config = lib.mkIf environment.sway.enable {
+  config = lib.mkIf (desktop == "sway") {
     # Wayland screen locker
     programs.swaylock = {
       enable = true;
 
       settings = {
-        image = lib.mkIf (selections.wallpaper != null) selections.wallpaper;
+        image = lib.mkIf (wallpaper != null) wallpaper;
         scaling = "fill";
         show-failed-attempts = true;
       };

@@ -29,6 +29,7 @@
       desktop = "aerospace";
       editor = "hx";
       shell = "fish";
+      terminal = "wezterm";
     };
 
     services.enable = true;

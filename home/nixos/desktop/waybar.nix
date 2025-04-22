@@ -6,14 +6,13 @@
 }:
 
 let
-  inherit (config.luminosity.desktop)
-    selections
-    waybar
-    ;
+  cfg = config.luminosity.desktop.waybar;
+
+  inherit (config.luminosity.desktop.environment) launcherCommand;
 
 in
 {
-  config = lib.mkIf waybar.enable {
+  config = lib.mkIf cfg.enable {
     # Wayland status bar
     programs.waybar = {
       enable = true;
@@ -39,7 +38,7 @@ in
           "custom/menu" = {
             format = "";
             tooltip = false;
-            on-click = lib.mkIf (selections.launcher != null) (lib.getExe pkgs.${selections.launcher});
+            on-click = launcherCommand;
           };
 
           "sway/workspaces" = {

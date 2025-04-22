@@ -1,19 +1,19 @@
 {
-  config,
   lib,
+  osConfig,
   pkgs,
   ...
 }:
 
 let
-  inherit (config.luminosity.desktop)
-    environment
-    selections
+  inherit (osConfig.luminosity.system.selections)
+    desktop
+    terminal
     ;
 
 in
 {
-  config = lib.mkIf environment.aerospace.enable {
+  config = lib.mkIf (desktop == "aerospace") {
     # macOS tiling window manager
     programs.aerospace = {
       enable = true;
@@ -36,9 +36,7 @@ in
         };
 
         mode.main.binding = {
-          alt-enter =
-            lib.mkIf (selections.terminal != null)
-              "exec-and-forget open -na ${lib.getExe pkgs.${selections.terminal}}";
+          alt-enter = lib.mkIf (terminal != null) "exec-and-forget open -na ${lib.getExe pkgs.${terminal}}";
 
           alt-h = "focus --boundaries-action wrap-around-the-workspace left";
           alt-j = "focus --boundaries-action wrap-around-the-workspace down";
