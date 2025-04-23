@@ -16,15 +16,7 @@
   # and migrated your data accordingly.
   system.stateVersion = 6;
 
-  luminosity.system = {
-    configurations = {
-      enable = true;
-      userConfig.uid = 501;
-      variables.bitwarden.sshAgent.enable = true;
-    };
-
-    programs.enable = true;
-
+  luminosity = {
     selections = {
       desktop = "aerospace";
       editor = "hx";
@@ -32,6 +24,15 @@
       terminal = "wezterm";
     };
 
-    services.enable = true;
+    system = {
+      configurations = {
+        enable = true;
+        userConfig.uid = 501;
+        variables.bitwarden.sshAgent.enable = true;
+      };
+
+      programs.enable = true;
+      services.enable = true;
+    };
   };
 }

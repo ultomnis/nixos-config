@@ -13,7 +13,7 @@ let
         type = types.bool;
 
         default = (
-          builtins.elem osConfig.luminosity.system.selections.desktop [
+          builtins.elem osConfig.luminosity.selections.desktop [
             "aerospace"
             "sway"
           ]

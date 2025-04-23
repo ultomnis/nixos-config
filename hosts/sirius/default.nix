@@ -15,14 +15,7 @@
   # and migrated your data accordingly.
   system.stateVersion = "24.05";
 
-  luminosity.system = {
-    configurations = {
-      enable = true;
-      variables.bitwarden.sshAgent.enable = true;
-    };
-
-    programs.enable = true;
-
+  luminosity = {
     selections = {
       desktop = "sway";
       editor = "hx";
@@ -33,9 +26,18 @@
       wallpaper = inputs.self + "/assets/wallpapers/kemo-sahab-4V0tz5FEvTc-unsplash.jpg";
     };
 
-    services = {
-      enable = true;
-      tailscale.useRoutingFeatures = "client";
+    system = {
+      configurations = {
+        enable = true;
+        variables.bitwarden.sshAgent.enable = true;
+      };
+
+      programs.enable = true;
+
+      services = {
+        enable = true;
+        tailscale.useRoutingFeatures = "client";
+      };
     };
   };
 }

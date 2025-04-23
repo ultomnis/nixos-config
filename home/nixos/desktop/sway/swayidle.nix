@@ -6,7 +6,7 @@
 }:
 
 let
-  inherit (osConfig.luminosity.system.selections) desktop;
+  inherit (osConfig.luminosity.selections) desktop;
 
 in
 {

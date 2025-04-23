@@ -6,7 +6,7 @@
 }:
 
 let
-  inherit (osConfig.luminosity.system.selections) terminal;
+  inherit (osConfig.luminosity.selections) terminal;
 
   inherit (config.luminosity.desktop)
     fonts

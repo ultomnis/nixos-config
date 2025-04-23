@@ -1,7 +1,7 @@
 { config, lib, ... }:
 
 let
-  inherit (config.luminosity.system.selections) gpu;
+  inherit (config.luminosity.selections) gpu;
 
 in
 {

@@ -8,7 +8,7 @@ let
 
 in
 {
-  options.luminosity.desktop.environment = {
+  options.luminosity.settings = {
     launcherCommand = mkOption {
       type = types.str;
       default = null;

@@ -6,7 +6,7 @@
 }:
 
 let
-  inherit (osConfig.luminosity.system.selections)
+  inherit (osConfig.luminosity.selections)
     desktop
     terminal
     ;

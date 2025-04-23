@@ -8,7 +8,7 @@ let
 
 in
 {
-  options.luminosity.system.selections = {
+  options.luminosity.selections = {
     desktop = mkOption {
       type = types.nullOr (
         types.enum [

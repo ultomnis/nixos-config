@@ -8,7 +8,7 @@
 let
   cfg = config.luminosity.desktop.waybar;
 
-  inherit (config.luminosity.desktop.environment) launcherCommand;
+  inherit (config.luminosity.settings) launcherCommand;
 
 in
 {
@@ -38,7 +38,7 @@ in
           "custom/menu" = {
             format = "";
             tooltip = false;
-            on-click = launcherCommand;
+            on-click = lib.mkIf (launcherCommand != null) launcherCommand;
           };
 
           "sway/workspaces" = {

@@ -6,7 +6,7 @@
 }:
 
 let
-  inherit (config.luminosity.system.selections) desktop;
+  inherit (config.luminosity.selections) desktop;
   cfg = config.luminosity.system.services.greetd;
 
 in

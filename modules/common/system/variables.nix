@@ -9,7 +9,11 @@ let
   inherit (config.luminosity.system)
     configurations
     programs
-    selections
+    ;
+
+  inherit (config.luminosity.selections)
+    editor
+    terminal
     ;
 
 in
@@ -17,14 +21,14 @@ in
   config = lib.mkIf configurations.variables.enable {
     environment = {
       variables = {
-        EDITOR = lib.mkIf (selections.editor != null) selections.editor;
+        EDITOR = lib.mkIf (editor != null) editor;
         HOMEBREW_NO_ANALYTICS = lib.mkIf (programs.homebrew.enable) "1";
 
         SSH_AUTH_SOCK = lib.mkIf (configurations.variables.bitwarden.sshAgent.enable) "${
           config.users.users.${userName}.home
         }/.bitwarden-ssh-agent.sock";
 
-        TERMINAL = lib.mkIf (selections.terminal != null) selections.terminal;
+        TERMINAL = lib.mkIf (terminal != null) terminal;
       };
     };
   };

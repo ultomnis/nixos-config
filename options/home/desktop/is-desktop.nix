@@ -16,7 +16,7 @@ let
     {
       enable = mkOption {
         type = types.bool;
-        default = osConfig.luminosity.system.selections.desktop != null;
+        default = osConfig.luminosity.selections.desktop != null;
         description = "Whether to enable " + name + ".";
       };
     }

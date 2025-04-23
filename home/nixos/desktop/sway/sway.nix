@@ -7,14 +7,14 @@
 }:
 
 let
-  inherit (osConfig.luminosity.system.selections)
+  inherit (osConfig.luminosity.selections)
     desktop
     launcher
     terminal
     wallpaper
     ;
 
-  inherit (config.luminosity.desktop.environment) swayOutput;
+  inherit (config.luminosity.settings) swayOutput;
 
 in
 {

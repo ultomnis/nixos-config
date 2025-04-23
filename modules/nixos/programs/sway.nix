@@ -1,7 +1,7 @@
 { config, lib, ... }:
 
 let
-  inherit (config.luminosity.system.selections) desktop;
+  inherit (config.luminosity.selections) desktop;
 
 in
 {
