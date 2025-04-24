@@ -71,11 +71,12 @@ in
         };
 
         focus = {
+          followMouse = "no";
           wrapping = "yes";
         };
 
         gaps = {
-          inner = 5;
+          inner = 7;
         };
 
         keybindings =
