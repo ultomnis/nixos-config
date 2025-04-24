@@ -22,7 +22,6 @@ in
     # Tiling Wayland compositor
     wayland.windowManager.sway = {
       enable = true;
-      checkConfig = false;
 
       config = {
         modifier = "Mod4";
