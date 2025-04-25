@@ -35,21 +35,28 @@ in
           };
 
           ExtensionSettings =
+            let
+              extensionSetting =
+                extensionName: extraOptions:
+                {
+                  installation_mode = "force_installed";
+                  install_url = "https://addons.mozilla.org/firefox/downloads/latest/${extensionName}/latest.xpi";
+                }
+                // extraOptions;
+            in
             {
               "*" = {
                 installation_mode = "blocked";
               };
-            }
-            // builtins.mapAttrs
-              (_: extension: {
-                installation_mode = "force_installed";
-                install_url = "https://addons.mozilla.org/firefox/downloads/latest/${extension}/latest.xpi";
-              })
-              {
-                "{446900e4-71c2-419f-a6a7-df9c091e268b}" = "bitwarden-password-manager";
-                "addon@darkreader.org" = "darkreader";
-                "uBlock0@raymondhill.net" = "ublock-origin";
+
+              "{446900e4-71c2-419f-a6a7-df9c091e268b}" = extensionSetting "bitwarden-password-manager" { };
+
+              "addon@darkreader.org" = extensionSetting "darkreader" { };
+
+              "uBlock0@raymondhill.net" = extensionSetting "ublock-origin" {
+                private_browsing = true;
               };
+            };
 
           FirefoxHome = {
             TopSites = false;
