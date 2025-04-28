@@ -1,7 +1,7 @@
-{ lib, osConfig, ... }:
+{ config, lib, ... }:
 
 let
-  inherit (osConfig.luminosity.selections) launcher;
+  inherit (config.luminosity.home.selections) launcher;
 
 in
 {

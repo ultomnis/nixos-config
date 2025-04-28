@@ -3,22 +3,21 @@
 {
   imports = [
     ../../home/common
-    ../../home/darwin
     ../../options/home
+    ../../options/modules
   ];
 
   home = {
     username = userName;
-    homeDirectory = "/Users/${userName}";
-    stateVersion = "24.05";
-    file.".hushlogin".text = "";
+    homeDirectory = "/home/${userName}";
+    stateVersion = "24.11";
   };
 
   programs.home-manager.enable = true;
 
   luminosity = {
     desktop = {
-      fonts.size = 13;
+      nixConfig.enable = true;
     };
 
     programs = {
@@ -33,5 +32,9 @@
         };
       };
     };
+  };
+
+  home.sessionVariables = {
+    SSH_AUTH_SOCK = "/home/${userName}/.bitwarden-ssh-agent.sock";
   };
 }

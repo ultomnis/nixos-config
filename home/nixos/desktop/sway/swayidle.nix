@@ -1,12 +1,12 @@
 {
+  config,
   lib,
-  osConfig,
   pkgs,
   ...
 }:
 
 let
-  inherit (osConfig.luminosity.selections) desktop;
+  inherit (config.luminosity.home.selections) desktop;
 
 in
 {

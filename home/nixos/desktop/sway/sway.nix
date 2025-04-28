@@ -1,13 +1,12 @@
 {
   config,
   lib,
-  osConfig,
   pkgs,
   ...
 }:
 
 let
-  inherit (osConfig.luminosity.selections)
+  inherit (config.luminosity.home.selections)
     desktop
     launcher
     terminal

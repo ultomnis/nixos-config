@@ -1,12 +1,15 @@
 {
   config,
   lib,
-  osConfig,
+  pkgs,
   ...
 }:
 
 let
-  inherit (osConfig.luminosity.selections) terminal;
+  inherit (config.luminosity.home.selections)
+    shell
+    terminal
+    ;
 
   inherit (config.luminosity.desktop)
     fonts
@@ -24,6 +27,7 @@ in
         local config = {}
 
         config.color_scheme = '${themes.name}'
+        ${if (shell != null) then "config.default_prog = { '${lib.getExe pkgs.${shell}}' }" else ""}
         config.enable_tab_bar = false
         config.font = wezterm.font '${fonts.mono}'
         config.font_size = ${builtins.toString fonts.size}

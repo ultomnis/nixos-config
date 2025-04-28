@@ -38,7 +38,7 @@
         inherit inputs;
       };
 
-      inherit (mkLib) mkNixosConfig mkDarwinConfig;
+      inherit (mkLib) mkNixosConfig mkDarwinConfig mkHomeConfig;
 
     in
     {
@@ -46,14 +46,10 @@
       formatter = self.forEachSystem (system: nixpkgs.legacyPackages.${system}.nixfmt-rfc-style);
 
       nixosConfigurations = {
-        sirius = mkNixosConfig rec {
+        sirius = mkNixosConfig {
           hostName = "sirius";
           userName = "user";
-          system = "x86_64-linux";
-
-          specialArgs = {
-            inherit hostName inputs userName;
-          };
+          systemType = "x86_64-linux";
 
           extraModules = [
             disko.nixosModules.disko
@@ -62,14 +58,18 @@
       };
 
       darwinConfigurations = {
-        canopus = mkDarwinConfig rec {
+        canopus = mkDarwinConfig {
           hostName = "canopus";
           userName = "user";
-          system = "aarch64-darwin";
+          systemType = "aarch64-darwin";
+        };
+      };
 
-          specialArgs = {
-            inherit hostName inputs userName;
-          };
+      homeConfigurations = {
+        deck = mkHomeConfig {
+          hostName = "alpha-centauri";
+          userName = "deck";
+          systemType = "x86_64-linux";
         };
       };
     };

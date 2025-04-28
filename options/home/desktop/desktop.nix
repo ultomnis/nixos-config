@@ -1,7 +1,7 @@
 {
   lib,
+  osConfig ? null,
   pkgs,
-  osConfig,
   ...
 }:
 
@@ -11,12 +11,12 @@ let
     types
     ;
 
-  mkIsDesktopOption =
+  mkDesktopOption =
     name: extraOptions:
     {
       enable = mkOption {
         type = types.bool;
-        default = osConfig.luminosity.selections.desktop != null;
+        default = if (osConfig != null) then (osConfig.luminosity.selections.desktop != null) else false;
         description = "Whether to enable " + name + ".";
       };
     }
@@ -25,9 +25,9 @@ let
 in
 {
   options.luminosity.desktop = {
-    dconf = mkIsDesktopOption "dconf" { };
+    dconf = mkDesktopOption "dconf" { };
 
-    fonts = mkIsDesktopOption "font configuration" {
+    fonts = mkDesktopOption "font configuration" {
       package = mkOption {
         type = types.package;
         default = pkgs.nerd-fonts.hack;
@@ -59,7 +59,9 @@ in
       };
     };
 
-    themes = mkIsDesktopOption "theme configuration" {
+    nixConfig = mkDesktopOption "user-specific Nix settings" { };
+
+    themes = mkDesktopOption "theme configuration" {
       name = mkOption {
         type = types.str;
         default = "rose-pine";

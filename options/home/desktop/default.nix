@@ -1,6 +1,6 @@
 {
   imports = [
-    ./is-desktop.nix
-    ./is-window-manager.nix
+    ./desktop.nix
+    ./window-manager.nix
   ];
 }

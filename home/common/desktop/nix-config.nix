@@ -1,7 +1,7 @@
-{ osConfig, lib, ... }:
+{ config, lib, ... }:
 
 let
-  cfg = osConfig.luminosity.system.configurations.nixConfig;
+  cfg = config.luminosity.desktop.nixConfig;
 
 in
 {

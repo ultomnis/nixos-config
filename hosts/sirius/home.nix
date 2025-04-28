@@ -1,6 +1,5 @@
 {
   lib,
-  osConfig,
   pkgs,
   userName,
   ...
@@ -15,7 +14,7 @@
 
   home = {
     username = userName;
-    homeDirectory = osConfig.users.users.${userName}.home;
+    homeDirectory = "/home/${userName}";
     stateVersion = "24.05";
   };
 
