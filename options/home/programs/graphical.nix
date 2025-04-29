@@ -33,6 +33,7 @@ in
     piper = mkGraphicalOption "Piper" { };
     pwvucontrol = mkGraphicalOption "pwvucontrol" { };
     thunderbird = mkGraphicalOption "Thunderbird" { };
+    tor-browser = mkGraphicalOption "Tor Browser" { };
     utm = mkGraphicalOption "UTM" { };
     wlsunset = mkGraphicalOption "wlsunset" { };
   };

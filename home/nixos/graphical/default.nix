@@ -5,6 +5,7 @@
     ./mullvad-browser.nix
     ./piper.nix
     ./pwvucontrol.nix
+    ./tor-browser.nix
     ./wlsunset.nix
   ];
 }
