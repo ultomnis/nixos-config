@@ -21,7 +21,6 @@ in
 {
   options.luminosity.system.services = {
     bluetooth = mkServiceOption "Bluetooth" { };
-    greetd = mkServiceOption "greetd" { };
     networkmanager = mkServiceOption "Network Manager" { };
     pipewire = mkServiceOption "PipeWire" { };
     printing = mkServiceOption "printing support" { };

@@ -7,7 +7,7 @@
 
 let
   cfg = config.luminosity.system.configurations.security;
-  inherit (pkgs.stdenv) isDarwin;
+  inherit (pkgs.stdenv) isDarwin isLinux;
 
 in
 {
@@ -17,9 +17,13 @@ in
         Defaults passprompt="What? Make it yourself:"
       '';
 
-      pam = lib.optionalAttrs isDarwin {
-        services.sudo_local.touchIdAuth = true;
-      };
+      pam.services =
+        lib.optionalAttrs isLinux {
+          login.enableGnomeKeyring = true;
+        }
+        // lib.optionalAttrs isDarwin {
+          sudo_local.touchIdAuth = true;
+        };
     };
   };
 }
