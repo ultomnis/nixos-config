@@ -27,11 +27,7 @@
     };
 
     system = {
-      configurations = {
-        enable = true;
-        variables.bitwarden.sshAgent.enable = true;
-      };
-
+      configurations.enable = true;
       programs.enable = true;
 
       services = {

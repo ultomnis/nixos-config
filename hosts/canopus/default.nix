@@ -28,7 +28,6 @@
       configurations = {
         enable = true;
         userConfig.uid = 501;
-        variables.bitwarden.sshAgent.enable = true;
       };
 
       programs.enable = true;

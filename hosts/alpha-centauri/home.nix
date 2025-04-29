@@ -4,7 +4,6 @@
   imports = [
     ../../home/common
     ../../options/home
-    ../../options/modules
   ];
 
   home = {
@@ -21,7 +20,10 @@
     };
 
     programs = {
-      graphical.enable = true;
+      graphical = {
+        enable = true;
+        bitwarden.sshAgent.enable = true;
+      };
 
       terminal = {
         enable = true;
@@ -32,9 +34,5 @@
         };
       };
     };
-  };
-
-  home.sessionVariables = {
-    SSH_AUTH_SOCK = "/home/${userName}/.bitwarden-ssh-agent.sock";
   };
 }

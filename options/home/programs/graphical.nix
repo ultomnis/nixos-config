@@ -2,6 +2,7 @@
 
 let
   inherit (lib)
+    mkEnableOption
     mkOption
     types
     ;
@@ -20,7 +21,10 @@ let
 in
 {
   options.luminosity.programs.graphical = {
-    bitwarden = mkGraphicalOption "Bitwarden" { };
+    bitwarden = mkGraphicalOption "Bitwarden" {
+      sshAgent.enable = mkEnableOption "Whether to enable the Bitwarden SSH Agent.";
+    };
+
     firefox = mkGraphicalOption "Firefox" { };
     imv = mkGraphicalOption "imv" { };
     mangohud = mkGraphicalOption "MangoHud" { };

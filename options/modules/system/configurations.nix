@@ -35,11 +35,6 @@ in
     };
 
     security = mkConfigurationOption "security configuration" { };
-
-    variables = mkConfigurationOption "environment variables" {
-      bitwarden.sshAgent.enable = mkEnableOption "Whether to enable the Bitwarden SSH Agent.";
-    };
-
     zramSwap = mkConfigurationOption "zram swap space" { };
   };
 }

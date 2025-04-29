@@ -22,7 +22,10 @@
     };
 
     programs = {
-      graphical.enable = true;
+      graphical = {
+        enable = true;
+        bitwarden.sshAgent.enable = true;
+      };
 
       terminal = {
         enable = true;

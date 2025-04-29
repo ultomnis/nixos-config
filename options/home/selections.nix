@@ -11,13 +11,9 @@ let
     ;
 
   desktopSelection = if (osConfig != null) then osConfig.luminosity.selections.desktop else null;
-
   launcherSelection = if (osConfig != null) then osConfig.luminosity.selections.launcher else null;
-
   shellSelection = if (osConfig != null) then osConfig.luminosity.selections.shell else null;
-
   terminalSelection = if (osConfig != null) then osConfig.luminosity.selections.terminal else null;
-
   wallpaperSelection = if (osConfig != null) then osConfig.luminosity.selections.wallpaper else null;
 
 in
