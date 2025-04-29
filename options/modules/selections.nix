@@ -68,6 +68,7 @@ in
     terminal = mkOption {
       type = types.nullOr (
         types.enum [
+          "foot"
           "wezterm"
         ]
       );

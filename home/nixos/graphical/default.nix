@@ -1,5 +1,6 @@
 {
   imports = [
+    ./foot.nix
     ./imv.nix
     ./mangohud.nix
     ./mullvad-browser.nix
