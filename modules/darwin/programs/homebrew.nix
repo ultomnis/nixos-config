@@ -24,6 +24,7 @@ in
       casks = [
         "mullvad-browser"
         "steam"
+        "tor-browser"
       ];
     };
 
