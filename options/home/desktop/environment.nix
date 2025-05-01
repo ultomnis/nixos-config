@@ -59,8 +59,6 @@ in
       };
     };
 
-    nixConfig = mkEnvironmentOption "user-specific Nix settings" { };
-
     themes = mkEnvironmentOption "theme configuration" {
       name = mkOption {
         type = types.str;

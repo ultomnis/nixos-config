@@ -30,11 +30,11 @@ in
     mangohud = mkGraphicalOption "MangoHud" { };
     mpv = mkGraphicalOption "MPV" { };
     mullvad-browser = mkGraphicalOption "Mullvad Browser" { };
+    nexusmods-app = mkGraphicalOption "Nexus Mods App" { };
     piper = mkGraphicalOption "Piper" { };
     pwvucontrol = mkGraphicalOption "pwvucontrol" { };
     thunderbird = mkGraphicalOption "Thunderbird" { };
     tor-browser = mkGraphicalOption "Tor Browser" { };
     utm = mkGraphicalOption "UTM" { };
-    wlsunset = mkGraphicalOption "wlsunset" { };
   };
 }

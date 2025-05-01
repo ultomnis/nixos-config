@@ -24,6 +24,7 @@ in
     darwin = mkConfigurationOption "macOS settings" { };
     locale = mkConfigurationOption "locale configuration" { };
     nixConfig = mkConfigurationOption "Nix settings" { };
+    unfree = mkConfigurationOption "unfree software" { };
 
     userConfig = mkConfigurationOption "user configuration" {
       uid = mkOption {

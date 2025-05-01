@@ -10,25 +10,25 @@ let
     types
     ;
 
-  desktopSelection = if (osConfig != null) then osConfig.luminosity.selections.desktop else null;
-  launcherSelection = if (osConfig != null) then osConfig.luminosity.selections.launcher else null;
-  monitorSelections = if (osConfig != null) then osConfig.luminosity.selections.monitors else [ ];
-  shellSelection = if (osConfig != null) then osConfig.luminosity.selections.shell else null;
-  terminalSelection = if (osConfig != null) then osConfig.luminosity.selections.terminal else null;
-  wallpaperSelection = if (osConfig != null) then osConfig.luminosity.selections.wallpaper else null;
+  desktop = if (osConfig != null) then osConfig.luminosity.selections.desktop else null;
+  launcher = if (osConfig != null) then osConfig.luminosity.selections.launcher else null;
+  monitors = if (osConfig != null) then osConfig.luminosity.selections.monitors else [ ];
+  shell = if (osConfig != null) then osConfig.luminosity.selections.shell else null;
+  terminal = if (osConfig != null) then osConfig.luminosity.selections.terminal else null;
+  wallpaper = if (osConfig != null) then osConfig.luminosity.selections.wallpaper else null;
 
 in
 {
   options.luminosity.home.selections = {
     desktop = mkOption {
       type = types.nullOr types.str;
-      default = desktopSelection;
+      default = desktop;
       description = "Desktop environment selection.";
     };
 
     launcher = mkOption {
       type = types.nullOr types.str;
-      default = launcherSelection;
+      default = launcher;
       description = "Application launcher selection.";
     };
 
@@ -65,25 +65,25 @@ in
         }
       );
 
-      default = monitorSelections;
+      default = monitors;
       description = "Monitor selections";
     };
 
     shell = mkOption {
       type = types.nullOr types.str;
-      default = shellSelection;
+      default = shell;
       description = "Shell selection.";
     };
 
     terminal = mkOption {
       type = types.nullOr types.str;
-      default = terminalSelection;
+      default = terminal;
       description = "Terminal emulator selection.";
     };
 
     wallpaper = mkOption {
       type = types.nullOr types.path;
-      default = wallpaperSelection;
+      default = wallpaper;
       description = "Wallpaper selection.";
     };
   };

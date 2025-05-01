@@ -3,6 +3,7 @@
 {
   imports = [
     ../../home/common
+    ../../home/nixos
     ../../options/home
   ];
 
@@ -15,7 +16,7 @@
   programs.home-manager.enable = true;
 
   luminosity.home = {
-    desktop.environment = {
+    configurations = {
       nixConfig.enable = true;
     };
 
@@ -23,6 +24,7 @@
       graphical = {
         enable = true;
         bitwarden.sshAgent.enable = true;
+        mangohud.enable = false;
       };
 
       terminal = {

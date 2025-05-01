@@ -32,5 +32,7 @@ in
         description = "Command to use when clicking menu";
       };
     };
+
+    wlsunset = mkMinimalOption "wlsunset" { };
   };
 }
