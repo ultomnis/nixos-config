@@ -16,8 +16,8 @@
 
   programs.home-manager.enable = true;
 
-  luminosity = {
-    desktop = {
+  luminosity.home = {
+    desktop.environment = {
       fonts.size = 13;
     };
 

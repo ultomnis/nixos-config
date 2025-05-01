@@ -11,7 +11,7 @@ let
     terminal
     ;
 
-  inherit (config.luminosity.desktop)
+  inherit (config.luminosity.home.desktop.environment)
     fonts
     themes
     ;

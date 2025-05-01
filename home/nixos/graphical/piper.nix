@@ -6,7 +6,7 @@
 }:
 
 let
-  cfg = config.luminosity.programs.graphical.piper;
+  cfg = config.luminosity.home.programs.graphical.piper;
 
 in
 {

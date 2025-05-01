@@ -1,7 +1,7 @@
 { config, lib, ... }:
 
 let
-  cfg = config.luminosity.programs.terminal.btop;
+  cfg = config.luminosity.home.programs.terminal.btop;
 
 in
 {

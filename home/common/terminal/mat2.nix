@@ -6,7 +6,7 @@
 }:
 
 let
-  cfg = config.luminosity.programs.terminal.mat2;
+  cfg = config.luminosity.home.programs.terminal.mat2;
 
 in
 {

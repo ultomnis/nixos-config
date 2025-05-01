@@ -1,7 +1,7 @@
 { config, lib, ... }:
 
 let
-  cfg = config.luminosity.desktop.polkit-gnome;
+  cfg = config.luminosity.home.desktop.minimal.polkit-gnome;
 
 in
 {

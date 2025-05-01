@@ -1,39 +1,31 @@
 { config, lib, ... }:
 
 let
-  inherit (config.luminosity.desktop)
+  inherit (config.luminosity.home.desktop.environment)
     fonts
     themes
     ;
 
 in
 {
-  config = lib.mkMerge [
-    (lib.mkIf (themes.enable) {
-      gtk = {
-        enable = true;
+  config = lib.mkIf (themes.enable || fonts.enable) {
+    gtk = {
+      enable = true;
 
-        theme = {
-          package = themes.package;
-          name = themes.name;
-        };
-
-        iconTheme = {
-          package = themes.iconPackage;
-          name = themes.iconName;
-        };
+      theme = lib.mkIf themes.enable {
+        package = themes.package;
+        name = themes.name;
       };
-    })
 
-    (lib.mkIf (fonts.enable) {
-      gtk = {
-        enable = true;
-
-        font = {
-          name = fonts.propo;
-          size = fonts.size;
-        };
+      iconTheme = lib.mkIf themes.enable {
+        package = themes.iconPackage;
+        name = themes.iconName;
       };
-    })
-  ];
+
+      font = lib.mkIf fonts.enable {
+        name = fonts.propo;
+        size = fonts.size;
+      };
+    };
+  };
 }

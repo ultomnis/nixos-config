@@ -6,7 +6,7 @@
 }:
 
 let
-  cfg = config.luminosity.programs.graphical.mullvad-browser;
+  cfg = config.luminosity.home.programs.graphical.mullvad-browser;
 
 in
 {

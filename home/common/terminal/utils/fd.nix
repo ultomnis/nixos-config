@@ -1,7 +1,7 @@
 { config, lib, ... }:
 
 let
-  cfg = config.luminosity.programs.terminal.fd;
+  cfg = config.luminosity.home.programs.terminal.fd;
 
 in
 {

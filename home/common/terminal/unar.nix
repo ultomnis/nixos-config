@@ -6,7 +6,7 @@
 }:
 
 let
-  cfg = config.luminosity.programs.terminal.unar;
+  cfg = config.luminosity.home.programs.terminal.unar;
 
 in
 {

@@ -1,7 +1,7 @@
 { config, lib, ... }:
 
 let
-  cfg = config.luminosity.programs.terminal.zoxide;
+  cfg = config.luminosity.home.programs.terminal.zoxide;
 
 in
 {

@@ -6,9 +6,7 @@
 }:
 
 let
-  cfg = config.luminosity.desktop.waybar;
-
-  inherit (config.luminosity.settings) launcherCommand;
+  cfg = config.luminosity.home.desktop.minimal.waybar;
 
 in
 {
@@ -38,7 +36,7 @@ in
           "custom/menu" = {
             format = "";
             tooltip = false;
-            on-click = lib.mkIf (launcherCommand != null) launcherCommand;
+            on-click = lib.mkIf (cfg.menuCommand != null) cfg.menuCommand;
           };
 
           "sway/workspaces" = {

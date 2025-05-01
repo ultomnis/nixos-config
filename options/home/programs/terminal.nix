@@ -11,7 +11,7 @@ let
     {
       enable = mkOption {
         type = types.bool;
-        default = config.luminosity.programs.terminal.enable;
+        default = config.luminosity.home.programs.terminal.enable;
         description = "Whether to enable " + name + ".";
       };
     }
@@ -19,7 +19,7 @@ let
 
 in
 {
-  options.luminosity.programs.terminal = {
+  options.luminosity.home.programs.terminal = {
     bat = mkTerminalOption "bat" { };
     btop = mkTerminalOption "btop" { };
     eza = mkTerminalOption "eza" { };

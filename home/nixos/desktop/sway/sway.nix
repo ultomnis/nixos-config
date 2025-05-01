@@ -9,11 +9,10 @@ let
   inherit (config.luminosity.home.selections)
     desktop
     launcher
+    monitors
     terminal
     wallpaper
     ;
-
-  inherit (config.luminosity.settings) swayOutput;
 
 in
 {
@@ -35,13 +34,25 @@ in
           };
         };
 
-        output = {
-          "*" = {
-            allow_tearing = "yes";
-            bg = lib.mkIf (wallpaper != null) "${wallpaper} fill";
-            max_render_time = "off";
-          };
-        } // swayOutput;
+        output =
+          {
+            "*" = {
+              allow_tearing = "yes";
+              bg = lib.mkIf (wallpaper != null) "${wallpaper} fill";
+              max_render_time = "off";
+            };
+          }
+          // builtins.listToAttrs (
+            map (monitor: {
+              name = monitor.name;
+
+              value = {
+                mode = "${monitor.resolution}@${monitor.rate}Hz";
+                pos = "${monitor.pos_x} ${monitor.pos_y}";
+                scale = monitor.scale;
+              };
+            }) monitors
+          );
 
         window = {
           border = 0;

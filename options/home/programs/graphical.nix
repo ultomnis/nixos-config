@@ -12,7 +12,7 @@ let
     {
       enable = mkOption {
         type = types.bool;
-        default = config.luminosity.programs.graphical.enable;
+        default = config.luminosity.home.programs.graphical.enable;
         description = "Whether to enable " + name + ".";
       };
     }
@@ -20,7 +20,7 @@ let
 
 in
 {
-  options.luminosity.programs.graphical = {
+  options.luminosity.home.programs.graphical = {
     bitwarden = mkGraphicalOption "Bitwarden" {
       sshAgent.enable = mkEnableOption "Whether to enable the Bitwarden SSH Agent.";
     };

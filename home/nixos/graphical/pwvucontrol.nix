@@ -6,7 +6,7 @@
 }:
 
 let
-  cfg = config.luminosity.programs.graphical.pwvucontrol;
+  cfg = config.luminosity.home.programs.graphical.pwvucontrol;
 
 in
 {

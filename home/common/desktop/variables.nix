@@ -1,7 +1,7 @@
 { config, lib, ... }:
 
 let
-  cfg = config.luminosity.desktop.variables;
+  cfg = config.luminosity.home.desktop.environment.variables;
 
   inherit (config.luminosity.home.selections) terminal;
 

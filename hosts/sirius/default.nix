@@ -21,6 +21,17 @@
       editor = "hx";
       gpu = "amd";
       launcher = "fuzzel";
+
+      monitors = [
+        {
+          name = "DP-2";
+          pos_x = "0";
+          pos_y = "0";
+          rate = "165";
+          resolution = "1920x1080";
+        }
+      ];
+
       shell = "fish";
       terminal = "wezterm";
       wallpaper = inputs.self + "/assets/wallpapers/kemo-sahab-4V0tz5FEvTc-unsplash.jpg";

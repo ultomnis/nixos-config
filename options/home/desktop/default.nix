@@ -1,6 +1,6 @@
 {
   imports = [
-    ./desktop.nix
-    ./window-manager.nix
+    ./environment.nix
+    ./minimal.nix
   ];
 }

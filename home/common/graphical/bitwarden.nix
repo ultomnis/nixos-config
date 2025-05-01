@@ -6,7 +6,7 @@
 }:
 
 let
-  cfg = config.luminosity.programs.graphical.bitwarden;
+  cfg = config.luminosity.home.programs.graphical.bitwarden;
 
 in
 {

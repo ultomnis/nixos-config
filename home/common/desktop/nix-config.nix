@@ -1,7 +1,7 @@
 { config, lib, ... }:
 
 let
-  cfg = config.luminosity.desktop.nixConfig;
+  cfg = config.luminosity.home.desktop.environment.nixConfig;
 
 in
 {

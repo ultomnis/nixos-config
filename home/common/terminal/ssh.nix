@@ -1,7 +1,7 @@
 { config, lib, ... }:
 
 let
-  cfg = config.luminosity.programs.terminal.ssh;
+  cfg = config.luminosity.home.programs.terminal.ssh;
 
 in
 {

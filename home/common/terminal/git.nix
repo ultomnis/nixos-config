@@ -1,7 +1,7 @@
 { config, lib, ... }:
 
 let
-  cfg = config.luminosity.programs.terminal.git;
+  cfg = config.luminosity.home.programs.terminal.git;
 
 in
 {

@@ -1,7 +1,7 @@
 { config, lib, ... }:
 
 let
-  cfg = config.luminosity.programs.graphical.imv;
+  cfg = config.luminosity.home.programs.graphical.imv;
 
 in
 {

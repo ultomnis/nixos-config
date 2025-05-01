@@ -5,7 +5,7 @@
 }:
 
 let
-  cfg = config.luminosity.programs.terminal.yt-dlp;
+  cfg = config.luminosity.home.programs.terminal.yt-dlp;
 
 in
 {

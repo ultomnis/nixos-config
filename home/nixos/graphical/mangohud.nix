@@ -1,7 +1,7 @@
 { config, lib, ... }:
 
 let
-  cfg = config.luminosity.programs.graphical.mangohud;
+  cfg = config.luminosity.home.programs.graphical.mangohud;
 
 in
 {

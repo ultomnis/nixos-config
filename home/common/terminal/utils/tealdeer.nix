@@ -1,7 +1,7 @@
 { config, lib, ... }:
 
 let
-  cfg = config.luminosity.programs.terminal.tealdeer;
+  cfg = config.luminosity.home.programs.terminal.tealdeer;
 
 in
 {

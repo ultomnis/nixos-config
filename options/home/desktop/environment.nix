@@ -1,6 +1,6 @@
 {
+  config,
   lib,
-  osConfig ? null,
   pkgs,
   ...
 }:
@@ -11,12 +11,12 @@ let
     types
     ;
 
-  mkDesktopOption =
+  mkEnvironmentOption =
     name: extraOptions:
     {
       enable = mkOption {
         type = types.bool;
-        default = if (osConfig != null) then (osConfig.luminosity.selections.desktop != null) else false;
+        default = config.luminosity.home.desktop.environment.enable;
         description = "Whether to enable " + name + ".";
       };
     }
@@ -24,10 +24,10 @@ let
 
 in
 {
-  options.luminosity.desktop = {
-    dconf = mkDesktopOption "dconf" { };
+  options.luminosity.home.desktop.environment = {
+    dconf = mkEnvironmentOption "dconf" { };
 
-    fonts = mkDesktopOption "font configuration" {
+    fonts = mkEnvironmentOption "font configuration" {
       package = mkOption {
         type = types.package;
         default = pkgs.nerd-fonts.hack;
@@ -59,9 +59,9 @@ in
       };
     };
 
-    nixConfig = mkDesktopOption "user-specific Nix settings" { };
+    nixConfig = mkEnvironmentOption "user-specific Nix settings" { };
 
-    themes = mkDesktopOption "theme configuration" {
+    themes = mkEnvironmentOption "theme configuration" {
       name = mkOption {
         type = types.str;
         default = "rose-pine";
@@ -99,7 +99,7 @@ in
       };
     };
 
-    variables = mkDesktopOption "environment variables configuration" {
+    variables = mkEnvironmentOption "environment variables configuration" {
       extraVariables = mkOption {
         type =
           with types;

@@ -1,7 +1,7 @@
 { config, lib, ... }:
 
 let
-  cfg = config.luminosity.programs.terminal.eza;
+  cfg = config.luminosity.home.programs.terminal.eza;
 
 in
 {

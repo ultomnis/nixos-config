@@ -6,7 +6,7 @@
 }:
 
 let
-  cfg = config.luminosity.programs.graphical.tor-browser;
+  cfg = config.luminosity.home.programs.graphical.tor-browser;
 
 in
 {

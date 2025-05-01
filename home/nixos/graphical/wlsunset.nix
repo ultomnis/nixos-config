@@ -1,7 +1,7 @@
 { config, lib, ... }:
 
 let
-  cfg = config.luminosity.programs.graphical.wlsunset;
+  cfg = config.luminosity.home.programs.graphical.wlsunset;
 
 in
 {

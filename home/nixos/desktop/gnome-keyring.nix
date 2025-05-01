@@ -1,7 +1,7 @@
 { config, lib, ... }:
 
 let
-  cfg = config.luminosity.desktop.gnome-keyring;
+  cfg = config.luminosity.home.desktop.minimal.gnome-keyring;
 
 in
 {

@@ -6,7 +6,7 @@
 }:
 
 let
-  cfg = config.luminosity.programs.graphical.thunderbird;
+  cfg = config.luminosity.home.programs.graphical.thunderbird;
 
 in
 {

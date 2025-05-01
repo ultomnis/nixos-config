@@ -1,7 +1,7 @@
 { config, lib, ... }:
 
 let
-  cfg = config.luminosity.programs.terminal.ollama;
+  cfg = config.luminosity.home.programs.terminal.ollama;
 
 in
 {

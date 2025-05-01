@@ -20,9 +20,15 @@
 
   programs.home-manager.enable = true;
 
-  luminosity = {
+  luminosity.home = {
     desktop = {
-      fonts.size = 10;
+      environment = {
+        fonts.size = 10;
+      };
+
+      minimal = {
+        waybar.menuCommand = "${lib.getExe pkgs.fuzzel} --anchor top-left";
+      };
     };
 
     programs = {
@@ -43,16 +49,6 @@
           environmentVariables = {
             HSA_OVERRIDE_GFX_VERSION = "11.0.1";
           };
-        };
-      };
-    };
-
-    settings = {
-      launcherCommand = "${lib.getExe pkgs.fuzzel} --anchor top-left";
-
-      swayOutput = {
-        DP-2 = {
-          mode = "1920x1080@165Hz";
         };
       };
     };

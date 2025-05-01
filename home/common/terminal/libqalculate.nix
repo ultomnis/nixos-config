@@ -6,7 +6,7 @@
 }:
 
 let
-  cfg = config.luminosity.programs.terminal.libqalculate;
+  cfg = config.luminosity.home.programs.terminal.libqalculate;
 
 in
 {
