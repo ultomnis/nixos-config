@@ -12,15 +12,5 @@ in
       wrapperFeatures.gtk = true;
       extraPackages = [ ];
     };
-
-    # Realtime priority
-    security.pam.loginLimits = [
-      {
-        domain = "@users";
-        item = "rtprio";
-        type = "-";
-        value = 1;
-      }
-    ];
   };
 }
