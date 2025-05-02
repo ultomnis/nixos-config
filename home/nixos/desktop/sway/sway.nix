@@ -1,5 +1,6 @@
 {
   config,
+  customLib,
   lib,
   pkgs,
   ...
@@ -34,25 +35,13 @@ in
           };
         };
 
-        output =
-          {
-            "*" = {
-              allow_tearing = "yes";
-              bg = lib.mkIf (wallpaper != null) "${wallpaper} fill";
-              max_render_time = "off";
-            };
-          }
-          // builtins.listToAttrs (
-            map (monitor: {
-              name = monitor.name;
-
-              value = {
-                mode = "${monitor.resolution}@${monitor.rate}Hz";
-                pos = "${monitor.pos_x} ${monitor.pos_y}";
-                scale = monitor.scale;
-              };
-            }) monitors
-          );
+        output = {
+          "*" = {
+            allow_tearing = "yes";
+            bg = lib.mkIf (wallpaper != null) "${wallpaper} fill";
+            max_render_time = "off";
+          };
+        } // customLib.mapSwayMonitors monitors;
 
         window = {
           border = 0;
