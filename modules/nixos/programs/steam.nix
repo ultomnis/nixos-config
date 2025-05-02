@@ -2,7 +2,7 @@
 
 let
   cfg = config.luminosity.system.programs.steam;
-  unfree = config.luminosity.system.configurations.unfree;
+  inherit (config.luminosity.system.configurations) unfree;
 
 in
 {
@@ -12,16 +12,6 @@ in
       enable = true;
       localNetworkGameTransfers.openFirewall = true;
       remotePlay.openFirewall = true;
-    };
-
-    nixpkgs.config = {
-      # Permit unfree packages
-      allowUnfreePredicate =
-        pkg:
-        builtins.elem (lib.getName pkg) [
-          "steam"
-          "steam-unwrapped"
-        ];
     };
   };
 }

@@ -16,14 +16,5 @@ in
     home.packages = with pkgs; [
       nexusmods-app-unfree
     ];
-
-    nixpkgs.config = {
-      # Permit unfree packages
-      allowUnfreePredicate =
-        pkg:
-        builtins.elem (lib.getName pkg) [
-          "7zz"
-        ];
-    };
   };
 }

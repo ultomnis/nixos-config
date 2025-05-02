@@ -1,7 +1,7 @@
 { config, lib, ... }:
 
 let
-  cfg = config.luminosity.system.configurations.unfree;
+  cfg = config.luminosity.home.configurations.unfree;
 
 in
 {
@@ -11,9 +11,7 @@ in
       allowUnfreePredicate =
         pkg:
         builtins.elem (lib.getName pkg) [
-          "7zz" # Nexus Mods App
-          "steam"
-          "steam-unwrapped"
+          "7zz"
         ];
     };
   };
