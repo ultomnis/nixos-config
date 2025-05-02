@@ -34,11 +34,8 @@
         "x86_64-linux"
       ];
 
-      mkLib = import ./lib {
-        inherit inputs;
-      };
-
-      inherit (mkLib) mkNixosConfig mkDarwinConfig mkHomeConfig;
+      customLib = import ./lib;
+      inherit (customLib) mkNixosConfig mkDarwinConfig mkHomeConfig;
 
     in
     {
@@ -47,6 +44,7 @@
 
       nixosConfigurations = {
         sirius = mkNixosConfig {
+          inherit customLib inputs;
           hostName = "sirius";
           userName = "user";
           systemType = "x86_64-linux";
@@ -59,6 +57,7 @@
 
       darwinConfigurations = {
         canopus = mkDarwinConfig {
+          inherit customLib inputs;
           hostName = "canopus";
           userName = "user";
           systemType = "aarch64-darwin";
@@ -67,6 +66,7 @@
 
       homeConfigurations = {
         deck = mkHomeConfig {
+          inherit customLib inputs;
           hostName = "alpha-centauri";
           userName = "deck";
           systemType = "x86_64-linux";
