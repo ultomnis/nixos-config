@@ -8,6 +8,8 @@
 let
   cfg = config.luminosity.home.programs.terminal.helix;
 
+  inherit (config.luminosity.home.desktop.environment) themes;
+
 in
 {
   config = lib.mkIf cfg.enable {
@@ -17,7 +19,7 @@ in
       defaultEditor = true;
 
       settings = {
-        theme = "rose_pine";
+        theme = builtins.replaceStrings [ "-" ] [ "_" ] themes.name;
 
         editor = {
           cursor-shape = {
