@@ -1,4 +1,9 @@
-{ config, lib, ... }:
+{
+  config,
+  lib,
+  osConfig ? null,
+  ...
+}:
 
 let
   cfg = config.luminosity.home.configurations.nixConfig;
@@ -12,6 +17,13 @@ in
         automatic = true;
         frequency = "weekly";
         options = "--delete-older-than 30d";
+      };
+
+      settings = lib.optionalAttrs (osConfig == null) {
+        experimental-features = [
+          "nix-command"
+          "flakes"
+        ];
       };
     };
   };

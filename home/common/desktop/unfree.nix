@@ -1,11 +1,16 @@
-{ config, lib, ... }:
+{
+  config,
+  lib,
+  osConfig ? null,
+  ...
+}:
 
 let
   cfg = config.luminosity.home.configurations.unfree;
 
 in
 {
-  config = lib.mkIf cfg.enable {
+  config = lib.mkIf (cfg.enable && osConfig == null) {
     nixpkgs.config = {
       # Permit unfree packages
       allowUnfreePredicate =

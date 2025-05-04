@@ -4,7 +4,6 @@
   imports = [
     ../../home/common
     ../../home/nixos
-    ../../home/standalone
     ../../options/home
   ];
 
