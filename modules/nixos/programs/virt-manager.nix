@@ -1,9 +1,4 @@
-{
-  config,
-  lib,
-  userName,
-  ...
-}:
+{ config, lib, ... }:
 
 let
   cfg = config.luminosity.system.programs.virt-manager;
@@ -11,9 +6,7 @@ let
 in
 {
   config = lib.mkIf cfg.enable {
-    # Manage virtual machines via libvirt
+    # Manage virtual machines
     programs.virt-manager.enable = true;
-    virtualisation.libvirtd.enable = true;
-    users.users.${userName}.extraGroups = [ "libvirtd" ];
   };
 }

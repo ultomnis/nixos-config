@@ -23,6 +23,7 @@ in
     avahi = mkServiceOption "Avahi" { };
     bluetooth = mkServiceOption "Bluetooth" { };
     gnome-keyring = mkServiceOption "GNOME Keyring" { };
+    libvirtd = mkServiceOption "libvirtd" { };
     networkmanager = mkServiceOption "Network Manager" { };
     pipewire = mkServiceOption "PipeWire" { };
     printing = mkServiceOption "printing support" { };
