@@ -6,17 +6,10 @@ let
 in
 {
   config = lib.mkIf cfg.enable {
-    services = {
-      # Local print service
-      printing = {
+    # Local print service
+    services.printing = {
         enable = true;
         stateless = true;
-      };
-
-      # Enable autodiscovery of network printers
-      avahi = {
-        enable = true;
-        nssmdns4 = true;
       };
     };
   };

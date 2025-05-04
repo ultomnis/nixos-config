@@ -1,5 +1,6 @@
 {
   imports = [
+    ./avahi.nix
     ./bluetooth.nix
     ./gnome-keyring.nix
     ./networkmanager.nix

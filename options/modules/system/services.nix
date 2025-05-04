@@ -20,6 +20,7 @@ let
 in
 {
   options.luminosity.system.services = {
+    avahi = mkServiceOption "Avahi" { };
     bluetooth = mkServiceOption "Bluetooth" { };
     gnome-keyring = mkServiceOption "GNOME Keyring" { };
     networkmanager = mkServiceOption "Network Manager" { };
