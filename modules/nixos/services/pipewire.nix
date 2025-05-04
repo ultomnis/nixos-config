@@ -20,8 +20,5 @@ in
         };
       };
     };
-
-    # RealtimeKit system service
-    security.rtkit.enable = true;
   };
 }

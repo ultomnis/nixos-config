@@ -28,6 +28,7 @@ in
     pipewire = mkServiceOption "PipeWire" { };
     printing = mkServiceOption "printing support" { };
     ratbagd = mkServiceOption "ratbagd" { };
+    rtkit = mkServiceOption "RealtimeKit" { };
 
     tailscale = mkServiceOption "Tailscale" {
       useRoutingFeatures = mkOption {

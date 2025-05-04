@@ -8,5 +8,6 @@
     ./pipewire.nix
     ./printing.nix
     ./ratbagd.nix
+    ./rtkit.nix
   ];
 }
