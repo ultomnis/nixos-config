@@ -1,6 +1,7 @@
 {
   imports = [
     ./bluetooth.nix
+    ./gnome-keyring.nix
     ./networkmanager.nix
     ./pipewire.nix
     ./printing.nix

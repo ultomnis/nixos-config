@@ -21,7 +21,6 @@ in
 
 {
   options.luminosity.home.desktop.minimal = {
-    gnome-keyring = mkMinimalOption "GNOME Keyring" { };
     mako = mkMinimalOption "mako" { };
     polkit-gnome = mkMinimalOption "Polkit GNOME" { };
 
