@@ -21,13 +21,13 @@ in
     nixConfig.enable = mkOption {
       type = types.bool;
       default = nixConfig;
-      description = "Whether to enable user-specific Nix settings";
+      description = "Whether to enable user-specific Nix settings.";
     };
 
     unfree.enable = mkOption {
       type = types.bool;
       default = unfree;
-      description = "Whether to enable unfree software";
+      description = "Whether to enable unfree software.";
     };
   };
 }

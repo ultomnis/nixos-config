@@ -66,7 +66,7 @@ in
       );
 
       default = monitors;
-      description = "Monitor selections";
+      description = "Monitor selections.";
     };
 
     shell = mkOption {
