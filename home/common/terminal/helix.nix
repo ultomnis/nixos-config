@@ -8,8 +8,6 @@
 let
   cfg = config.luminosity.home.programs.terminal.helix;
 
-  inherit (config.luminosity.home.desktop.environment) themes;
-
 in
 {
   config = lib.mkIf cfg.enable {
@@ -19,7 +17,7 @@ in
       defaultEditor = true;
 
       settings = {
-        theme = builtins.replaceStrings [ "-" ] [ "_" ] themes.name;
+        theme = "base16_default";
 
         editor = {
           cursor-shape = {
@@ -28,10 +26,8 @@ in
             select = "underline";
           };
 
-          cursorline = true;
           indent-guides.render = true;
           line-number = "relative";
-          lsp.display-messages = true;
         };
       };
 
