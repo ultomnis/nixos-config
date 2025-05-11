@@ -8,29 +8,24 @@ in
   config = lib.mkIf cfg.enable {
     # macOS settings
     system = {
-      startup.chime = false; # Disable startup chime
+      startup.chime = false; # Whether to enable startup chime
 
       defaults = {
         dock = {
           autohide = true;
-          mru-spaces = false; # Do not automatically rearrange spaces
           show-recents = false;
           static-only = true; # Show open applications only
-          wvous-br-corner = 1; # Disable bottom-right hot corner
         };
 
-        finder = {
+        NSGlobalDomain = {
+          AppleICUForce24HourTime = true;
+          AppleInterfaceStyle = "Dark";
           AppleShowAllExtensions = true; # Show file extensions
           AppleShowAllFiles = true; # Show hidden files
         };
 
-        menuExtraClock = {
-          Show24Hour = true;
-          ShowAMPM = false;
-        };
-
         spaces = {
-          spans-displays = true; # Disable displays have separate spaces
+          spans-displays = true; # Whether displays have separate spaces
         };
 
         trackpad = {
