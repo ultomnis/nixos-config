@@ -30,7 +30,7 @@ in
         ${if (shell != null) then "config.default_prog = { '${lib.getExe pkgs.${shell}}' }" else ""}
         config.enable_tab_bar = false
         config.font = wezterm.font '${fonts.mono}'
-        config.font_size = ${builtins.toString fonts.size}
+        config.font_size = ${toString fonts.size}
 
         return config
       '';

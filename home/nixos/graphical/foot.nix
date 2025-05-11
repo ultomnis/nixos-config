@@ -25,7 +25,7 @@ in
 
       settings = {
         main = {
-          font = "${fonts.mono}:size=${builtins.toString fonts.size}";
+          font = "${fonts.mono}:size=${toString fonts.size}";
           include = "${pkgs.foot.themes}/share/foot/themes/${themes.name}";
           pad = "5x5";
           shell = lib.mkIf (shell != null) (lib.getExe pkgs.${shell});
