@@ -2,6 +2,7 @@
 
 let
   inherit (config.luminosity.home.selections) launcher;
+  inherit (config.luminosity.home.desktop.environment) themes;
 
 in
 {
@@ -12,7 +13,7 @@ in
 
       settings = {
         main = {
-          icon-theme = "Papirus";
+          icon-theme = themes.iconName;
         };
 
         border = {
