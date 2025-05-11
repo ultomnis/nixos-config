@@ -58,30 +58,34 @@ in
       type = types.listOf (
         types.submodule {
           options = {
+            height = mkOption {
+              type = types.int;
+            };
+
+            width = mkOption {
+              type = types.int;
+            };
+
             name = mkOption {
               type = types.str;
             };
 
             pos_x = mkOption {
-              type = types.str;
+              type = types.int;
             };
 
             pos_y = mkOption {
-              type = types.str;
+              type = types.int;
             };
 
             rate = mkOption {
-              type = types.str;
-              default = "60";
-            };
-
-            resolution = mkOption {
-              type = types.str;
+              type = types.int;
+              default = 60;
             };
 
             scale = mkOption {
-              type = types.str;
-              default = "1";
+              type = types.int;
+              default = 1;
             };
           };
         }
