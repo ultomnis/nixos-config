@@ -16,8 +16,11 @@
   programs.home-manager.enable = true;
 
   luminosity.home = {
-    configurations = {
-      nixConfig.enable = true;
+    desktop = {
+      configurations = {
+        enable = true;
+        nixConfig.enable = true;
+      };
     };
 
     programs = {

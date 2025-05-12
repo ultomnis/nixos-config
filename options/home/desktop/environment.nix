@@ -96,21 +96,5 @@ in
         description = "Icon theme package.";
       };
     };
-
-    variables = mkEnvironmentOption "environment variables configuration" {
-      extraVariables = mkOption {
-        type =
-          with types;
-          lazyAttrsOf (oneOf [
-            str
-            path
-            int
-            float
-          ]);
-
-        default = { };
-        description = "Extra environment variables to set at login.";
-      };
-    };
   };
 }

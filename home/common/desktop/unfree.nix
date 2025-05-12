@@ -6,7 +6,7 @@
 }:
 
 let
-  cfg = config.luminosity.home.configurations.unfree;
+  cfg = config.luminosity.home.desktop.configurations.unfree;
 
 in
 {

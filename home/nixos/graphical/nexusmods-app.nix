@@ -7,7 +7,7 @@
 
 let
   cfg = config.luminosity.home.programs.graphical.nexusmods-app;
-  inherit (config.luminosity.home.configurations) unfree;
+  inherit (config.luminosity.home.desktop.configurations) unfree;
 
 in
 {

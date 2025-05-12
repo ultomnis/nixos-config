@@ -15,6 +15,12 @@ in
 {
   options.luminosity.home = {
     desktop = {
+      configurations.enable = mkOption {
+        type = types.bool;
+        default = if (osConfig != null) then (osConfig.luminosity.system.configurations.enable) else false;
+        description = "Whether to enable home configurations.";
+      };
+
       environment.enable = mkOption {
         type = types.bool;
         default = if (osConfig != null) then (osConfig.luminosity.selections.desktop != null) else false;
