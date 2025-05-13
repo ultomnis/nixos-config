@@ -1,6 +1,6 @@
 {
   imports = [
+    ./configurations
     ./programs
-    ./system
   ];
 }
