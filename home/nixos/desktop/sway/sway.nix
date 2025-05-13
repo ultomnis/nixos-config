@@ -7,8 +7,9 @@
 }:
 
 let
+  cfg = config.luminosity.home.desktop.minimal.sway;
+
   inherit (config.luminosity.home.selections)
-    desktop
     launcher
     monitors
     terminal
@@ -17,7 +18,7 @@ let
 
 in
 {
-  config = lib.mkIf (desktop == "sway") {
+  config = lib.mkIf cfg.enable {
     # Tiling Wayland compositor
     wayland.windowManager.sway = {
       enable = true;

@@ -1,12 +1,12 @@
 { config, lib, ... }:
 
 let
-  inherit (config.luminosity.home.selections) launcher;
+  cfg = config.luminosity.home.desktop.minimal.fuzzel;
   inherit (config.luminosity.home.desktop.environment) themes;
 
 in
 {
-  config = lib.mkIf (launcher == "fuzzel") {
+  config = lib.mkIf cfg.enable {
     # Wayland application launcher
     programs.fuzzel = {
       enable = true;

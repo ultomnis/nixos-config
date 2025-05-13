@@ -18,11 +18,34 @@ let
     // extraOptions;
 
 in
-
 {
   options.luminosity.home.desktop.minimal = {
+    aerospace = {
+      enable = mkOption {
+        type = types.bool;
+        default = config.luminosity.home.selections.desktop == "aerospace";
+        description = "Whether to enable AeroSpace.";
+      };
+    };
+
+    fuzzel = {
+      enable = mkOption {
+        type = types.bool;
+        default = config.luminosity.home.selections.launcher == "fuzzel";
+        description = "Whether to enable fuzzel.";
+      };
+    };
+
     mako = mkMinimalOption "mako" { };
     polkit-gnome = mkMinimalOption "Polkit GNOME" { };
+
+    sway = {
+      enable = mkOption {
+        type = types.bool;
+        default = config.luminosity.home.selections.desktop == "sway";
+        description = "Whether to enable Sway.";
+      };
+    };
 
     waybar = mkMinimalOption "Waybar" {
       menuCommand = mkOption {

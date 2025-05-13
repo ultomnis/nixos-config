@@ -1,14 +1,12 @@
 { config, lib, ... }:
 
 let
-  inherit (config.luminosity.home.selections)
-    desktop
-    wallpaper
-    ;
+  cfg = config.luminosity.home.desktop.minimal.sway;
+  inherit (config.luminosity.home.selections) wallpaper;
 
 in
 {
-  config = lib.mkIf (desktop == "sway") {
+  config = lib.mkIf cfg.enable {
     # Wayland screen locker
     programs.swaylock = {
       enable = true;

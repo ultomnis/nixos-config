@@ -6,14 +6,12 @@
 }:
 
 let
-  inherit (config.luminosity.home.selections)
-    desktop
-    terminal
-    ;
+  cfg = config.luminosity.home.desktop.minimal.aerospace;
+  inherit (config.luminosity.home.selections) terminal;
 
 in
 {
-  config = lib.mkIf (desktop == "aerospace") {
+  config = lib.mkIf cfg.enable {
     # macOS tiling window manager
     programs.aerospace = {
       enable = true;

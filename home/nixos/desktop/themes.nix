@@ -6,7 +6,20 @@ let
 in
 {
   config = lib.mkIf cfg.enable {
-    # Cursor configuration
+    gtk = {
+      enable = true;
+
+      theme = {
+        package = cfg.package;
+        name = cfg.name;
+      };
+
+      iconTheme = {
+        package = cfg.iconPackage;
+        name = cfg.iconName;
+      };
+    };
+
     home.pointerCursor = {
       package = cfg.cursorPackage;
       name = cfg.cursorName;

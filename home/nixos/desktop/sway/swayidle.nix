@@ -6,11 +6,11 @@
 }:
 
 let
-  inherit (config.luminosity.home.selections) desktop;
+  cfg = config.luminosity.home.desktop.minimal.sway;
 
 in
 {
-  config = lib.mkIf (desktop == "sway") {
+  config = lib.mkIf cfg.enable {
     # Wayland idle management daemon
     services.swayidle = {
       enable = true;

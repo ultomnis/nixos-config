@@ -26,6 +26,21 @@ in
     };
 
     firefox = mkGraphicalOption "Firefox" { };
+
+    foot = {
+      enable = mkOption {
+        type = types.bool;
+        default = config.luminosity.home.selections.terminal == "foot";
+        description = "Whether to enable foot.";
+      };
+
+      theme = mkOption {
+        type = types.str;
+        default = config.luminosity.home.desktop.environment.themes.name;
+        description = "Theme for foot.";
+      };
+    };
+
     imv = mkGraphicalOption "imv" { };
     mangohud = mkGraphicalOption "MangoHud" { };
     mpv = mkGraphicalOption "MPV" { };
@@ -36,5 +51,19 @@ in
     thunderbird = mkGraphicalOption "Thunderbird" { };
     tor-browser = mkGraphicalOption "Tor Browser" { };
     utm = mkGraphicalOption "UTM" { };
+
+    wezterm = {
+      enable = mkOption {
+        type = types.bool;
+        default = config.luminosity.home.selections.terminal == "wezterm";
+        description = "Whether to enable WezTerm.";
+      };
+
+      theme = mkOption {
+        type = types.str;
+        default = config.luminosity.home.desktop.environment.themes.name;
+        description = "Theme for WezTerm.";
+      };
+    };
   };
 }
