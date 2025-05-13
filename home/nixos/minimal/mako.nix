@@ -9,9 +9,12 @@ in
     # Notification daemon
     services.mako = {
       enable = true;
-      backgroundColor = "#000000ff";
-      borderSize = 0;
-      defaultTimeout = 5000;
+
+      settings = {
+        background-color = "#000000ff";
+        border-size = 0;
+        default-timeout = 5000;
+      };
     };
   };
 }
