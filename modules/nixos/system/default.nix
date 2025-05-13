@@ -3,6 +3,6 @@
     ./amdgpu.nix
     ./boot.nix
     ./locale.nix
-    ./zramswap.nix
+    ./zram-swap.nix
   ];
 }

@@ -7,11 +7,11 @@
 }:
 
 let
-  inherit (config.luminosity.selections) shell;
+  cfg = config.luminosity.system.programs.fish;
 
 in
 {
-  config = lib.mkIf (shell == "fish") {
+  config = lib.mkIf cfg.enable {
     # The friendly interactive shell
     programs.fish.enable = true;
     users.users.${userName}.shell = pkgs.fish; # Set default shell

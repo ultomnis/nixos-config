@@ -1,7 +1,7 @@
 { config, lib, ... }:
 
 let
-  cfg = config.luminosity.system.configurations.darwin;
+  cfg = config.luminosity.system.configurations.systemDefaults;
 
 in
 {

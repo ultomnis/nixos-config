@@ -21,9 +21,26 @@ in
 {
   options.luminosity.system.programs = {
     adb = mkProgramOption "Android Debug Bridge" { };
+
+    fish = {
+      enable = mkOption {
+        type = types.bool;
+        default = config.luminosity.selections.shell == "fish";
+        description = "Whether to enable fish shell.";
+      };
+    };
+
     homebrew = mkProgramOption "Homebrew" { };
     obs-studio = mkProgramOption "OBS Studio" { };
     steam = mkProgramOption "Steam" { };
+
+    sway = {
+      enable = mkOption {
+        type = types.bool;
+        default = config.luminosity.selections.desktop == "sway";
+      };
+    };
+
     virt-manager = mkProgramOption "Virtual Machine Manager" { };
   };
 }

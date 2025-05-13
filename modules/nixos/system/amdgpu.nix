@@ -1,11 +1,11 @@
 { config, lib, ... }:
 
 let
-  inherit (config.luminosity.selections) gpu;
+  cfg = config.luminosity.system.configurations.amdgpu;
 
 in
 {
-  config = lib.mkIf (gpu == "amd") {
+  config = lib.mkIf cfg.enable {
     hardware.amdgpu = {
       initrd.enable = true;
       opencl.enable = true;

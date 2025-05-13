@@ -20,10 +20,19 @@ let
 in
 {
   options.luminosity.system.configurations = {
+    amdgpu = {
+      enable = mkOption {
+        type = types.bool;
+        default = config.luminosity.selections.gpu == "amd";
+        description = "Whether to enable AMD GPU configuration.";
+      };
+    };
+
     boot = mkConfigurationOption "boot configuration" { };
-    darwin = mkConfigurationOption "macOS settings" { };
     locale = mkConfigurationOption "locale configuration" { };
     nixConfig = mkConfigurationOption "Nix settings" { };
+    security = mkConfigurationOption "security configuration" { };
+    systemDefaults = mkConfigurationOption "macOS settings" { };
     unfree = mkConfigurationOption "unfree software" { };
 
     userConfig = mkConfigurationOption "user configuration" {
@@ -34,7 +43,6 @@ in
       };
     };
 
-    security = mkConfigurationOption "security configuration" { };
     zramSwap = mkConfigurationOption "zram swap space" { };
   };
 }

@@ -1,11 +1,11 @@
 { config, lib, ... }:
 
 let
-  inherit (config.luminosity.selections) desktop;
+  cfg = config.luminosity.system.programs.sway;
 
 in
 {
-  config = lib.mkIf (desktop == "sway") {
+  config = lib.mkIf cfg.enable {
     # Tiling Wayland compositor
     programs.sway = {
       enable = true;
