@@ -8,9 +8,8 @@ in
   config = lib.mkIf cfg.enable {
     # Local print service
     services.printing = {
-        enable = true;
-        stateless = true;
-      };
+      enable = true;
+      stateless = true;
     };
   };
 }
