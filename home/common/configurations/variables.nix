@@ -7,8 +7,10 @@ let
 in
 {
   config = lib.mkIf cfg.enable {
-    home.sessionVariables = {
-      TERMINAL = lib.mkIf (terminal != null) terminal;
-    } // cfg.extraVariables;
+    home.sessionVariables =
+      lib.optionalAttrs (terminal != null) {
+        TERMINAL = terminal;
+      }
+      // cfg.extraVariables;
   };
 }
