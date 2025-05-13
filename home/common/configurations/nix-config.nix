@@ -2,6 +2,7 @@
   config,
   lib,
   osConfig ? null,
+  pkgs,
   ...
 }:
 
@@ -11,20 +12,24 @@ let
 in
 {
   config = lib.mkIf cfg.enable {
-    nix = {
-      # Automated garbage collection for user-specific generations
-      gc = {
-        automatic = true;
-        frequency = "weekly";
-        options = "--delete-older-than 30d";
-      };
+    nix =
+      {
+        # Automated garbage collection for user-specific generations
+        gc = {
+          automatic = true;
+          frequency = "weekly";
+          options = "--delete-older-than 30d";
+        };
+      }
+      // lib.optionalAttrs (osConfig == null) {
+        package = pkgs.nix;
 
-      settings = lib.optionalAttrs (osConfig == null) {
-        experimental-features = [
-          "nix-command"
-          "flakes"
-        ];
+        settings = {
+          experimental-features = [
+            "nix-command"
+            "flakes"
+          ];
+        };
       };
-    };
   };
 }
