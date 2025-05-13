@@ -25,6 +25,9 @@ in
         config.enable_tab_bar = false
         config.font = wezterm.font '${fonts.mono}'
         config.font_size = ${toString fonts.size}
+        config.front_end = 'WebGpu'
+        config.max_fps = ${toString cfg.maxFPS}
+        config.webgpu_power_preference = 'HighPerformance'
 
         return config
       '';

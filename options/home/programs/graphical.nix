@@ -59,6 +59,12 @@ in
         description = "Whether to enable WezTerm.";
       };
 
+      maxFPS = mkOption {
+        type = types.int;
+        default = 60;
+        description = "Maximum FPS for WezTerm.";
+      };
+
       theme = mkOption {
         type = types.str;
         default = config.luminosity.home.desktop.environment.themes.name;

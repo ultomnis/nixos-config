@@ -25,6 +25,7 @@
       graphical = {
         enable = true;
         bitwarden.sshAgent.enable = true;
+        wezterm.maxFPS = 120;
       };
 
       terminal = {
