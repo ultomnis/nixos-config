@@ -23,17 +23,6 @@ in
       description = "Desktop environment selection.";
     };
 
-    editor = mkOption {
-      type = types.nullOr (
-        types.enum [
-          "hx"
-        ]
-      );
-
-      default = null;
-      description = "Default text editor.";
-    };
-
     gpu = mkOption {
       type = types.nullOr (
         types.enum [
