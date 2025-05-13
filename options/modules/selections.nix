@@ -1,10 +1,12 @@
-{ lib, ... }:
+{ lib, pkgs, ... }:
 
 let
   inherit (lib)
     mkOption
     types
     ;
+
+  inherit (pkgs.stdenv) isLinux;
 
 in
 {
@@ -99,10 +101,11 @@ in
       type = types.nullOr (
         types.enum [
           "fish"
+          "shadow"
         ]
       );
 
-      default = null;
+      default = if isLinux then "shadow" else null;
       description = "Default shell.";
     };
 

@@ -8,6 +8,7 @@
 
 let
   cfg = config.luminosity.system.configurations.userConfig;
+  inherit (config.luminosity.selections) shell;
 
   inherit (pkgs.stdenv)
     isDarwin
@@ -22,6 +23,7 @@ in
         users.${userName} =
           {
             home = if isDarwin then "/Users/${userName}" else "/home/${userName}";
+            shell = if (shell != null) then pkgs.${shell} else null;
             uid = cfg.uid;
           }
           // lib.optionalAttrs isLinux {
