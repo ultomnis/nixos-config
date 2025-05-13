@@ -1,6 +1,7 @@
 {
   imports = [
-    ./desktop
+    ./configurations
+    ./environment
     ./graphical
     ./terminal
   ];
