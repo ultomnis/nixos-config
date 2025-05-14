@@ -22,13 +22,10 @@ in
       };
 
       extraConfig = {
-        merge = {
-          conflictStyle = "zdiff3";
-        };
-
-        user = {
-          useConfigOnly = true;
-        };
+        diff.algorithm = "histogram";
+        init.defaultBranch = "main";
+        merge.conflictStyle = "zdiff3";
+        user.useConfigOnly = true;
       };
 
       includes = [
