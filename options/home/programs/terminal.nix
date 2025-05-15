@@ -30,14 +30,14 @@ in
 
     git = mkTerminalOption "Git" {
       userName = mkOption {
-        type = types.str;
-        default = "";
+        type = types.nullOr types.str;
+        default = null;
         description = "Default username for Git.";
       };
 
       email = mkOption {
-        type = types.str;
-        default = "";
+        type = types.nullOr types.str;
+        default = null;
         description = "Default email for Git.";
       };
     };

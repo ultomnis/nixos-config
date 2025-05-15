@@ -9,7 +9,7 @@ in
     # Distributed version control system
     programs.git = {
       enable = true;
-      userName = cfg.userName;
+      userName = lib.mkIf (cfg.userName != null) cfg.userName;
 
       # Syntax-highlighting pager
       delta = {
@@ -37,7 +37,7 @@ in
             gpg.format = "ssh";
 
             user = {
-              email = cfg.email;
+              email = lib.mkIf (cfg.email != null) cfg.email;
               signingKey = "${config.home.homeDirectory}/.ssh/github.pub";
             };
           };

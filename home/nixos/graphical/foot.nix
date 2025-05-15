@@ -7,7 +7,6 @@
 
 let
   cfg = config.luminosity.home.programs.graphical.foot;
-  inherit (config.luminosity.home.desktop.environment) fonts;
   inherit (config.luminosity.home.selections) shell;
 
 in
@@ -19,8 +18,14 @@ in
 
       settings = {
         main = {
-          font = "${fonts.mono}:size=${toString fonts.size}";
-          include = "${pkgs.foot.themes}/share/foot/themes/${cfg.theme}";
+          font = lib.mkIf (
+            cfg.font != null && cfg.fontSize != null
+          ) "${cfg.font}:size=${toString cfg.fontSize}";
+
+          include = lib.optionals (cfg.theme != null) [
+            "${pkgs.foot.themes}/share/foot/themes/${cfg.theme}"
+          ];
+
           pad = "5x5";
           shell = lib.mkIf (shell != null) (lib.getExe pkgs.${shell});
         };

@@ -24,7 +24,7 @@ in
           {
             home = if isDarwin then "/Users/${userName}" else "/home/${userName}";
             shell = if (shell != null) then pkgs.${shell} else null;
-            uid = cfg.uid;
+            uid = lib.mkIf (cfg.uid != null) cfg.uid;
           }
           // lib.optionalAttrs isLinux {
             isNormalUser = true;

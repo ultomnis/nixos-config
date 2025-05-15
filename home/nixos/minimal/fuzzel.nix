@@ -13,7 +13,7 @@ in
 
       settings = {
         main = {
-          icon-theme = themes.iconName;
+          icon-theme = lib.mkIf (themes.iconName != null) themes.iconName;
         };
 
         border = {

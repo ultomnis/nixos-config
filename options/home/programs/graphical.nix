@@ -34,8 +34,20 @@ in
         description = "Whether to enable foot.";
       };
 
+      font = mkOption {
+        type = types.nullOr types.str;
+        default = config.luminosity.home.desktop.environment.fonts.mono;
+        description = "Font for foot.";
+      };
+
+      fontSize = mkOption {
+        type = types.nullOr types.int;
+        default = config.luminosity.home.desktop.environment.fonts.size;
+        description = "Font size for foot.";
+      };
+
       theme = mkOption {
-        type = types.str;
+        type = types.nullOr types.str;
         default = config.luminosity.home.desktop.environment.themes.name;
         description = "Theme for foot.";
       };
@@ -59,6 +71,18 @@ in
         description = "Whether to enable WezTerm.";
       };
 
+      font = mkOption {
+        type = types.nullOr types.str;
+        default = config.luminosity.home.desktop.environment.fonts.mono;
+        description = "Font for WezTerm.";
+      };
+
+      fontSize = mkOption {
+        type = types.nullOr types.int;
+        default = config.luminosity.home.desktop.environment.fonts.size;
+        description = "Font size for WezTerm.";
+      };
+
       maxFPS = mkOption {
         type = types.int;
         default = 60;
@@ -66,7 +90,7 @@ in
       };
 
       theme = mkOption {
-        type = types.str;
+        type = types.nullOr types.str;
         default = config.luminosity.home.desktop.environment.themes.name;
         description = "Theme for WezTerm.";
       };

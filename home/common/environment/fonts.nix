@@ -17,16 +17,15 @@ in
         # Allow fontconfig to discover fonts
         fonts.fontconfig.enable = true;
 
-        home.packages = with pkgs; [
-          cfg.package
-          noto-fonts
-        ];
+        home.packages = [
+          pkgs.noto-fonts
+        ] ++ lib.optional (cfg.package != null) cfg.package;
       }
 
       (lib.mkIf isLinux {
         gtk.font = {
-          name = cfg.propo;
-          size = cfg.size;
+          name = lib.mkIf (cfg.propo != null) cfg.propo;
+          size = lib.mkIf (cfg.size != null) cfg.size;
         };
       })
     ]

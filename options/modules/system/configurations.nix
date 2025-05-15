@@ -37,7 +37,7 @@ in
 
     userConfig = mkConfigurationOption "user configuration" {
       uid = mkOption {
-        type = types.nullOr (types.int);
+        type = types.nullOr types.int;
         default = null;
         description = "The account UID.";
       };

@@ -16,8 +16,8 @@ in
         bitwarden-desktop
       ];
 
-      sessionVariables = {
-        SSH_AUTH_SOCK = lib.mkIf (cfg.sshAgent.enable) "${config.home.homeDirectory}/.bitwarden-ssh-agent.sock";
+      sessionVariables = lib.optionalAttrs (cfg.sshAgent.enable) {
+        SSH_AUTH_SOCK = "${config.home.homeDirectory}/.bitwarden-ssh-agent.sock";
       };
     };
   };

@@ -49,7 +49,7 @@ in
 
     waybar = mkMinimalOption "Waybar" {
       menuCommand = mkOption {
-        type = types.str;
+        type = types.nullOr types.str;
         default = null;
         description = "Command to use when clicking menu";
       };
