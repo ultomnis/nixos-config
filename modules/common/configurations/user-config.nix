@@ -31,7 +31,7 @@ in
             extraGroups = [ "wheel" ];
           };
       }
-      // lib.optionalAttrs isDarwin {
+      // lib.optionalAttrs (cfg.uid != null && isDarwin) {
         knownUsers = [
           userName
         ];
