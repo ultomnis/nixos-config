@@ -23,7 +23,7 @@ in
         users.${userName} =
           {
             home = if isDarwin then "/Users/${userName}" else "/home/${userName}";
-            shell = if (shell != null) then pkgs.${shell} else null;
+            shell = lib.mkIf (shell != null) pkgs.${shell};
             uid = lib.mkIf (cfg.uid != null) cfg.uid;
           }
           // lib.optionalAttrs isLinux {
