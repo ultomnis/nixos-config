@@ -21,7 +21,15 @@ in
 {
   options.luminosity.home.programs.terminal = {
     bash = mkTerminalOption "bash" { };
-    bat = mkTerminalOption "bat" { };
+
+    bat = mkTerminalOption "bat" {
+      theme = mkOption {
+        type = types.nullOr types.str;
+        default = config.luminosity.home.desktop.environment.themes.name;
+        description = "Theme for bat.";
+      };
+    };
+
     btop = mkTerminalOption "btop" { };
     eza = mkTerminalOption "eza" { };
     fd = mkTerminalOption "fd" { };
@@ -30,16 +38,22 @@ in
     fzf = mkTerminalOption "fzf" { };
 
     git = mkTerminalOption "Git" {
-      userName = mkOption {
-        type = types.nullOr types.str;
-        default = null;
-        description = "Default username for Git.";
-      };
-
       email = mkOption {
         type = types.nullOr types.str;
         default = null;
         description = "Default email for Git.";
+      };
+
+      syntaxTheme = mkOption {
+        type = types.nullOr types.str;
+        default = config.luminosity.home.desktop.environment.themes.name;
+        description = "Syntax theme for delta.";
+      };
+
+      userName = mkOption {
+        type = types.nullOr types.str;
+        default = null;
+        description = "Default username for Git.";
       };
     };
 

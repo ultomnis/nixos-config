@@ -18,6 +18,12 @@
     };
 
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+
+    # Themes
+    rose-pine-tm = {
+      url = "github:rose-pine/tm-theme";
+      flake = false;
+    };
   };
 
   outputs =

@@ -82,7 +82,24 @@
         "disko": "disko",
         "home-manager": "home-manager",
         "nix-darwin": "nix-darwin",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "rose-pine-tm": "rose-pine-tm"
+      }
+    },
+    "rose-pine-tm": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1743209992,
+        "narHash": "sha256-maQp4QTJOlK24eid7mUsoS7kc8P0gerKcbvNaxO8Mic=",
+        "owner": "rose-pine",
+        "repo": "tm-theme",
+        "rev": "c4cab0c431f55a3c4f9897407b7bdad363bbb862",
+        "type": "github"
+      },
+      "original": {
+        "owner": "rose-pine",
+        "repo": "tm-theme",
+        "type": "github"
       }
     }
   },
