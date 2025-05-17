@@ -87,6 +87,7 @@ in
     shell = mkOption {
       type = types.nullOr (
         types.enum [
+          "bash"
           "fish"
           "zsh"
         ]

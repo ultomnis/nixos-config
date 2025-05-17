@@ -20,6 +20,7 @@ let
 in
 {
   options.luminosity.home.programs.terminal = {
+    bash = mkTerminalOption "bash" { };
     bat = mkTerminalOption "bat" { };
     btop = mkTerminalOption "btop" { };
     eza = mkTerminalOption "eza" { };

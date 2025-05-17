@@ -1,9 +1,9 @@
 {
   imports = [
+    ./shells
     ./utils
 
     ./ffmpeg.nix
-    ./fish.nix
     ./git.nix
     ./helix.nix
     ./libqalculate.nix
@@ -13,6 +13,5 @@
     ./unar.nix
     ./yazi.nix
     ./yt-dlp.nix
-    ./zsh.nix
   ];
 }
