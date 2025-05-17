@@ -42,5 +42,13 @@ in
     };
 
     virt-manager = mkProgramOption "Virtual Machine Manager" { };
+
+    zsh = {
+      enable = mkOption {
+        type = types.bool;
+        default = config.luminosity.selections.shell == "zsh";
+        description = "Whether to enable Zsh.";
+      };
+    };
   };
 }

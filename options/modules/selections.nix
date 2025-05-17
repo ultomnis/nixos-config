@@ -88,6 +88,7 @@ in
       type = types.nullOr (
         types.enum [
           "fish"
+          "zsh"
         ]
       );
 

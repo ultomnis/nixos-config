@@ -61,5 +61,6 @@ in
     yazi = mkTerminalOption "Yazi" { };
     yt-dlp = mkTerminalOption "yt-dlp" { };
     zoxide = mkTerminalOption "zoxide" { };
+    zsh = mkTerminalOption "zsh" { };
   };
 }
