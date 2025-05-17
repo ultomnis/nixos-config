@@ -30,7 +30,14 @@ in
       };
     };
 
-    btop = mkTerminalOption "btop" { };
+    btop = mkTerminalOption "btop" {
+      theme = mkOption {
+        type = types.nullOr types.str;
+        default = config.luminosity.home.desktop.environment.themes.name;
+        description = "Theme for btop.";
+      };
+    };
+
     eza = mkTerminalOption "eza" { };
     fd = mkTerminalOption "fd" { };
     ffmpeg = mkTerminalOption "ffmpeg" { };
