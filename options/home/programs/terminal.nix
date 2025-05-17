@@ -64,7 +64,16 @@ in
       };
     };
 
-    helix = mkTerminalOption "Helix" { };
+    helix = mkTerminalOption "Helix" {
+      theme = mkOption {
+        type = types.nullOr types.str;
+        default =
+          builtins.replaceStrings [ "-" ] [ "_" ]
+            config.luminosity.home.desktop.environment.themes.name;
+        description = "Theme for Helix.";
+      };
+    };
+
     libqalculate = mkTerminalOption "libqalculate" { };
     mat2 = mkTerminalOption "mat2" { };
 
