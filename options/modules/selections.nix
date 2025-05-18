@@ -28,6 +28,9 @@ in
           "zed-editor"
         ]
       );
+
+      default = null;
+      description = "Editor selection.";
     };
 
     gpu = mkOption {
