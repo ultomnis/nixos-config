@@ -1,4 +1,4 @@
-{ hostName, ... }:
+{ hostName, userName, ... }:
 
 {
   imports = [
@@ -14,7 +14,10 @@
 
   # Do NOT change this value unless you have manually inspected all the changes it would make to your configuration,
   # and migrated your data accordingly.
-  system.stateVersion = 6;
+  system = {
+    stateVersion = 6;
+    primaryUser = userName;
+  };
 
   luminosity = {
     selections = {
