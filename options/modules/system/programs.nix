@@ -31,7 +31,6 @@ in
     };
 
     homebrew = mkProgramOption "Homebrew" { };
-    obs-studio = mkProgramOption "OBS Studio" { };
     steam = mkProgramOption "Steam" { };
 
     sway = {

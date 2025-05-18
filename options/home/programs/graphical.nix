@@ -67,6 +67,7 @@ in
     mpv = mkGraphicalOption "MPV" { };
     mullvad-browser = mkGraphicalOption "Mullvad Browser" { };
     nexusmods-app = mkGraphicalOption "Nexus Mods App" { };
+    obs-studio = mkGraphicalOption "OBS Studio" { };
     piper = mkGraphicalOption "Piper" { };
     pwvucontrol = mkGraphicalOption "pwvucontrol" { };
     thunderbird = mkGraphicalOption "Thunderbird" { };
