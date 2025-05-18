@@ -2,19 +2,33 @@
   config,
   customLib,
   lib,
+  osConfig ? null,
   pkgs,
   ...
 }:
 
 let
   cfg = config.luminosity.home.desktop.minimal.sway;
-
-  inherit (config.luminosity.home.selections)
-    launcher
-    monitors
-    terminal
-    wallpaper
-    ;
+  launcher =
+    if (osConfig != null) then
+      osConfig.luminosity.selections.launcher
+    else
+      config.luminosity.selections.launcher;
+  monitors =
+    if (osConfig != null) then
+      osConfig.luminosity.selections.monitors
+    else
+      config.luminosity.selections.monitors;
+  terminal =
+    if (osConfig != null) then
+      osConfig.luminosity.selections.terminal
+    else
+      config.luminosity.selections.terminal;
+  wallpaper =
+    if (osConfig != null) then
+      osConfig.luminosity.selections.wallpaper
+    else
+      config.luminosity.selections.wallpaper;
 
 in
 {

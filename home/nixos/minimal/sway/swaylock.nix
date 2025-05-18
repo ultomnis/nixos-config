@@ -1,8 +1,17 @@
-{ config, lib, ... }:
+{
+  config,
+  lib,
+  osConfig ? null,
+  ...
+}:
 
 let
   cfg = config.luminosity.home.desktop.minimal.sway;
-  inherit (config.luminosity.home.selections) wallpaper;
+  wallpaper =
+    if (osConfig != null) then
+      osConfig.luminosity.selections.wallpaper
+    else
+      config.luminosity.selections.wallpaper;
 
 in
 {

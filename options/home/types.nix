@@ -1,4 +1,5 @@
 {
+  config,
   lib,
   osConfig ? null,
   ...
@@ -23,7 +24,11 @@ in
 
       environment.enable = mkOption {
         type = types.bool;
-        default = if (osConfig != null) then (osConfig.luminosity.selections.desktop != null) else false;
+        default =
+          if (osConfig != null) then
+            (osConfig.luminosity.selections.desktop != null)
+          else
+            (config.luminosity.selections.desktop != null);
         description = "Whether to enable desktop environment configurations.";
       };
 
@@ -37,7 +42,10 @@ in
               "sway"
             ])
           else
-            false;
+            (builtins.elem config.luminosity.selections.desktop [
+              "aerospace"
+              "sway"
+            ]);
 
         description = "Whether to enable window manager configurations.";
       };

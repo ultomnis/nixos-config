@@ -5,6 +5,7 @@
     ../../home/common
     ../../home/nixos
     ../../options/home
+    ../../options/modules/selections.nix
   ];
 
   home = {
@@ -17,10 +18,7 @@
 
   luminosity.home = {
     desktop = {
-      configurations = {
-        enable = true;
-        nixConfig.enable = true;
-      };
+      configurations.enable = true;
     };
 
     programs = {

@@ -1,17 +1,23 @@
 {
   config,
   lib,
+  osConfig ? null,
   pkgs,
   ...
 }:
 
 let
   cfg = config.luminosity.home.desktop.configurations.variables;
-
-  inherit (config.luminosity.home.selections)
-    editor
-    terminal
-    ;
+  editor =
+    if (osConfig != null) then
+      osConfig.luminosity.selections.editor
+    else
+      config.luminosity.selections.editor;
+  terminal =
+    if (osConfig != null) then
+      osConfig.luminosity.selections.terminal
+    else
+      config.luminosity.selections.terminal;
 
 in
 {

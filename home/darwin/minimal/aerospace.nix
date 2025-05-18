@@ -1,13 +1,18 @@
 {
   config,
   lib,
+  osConfig ? null,
   pkgs,
   ...
 }:
 
 let
   cfg = config.luminosity.home.desktop.minimal.aerospace;
-  inherit (config.luminosity.home.selections) terminal;
+  terminal =
+    if (osConfig != null) then
+      osConfig.luminosity.selections.terminal
+    else
+      config.luminosity.selections.terminal;
 
 in
 {

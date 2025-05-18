@@ -1,4 +1,9 @@
-{ config, lib, ... }:
+{
+  config,
+  lib,
+  osConfig ? null,
+  ...
+}:
 
 let
   inherit (lib)
@@ -30,7 +35,11 @@ in
     foot = {
       enable = mkOption {
         type = types.bool;
-        default = config.luminosity.home.selections.terminal == "foot";
+        default =
+          if (osConfig != null) then
+            (osConfig.luminosity.selections.terminal == "foot")
+          else
+            (config.luminosity.selections.terminal == "foot");
         description = "Whether to enable foot.";
       };
 
@@ -67,7 +76,11 @@ in
     wezterm = {
       enable = mkOption {
         type = types.bool;
-        default = config.luminosity.home.selections.terminal == "wezterm";
+        default =
+          if (osConfig != null) then
+            (osConfig.luminosity.selections.terminal == "wezterm")
+          else
+            (config.luminosity.selections.terminal == "wezterm");
         description = "Whether to enable WezTerm.";
       };
 

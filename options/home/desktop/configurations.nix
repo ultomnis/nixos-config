@@ -1,9 +1,4 @@
-{
-  config,
-  lib,
-  osConfig ? null,
-  ...
-}:
+{ config, lib, ... }:
 
 let
   inherit (lib)
@@ -22,25 +17,11 @@ let
     }
     // extraOptions;
 
-  nixConfig =
-    if (osConfig != null) then osConfig.luminosity.system.configurations.nixConfig.enable else false;
-  unfree =
-    if (osConfig != null) then osConfig.luminosity.system.configurations.unfree.enable else false;
-
 in
 {
   options.luminosity.home.desktop.configurations = {
-    nixConfig.enable = mkOption {
-      type = types.bool;
-      default = nixConfig;
-      description = "Whether to enable user-specific Nix settings.";
-    };
-
-    unfree.enable = mkOption {
-      type = types.bool;
-      default = unfree;
-      description = "Whether to enable unfree software.";
-    };
+    nixConfig = mkConfigurationOption "user-specific Nix settings" { };
+    unfree = mkConfigurationOption "unfree software" { };
 
     variables = mkConfigurationOption "environment variables configuration" {
       extraVariables = mkOption {

@@ -1,4 +1,9 @@
-{ config, lib, ... }:
+{
+  config,
+  lib,
+  osConfig ? null,
+  ...
+}:
 
 let
   inherit (lib)
@@ -23,7 +28,11 @@ in
     aerospace = {
       enable = mkOption {
         type = types.bool;
-        default = config.luminosity.home.selections.desktop == "aerospace";
+        default =
+          if (osConfig != null) then
+            (osConfig.luminosity.selections.desktop == "aerospace")
+          else
+            (config.luminosity.selections.desktop == "aerospace");
         description = "Whether to enable AeroSpace.";
       };
     };
@@ -31,7 +40,11 @@ in
     fuzzel = {
       enable = mkOption {
         type = types.bool;
-        default = config.luminosity.home.selections.launcher == "fuzzel";
+        default =
+          if (osConfig != null) then
+            (osConfig.luminosity.selections.launcher == "fuzzel")
+          else
+            (config.luminosity.selections.launcher == "fuzzel");
         description = "Whether to enable fuzzel.";
       };
     };
@@ -42,7 +55,11 @@ in
     sway = {
       enable = mkOption {
         type = types.bool;
-        default = config.luminosity.home.selections.desktop == "sway";
+        default =
+          if (osConfig != null) then
+            (osConfig.luminosity.selections.desktop == "sway")
+          else
+            (config.luminosity.selections.desktop == "sway");
         description = "Whether to enable Sway.";
       };
     };

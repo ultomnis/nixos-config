@@ -1,13 +1,18 @@
 {
   config,
   lib,
+  osConfig ? null,
   pkgs,
   ...
 }:
 
 let
   cfg = config.luminosity.home.programs.graphical.foot;
-  inherit (config.luminosity.home.selections) shell;
+  shell =
+    if (osConfig != null) then
+      osConfig.luminosity.selections.shell
+    else
+      config.luminosity.selections.shell;
 
 in
 {
