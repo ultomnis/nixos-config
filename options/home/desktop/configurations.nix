@@ -20,6 +20,7 @@ let
 in
 {
   options.luminosity.home.desktop.configurations = {
+    darwinDefaults = mkConfigurationOption "macOS user defaults" { };
     nixConfig = mkConfigurationOption "user-specific Nix settings" { };
     unfree = mkConfigurationOption "unfree software" { };
 

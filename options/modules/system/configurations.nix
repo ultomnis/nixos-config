@@ -32,7 +32,6 @@ in
     locale = mkConfigurationOption "locale configuration" { };
     nixConfig = mkConfigurationOption "Nix settings" { };
     security = mkConfigurationOption "security configuration" { };
-    systemDefaults = mkConfigurationOption "macOS settings" { };
     unfree = mkConfigurationOption "unfree software" { };
 
     userConfig = mkConfigurationOption "user configuration" {

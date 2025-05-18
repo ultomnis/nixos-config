@@ -1,5 +1,0 @@
-{
-  imports = [
-    ./system-defaults.nix
-  ];
-}
