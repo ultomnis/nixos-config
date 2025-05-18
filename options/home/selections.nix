@@ -11,6 +11,7 @@ let
     ;
 
   desktop = if (osConfig != null) then osConfig.luminosity.selections.desktop else null;
+  editor = if (osConfig != null) then osConfig.luminosity.selections.editor else null;
   launcher = if (osConfig != null) then osConfig.luminosity.selections.launcher else null;
   monitors = if (osConfig != null) then osConfig.luminosity.selections.monitors else [ ];
   shell = if (osConfig != null) then osConfig.luminosity.selections.shell else null;
@@ -24,6 +25,12 @@ in
       type = types.nullOr types.str;
       default = desktop;
       description = "Desktop environment selection.";
+    };
+
+    editor = mkOption {
+      type = types.nullOr types.str;
+      default = editor;
+      description = "Editor selection.";
     };
 
     launcher = mkOption {

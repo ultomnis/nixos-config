@@ -67,9 +67,7 @@ in
     helix = mkTerminalOption "Helix" {
       theme = mkOption {
         type = types.nullOr types.str;
-        default =
-          builtins.replaceStrings [ "-" ] [ "_" ]
-            config.luminosity.home.desktop.environment.themes.name;
+        default = config.luminosity.home.desktop.environment.themes.name;
         description = "Theme for Helix.";
       };
     };

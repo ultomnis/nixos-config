@@ -19,6 +19,7 @@
   luminosity = {
     selections = {
       desktop = "aerospace";
+      editor = "helix";
       shell = "fish";
       terminal = "wezterm";
     };

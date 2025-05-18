@@ -21,6 +21,15 @@ in
       description = "Desktop environment selection.";
     };
 
+    editor = mkOption {
+      type = types.nullOr (
+        types.enum [
+          "helix"
+          "zed-editor"
+        ]
+      );
+    };
+
     gpu = mkOption {
       type = types.nullOr (
         types.enum [

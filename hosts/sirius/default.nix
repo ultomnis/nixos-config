@@ -18,6 +18,7 @@
   luminosity = {
     selections = {
       desktop = "sway";
+      editor = "helix";
       gpu = "amd";
       launcher = "fuzzel";
 

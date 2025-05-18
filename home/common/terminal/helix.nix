@@ -14,7 +14,6 @@ in
     # Modal text editor
     programs.helix = {
       enable = true;
-      defaultEditor = true;
 
       settings = {
         theme = cfg.theme;

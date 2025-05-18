@@ -35,6 +35,7 @@
       graphical = {
         enable = true;
         bitwarden.sshAgent.enable = true;
+        zed-editor.theme = "Rosé Pine";
       };
 
       terminal = {
@@ -44,6 +45,8 @@
           userName = "ultomnis";
           email = "125839032+ultomnis@users.noreply.github.com";
         };
+
+        helix.theme = "rose_pine";
 
         ollama = {
           environmentVariables = {
