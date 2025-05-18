@@ -49,6 +49,7 @@ in
       };
     };
 
+    gammastep = mkMinimalOption "Gammastep" { };
     gnome-keyring = mkMinimalOption "GNOME Keyring" { };
     mako = mkMinimalOption "mako" { };
     polkit-gnome = mkMinimalOption "Polkit GNOME" { };
@@ -72,7 +73,5 @@ in
         description = "Command to use when clicking menu";
       };
     };
-
-    wlsunset = mkMinimalOption "wlsunset" { };
   };
 }
