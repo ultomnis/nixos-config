@@ -17,7 +17,7 @@ in
 
         options = {
           navigate = true;
-          syntax-theme = cfg.syntaxTheme;
+          syntax-theme = "base16";
         };
       };
 

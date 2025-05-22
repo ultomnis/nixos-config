@@ -1,9 +1,4 @@
-{
-  config,
-  inputs,
-  lib,
-  ...
-}:
+{ config, lib, ... }:
 
 let
   cfg = config.luminosity.home.programs.terminal.bat;
@@ -16,16 +11,9 @@ in
       enable = true;
 
       config = {
-        theme = lib.mkIf (cfg.theme != null) cfg.theme;
+        theme = "base16";
         squeeze-blank = true;
         squeeze-limit = "1";
-      };
-
-      themes = {
-        rose-pine = {
-          src = inputs.rose-pine-tm;
-          file = "dist/themes/rose-pine.tmTheme";
-        };
       };
     };
   };
