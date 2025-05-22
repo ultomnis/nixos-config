@@ -85,9 +85,9 @@ in
 
     ripgrep = mkTerminalOption "ripgrep" { };
     ssh = mkTerminalOption "SSH" { };
+    superfile = mkTerminalOption "superfile" { };
     tealdeer = mkTerminalOption "tealdeer" { };
     unar = mkTerminalOption "unar" { };
-    yazi = mkTerminalOption "Yazi" { };
     yt-dlp = mkTerminalOption "yt-dlp" { };
     zoxide = mkTerminalOption "zoxide" { };
     zsh = mkTerminalOption "zsh" { };
