@@ -19,12 +19,6 @@
 
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
-    # Themes
-    rose-pine-btop = {
-      url = "github:rose-pine/btop";
-      flake = false;
-    };
-
     rose-pine-tm = {
       url = "github:rose-pine/tm-theme";
       flake = false;
