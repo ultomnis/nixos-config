@@ -85,6 +85,7 @@ in
 
     ripgrep = mkTerminalOption "ripgrep" { };
     ssh = mkTerminalOption "SSH" { };
+    starship = mkTerminalOption "Starship" { };
     superfile = mkTerminalOption "superfile" { };
     tealdeer = mkTerminalOption "tealdeer" { };
     unar = mkTerminalOption "unar" { };
