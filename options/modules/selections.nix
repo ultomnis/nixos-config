@@ -30,7 +30,7 @@ in
       );
 
       default = null;
-      description = "Editor selection.";
+      description = "Default editor.";
     };
 
     gpu = mkOption {
