@@ -10,8 +10,8 @@
     ./mat2.nix
     ./ollama.nix
     ./ssh.nix
-    ./superfile.nix
     ./unar.nix
+    ./yazi.nix
     ./yt-dlp.nix
   ];
 }
