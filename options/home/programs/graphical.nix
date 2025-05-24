@@ -62,7 +62,6 @@ in
       };
     };
 
-    imv = mkGraphicalOption "imv" { };
     mangohud = mkGraphicalOption "MangoHud" { };
     mpv = mkGraphicalOption "MPV" { };
     mullvad-browser = mkGraphicalOption "Mullvad Browser" { };
@@ -70,6 +69,7 @@ in
     obs-studio = mkGraphicalOption "OBS Studio" { };
     piper = mkGraphicalOption "Piper" { };
     pwvucontrol = mkGraphicalOption "pwvucontrol" { };
+    swayimg = mkGraphicalOption "swayimg" { };
     thunderbird = mkGraphicalOption "Thunderbird" { };
     tor-browser = mkGraphicalOption "Tor Browser" { };
     utm = mkGraphicalOption "UTM" { };

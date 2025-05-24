@@ -1,18 +1,18 @@
 { config, lib, ... }:
 
 let
-  cfg = config.luminosity.home.programs.graphical.imv;
+  cfg = config.luminosity.home.programs.graphical.swayimg;
 
 in
 {
   config = lib.mkIf cfg.enable {
     # Image viewer
-    programs.imv = {
+    programs.swayimg = {
       enable = true;
 
       settings = {
-        options = {
-          overlay_position_bottom = true;
+        info = {
+          show = "no";
         };
       };
     };
