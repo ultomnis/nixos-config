@@ -14,15 +14,21 @@ in
 {
   config = lib.mkIf cfg.enable {
     stylix =
-      lib.optionalAttrs (firefox.enable) {
-        targets.firefox.colorTheme.enable = true;
-        targets.firefox.firefoxGnomeTheme.enable = true;
-        targets.firefox.profileNames = [
-          "default"
-        ];
-      }
-      // lib.optionalAttrs (waybar.enable) {
-        targets.waybar.font = "serif";
+      {
+        targets =
+          lib.optionalAttrs (firefox.enable) {
+            firefox = {
+              colorTheme.enable = true;
+              firefoxGnomeTheme.enable = true;
+
+              profileNames = [
+                "default"
+              ];
+            };
+          }
+          // lib.optionalAttrs (waybar.enable) {
+            waybar.font = "serif";
+          };
       }
       // lib.optionalAttrs (systemOS == "linux") {
         iconTheme = {

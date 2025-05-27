@@ -28,7 +28,7 @@ in
     fonts = mkEnvironmentOption "font configuration" { };
 
     stylix = mkEnvironmentOption "Stylix" {
-      icons = mkEnvironmentOption "Icon configuration" {
+      icons = {
         package = mkOption {
           type = types.nullOr types.package;
           default = pkgs.papirus-icon-theme;

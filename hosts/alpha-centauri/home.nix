@@ -25,9 +25,7 @@
           unfree.enable = false;
         };
 
-        environment = {
-          stylix.enable = true;
-        };
+        environment.enable = true;
       };
 
       programs = {
