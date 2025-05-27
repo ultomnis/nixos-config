@@ -22,10 +22,6 @@
 
   luminosity.home = {
     desktop = {
-      environment = {
-        fonts.size = 10;
-      };
-
       minimal = {
         waybar.menuCommand = "${lib.getExe pkgs.fuzzel} --anchor top-left";
       };
@@ -35,18 +31,16 @@
       graphical = {
         enable = true;
         bitwarden.sshAgent.enable = true;
-        zed-editor.theme = "Rosé Pine";
       };
 
       terminal = {
         enable = true;
 
         git = {
-          userName = "ultomnis";
+          delta.theme = "base16-stylix";
           email = "125839032+ultomnis@users.noreply.github.com";
+          userName = "ultomnis";
         };
-
-        helix.theme = "rose_pine";
 
         ollama = {
           environmentVariables = {

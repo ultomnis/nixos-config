@@ -1,13 +1,12 @@
 {
   config,
   lib,
-  pkgs,
+  systemOS,
   ...
 }:
 
 let
   cfg = config.luminosity.system.configurations.security;
-  inherit (pkgs.stdenv) isDarwin isLinux;
 
 in
 {
@@ -18,10 +17,10 @@ in
       '';
 
       pam.services =
-        lib.optionalAttrs isLinux {
+        lib.optionalAttrs (systemOS == "linux") {
           login.enableGnomeKeyring = true;
         }
-        // lib.optionalAttrs isDarwin {
+        // lib.optionalAttrs (systemOS == "darwin") {
           sudo_local.touchIdAuth = true;
         };
     };

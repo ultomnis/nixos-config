@@ -42,24 +42,6 @@ in
             (config.luminosity.selections.terminal == "foot");
         description = "Whether to enable foot.";
       };
-
-      font = mkOption {
-        type = types.nullOr types.str;
-        default = config.luminosity.home.desktop.environment.fonts.mono;
-        description = "Font for foot.";
-      };
-
-      fontSize = mkOption {
-        type = types.nullOr types.int;
-        default = config.luminosity.home.desktop.environment.fonts.size;
-        description = "Font size for foot.";
-      };
-
-      theme = mkOption {
-        type = types.nullOr types.str;
-        default = config.luminosity.home.desktop.environment.themes.name;
-        description = "Theme for foot.";
-      };
     };
 
     mangohud = mkGraphicalOption "MangoHud" { };
@@ -85,49 +67,13 @@ in
         description = "Whether to enable WezTerm.";
       };
 
-      font = mkOption {
-        type = types.nullOr types.str;
-        default = config.luminosity.home.desktop.environment.fonts.mono;
-        description = "Font for WezTerm.";
-      };
-
-      fontSize = mkOption {
-        type = types.nullOr types.int;
-        default = config.luminosity.home.desktop.environment.fonts.size;
-        description = "Font size for WezTerm.";
-      };
-
       maxFPS = mkOption {
         type = types.int;
         default = 60;
         description = "Maximum FPS for WezTerm.";
       };
-
-      theme = mkOption {
-        type = types.nullOr types.str;
-        default = config.luminosity.home.desktop.environment.themes.name;
-        description = "Theme for WezTerm.";
-      };
     };
 
-    zed-editor = mkGraphicalOption "Zed" {
-      font = mkOption {
-        type = types.nullOr types.str;
-        default = config.luminosity.home.desktop.environment.fonts.mono;
-        description = "Font for Zed.";
-      };
-
-      fontSize = mkOption {
-        type = types.nullOr types.int;
-        default = config.luminosity.home.desktop.environment.fonts.size;
-        description = "Font size for Zed.";
-      };
-
-      theme = mkOption {
-        type = types.nullOr types.str;
-        default = config.luminosity.home.desktop.environment.themes.name;
-        description = "Theme for Zed.";
-      };
-    };
+    zed-editor = mkGraphicalOption "Zed" { };
   };
 }

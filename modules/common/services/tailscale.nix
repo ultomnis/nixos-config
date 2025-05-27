@@ -1,13 +1,12 @@
 {
   config,
   lib,
-  pkgs,
+  systemOS,
   ...
 }:
 
 let
   cfg = config.luminosity.system.services.tailscale;
-  isLinux = pkgs.stdenv.isLinux;
 
 in
 {
@@ -16,7 +15,7 @@ in
       {
         enable = true;
       }
-      // lib.optionalAttrs isLinux {
+      // lib.optionalAttrs (systemOS == "linux") {
         useRoutingFeatures = cfg.useRoutingFeatures;
       };
   };

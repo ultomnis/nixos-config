@@ -16,8 +16,6 @@ in
       enable = true;
 
       settings = {
-        theme = cfg.theme;
-
         editor = {
           cursor-shape = {
             normal = "block";
@@ -25,6 +23,7 @@ in
             select = "underline";
           };
 
+          cursorline = true;
           indent-guides.render = true;
           line-number = "relative";
         };

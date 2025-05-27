@@ -21,15 +21,7 @@ in
 {
   options.luminosity.system.programs = {
     adb = mkProgramOption "Android Debug Bridge" { };
-
-    fish = {
-      enable = mkOption {
-        type = types.bool;
-        default = config.luminosity.selections.shell == "fish";
-        description = "Whether to enable fish shell.";
-      };
-    };
-
+    fish = mkProgramOption "fish" { };
     homebrew = mkProgramOption "Homebrew" { };
     steam = mkProgramOption "Steam" { };
 
@@ -41,13 +33,6 @@ in
     };
 
     virt-manager = mkProgramOption "Virtual Machine Manager" { };
-
-    zsh = {
-      enable = mkOption {
-        type = types.bool;
-        default = config.luminosity.selections.shell == "zsh";
-        description = "Whether to enable Zsh.";
-      };
-    };
+    zsh = mkProgramOption "Zsh" { };
   };
 }

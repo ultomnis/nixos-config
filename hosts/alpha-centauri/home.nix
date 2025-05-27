@@ -4,8 +4,9 @@
   imports = [
     ../../home/common
     ../../home/nixos
+    ../../modules/home
+    ../../options/common
     ../../options/home
-    ../../options/modules/selections.nix
   ];
 
   home = {
@@ -16,32 +17,36 @@
 
   programs.home-manager.enable = true;
 
-  luminosity.home = {
-    desktop = {
-      configurations = {
-        enable = true;
-        unfree.enable = false;
+  luminosity = {
+    home = {
+      desktop = {
+        configurations = {
+          enable = true;
+          unfree.enable = false;
+        };
+      };
+
+      programs = {
+        graphical = {
+          enable = true;
+          bitwarden.sshAgent.enable = true;
+          mangohud.enable = false;
+        };
+
+        terminal = {
+          enable = true;
+
+          git = {
+            delta.theme = "base16-stylix";
+            email = "125839032+ultomnis@users.noreply.github.com";
+            userName = "ultomnis";
+          };
+        };
       };
     };
 
-    programs = {
-      graphical = {
-        enable = true;
-        bitwarden.sshAgent.enable = true;
-        mangohud.enable = false;
-        zed-editor.theme = "Rosé Pine";
-      };
-
-      terminal = {
-        enable = true;
-
-        git = {
-          userName = "ultomnis";
-          email = "125839032+ultomnis@users.noreply.github.com";
-        };
-
-        helix.theme = "rose_pine";
-      };
+    stylix = {
+      enable = true;
     };
   };
 }

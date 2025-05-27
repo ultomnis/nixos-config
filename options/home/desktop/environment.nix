@@ -8,7 +8,6 @@
 let
   inherit (lib)
     mkOption
-    mkPackageOption
     types
     ;
 
@@ -26,75 +25,27 @@ let
 in
 {
   options.luminosity.home.desktop.environment = {
-    dconf = mkEnvironmentOption "dconf" { };
+    fonts = mkEnvironmentOption "font configuration" { };
 
-    fonts = mkEnvironmentOption "font configuration" {
-      package = mkPackageOption pkgs "font" {
-        default = [
-          "nerd-fonts"
-          "hack"
-        ];
+    stylix = mkEnvironmentOption "Stylix" {
+      icons = mkEnvironmentOption "Icon configuration" {
+        package = mkOption {
+          type = types.nullOr types.package;
+          default = pkgs.papirus-icon-theme;
+          description = "Icon theme package.";
+        };
 
-        nullable = true;
-      };
+        dark = mkOption {
+          type = types.nullOr types.str;
+          default = "Papirus-Dark";
+          description = "Dark icon theme name.";
+        };
 
-      regular = mkOption {
-        type = types.nullOr types.str;
-        default = "Hack Nerd Font";
-        description = "Regular font name.";
-      };
-
-      mono = mkOption {
-        type = types.nullOr types.str;
-        default = "Hack Nerd Font Mono";
-        description = "Monospace font name.";
-      };
-
-      propo = mkOption {
-        type = types.nullOr types.str;
-        default = "Hack Nerd Font Propo";
-        description = "Proportional font name.";
-      };
-
-      size = mkOption {
-        type = types.nullOr types.int;
-        default = 12;
-        description = "Font size.";
-      };
-    };
-
-    themes = mkEnvironmentOption "theme configuration" {
-      package = mkPackageOption pkgs "GTK theme" {
-        default = "rose-pine-gtk-theme";
-        nullable = true;
-      };
-
-      cursorPackage = mkPackageOption pkgs "cursor theme" {
-        default = "bibata-cursors";
-        nullable = true;
-      };
-
-      iconPackage = mkPackageOption pkgs "icon theme" {
-        default = "papirus-icon-theme";
-        nullable = true;
-      };
-
-      name = mkOption {
-        type = types.nullOr types.str;
-        default = "rose-pine";
-        description = "Theme name.";
-      };
-
-      cursorName = mkOption {
-        type = types.nullOr types.str;
-        default = "Bibata-Modern-Ice";
-        description = "Cursor theme name.";
-      };
-
-      iconName = mkOption {
-        type = types.nullOr types.str;
-        default = "Papirus";
-        description = "Icon theme name.";
+        light = mkOption {
+          type = types.nullOr types.str;
+          default = "Papirus-Light";
+          description = "Light icon theme name.";
+        };
       };
     };
   };

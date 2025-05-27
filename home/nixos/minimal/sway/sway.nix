@@ -24,11 +24,6 @@ let
       osConfig.luminosity.selections.terminal
     else
       config.luminosity.selections.terminal;
-  wallpaper =
-    if (osConfig != null) then
-      osConfig.luminosity.selections.wallpaper
-    else
-      config.luminosity.selections.wallpaper;
 
 in
 {
@@ -53,13 +48,11 @@ in
         output = {
           "*" = {
             allow_tearing = "yes";
-            bg = lib.mkIf (wallpaper != null) "${wallpaper} fill";
             max_render_time = "off";
           };
         } // customLib.mapSwayMonitors monitors;
 
         window = {
-          border = 0;
           titlebar = false;
 
           commands = [
@@ -79,7 +72,6 @@ in
         };
 
         floating = {
-          border = 0;
           titlebar = false;
         };
 

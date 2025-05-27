@@ -17,7 +17,6 @@ in
 
       extensions = [
         "nix"
-        "rose-pine-theme"
       ];
 
       extraPackages = with pkgs; [
@@ -35,8 +34,6 @@ in
           version = "2";
         };
 
-        buffer_font_family = cfg.font;
-        buffer_font_size = cfg.fontSize;
         cursor_blink = false;
         hour_format = "hour24";
 
@@ -58,7 +55,6 @@ in
           blinking = "off";
         };
 
-        theme = cfg.theme;
         vim_mode = true;
       };
     };

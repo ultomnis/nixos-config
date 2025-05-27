@@ -1,6 +1,5 @@
 {
   imports = [
-    ./environment
     ./graphical
     ./minimal
   ];

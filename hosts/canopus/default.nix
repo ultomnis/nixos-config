@@ -1,9 +1,16 @@
-{ hostName, userName, ... }:
+{
+  hostName,
+  inputs,
+  userName,
+  ...
+}:
 
 {
   imports = [
     ../../modules/common
     ../../modules/darwin
+    ../../modules/home
+    ../../options/common
     ../../options/modules
   ];
 
@@ -25,6 +32,12 @@
       editor = "helix";
       shell = "fish";
       terminal = "wezterm";
+    };
+
+    stylix = {
+      enable = true;
+      fonts.terminalSize = 13;
+      image = inputs.self + "/assets/wallpapers/cristina-gottardi-Wl4UzFaQpUo-unsplash.jpg";
     };
 
     system = {

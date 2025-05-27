@@ -30,6 +30,14 @@ in
     fzf = mkTerminalOption "fzf" { };
 
     git = mkTerminalOption "Git" {
+      delta = {
+        theme = mkOption {
+          type = types.nullOr types.str;
+          default = null;
+          description = "Syntax theme for delta.";
+        };
+      };
+
       email = mkOption {
         type = types.nullOr types.str;
         default = null;
@@ -43,14 +51,7 @@ in
       };
     };
 
-    helix = mkTerminalOption "Helix" {
-      theme = mkOption {
-        type = types.nullOr types.str;
-        default = config.luminosity.home.desktop.environment.themes.name;
-        description = "Theme for Helix.";
-      };
-    };
-
+    helix = mkTerminalOption "Helix" { };
     libqalculate = mkTerminalOption "libqalculate" { };
     mat2 = mkTerminalOption "mat2" { };
 

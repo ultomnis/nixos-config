@@ -89,33 +89,15 @@ in
         };
       };
 
-      style = ''
-        window#waybar {
-          background-color: rgba (0, 0, 0, 0.1);
-        }
-
+      style = lib.mkAfter ''
         button {
-          box-shadow: inset 0 -2px transparent;
           border: none;
           border-radius: 0;
-        }
-
-        button:hover {
-          background: inherit;
         }
 
         #workspaces button {
           padding: 0 7px;
           transition: none;
-          color: #ffffff;
-        }
-
-        #workspaces button:hover {
-          background: rgba (255, 255, 255, 0.1);
-        }
-
-        #workspaces button.focused {
-          box-shadow: inset 0 -2px #ffffff;
         }
 
         #custom-menu,

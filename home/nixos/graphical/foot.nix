@@ -23,14 +23,6 @@ in
 
       settings = {
         main = {
-          font = lib.mkIf (
-            cfg.font != null && cfg.fontSize != null
-          ) "${cfg.font}:size=${toString cfg.fontSize}";
-
-          include = lib.optionals (cfg.theme != null) [
-            "${pkgs.foot.themes}/share/foot/themes/${cfg.theme}"
-          ];
-
           pad = "5x5";
           shell = lib.mkIf (shell != null) (lib.getExe pkgs.${shell});
         };

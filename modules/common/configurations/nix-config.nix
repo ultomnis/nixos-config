@@ -1,13 +1,12 @@
 {
   config,
   lib,
-  pkgs,
+  systemOS,
   ...
 }:
 
 let
   cfg = config.luminosity.system.configurations.nixConfig;
-  inherit (pkgs.stdenv) isDarwin isLinux;
 
 in
 {
@@ -18,10 +17,10 @@ in
           automatic = true;
           options = "--delete-older-than 30d";
         }
-        // lib.optionalAttrs isLinux {
+        // lib.optionalAttrs (systemOS == "linux") {
           dates = "weekly";
         }
-        // lib.optionalAttrs isDarwin {
+        // lib.optionalAttrs (systemOS == "darwin") {
           interval = [
             {
               Hour = 0;
@@ -35,12 +34,12 @@ in
         {
           automatic = true;
         }
-        // lib.optionalAttrs isLinux {
+        // lib.optionalAttrs (systemOS == "linux") {
           dates = [
             "weekly"
           ];
         }
-        // lib.optionalAttrs isDarwin {
+        // lib.optionalAttrs (systemOS == "darwin") {
           interval = [
             {
               Hour = 0;

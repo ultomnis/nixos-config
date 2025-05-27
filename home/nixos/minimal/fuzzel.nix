@@ -2,7 +2,6 @@
 
 let
   cfg = config.luminosity.home.desktop.minimal.fuzzel;
-  inherit (config.luminosity.home.desktop.environment) themes;
 
 in
 {
@@ -12,17 +11,9 @@ in
       enable = true;
 
       settings = {
-        main = {
-          icon-theme = lib.mkIf (themes.iconName != null) themes.iconName;
-        };
-
         border = {
-          width = 0;
+          width = 2;
           radius = 0;
-        };
-
-        colors = {
-          background = "000000ff";
         };
       };
     };

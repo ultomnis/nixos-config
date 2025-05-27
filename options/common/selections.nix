@@ -120,11 +120,5 @@ in
       default = null;
       description = "Default terminal emulator.";
     };
-
-    wallpaper = mkOption {
-      type = types.nullOr types.path;
-      default = null;
-      description = "Path to the wallpaper.";
-    };
   };
 }

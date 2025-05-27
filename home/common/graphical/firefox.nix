@@ -71,6 +71,8 @@ in
       };
 
       profiles.default = {
+        extensions.force = true;
+
         search = {
           default = "ddg";
           privateDefault = "ddg";

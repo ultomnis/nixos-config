@@ -18,6 +18,11 @@
     };
 
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+
+    stylix = {
+      url = "github:nix-community/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -25,6 +30,7 @@
       self,
       disko,
       nixpkgs,
+      stylix,
       ...
     }@inputs:
 
@@ -47,10 +53,12 @@
           inherit customLib inputs;
           hostName = "sirius";
           userName = "user";
-          systemType = "x86_64-linux";
+          systemArch = "x86_64";
+          systemOS = "linux";
 
           extraModules = [
             disko.nixosModules.disko
+            stylix.nixosModules.stylix
           ];
         };
       };
@@ -60,7 +68,12 @@
           inherit customLib inputs;
           hostName = "canopus";
           userName = "user";
-          systemType = "aarch64-darwin";
+          systemArch = "aarch64";
+          systemOS = "darwin";
+
+          extraModules = [
+            stylix.darwinModules.stylix
+          ];
         };
       };
 
@@ -69,7 +82,12 @@
           inherit customLib inputs;
           hostName = "alpha-centauri";
           userName = "deck";
-          systemType = "x86_64-linux";
+          systemArch = "x86_64";
+          systemOS = "linux";
+
+          extraModules = [
+            stylix.homeModules.stylix
+          ];
         };
       };
     };

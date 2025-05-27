@@ -17,27 +17,21 @@
   programs.home-manager.enable = true;
 
   luminosity.home = {
-    desktop.environment = {
-      fonts.size = 13;
-    };
-
     programs = {
       graphical = {
         enable = true;
         bitwarden.sshAgent.enable = true;
         wezterm.maxFPS = 120;
-        zed-editor.theme = "Rosé Pine";
       };
 
       terminal = {
         enable = true;
 
         git = {
-          userName = "ultomnis";
+          delta.theme = "base16-stylix";
           email = "125839032+ultomnis@users.noreply.github.com";
+          userName = "ultomnis";
         };
-
-        helix.theme = "rose_pine";
       };
     };
   };
