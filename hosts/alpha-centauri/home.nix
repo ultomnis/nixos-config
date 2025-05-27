@@ -1,4 +1,4 @@
-{ userName, ... }:
+{ inputs, userName, ... }:
 
 {
   imports = [
@@ -51,6 +51,7 @@
 
     stylix = {
       enable = true;
+      image = inputs.self + "/assets/wallpapers/max-lederer-y0vXb9Hd3Yw-unsplash.jpg";
     };
   };
 }
