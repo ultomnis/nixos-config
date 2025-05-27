@@ -9,11 +9,6 @@
 
 let
   cfg = config.luminosity.home.desktop.minimal.sway;
-  launcher =
-    if (osConfig != null) then
-      osConfig.luminosity.selections.launcher
-    else
-      config.luminosity.selections.launcher;
   monitors =
     if (osConfig != null) then
       osConfig.luminosity.selections.monitors
@@ -35,7 +30,7 @@ in
       config = {
         modifier = "Mod4";
         terminal = lib.mkIf (terminal != null) (lib.getExe pkgs.${terminal});
-        menu = lib.mkIf (launcher != null) (lib.getExe pkgs.${launcher});
+        menu = lib.getExe pkgs.fuzzel;
         defaultWorkspace = "workspace number 1";
 
         input = {

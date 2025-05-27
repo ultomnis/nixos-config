@@ -22,7 +22,6 @@
       desktop = "sway";
       editor = "helix";
       gpu = "amd";
-      launcher = "fuzzel";
 
       monitors = [
         {

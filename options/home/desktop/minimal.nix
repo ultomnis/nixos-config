@@ -37,18 +37,7 @@ in
       };
     };
 
-    fuzzel = {
-      enable = mkOption {
-        type = types.bool;
-        default =
-          if (osConfig != null) then
-            (osConfig.luminosity.selections.launcher == "fuzzel")
-          else
-            (config.luminosity.selections.launcher == "fuzzel");
-        description = "Whether to enable fuzzel.";
-      };
-    };
-
+    fuzzel = mkMinimalOption "fuzzel" { };
     gammastep = mkMinimalOption "Gammastep" { };
     gnome-keyring = mkMinimalOption "GNOME Keyring" { };
     mako = mkMinimalOption "mako" { };

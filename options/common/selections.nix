@@ -44,17 +44,6 @@ in
       description = "System GPU.";
     };
 
-    launcher = mkOption {
-      type = types.nullOr (
-        types.enum [
-          "fuzzel"
-        ]
-      );
-
-      default = null;
-      description = "Default application launcher.";
-    };
-
     monitors = mkOption {
       type = types.listOf (
         types.submodule {
