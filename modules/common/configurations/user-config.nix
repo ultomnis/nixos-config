@@ -56,7 +56,7 @@ in
             ../../../hosts/${hostname}/${user.name}/home.nix
           ];
         };
-      }) cfg.users
+      }) (builtins.filter (user: user.homeManager) cfg.users)
     );
   };
 }

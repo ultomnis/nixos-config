@@ -39,6 +39,12 @@ in
         type = types.listOf (
           types.submodule {
             options = {
+              homeManager = mkOption {
+                type = types.bool;
+                default = true;
+                description = "Whether to import user-specific Home Manager configurations.";
+              };
+
               name = mkOption {
                 type = types.str;
                 description = "The account username.";
