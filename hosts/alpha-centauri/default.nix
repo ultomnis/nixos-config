@@ -1,5 +1,3 @@
-{ inputs, ... }:
-
 {
   imports = [
     ../../home/common
@@ -24,8 +22,6 @@
           enable = true;
           unfree.enable = false;
         };
-
-        environment.enable = true;
       };
 
       programs = {
@@ -45,11 +41,6 @@
           };
         };
       };
-    };
-
-    stylix = {
-      enable = true;
-      image = inputs.self + "/assets/wallpapers/max-lederer-y0vXb9Hd3Yw-unsplash.jpg";
     };
   };
 }
