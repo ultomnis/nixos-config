@@ -9,6 +9,9 @@
 
 let
   cfg = config.luminosity.system.configurations.userConfig;
+  adb = config.luminosity.system.programs.adb;
+  libvirtd = config.luminosity.system.services.libvirtd;
+  networkmanager = config.luminosity.system.services.networkmanager;
   inherit (config.luminosity.selections) shell;
 
 in
@@ -30,13 +33,13 @@ in
                 isNormalUser = true;
                 extraGroups =
                   [ "wheel" ]
-                  ++ lib.optionals (config.luminosity.system.programs.adb.enable) [
+                  ++ lib.optionals (adb.enable) [
                     "adbusers"
                   ]
-                  ++ lib.optionals (config.luminosity.system.services.libvirtd.enable) [
+                  ++ lib.optionals (libvirtd.enable) [
                     "libvirtd"
                   ]
-                  ++ lib.optionals (config.luminosity.system.services.networkmanager.enable) [
+                  ++ lib.optionals (networkmanager.enable) [
                     "networkmanager"
                   ];
               };
