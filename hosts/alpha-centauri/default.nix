@@ -1,4 +1,4 @@
-{ inputs, userName, ... }:
+{ inputs, ... }:
 
 {
   imports = [
@@ -10,8 +10,8 @@
   ];
 
   home = {
-    username = userName;
-    homeDirectory = "/home/${userName}";
+    username = "deck";
+    homeDirectory = "/home/deck";
     stateVersion = "24.11";
   };
 

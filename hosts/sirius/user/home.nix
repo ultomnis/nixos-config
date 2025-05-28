@@ -1,20 +1,19 @@
 {
   lib,
   pkgs,
-  userName,
   ...
 }:
 
 {
   imports = [
-    ../../home/common
-    ../../home/nixos
-    ../../options/home
+    ../../../home/common
+    ../../../home/nixos
+    ../../../options/home
   ];
 
   home = {
-    username = userName;
-    homeDirectory = "/home/${userName}";
+    username = "user";
+    homeDirectory = "/home/user";
     stateVersion = "24.05";
   };
 

@@ -29,6 +29,7 @@
     {
       self,
       disko,
+      home-manager,
       nixpkgs,
       stylix,
       ...
@@ -51,13 +52,13 @@
       nixosConfigurations = {
         sirius = mkNixosConfig {
           inherit customLib inputs;
-          hostName = "sirius";
-          userName = "user";
+          hostname = "sirius";
           systemArch = "x86_64";
           systemOS = "linux";
 
           extraModules = [
             disko.nixosModules.disko
+            home-manager.nixosModules.home-manager
             stylix.nixosModules.stylix
           ];
         };
@@ -66,12 +67,12 @@
       darwinConfigurations = {
         canopus = mkDarwinConfig {
           inherit customLib inputs;
-          hostName = "canopus";
-          userName = "user";
+          hostname = "canopus";
           systemArch = "aarch64";
           systemOS = "darwin";
 
           extraModules = [
+            home-manager.darwinModules.home-manager
             stylix.darwinModules.stylix
           ];
         };
@@ -80,8 +81,7 @@
       homeConfigurations = {
         deck = mkHomeConfig {
           inherit customLib inputs;
-          hostName = "alpha-centauri";
-          userName = "deck";
+          hostname = "alpha-centauri";
           systemArch = "x86_64";
           systemOS = "linux";
 

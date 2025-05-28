@@ -1,15 +1,13 @@
-{ userName, ... }:
-
 {
   imports = [
-    ../../home/common
-    ../../home/darwin
-    ../../options/home
+    ../../../home/common
+    ../../../home/darwin
+    ../../../options/home
   ];
 
   home = {
-    username = userName;
-    homeDirectory = "/Users/${userName}";
+    username = "user";
+    homeDirectory = "/Users/user";
     stateVersion = "24.05";
     file.".hushlogin".text = "";
   };

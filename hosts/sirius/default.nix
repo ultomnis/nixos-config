@@ -1,4 +1,4 @@
-{ hostName, inputs, ... }:
+{ hostname, inputs, ... }:
 
 {
   imports = [
@@ -11,7 +11,7 @@
     ../../options/modules
   ];
 
-  networking.hostName = hostName; # Define your hostname
+  networking.hostName = hostname; # Define your hostname
 
   # Do NOT change this value unless you have manually inspected all the changes it would make to your configuration,
   # and migrated your data accordingly.
@@ -45,7 +45,15 @@
     };
 
     system = {
-      configurations.enable = true;
+      configurations = {
+        enable = true;
+        userConfig.users = [
+          {
+            name = "user";
+          }
+        ];
+      };
+
       programs.enable = true;
 
       services = {

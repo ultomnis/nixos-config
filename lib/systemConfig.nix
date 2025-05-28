@@ -3,14 +3,13 @@
     {
       customLib,
       inputs,
-      hostName,
-      userName,
+      hostname,
       systemArch,
       systemOS,
       extraModules ? [ ],
     }:
     let
-      inherit (inputs) home-manager nixpkgs;
+      inherit (inputs) nixpkgs;
 
     in
     nixpkgs.lib.nixosSystem rec {
@@ -19,28 +18,19 @@
       specialArgs = {
         inherit
           customLib
-          hostName
+          hostname
           inputs
           systemOS
-          userName
           ;
       };
 
       modules = [
-        ../hosts/${hostName}
+        ../hosts/${hostname}
 
-        home-manager.nixosModules.home-manager
         {
           home-manager = {
             useGlobalPkgs = true;
             useUserPackages = true;
-
-            users.${userName} = {
-              imports = [
-                ../hosts/${hostName}/home.nix
-              ];
-            };
-
             extraSpecialArgs = specialArgs;
           };
         }
@@ -51,14 +41,13 @@
     {
       customLib,
       inputs,
-      hostName,
-      userName,
+      hostname,
       systemArch,
       systemOS,
       extraModules ? [ ],
     }:
     let
-      inherit (inputs) home-manager nix-darwin;
+      inherit (inputs) nix-darwin;
 
     in
     nix-darwin.lib.darwinSystem rec {
@@ -67,28 +56,19 @@
       specialArgs = {
         inherit
           customLib
-          hostName
+          hostname
           inputs
           systemOS
-          userName
           ;
       };
 
       modules = [
-        ../hosts/${hostName}
+        ../hosts/${hostname}
 
-        home-manager.darwinModules.home-manager
         {
           home-manager = {
             useGlobalPkgs = true;
             useUserPackages = true;
-
-            users.${userName} = {
-              imports = [
-                ../hosts/${hostName}/home.nix
-              ];
-            };
-
             extraSpecialArgs = specialArgs;
           };
         }
@@ -99,8 +79,7 @@
     {
       customLib,
       inputs,
-      hostName,
-      userName,
+      hostname,
       systemArch,
       systemOS,
       extraModules ? [ ],
@@ -116,15 +95,14 @@
       extraSpecialArgs = {
         inherit
           customLib
-          hostName
+          hostname
           inputs
           systemOS
-          userName
           ;
       };
 
       modules = [
-        ../hosts/${hostName}/home.nix
+        ../hosts/${hostname}
       ] ++ extraModules;
     };
 }

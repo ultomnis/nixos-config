@@ -35,10 +35,26 @@ in
     unfree = mkConfigurationOption "unfree software" { };
 
     userConfig = mkConfigurationOption "user configuration" {
-      uid = mkOption {
-        type = types.nullOr types.int;
-        default = null;
-        description = "The account UID.";
+      users = mkOption {
+        type = types.listOf (
+          types.submodule {
+            options = {
+              name = mkOption {
+                type = types.str;
+                description = "The account username.";
+              };
+
+              uid = mkOption {
+                type = types.nullOr types.int;
+                default = null;
+                description = "The account UID.";
+              };
+            };
+          }
+        );
+
+        default = [ ];
+        description = "User configurations.";
       };
     };
 
