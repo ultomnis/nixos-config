@@ -40,6 +40,7 @@
         enable = true;
         userConfig.users = [
           {
+            homeManager = true;
             name = "user";
             uid = 501;
           }

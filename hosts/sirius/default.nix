@@ -49,6 +49,7 @@
         enable = true;
         userConfig.users = [
           {
+            homeManager = true;
             name = "user";
           }
         ];
