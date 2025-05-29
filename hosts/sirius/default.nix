@@ -25,9 +25,9 @@
 
       monitors = [
         {
+          output = "DP-2";
           height = 1920;
           width = 1080;
-          name = "DP-2";
           pos_x = 0;
           pos_y = 0;
           rate = 165;

@@ -3,7 +3,7 @@
     monitors:
     builtins.listToAttrs (
       map (monitor: {
-        name = monitor.name;
+        name = monitor.output;
 
         value = {
           mode = "${toString monitor.height}x${toString monitor.width}@${toString monitor.rate}Hz";

@@ -48,34 +48,41 @@ in
       type = types.listOf (
         types.submodule {
           options = {
+            output = mkOption {
+              type = types.str;
+              description = "Display output.";
+            };
+
             height = mkOption {
               type = types.int;
+              description = "Monitor height in pixels.";
             };
 
             width = mkOption {
               type = types.int;
-            };
-
-            name = mkOption {
-              type = types.str;
+              description = "Monitor width in pixels.";
             };
 
             pos_x = mkOption {
               type = types.int;
+              description = "Position on the x-axis.";
             };
 
             pos_y = mkOption {
               type = types.int;
+              description = "Position on the y-axis.";
             };
 
             rate = mkOption {
               type = types.int;
               default = 60;
+              description = "Monitor refresh rate in Hz.";
             };
 
             scale = mkOption {
               type = types.int;
               default = 1;
+              description = "Scale factor.";
             };
           };
         }
