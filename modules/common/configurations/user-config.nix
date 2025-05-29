@@ -19,8 +19,9 @@ in
   config = lib.mkIf cfg.enable {
     users =
       {
-        users = builtins.listToAttrs (
-          map (user: {
+        users =
+          cfg.users
+          |> map (user: {
             name = user.name;
 
             value =
@@ -43,15 +44,17 @@ in
                     "networkmanager"
                   ];
               };
-          }) cfg.users
-        );
+          })
+          |> builtins.listToAttrs;
       }
       // lib.optionalAttrs (systemOS == "darwin") {
-        knownUsers = map (user: user.name) (builtins.filter (user: user.uid != null) cfg.users);
+        knownUsers = cfg.users |> builtins.filter (user: user.uid != null) |> map (user: user.name);
       };
 
-    home-manager.users = builtins.listToAttrs (
-      map (user: {
+    home-manager.users =
+      cfg.users
+      |> builtins.filter (user: user.homeManager)
+      |> map (user: {
         name = user.name;
 
         value = {
@@ -59,7 +62,7 @@ in
             ../../../hosts/${hostname}/${user.name}/home.nix
           ];
         };
-      }) (builtins.filter (user: user.homeManager) cfg.users)
-    );
+      })
+      |> builtins.listToAttrs;
   };
 }
