@@ -11,8 +11,8 @@ let
 in
 {
   config = lib.mkIf cfg.enable {
-    home.packages = with pkgs; [
-      libqalculate
-    ];
+    home.packages = builtins.attrValues {
+      inherit (pkgs) libqalculate;
+    };
   };
 }

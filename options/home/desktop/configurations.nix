@@ -26,14 +26,14 @@ in
 
     variables = mkConfigurationOption "environment variables configuration" {
       extraVariables = mkOption {
-        type =
-          with types;
-          lazyAttrsOf (oneOf [
-            str
-            path
-            int
-            float
-          ]);
+        type = types.lazyAttrsOf (
+          types.oneOf [
+            types.float
+            types.int
+            types.path
+            types.str
+          ]
+        );
 
         default = { };
         description = "Extra environment variables to set at login.";

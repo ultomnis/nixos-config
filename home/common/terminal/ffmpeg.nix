@@ -11,8 +11,8 @@ let
 in
 {
   config = lib.mkIf cfg.enable {
-    home.packages = with pkgs; [
-      ffmpeg
-    ];
+    home.packages = builtins.attrValues {
+      inherit (pkgs) ffmpeg;
+    };
   };
 }

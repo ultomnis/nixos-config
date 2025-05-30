@@ -12,9 +12,8 @@ let
 in
 {
   config = lib.mkIf (cfg.enable && unfree.enable) {
-    # Mod manager
-    home.packages = with pkgs; [
-      nexusmods-app-unfree
-    ];
+    home.packages = builtins.attrValues {
+      inherit (pkgs) nexusmods-app-unfree;
+    };
   };
 }

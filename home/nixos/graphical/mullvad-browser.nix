@@ -11,8 +11,8 @@ let
 in
 {
   config = lib.mkIf cfg.enable {
-    home.packages = with pkgs; [
-      mullvad-browser
-    ];
+    home.packages = builtins.attrValues {
+      inherit (pkgs) mullvad-browser;
+    };
   };
 }

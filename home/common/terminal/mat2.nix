@@ -11,8 +11,8 @@ let
 in
 {
   config = lib.mkIf cfg.enable {
-    home.packages = with pkgs; [
-      mat2
-    ];
+    home.packages = builtins.attrValues {
+      inherit (pkgs) mat2;
+    };
   };
 }

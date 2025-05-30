@@ -15,10 +15,12 @@ in
     programs.helix = {
       enable = true;
 
-      extraPackages = with pkgs; [
-        nixd
-        nixfmt-rfc-style
-      ];
+      extraPackages = builtins.attrValues {
+        inherit (pkgs)
+          nixd
+          nixfmt-rfc-style
+          ;
+      };
 
       settings = {
         editor = {

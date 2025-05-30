@@ -14,13 +14,13 @@ in
       enable = mkEnableOption "Whether to enable Stylix.";
 
       base16 = mkOption {
-        type =
-          with lib.types;
-          nullOr (oneOf [
-            path
-            lines
-            attrs
-          ]);
+        type = types.nullOr (
+          types.oneOf [
+            types.attrs
+            types.lines
+            types.path
+          ]
+        );
 
         default = "${pkgs.base16-schemes}/share/themes/rose-pine.yaml";
         description = "Base16 scheme.";
