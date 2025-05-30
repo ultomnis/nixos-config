@@ -34,9 +34,9 @@ in
         lib.optionalAttrs (systemOS == "linux") {
           iconTheme = {
             enable = true;
-            package = lib.mkIf (cfg.icons.package != null) cfg.icons.package;
-            dark = lib.mkIf (cfg.icons.dark != null) cfg.icons.dark;
-            light = lib.mkIf (cfg.icons.light != null) cfg.icons.light;
+            package = cfg.icons.package;
+            dark = cfg.icons.dark;
+            light = cfg.icons.light;
           };
         }
       );

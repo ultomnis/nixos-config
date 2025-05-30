@@ -14,13 +14,11 @@ in
       enable = mkEnableOption "Whether to enable Stylix.";
 
       base16 = mkOption {
-        type = types.nullOr (
-          types.oneOf [
-            types.attrs
-            types.lines
-            types.path
-          ]
-        );
+        type = types.oneOf [
+          types.attrs
+          types.lines
+          types.path
+        ];
 
         default = "${pkgs.base16-schemes}/share/themes/rose-pine.yaml";
         description = "Base16 scheme.";
@@ -28,19 +26,19 @@ in
 
       cursor = {
         package = mkOption {
-          type = types.nullOr types.package;
+          type = types.package;
           default = pkgs.bibata-cursors;
           description = "Cursor package.";
         };
 
         name = mkOption {
-          type = types.nullOr types.str;
+          type = types.str;
           default = "Bibata-Modern-Ice";
           description = "Cursor name.";
         };
 
         size = mkOption {
-          type = types.nullOr types.int;
+          type = types.int;
           default = 24;
           description = "Cursor size.";
         };
@@ -48,49 +46,49 @@ in
 
       fonts = {
         package = mkOption {
-          type = types.nullOr types.package;
+          type = types.package;
           default = pkgs.nerd-fonts.hack;
           description = "Font package.";
         };
 
         serif = mkOption {
-          type = types.nullOr types.str;
+          type = types.str;
           default = "Hack Nerd Font Propo";
           description = "Serif font name.";
         };
 
         sansSerif = mkOption {
-          type = types.nullOr types.str;
+          type = types.str;
           default = "Hack Nerd Font Propo";
           description = "Sans-serif font name.";
         };
 
         monospace = mkOption {
-          type = types.nullOr types.str;
+          type = types.str;
           default = "Hack Nerd Font Mono";
           description = "Monospace font name.";
         };
 
         applicationSize = mkOption {
-          type = types.nullOr types.int;
+          type = types.int;
           default = 12;
           description = "Application font size.";
         };
 
         desktopSize = mkOption {
-          type = types.nullOr types.int;
+          type = types.int;
           default = 12;
           description = "Desktop font size.";
         };
 
         popupSize = mkOption {
-          type = types.nullOr types.int;
+          type = types.int;
           default = 12;
           description = "Popup font size.";
         };
 
         terminalSize = mkOption {
-          type = types.nullOr types.int;
+          type = types.int;
           default = 12;
           description = "Terminal font size.";
         };
@@ -103,13 +101,11 @@ in
       };
 
       polarity = mkOption {
-        type = types.nullOr (
-          types.enum [
-            "dark"
-            "either"
-            "light"
-          ]
-        );
+        type = types.enum [
+          "dark"
+          "either"
+          "light"
+        ];
 
         default = "dark";
         description = "Light or dark theme.";

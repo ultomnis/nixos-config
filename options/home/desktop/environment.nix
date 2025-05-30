@@ -30,19 +30,19 @@ in
     stylix = mkEnvironmentOption "Stylix" {
       icons = {
         package = mkOption {
-          type = types.nullOr types.package;
+          type = types.package;
           default = pkgs.papirus-icon-theme;
           description = "Icon theme package.";
         };
 
         dark = mkOption {
-          type = types.nullOr types.str;
+          type = types.str;
           default = "Papirus-Dark";
           description = "Dark icon theme name.";
         };
 
         light = mkOption {
-          type = types.nullOr types.str;
+          type = types.str;
           default = "Papirus-Light";
           description = "Light icon theme name.";
         };
