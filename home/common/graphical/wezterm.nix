@@ -22,7 +22,7 @@ in
       enable = true;
 
       extraConfig = ''
-        local config = {}
+        local config = wezterm.config_builder()
 
         ${if (shell != null) then "config.default_prog = { '${lib.getExe pkgs.${shell}}' }" else ""}
         config.enable_tab_bar = false
