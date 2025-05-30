@@ -15,6 +15,11 @@ in
     programs.helix = {
       enable = true;
 
+      extraPackages = with pkgs; [
+        nixd
+        nixfmt-rfc-style
+      ];
+
       settings = {
         editor = {
           cursor-shape = {
@@ -30,19 +35,13 @@ in
       };
 
       languages = {
-        language-server = {
-          nixd = {
-            command = lib.getExe pkgs.nixd;
-          };
-        };
-
         language = [
           {
             name = "nix";
-            auto-format = true;
             language-servers = [ "nixd" ];
+
             formatter = {
-              command = lib.getExe pkgs.nixfmt-rfc-style;
+              command = "nixfmt";
             };
           }
         ];
