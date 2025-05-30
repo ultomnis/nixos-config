@@ -11,10 +11,6 @@
     let
       inherit (inputs) nixpkgs;
 
-    in
-    nixpkgs.lib.nixosSystem rec {
-      system = "${systemArch}-${systemOS}";
-
       specialArgs = {
         inherit
           customLib
@@ -23,6 +19,11 @@
           systemOS
           ;
       };
+
+    in
+    nixpkgs.lib.nixosSystem {
+      system = "${systemArch}-${systemOS}";
+      inherit specialArgs;
 
       modules = [
         ../hosts/${hostname}
@@ -49,10 +50,6 @@
     let
       inherit (inputs) nix-darwin;
 
-    in
-    nix-darwin.lib.darwinSystem rec {
-      system = "${systemArch}-${systemOS}";
-
       specialArgs = {
         inherit
           customLib
@@ -61,6 +58,11 @@
           systemOS
           ;
       };
+
+    in
+    nix-darwin.lib.darwinSystem {
+      system = "${systemArch}-${systemOS}";
+      inherit specialArgs;
 
       modules = [
         ../hosts/${hostname}
