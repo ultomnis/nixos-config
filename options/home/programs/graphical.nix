@@ -30,7 +30,28 @@ in
       sshAgent.enable = mkEnableOption "Whether to enable the Bitwarden SSH Agent.";
     };
 
-    firefox = mkGraphicalOption "Firefox" { };
+    firefox = mkGraphicalOption "Firefox" {
+      profiles = mkOption {
+        type = types.listOf (
+          types.submodule {
+            options = {
+              id = mkOption {
+                type = types.int;
+                description = "Profile ID.";
+              };
+
+              name = mkOption {
+                type = types.str;
+                description = "Profile name.";
+              };
+            };
+          }
+        );
+
+        default = [ ];
+        description = "List of firefox profiles.";
+      };
+    };
 
     foot = {
       enable = mkOption {

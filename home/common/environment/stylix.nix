@@ -21,9 +21,7 @@ in
               colorTheme.enable = true;
               firefoxGnomeTheme.enable = true;
 
-              profileNames = [
-                "default"
-              ];
+              profileNames = firefox.profiles |> builtins.map (profile: profile.name);
             };
           }
           // lib.optionalAttrs (waybar.enable) {

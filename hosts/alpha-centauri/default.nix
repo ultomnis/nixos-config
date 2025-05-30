@@ -28,6 +28,14 @@
         graphical = {
           enable = true;
           bitwarden.sshAgent.enable = true;
+
+          firefox.profiles = [
+            {
+              id = 0;
+              name = "default";
+            }
+          ];
+
           mangohud.enable = false;
         };
 

@@ -70,15 +70,23 @@ in
         };
       };
 
-      profiles.default = {
-        extensions.force = true;
+      profiles =
+        cfg.profiles
+        |> map (profile: {
+          name = profile.name;
 
-        search = {
-          default = "ddg";
-          privateDefault = "ddg";
-          force = true;
-        };
-      };
+          value = {
+            extensions.force = true;
+            id = profile.id;
+
+            search = {
+              default = "ddg";
+              privateDefault = "ddg";
+              force = true;
+            };
+          };
+        })
+        |> lib.listToAttrs;
     };
   };
 }
