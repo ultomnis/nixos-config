@@ -27,6 +27,13 @@
           }
         ];
 
+        thunderbird.profiles = [
+          {
+            isDefault = true;
+            name = "default";
+          }
+        ];
+
         wezterm.maxFPS = 120;
       };
 

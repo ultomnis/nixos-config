@@ -21,15 +21,22 @@ in
         };
       };
 
-      profiles.default = {
-        isDefault = true;
+      profiles =
+        cfg.profiles
+        |> map (profile: {
+          name = profile.name;
 
-        search = {
-          default = "ddg";
-          privateDefault = "ddg";
-          force = true;
-        };
-      };
+          value = {
+            isDefault = profile.isDefault;
+
+            search = {
+              default = "ddg";
+              privateDefault = "ddg";
+              force = true;
+            };
+          };
+        })
+        |> builtins.listToAttrs;
     };
   };
 }

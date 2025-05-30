@@ -49,7 +49,7 @@ in
         );
 
         default = [ ];
-        description = "List of firefox profiles.";
+        description = "List of Firefox profiles.";
       };
     };
 
@@ -73,7 +73,27 @@ in
     piper = mkGraphicalOption "Piper" { };
     pwvucontrol = mkGraphicalOption "pwvucontrol" { };
     swayimg = mkGraphicalOption "swayimg" { };
-    thunderbird = mkGraphicalOption "Thunderbird" { };
+
+    thunderbird = mkGraphicalOption "Thunderbird" {
+      profiles = mkOption {
+        type = types.listOf (
+          types.submodule {
+            options = {
+              isDefault = mkEnableOption "Whether the profile is the default profile.";
+
+              name = mkOption {
+                type = types.str;
+                description = "Profile name.";
+              };
+            };
+          }
+        );
+
+        default = [ ];
+        description = "List of Thunderbird profiles.";
+      };
+    };
+
     tor-browser = mkGraphicalOption "Tor Browser" { };
     utm = mkGraphicalOption "UTM" { };
 

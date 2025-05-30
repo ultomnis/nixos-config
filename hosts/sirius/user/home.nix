@@ -37,6 +37,13 @@
             name = "default";
           }
         ];
+
+        thunderbird.profiles = [
+          {
+            isDefault = true;
+            name = "default";
+          }
+        ];
       };
 
       terminal = {
