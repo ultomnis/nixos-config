@@ -16,25 +16,29 @@ in
     stylix =
       {
         targets =
-          lib.optionalAttrs (firefox.enable) {
+          (lib.optionalAttrs (firefox.enable) {
             firefox = {
               colorTheme.enable = true;
               firefoxGnomeTheme.enable = true;
 
               profileNames = firefox.profiles |> builtins.map (profile: profile.name);
             };
-          }
-          // lib.optionalAttrs (waybar.enable) {
-            waybar.font = "serif";
-          };
+          })
+          |> lib.recursiveUpdate (
+            lib.optionalAttrs (waybar.enable) {
+              waybar.font = "serif";
+            }
+          );
       }
-      // lib.optionalAttrs (systemOS == "linux") {
-        iconTheme = {
-          enable = true;
-          package = lib.mkIf (cfg.icons.package != null) cfg.icons.package;
-          dark = lib.mkIf (cfg.icons.dark != null) cfg.icons.dark;
-          light = lib.mkIf (cfg.icons.light != null) cfg.icons.light;
-        };
-      };
+      |> lib.recursiveUpdate (
+        lib.optionalAttrs (systemOS == "linux") {
+          iconTheme = {
+            enable = true;
+            package = lib.mkIf (cfg.icons.package != null) cfg.icons.package;
+            dark = lib.mkIf (cfg.icons.dark != null) cfg.icons.dark;
+            light = lib.mkIf (cfg.icons.light != null) cfg.icons.light;
+          };
+        }
+      );
   };
 }

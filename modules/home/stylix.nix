@@ -43,12 +43,14 @@ in
 
         polarity = lib.mkIf (cfg.polarity != null) cfg.polarity;
       }
-      // lib.optionalAttrs (systemOS == "linux") {
-        cursor = {
-          package = lib.mkIf (cfg.cursor.package != null) cfg.cursor.package;
-          name = lib.mkIf (cfg.cursor.name != null) cfg.cursor.name;
-          size = lib.mkIf (cfg.cursor.size != null) cfg.cursor.size;
-        };
-      };
+      |> lib.recursiveUpdate (
+        lib.optionalAttrs (systemOS == "linux") {
+          cursor = {
+            package = lib.mkIf (cfg.cursor.package != null) cfg.cursor.package;
+            name = lib.mkIf (cfg.cursor.name != null) cfg.cursor.name;
+            size = lib.mkIf (cfg.cursor.size != null) cfg.cursor.size;
+          };
+        }
+      );
   };
 }

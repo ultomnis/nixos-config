@@ -21,7 +21,7 @@ let
         description = "Whether to enable " + name + ".";
       };
     }
-    // extraOptions;
+    |> lib.recursiveUpdate extraOptions;
 
 in
 {

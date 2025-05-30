@@ -21,16 +21,18 @@ in
           options = "--delete-older-than 30d";
         };
       }
-      // lib.optionalAttrs (osConfig == null) {
-        package = pkgs.nix;
+      |> lib.recursiveUpdate (
+        lib.optionalAttrs (osConfig == null) {
+          package = pkgs.nix;
 
-        settings = {
-          experimental-features = [
-            "flakes"
-            "nix-command"
-            "pipe-operators"
-          ];
-        };
-      };
+          settings = {
+            experimental-features = [
+              "flakes"
+              "nix-command"
+              "pipe-operators"
+            ];
+          };
+        }
+      );
   };
 }

@@ -17,12 +17,14 @@ in
       '';
 
       pam.services =
-        lib.optionalAttrs (systemOS == "linux") {
+        (lib.optionalAttrs (systemOS == "linux") {
           login.enableGnomeKeyring = true;
-        }
-        // lib.optionalAttrs (systemOS == "darwin") {
-          sudo_local.touchIdAuth = true;
-        };
+        })
+        |> lib.recursiveUpdate (
+          lib.optionalAttrs (systemOS == "darwin") {
+            sudo_local.touchIdAuth = true;
+          }
+        );
     };
   };
 }

@@ -40,12 +40,14 @@ in
           };
         };
 
-        output = {
-          "*" = {
-            allow_tearing = "yes";
-            max_render_time = "off";
-          };
-        } // customLib.mapSwayMonitors monitors;
+        output =
+          {
+            "*" = {
+              allow_tearing = "yes";
+              max_render_time = "off";
+            };
+          }
+          |> lib.recursiveUpdate (customLib.mapSwayMonitors monitors);
 
         window = {
           titlebar = false;

@@ -15,8 +15,10 @@ in
       {
         enable = true;
       }
-      // lib.optionalAttrs (systemOS == "linux") {
-        useRoutingFeatures = cfg.useRoutingFeatures;
-      };
+      |> lib.recursiveUpdate (
+        lib.optionalAttrs (systemOS == "linux") {
+          useRoutingFeatures = cfg.useRoutingFeatures;
+        }
+      );
   };
 }

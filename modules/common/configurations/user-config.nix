@@ -30,26 +30,30 @@ in
                 shell = lib.mkIf (shell != null) pkgs.${shell};
                 uid = lib.mkIf (user.uid != null) user.uid;
               }
-              // lib.optionalAttrs (systemOS == "linux") {
-                isNormalUser = true;
-                extraGroups =
-                  [ "wheel" ]
-                  ++ lib.optionals (adb.enable) [
-                    "adbusers"
-                  ]
-                  ++ lib.optionals (libvirtd.enable) [
-                    "libvirtd"
-                  ]
-                  ++ lib.optionals (networkmanager.enable) [
-                    "networkmanager"
-                  ];
-              };
+              |> lib.recursiveUpdate (
+                lib.optionalAttrs (systemOS == "linux") {
+                  isNormalUser = true;
+                  extraGroups =
+                    [ "wheel" ]
+                    ++ lib.optionals (adb.enable) [
+                      "adbusers"
+                    ]
+                    ++ lib.optionals (libvirtd.enable) [
+                      "libvirtd"
+                    ]
+                    ++ lib.optionals (networkmanager.enable) [
+                      "networkmanager"
+                    ];
+                }
+              );
           })
           |> builtins.listToAttrs;
       }
-      // lib.optionalAttrs (systemOS == "darwin") {
-        knownUsers = cfg.users |> builtins.filter (user: user.uid != null) |> map (user: user.name);
-      };
+      |> lib.recursiveUpdate (
+        lib.optionalAttrs (systemOS == "darwin") {
+          knownUsers = cfg.users |> builtins.filter (user: user.uid != null) |> map (user: user.name);
+        }
+      );
 
     home-manager.users =
       cfg.users

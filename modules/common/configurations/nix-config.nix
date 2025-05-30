@@ -17,37 +17,45 @@ in
           automatic = true;
           options = "--delete-older-than 30d";
         }
-        // lib.optionalAttrs (systemOS == "linux") {
-          dates = "weekly";
-        }
-        // lib.optionalAttrs (systemOS == "darwin") {
-          interval = [
-            {
-              Hour = 0;
-              Minute = 0;
-              Weekday = 1;
-            }
-          ];
-        };
+        |> lib.recursiveUpdate (
+          lib.optionalAttrs (systemOS == "linux") {
+            dates = "weekly";
+          }
+        )
+        |> lib.recursiveUpdate (
+          lib.optionalAttrs (systemOS == "darwin") {
+            interval = [
+              {
+                Hour = 0;
+                Minute = 0;
+                Weekday = 1;
+              }
+            ];
+          }
+        );
 
       optimise =
         {
           automatic = true;
         }
-        // lib.optionalAttrs (systemOS == "linux") {
-          dates = [
-            "weekly"
-          ];
-        }
-        // lib.optionalAttrs (systemOS == "darwin") {
-          interval = [
-            {
-              Hour = 0;
-              Minute = 0;
-              Weekday = 1;
-            }
-          ];
-        };
+        |> lib.recursiveUpdate (
+          lib.optionalAttrs (systemOS == "linux") {
+            dates = [
+              "weekly"
+            ];
+          }
+        )
+        |> lib.recursiveUpdate (
+          lib.optionalAttrs (systemOS == "darwin") {
+            interval = [
+              {
+                Hour = 0;
+                Minute = 0;
+                Weekday = 1;
+              }
+            ];
+          }
+        );
 
       settings = {
         experimental-features = [

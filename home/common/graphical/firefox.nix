@@ -36,7 +36,7 @@ in
                 installation_mode = "force_installed";
                 install_url = "https://addons.mozilla.org/firefox/downloads/latest/${extensionName}/latest.xpi";
               }
-              // extraOptions;
+              |> lib.recursiveUpdate extraOptions;
           in
           {
             "*" = {
