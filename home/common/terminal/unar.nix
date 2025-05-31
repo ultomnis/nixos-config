@@ -11,8 +11,8 @@ let
 in
 {
   config = lib.mkIf cfg.enable {
-    home.packages = builtins.attrValues {
-      inherit (pkgs) unar;
-    };
+    home.packages = [
+      pkgs.unar
+    ];
   };
 }
