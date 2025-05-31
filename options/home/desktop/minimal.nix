@@ -29,10 +29,7 @@ in
       enable = mkOption {
         type = types.bool;
         default =
-          if (osConfig != null) then
-            (osConfig.luminosity.selections.desktop == "aerospace")
-          else
-            (config.luminosity.selections.desktop == "aerospace");
+          (osConfig.luminosity.selections.desktop or config.luminosity.selections.desktop) == "aerospace";
         description = "Whether to enable AeroSpace.";
       };
     };
@@ -47,10 +44,7 @@ in
       enable = mkOption {
         type = types.bool;
         default =
-          if (osConfig != null) then
-            (osConfig.luminosity.selections.desktop == "sway")
-          else
-            (config.luminosity.selections.desktop == "sway");
+          (osConfig.luminosity.selections.desktop or config.luminosity.selections.desktop) == "sway";
         description = "Whether to enable Sway.";
       };
     };

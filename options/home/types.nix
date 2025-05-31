@@ -18,34 +18,25 @@ in
     desktop = {
       configurations.enable = mkOption {
         type = types.bool;
-        default = if (osConfig != null) then (osConfig.luminosity.system.configurations.enable) else false;
+        default = osConfig.luminosity.system.configurations.enable or false;
         description = "Whether to enable home configurations.";
       };
 
       environment.enable = mkOption {
         type = types.bool;
-        default =
-          if (osConfig != null) then
-            (osConfig.luminosity.selections.desktop != null)
-          else
-            (config.luminosity.selections.desktop != null);
+        default = (osConfig.luminosity.selections.desktop or config.luminosity.selections.desktop) != null;
         description = "Whether to enable desktop environment configurations.";
       };
 
       minimal.enable = mkOption {
         type = types.bool;
 
-        default =
-          if (osConfig != null) then
-            (builtins.elem osConfig.luminosity.selections.desktop [
-              "aerospace"
-              "sway"
-            ])
-          else
-            (builtins.elem config.luminosity.selections.desktop [
-              "aerospace"
-              "sway"
-            ]);
+        default = (
+          builtins.elem (osConfig.luminosity.selections.desktop or config.luminosity.selections.desktop) [
+            "aerospace"
+            "sway"
+          ]
+        );
 
         description = "Whether to enable window manager configurations.";
       };

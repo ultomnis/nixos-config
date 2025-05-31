@@ -57,10 +57,7 @@ in
       enable = mkOption {
         type = types.bool;
         default =
-          if (osConfig != null) then
-            (osConfig.luminosity.selections.terminal == "foot")
-          else
-            (config.luminosity.selections.terminal == "foot");
+          (osConfig.luminosity.selections.terminal or config.luminosity.selections.terminal) == "foot";
         description = "Whether to enable foot.";
       };
     };
@@ -101,10 +98,7 @@ in
       enable = mkOption {
         type = types.bool;
         default =
-          if (osConfig != null) then
-            (osConfig.luminosity.selections.terminal == "wezterm")
-          else
-            (config.luminosity.selections.terminal == "wezterm");
+          (osConfig.luminosity.selections.terminal or config.luminosity.selections.terminal) == "wezterm";
         description = "Whether to enable WezTerm.";
       };
 

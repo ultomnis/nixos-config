@@ -9,16 +9,8 @@
 
 let
   cfg = config.luminosity.home.desktop.minimal.sway;
-  monitors =
-    if (osConfig != null) then
-      osConfig.luminosity.selections.monitors
-    else
-      config.luminosity.selections.monitors;
-  terminal =
-    if (osConfig != null) then
-      osConfig.luminosity.selections.terminal
-    else
-      config.luminosity.selections.terminal;
+  monitors = osConfig.luminosity.selections.monitors or config.luminosity.selections.monitors;
+  terminal = osConfig.luminosity.selections.terminal or config.luminosity.selections.terminal;
 
 in
 {

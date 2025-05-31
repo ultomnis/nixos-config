@@ -8,11 +8,7 @@
 
 let
   cfg = config.luminosity.home.programs.graphical.wezterm;
-  shell =
-    if (osConfig != null) then
-      osConfig.luminosity.selections.shell
-    else
-      config.luminosity.selections.shell;
+  shell = osConfig.luminosity.selections.shell or config.luminosity.selections.shell;
 
 in
 {

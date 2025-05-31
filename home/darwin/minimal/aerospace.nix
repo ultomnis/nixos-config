@@ -8,11 +8,7 @@
 
 let
   cfg = config.luminosity.home.desktop.minimal.aerospace;
-  terminal =
-    if (osConfig != null) then
-      osConfig.luminosity.selections.terminal
-    else
-      config.luminosity.selections.terminal;
+  terminal = osConfig.luminosity.selections.terminal or config.luminosity.selections.terminal;
 
 in
 {

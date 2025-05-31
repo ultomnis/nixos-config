@@ -8,16 +8,8 @@
 
 let
   cfg = config.luminosity.home.desktop.configurations.variables;
-  editor =
-    if (osConfig != null) then
-      osConfig.luminosity.selections.editor
-    else
-      config.luminosity.selections.editor;
-  terminal =
-    if (osConfig != null) then
-      osConfig.luminosity.selections.terminal
-    else
-      config.luminosity.selections.terminal;
+  editor = osConfig.luminosity.selections.editor or config.luminosity.selections.editor;
+  terminal = osConfig.luminosity.selections.terminal or config.luminosity.selections.terminal;
 
 in
 {
