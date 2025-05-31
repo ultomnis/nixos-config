@@ -15,10 +15,14 @@ in
 {
   config = lib.mkIf cfg.enable {
     home.sessionVariables =
-      {
-        EDITOR = lib.mkIf (editor != null) (lib.getExe pkgs.${editor});
-        TERMINAL = lib.mkIf (terminal != null) (lib.getExe pkgs.${terminal});
+      lib.optionalAttrs (editor != null) {
+        EDITOR = lib.getExe pkgs.${editor};
       }
+      |> lib.recursiveUpdate (
+        lib.optionalAttrs (terminal != null) {
+          TERMINAL = lib.getExe pkgs.${terminal};
+        }
+      )
       |> lib.recursiveUpdate cfg.extraVariables;
   };
 }
