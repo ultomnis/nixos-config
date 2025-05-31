@@ -54,12 +54,12 @@ in
             };
 
             height = mkOption {
-              type = types.int;
+              type = types.ints.positive;
               description = "Monitor height in pixels.";
             };
 
             width = mkOption {
-              type = types.int;
+              type = types.ints.positive;
               description = "Monitor width in pixels.";
             };
 
@@ -74,13 +74,13 @@ in
             };
 
             rate = mkOption {
-              type = types.int;
+              type = types.ints.positive;
               default = 60;
               description = "Monitor refresh rate in Hz.";
             };
 
             scale = mkOption {
-              type = types.int;
+              type = types.numbers.positive;
               default = 1;
               description = "Scale factor.";
             };

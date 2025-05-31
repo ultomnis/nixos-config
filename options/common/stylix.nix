@@ -38,7 +38,7 @@ in
         };
 
         size = mkOption {
-          type = types.int;
+          type = types.ints.positive;
           default = 24;
           description = "Cursor size.";
         };
@@ -70,25 +70,25 @@ in
         };
 
         applicationSize = mkOption {
-          type = types.int;
+          type = types.numbers.positive;
           default = 12;
           description = "Application font size.";
         };
 
         desktopSize = mkOption {
-          type = types.int;
+          type = types.numbers.positive;
           default = 12;
           description = "Desktop font size.";
         };
 
         popupSize = mkOption {
-          type = types.int;
+          type = types.numbers.positive;
           default = 12;
           description = "Popup font size.";
         };
 
         terminalSize = mkOption {
-          type = types.int;
+          type = types.numbers.positive;
           default = 12;
           description = "Terminal font size.";
         };

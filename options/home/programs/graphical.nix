@@ -36,7 +36,7 @@ in
           types.submodule {
             options = {
               id = mkOption {
-                type = types.int;
+                type = types.ints.unsigned;
                 description = "Profile ID.";
               };
 
@@ -109,7 +109,7 @@ in
       };
 
       maxFPS = mkOption {
-        type = types.int;
+        type = types.ints.positive;
         default = 60;
         description = "Maximum FPS for WezTerm.";
       };
