@@ -62,6 +62,7 @@ in
       };
     };
 
+    keepassxc = mkGraphicalOption "KeePassXC" { };
     mangohud = mkGraphicalOption "MangoHud" { };
     mpv = mkGraphicalOption "MPV" { };
     mullvad-browser = mkGraphicalOption "Mullvad Browser" { };

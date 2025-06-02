@@ -47,6 +47,8 @@ in
 
             "addon@darkreader.org" = extensionSetting "darkreader" { };
 
+            "keepassxc-browser@keepassxc.org" = extensionSetting "keepassxc-browser" { };
+
             "uBlock0@raymondhill.net" = extensionSetting "ublock-origin" {
               private_browsing = true;
             };
