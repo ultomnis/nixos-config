@@ -25,6 +25,7 @@ in
     geoclue2 = mkServiceOption "GeoClue 2" { };
     libvirtd = mkServiceOption "libvirtd" { };
     networkmanager = mkServiceOption "Network Manager" { };
+    openssh = mkServiceOption "OpenSSH" { };
     pipewire = mkServiceOption "PipeWire" { };
     printing = mkServiceOption "printing support" { };
     ratbagd = mkServiceOption "ratbagd" { };
