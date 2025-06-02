@@ -40,6 +40,12 @@ in
         type = types.listOf (
           types.submodule {
             options = {
+              hashedPasswordFile = mkOption {
+                type = types.nullOr types.str;
+                default = null;
+                description = "File that contains hash of the user's password.";
+              };
+            
               homeManager = mkEnableOption "Whether to import user-specific Home Manager configurations.";
 
               name = mkOption {

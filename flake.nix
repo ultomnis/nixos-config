@@ -2,7 +2,10 @@
   description = "ultomnis' NixOS and nix-darwin configurations";
 
   inputs = {
-    agenix.url = "github:ryantm/agenix";
+    agenix = {
+      url = "github:ryantm/agenix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     disko = {
       url = "github:nix-community/disko/latest";

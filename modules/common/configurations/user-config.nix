@@ -32,6 +32,7 @@ in
               }
               |> lib.recursiveUpdate (
                 lib.optionalAttrs (systemOS == "linux") {
+                  hashedPasswordFile = user.hashedPasswordFile;
                   isNormalUser = true;
                   extraGroups =
                     [ "wheel" ]

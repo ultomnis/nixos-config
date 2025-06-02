@@ -1,4 +1,4 @@
-{ hostname, inputs, ... }:
+{ config, hostname, inputs, ... }:
 
 {
   imports = [
@@ -51,6 +51,7 @@
         enable = true;
         userConfig.users = [
           {
+            hashedPasswordFile = config.age.secrets.sirius-user-passwd.path;
             homeManager = true;
             name = "user";
           }
