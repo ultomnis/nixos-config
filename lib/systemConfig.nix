@@ -88,11 +88,10 @@
     }:
     let
       inherit (inputs) home-manager nixpkgs;
-      system = "${systemArch}-${systemOS}";
 
     in
     home-manager.lib.homeManagerConfiguration {
-      pkgs = nixpkgs.legacyPackages."${system}";
+      pkgs = nixpkgs.legacyPackages."${systemArch}-${systemOS}";
 
       extraSpecialArgs = {
         inherit
