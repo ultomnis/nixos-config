@@ -7,6 +7,8 @@
     ../../modules/home
     ../../options/common
     ../../options/modules
+
+    ../../secrets/modules.nix
   ];
 
   networking = {

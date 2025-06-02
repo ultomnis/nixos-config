@@ -2,13 +2,15 @@
 
 {
   imports = [
-    ./disk-config.nix
-    ./hardware-configuration.nix
     ../../modules/common
     ../../modules/home
     ../../modules/nixos
     ../../options/common
     ../../options/modules
+
+    ./disk-config.nix
+    ./hardware-configuration.nix
+    ../../secrets/modules.nix
   ];
 
   networking.hostName = hostname; # Define your hostname

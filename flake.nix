@@ -2,6 +2,8 @@
   description = "ultomnis' NixOS and nix-darwin configurations";
 
   inputs = {
+    agenix.url = "github:ryantm/agenix";
+
     disko = {
       url = "github:nix-community/disko/latest";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -19,6 +21,11 @@
 
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
+    nix-secrets = {
+      url = "git+ssh://git@github.com/ultomnis/nix-secrets.git?ref=main";
+      flake = false;
+    };
+
     stylix = {
       url = "github:nix-community/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -28,6 +35,7 @@
   outputs =
     {
       self,
+      agenix,
       disko,
       home-manager,
       nixpkgs,
@@ -57,6 +65,7 @@
           systemOS = "linux";
 
           extraModules = [
+            agenix.nixosModules.default
             disko.nixosModules.disko
             home-manager.nixosModules.home-manager
             stylix.nixosModules.stylix
@@ -72,6 +81,7 @@
           systemOS = "darwin";
 
           extraModules = [
+            agenix.darwinModules.default
             home-manager.darwinModules.home-manager
             stylix.darwinModules.stylix
           ];
