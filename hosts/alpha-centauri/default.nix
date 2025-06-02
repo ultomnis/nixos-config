@@ -57,5 +57,9 @@
         };
       };
     };
+
+    selections = {
+      editor = "helix";
+    };
   };
 }
