@@ -22,6 +22,7 @@ in
   options.luminosity.system.services = {
     avahi = mkServiceOption "Avahi" { };
     bluetooth = mkServiceOption "Bluetooth" { };
+    davfs2 = mkServiceOption "davfs2" { };
     geoclue2 = mkServiceOption "GeoClue 2" { };
     libvirtd = mkServiceOption "libvirtd" { };
     networkmanager = mkServiceOption "Network Manager" { };

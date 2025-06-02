@@ -22,12 +22,13 @@
           enable = true;
           unfree.enable = false;
         };
+
+        minimal.ssh-agent.enable = true;
       };
 
       programs = {
         graphical = {
           enable = true;
-          bitwarden.sshAgent.enable = true;
 
           firefox.profiles = [
             {

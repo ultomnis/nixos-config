@@ -26,10 +26,6 @@ let
 in
 {
   options.luminosity.home.programs.graphical = {
-    bitwarden = mkGraphicalOption "Bitwarden" {
-      sshAgent.enable = mkEnableOption "Whether to enable the Bitwarden SSH Agent.";
-    };
-
     firefox = mkGraphicalOption "Firefox" {
       profiles = mkOption {
         type = types.listOf (

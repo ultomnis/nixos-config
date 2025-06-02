@@ -22,6 +22,7 @@ in
       };
 
       casks = [
+        "keepassxc"
         "mullvad-browser"
         "steam"
         "tor-browser"

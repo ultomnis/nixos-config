@@ -43,10 +43,7 @@ in
               installation_mode = "blocked";
             };
 
-            "{446900e4-71c2-419f-a6a7-df9c091e268b}" = extensionSetting "bitwarden-password-manager" { };
-
             "addon@darkreader.org" = extensionSetting "darkreader" { };
-
             "keepassxc-browser@keepassxc.org" = extensionSetting "keepassxc-browser" { };
 
             "uBlock0@raymondhill.net" = extensionSetting "ublock-origin" {

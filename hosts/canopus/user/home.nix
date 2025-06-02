@@ -18,7 +18,6 @@
     programs = {
       graphical = {
         enable = true;
-        bitwarden.sshAgent.enable = true;
 
         firefox.profiles = [
           {

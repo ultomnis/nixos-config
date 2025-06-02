@@ -1,6 +1,7 @@
 {
   imports = [
     ./foot.nix
+    ./keepassxc.nix
     ./mangohud.nix
     ./mullvad-browser.nix
     ./nexusmods-app.nix
