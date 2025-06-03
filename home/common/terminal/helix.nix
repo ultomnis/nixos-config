@@ -17,8 +17,10 @@ in
 
       extraPackages = builtins.attrValues {
         inherit (pkgs)
+          marksman
           nixd
           nixfmt-rfc-style
+          typescript-language-server
           ;
       };
 
@@ -40,7 +42,6 @@ in
         language = [
           {
             name = "nix";
-            language-servers = [ "nixd" ];
 
             formatter = {
               command = "nixfmt";

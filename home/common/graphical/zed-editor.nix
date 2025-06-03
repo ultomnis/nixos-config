@@ -15,12 +15,9 @@ in
     programs.zed-editor = {
       enable = true;
 
-      extensions = [
-        "nix"
-      ];
-
       extraPackages = builtins.attrValues {
         inherit (pkgs)
+          marksman
           nixd
           nixfmt-rfc-style
           ;
@@ -40,10 +37,37 @@ in
         hour_format = "hour24";
 
         languages = {
+          "JavaScript" = {
+            language_servers = [
+              "typescript-language-server"
+              "!vtsls"
+            ];
+          };
+        
           "Nix" = {
+            formatter = {
+              external = {
+                command = "nixfmt";
+              };
+            };
+          
             language_servers = [
               "nixd"
               "!nil"
+            ];
+          };
+
+          "TSX" = {
+            language_servers = [
+              "typescript-language-server"
+              "!vtsls"
+            ];
+          };
+
+          "TypeScript" = {
+            language_servers = [
+              "typescript-language-server"
+              "!vtsls"
             ];
           };
         };
