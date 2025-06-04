@@ -2,7 +2,6 @@
   imports = [
     ./avahi.nix
     ./bluetooth.nix
-    ./davfs2.nix
     ./geoclue2.nix
     ./gvfs.nix
     ./libvirtd.nix
