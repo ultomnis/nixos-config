@@ -1,5 +1,6 @@
 {
   imports = [
+    ./anki.nix
     ./firefox.nix
     ./mpv.nix
     ./thunderbird.nix

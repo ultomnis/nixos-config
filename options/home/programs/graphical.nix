@@ -26,6 +26,8 @@ let
 in
 {
   options.luminosity.home.programs.graphical = {
+    anki = mkGraphicalOption "Anki" { };
+  
     firefox = mkGraphicalOption "Firefox" {
       profiles = mkOption {
         type = types.listOf (
