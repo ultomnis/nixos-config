@@ -27,7 +27,7 @@ in
 {
   options.luminosity.home.programs.graphical = {
     anki = mkGraphicalOption "Anki" { };
-  
+
     firefox = mkGraphicalOption "Firefox" {
       profiles = mkOption {
         type = types.listOf (
@@ -64,6 +64,7 @@ in
     mangohud = mkGraphicalOption "MangoHud" { };
     mpv = mkGraphicalOption "MPV" { };
     mullvad-browser = mkGraphicalOption "Mullvad Browser" { };
+    nautilus = mkGraphicalOption "GNOME Files" { };
     nexusmods-app = mkGraphicalOption "Nexus Mods App" { };
     obs-studio = mkGraphicalOption "OBS Studio" { };
     piper = mkGraphicalOption "Piper" { };
