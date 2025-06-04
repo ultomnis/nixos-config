@@ -24,6 +24,7 @@ in
     bluetooth = mkServiceOption "Bluetooth" { };
     davfs2 = mkServiceOption "davfs2" { };
     geoclue2 = mkServiceOption "GeoClue 2" { };
+    gvfs = mkServiceOption "GVfs" { };
     libvirtd = mkServiceOption "libvirtd" { };
     networkmanager = mkServiceOption "Network Manager" { };
     openssh = mkServiceOption "OpenSSH" { };
