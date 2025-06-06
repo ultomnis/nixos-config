@@ -21,6 +21,8 @@ in
           nixd
           nixfmt-rfc-style
           ;
+
+        inherit (pkgs.python313Packages) python-lsp-server;
       };
 
       userSettings = {
@@ -43,17 +45,24 @@ in
               "!vtsls"
             ];
           };
-        
+
           "Nix" = {
             formatter = {
               external = {
                 command = "nixfmt";
               };
             };
-          
+
             language_servers = [
               "nixd"
               "!nil"
+            ];
+          };
+
+          "Python" = {
+            language_servers = [
+              "pylsp"
+              "!pyright"
             ];
           };
 

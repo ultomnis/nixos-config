@@ -22,6 +22,8 @@ in
           nixfmt-rfc-style
           typescript-language-server
           ;
+
+        inherit (pkgs.python313Packages) python-lsp-server;
       };
 
       settings = {
@@ -41,11 +43,29 @@ in
       languages = {
         language = [
           {
+            name = "markdown";
+
+            language-servers = [
+              "marksman"
+            ];
+          }
+          {
             name = "nix";
+
+            language-servers = [
+              "nixd"
+            ];
 
             formatter = {
               command = "nixfmt";
             };
+          }
+          {
+            name = "python";
+
+            language-servers = [
+              "pylsp"
+            ];
           }
         ];
       };
