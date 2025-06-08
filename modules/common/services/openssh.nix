@@ -6,15 +6,13 @@ let
 in
 {
   config = lib.mkIf cfg.enable {
-    services.openssh =
-      {
-        enable = true;
+    services.openssh = {
+      enable = true;
 
-        extraConfig = ''
-          PasswordAuthentication no
-          PermitRootLogin no
-        '';
-      };
+      extraConfig = ''
+        PasswordAuthentication no
+        PermitRootLogin no
+      '';
+    };
   };
 }
-
