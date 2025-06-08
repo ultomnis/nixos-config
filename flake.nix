@@ -58,7 +58,7 @@
     in
     {
       forEachSystem = nixpkgs.lib.genAttrs includedSystems;
-      formatter = self.forEachSystem (system: nixpkgs.legacyPackages.${system}.nixfmt-rfc-style);
+      formatter = self.forEachSystem (system: nixpkgs.legacyPackages.${system}.nixfmt-tree);
 
       nixosConfigurations = {
         sirius = mkNixosConfig {
