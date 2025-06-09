@@ -15,17 +15,6 @@ in
     programs.helix = {
       enable = true;
 
-      extraPackages = builtins.attrValues {
-        inherit (pkgs)
-          marksman
-          nixd
-          nixfmt-rfc-style
-          typescript-language-server
-          ;
-
-        inherit (pkgs.python313Packages) python-lsp-server;
-      };
-
       settings = {
         editor = {
           cursor-shape = {
@@ -41,6 +30,24 @@ in
       };
 
       languages = {
+        language-server = {
+          marksman = {
+            command = lib.getExe pkgs.marksman;
+          };
+
+          nixd = {
+            command = lib.getExe pkgs.nixd;
+          };
+
+          pylsp = {
+            command = lib.getExe pkgs.python313Packages.python-lsp-server;
+          };
+
+          typescript-language-server = {
+            command = lib.getExe pkgs.typescript-language-server;
+          };
+        };
+
         language = [
           {
             name = "markdown";
@@ -57,7 +64,7 @@ in
             ];
 
             formatter = {
-              command = "nixfmt";
+              command = lib.getExe pkgs.nixfmt-rfc-style;
             };
           }
           {
@@ -65,6 +72,13 @@ in
 
             language-servers = [
               "pylsp"
+            ];
+          }
+          {
+            name = "typescript";
+
+            language-servers = [
+              "typescript-language-server"
             ];
           }
         ];
