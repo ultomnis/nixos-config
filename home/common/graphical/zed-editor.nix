@@ -15,15 +15,9 @@ in
     programs.zed-editor = {
       enable = true;
 
-      extraPackages = builtins.attrValues {
-        inherit (pkgs)
-          marksman
-          nixd
-          nixfmt-rfc-style
-          ;
-
-        inherit (pkgs.python313Packages) python-lsp-server;
-      };
+      extensions = [
+        "nix"
+      ];
 
       userSettings = {
         assistant = {
@@ -38,45 +32,76 @@ in
         cursor_blink = false;
         hour_format = "hour24";
 
+        lsp = {
+          marksman = {
+            binary = {
+              path = lib.getExe pkgs.marksman;
+            };
+          };
+
+          nixd = {
+            binary = {
+              path = lib.getExe pkgs.nixd;
+            };
+          };
+
+          pylsp = {
+            binary = {
+              path = lib.getExe pkgs.python313Packages.python-lsp-server;
+            };
+          };
+
+          typescript-language-server = {
+            binary = {
+              path = lib.getExe pkgs.typescript-language-server;
+
+              arguments = [
+                "--stdio"
+              ];
+            };
+          };
+        };
+
         languages = {
           "JavaScript" = {
             language_servers = [
               "typescript-language-server"
-              "!vtsls"
+            ];
+          };
+
+          "Markdown" = {
+            language_servers = [
+              "marksman"
             ];
           };
 
           "Nix" = {
             formatter = {
               external = {
-                command = "nixfmt";
+                command = lib.getExe pkgs.nixfmt-rfc-style;
               };
             };
 
             language_servers = [
               "nixd"
-              "!nil"
             ];
           };
 
           "Python" = {
             language_servers = [
               "pylsp"
-              "!pyright"
             ];
           };
 
           "TSX" = {
             language_servers = [
               "typescript-language-server"
-              "!vtsls"
             ];
           };
 
           "TypeScript" = {
             language_servers = [
               "typescript-language-server"
-              "!vtsls"
             ];
           };
         };
