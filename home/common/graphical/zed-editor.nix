@@ -17,6 +17,7 @@ in
 
       extensions = [
         "nix"
+        "qml"
       ];
 
       userSettings = {
@@ -48,6 +49,16 @@ in
           pylsp = {
             binary = {
               path = lib.getExe pkgs.python313Packages.python-lsp-server;
+            };
+          };
+
+          qmljs = {
+            binary = {
+              path = lib.getExe' pkgs.kdePackages.qtdeclarative "qmlls";
+
+              arguments = [
+                "-E"
+              ];
             };
           };
 
@@ -90,6 +101,12 @@ in
           "Python" = {
             language_servers = [
               "pylsp"
+            ];
+          };
+
+          "QML" = {
+            language_servers = [
+              "qmljs"
             ];
           };
 
