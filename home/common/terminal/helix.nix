@@ -43,8 +43,20 @@ in
             command = lib.getExe pkgs.python313Packages.python-lsp-server;
           };
 
+          qmlls = {
+            command = lib.getExe' pkgs.kdePackages.qtdeclarative "qmlls";
+
+            args = [
+              "-E"
+            ];
+          };
+
           typescript-language-server = {
             command = lib.getExe pkgs.typescript-language-server;
+
+            args = [
+              "--stdio"
+            ];
           };
         };
 
@@ -72,6 +84,13 @@ in
 
             language-servers = [
               "pylsp"
+            ];
+          }
+          {
+            name = "qml";
+
+            language-servers = [
+              "qmlls"
             ];
           }
           {
