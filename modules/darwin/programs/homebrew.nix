@@ -26,6 +26,7 @@ in
         "mullvad-browser"
         "steam"
         "tor-browser"
+        "vmware-fusion"
       ];
     };
 
