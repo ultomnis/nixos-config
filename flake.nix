@@ -28,11 +28,6 @@
       url = "git+ssh://git@github.com/ultomnis/nix-secrets.git?ref=main";
       flake = false;
     };
-
-    stylix = {
-      url = "github:nix-community/stylix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs =
@@ -42,7 +37,6 @@
       disko,
       home-manager,
       nixpkgs,
-      stylix,
       ...
     }@inputs:
 
@@ -71,7 +65,6 @@
             agenix.nixosModules.default
             disko.nixosModules.disko
             home-manager.nixosModules.home-manager
-            stylix.nixosModules.stylix
           ];
         };
       };
@@ -86,7 +79,6 @@
           extraModules = [
             agenix.darwinModules.default
             home-manager.darwinModules.home-manager
-            stylix.darwinModules.stylix
           ];
         };
       };
@@ -97,10 +89,6 @@
           hostname = "alpha-centauri";
           systemArch = "x86_64";
           systemOS = "linux";
-
-          extraModules = [
-            stylix.homeModules.stylix
-          ];
         };
       };
     };

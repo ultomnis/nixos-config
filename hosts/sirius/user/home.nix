@@ -21,6 +21,10 @@
 
   luminosity.home = {
     desktop = {
+      environment = {
+        fonts.size = 10;
+      };
+
       minimal = {
         waybar.menuCommand = "${lib.getExe pkgs.fuzzel} --anchor top-left";
       };
@@ -49,7 +53,6 @@
         enable = true;
 
         git = {
-          delta.theme = "base16-stylix";
           email = "125839032+ultomnis@users.noreply.github.com";
           userName = "ultomnis";
         };

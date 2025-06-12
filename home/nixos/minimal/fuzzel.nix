@@ -2,6 +2,7 @@
 
 let
   cfg = config.luminosity.home.desktop.minimal.fuzzel;
+  inherit (config.luminosity.home.desktop.environment) gtk;
 
 in
 {
@@ -11,9 +12,17 @@ in
       enable = true;
 
       settings = {
+        main = {
+          icon-theme = lib.mkIf (gtk.icon.name != null) gtk.icon.name;
+        };
+
         border = {
           width = 2;
           radius = 0;
+        };
+
+        colors = {
+          background = "000000ff";
         };
       };
     };

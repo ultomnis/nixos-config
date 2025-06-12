@@ -11,6 +11,7 @@ let
   cfg = config.luminosity.home.desktop.minimal.sway;
   monitors = osConfig.luminosity.selections.monitors or config.luminosity.selections.monitors;
   terminal = osConfig.luminosity.selections.terminal or config.luminosity.selections.terminal;
+  wallpaper = osConfig.luminosity.selections.wallpaper or config.luminosity.selections.wallpaper;
 
 in
 {
@@ -36,6 +37,7 @@ in
           {
             "*" = {
               allow_tearing = "yes";
+              bg = lib.mkIf (wallpaper != null) "${wallpaper} fill";
               max_render_time = "off";
             };
           }

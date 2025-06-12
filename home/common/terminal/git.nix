@@ -17,7 +17,7 @@ in
 
         options = {
           navigate = true;
-          syntax-theme = lib.mkIf (cfg.delta.theme != null) cfg.delta.theme;
+          syntax-theme = "base16";
         };
       };
 

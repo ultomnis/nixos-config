@@ -15,6 +15,10 @@
   programs.home-manager.enable = true;
 
   luminosity.home = {
+    desktop.environment = {
+      fonts.size = 13;
+    };
+
     programs = {
       graphical = {
         enable = true;
@@ -40,7 +44,6 @@
         enable = true;
 
         git = {
-          delta.theme = "base16-stylix";
           email = "125839032+ultomnis@users.noreply.github.com";
           userName = "ultomnis";
         };

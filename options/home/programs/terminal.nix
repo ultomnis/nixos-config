@@ -30,14 +30,6 @@ in
     fzf = mkTerminalOption "fzf" { };
 
     git = mkTerminalOption "Git" {
-      delta = {
-        theme = mkOption {
-          type = types.nullOr types.str;
-          default = null;
-          description = "Syntax theme for delta.";
-        };
-      };
-
       email = mkOption {
         type = types.nullOr types.str;
         default = null;

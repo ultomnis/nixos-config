@@ -58,6 +58,20 @@ in
           (osConfig.luminosity.selections.terminal or config.luminosity.selections.terminal) == "foot";
         description = "Whether to enable foot.";
       };
+
+      font = {
+        name = mkOption {
+          type = types.nullOr types.str;
+          default = config.luminosity.home.desktop.environment.fonts.mono;
+          description = "Font for foot.";
+        };
+
+        size = mkOption {
+          type = types.nullOr types.int;
+          default = config.luminosity.home.desktop.environment.fonts.size;
+          description = "Font size for foot.";
+        };
+      };
     };
 
     keepassxc = mkGraphicalOption "KeePassXC" { };
@@ -102,6 +116,20 @@ in
         description = "Whether to enable WezTerm.";
       };
 
+      font = {
+        name = mkOption {
+          type = types.nullOr types.str;
+          default = config.luminosity.home.desktop.environment.fonts.mono;
+          description = "Font for WezTerm.";
+        };
+
+        size = mkOption {
+          type = types.nullOr types.int;
+          default = config.luminosity.home.desktop.environment.fonts.size;
+          description = "Font size for WezTerm.";
+        };
+      };
+
       maxFPS = mkOption {
         type = types.ints.positive;
         default = 60;
@@ -109,6 +137,20 @@ in
       };
     };
 
-    zed-editor = mkGraphicalOption "Zed" { };
+    zed-editor = mkGraphicalOption "Zed" {
+      font = {
+        name = mkOption {
+          type = types.nullOr types.str;
+          default = config.luminosity.home.desktop.environment.fonts.mono;
+          description = "Font for Zed.";
+        };
+
+        size = mkOption {
+          type = types.nullOr types.int;
+          default = config.luminosity.home.desktop.environment.fonts.size;
+          description = "Font size for Zed.";
+        };
+      };
+    };
   };
 }

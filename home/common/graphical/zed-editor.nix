@@ -30,6 +30,8 @@ in
           version = "2";
         };
 
+        buffer_font_family = cfg.font.name;
+        buffer_font_size = cfg.font.size;
         cursor_blink = false;
         hour_format = "hour24";
 

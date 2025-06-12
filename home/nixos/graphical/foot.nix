@@ -19,6 +19,10 @@ in
 
       settings = {
         main = {
+          font = lib.mkIf (
+            cfg.font.name != null && cfg.font.size != null
+          ) "${cfg.font.name}:size=${toString cfg.font.size}";
+
           pad = "5x5";
           shell = lib.mkIf (shell != null) (lib.getExe pkgs.${shell});
         };

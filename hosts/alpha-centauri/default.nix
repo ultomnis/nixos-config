@@ -2,7 +2,6 @@
   imports = [
     ../../home/common
     ../../home/nixos
-    ../../modules/home
     ../../options/common
     ../../options/home
   ];
@@ -51,7 +50,6 @@
           enable = true;
 
           git = {
-            delta.theme = "base16-stylix";
             email = "125839032+ultomnis@users.noreply.github.com";
             userName = "ultomnis";
           };

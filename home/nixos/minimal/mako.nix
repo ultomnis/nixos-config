@@ -11,6 +11,8 @@ in
       enable = true;
 
       settings = {
+        background-color = "#000000ff";
+        border-size = 0;
         default-timeout = 5000;
       };
     };

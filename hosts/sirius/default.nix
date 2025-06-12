@@ -8,7 +8,6 @@
 {
   imports = [
     ../../modules/common
-    ../../modules/home
     ../../modules/nixos
     ../../options/common
     ../../options/modules
@@ -43,12 +42,7 @@
 
       shell = "fish";
       terminal = "wezterm";
-    };
-
-    stylix = {
-      enable = true;
-      fonts.terminalSize = 10;
-      image = inputs.self + "/assets/wallpapers/kemo-sahab-4V0tz5FEvTc-unsplash.jpg";
+      wallpaper = inputs.self + "/assets/wallpapers/kemo-sahab-4V0tz5FEvTc-unsplash.jpg";
     };
 
     system = {
