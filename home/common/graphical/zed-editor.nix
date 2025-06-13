@@ -135,6 +135,23 @@ in
         };
 
         vim_mode = true;
+
+        "experimental.theme_overrides" = {
+          "background" = "#00000033";
+          "background.appearance" = "blurred";
+          "editor.active_line.background" = "#ffffff00";
+          "editor.background" = "#ffffff00";
+          "editor.gutter.background" = "#ffffff00";
+          "elevated_surface.background" = "#00000033";
+          "panel.background" = "#00000033";
+          "status_bar.background" = "#00000033";
+          "tab_bar.background" = "#ffffff00";
+          "tab.active_background" = "#00000033";
+          "tab.inactive_background" = "#ffffff00";
+          "terminal.background" = "#ffffff00";
+          "title_bar.background" = "#00000033";
+          "toolbar.background" = "#ffffff00";
+        };
       };
     };
   };
