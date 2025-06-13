@@ -35,7 +35,9 @@ in
                   hashedPasswordFile = user.hashedPasswordFile;
                   isNormalUser = true;
                   extraGroups =
-                    [ "wheel" ]
+                    [
+                      "wheel"
+                    ]
                     ++ lib.optionals (adb.enable) [
                       "adbusers"
                     ]
