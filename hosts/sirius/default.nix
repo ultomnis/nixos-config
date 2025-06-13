@@ -42,7 +42,7 @@
 
       shell = "fish";
       terminal = "wezterm";
-      wallpaper = inputs.self + "/assets/wallpapers/kemo-sahab-4V0tz5FEvTc-unsplash.jpg";
+      wallpaper = inputs.self + "/assets/wallpapers/bence-balla-schottner-zwAevXBnEN0-unsplash.jpg";
     };
 
     system = {
