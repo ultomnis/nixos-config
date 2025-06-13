@@ -33,6 +33,7 @@
     system = {
       configurations = {
         enable = true;
+
         userConfig.users = lib.singleton {
           homeManager = true;
           name = "user";

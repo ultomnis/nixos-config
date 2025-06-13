@@ -47,6 +47,7 @@
     system = {
       configurations = {
         enable = true;
+
         userConfig.users = lib.singleton {
           hashedPasswordFile = config.age.secrets.sirius-user-passwd.path;
           homeManager = true;
