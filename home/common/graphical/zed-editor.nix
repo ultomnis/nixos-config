@@ -21,7 +21,7 @@ in
       ];
 
       userSettings = {
-        assistant = {
+        agent = {
           default_model = {
             provider = "ollama";
             model = "deepseek-r1:latest";
