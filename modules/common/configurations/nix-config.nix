@@ -24,13 +24,11 @@ in
         )
         |> lib.recursiveUpdate (
           lib.optionalAttrs (systemOS == "darwin") {
-            interval = [
-              {
-                Hour = 0;
-                Minute = 0;
-                Weekday = 1;
-              }
-            ];
+            interval = lib.singleton {
+              Hour = 0;
+              Minute = 0;
+              Weekday = 1;
+            };
           }
         );
 
@@ -47,13 +45,11 @@ in
         )
         |> lib.recursiveUpdate (
           lib.optionalAttrs (systemOS == "darwin") {
-            interval = [
-              {
-                Hour = 0;
-                Minute = 0;
-                Weekday = 1;
-              }
-            ];
+            interval = lib.singleton {
+              Hour = 0;
+              Minute = 0;
+              Weekday = 1;
+            };
           }
         );
 

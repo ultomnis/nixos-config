@@ -2,6 +2,7 @@
   config,
   hostname,
   inputs,
+  lib,
   ...
 }:
 
@@ -29,16 +30,14 @@
       editor = "helix";
       gpu = "amd";
 
-      monitors = [
-        {
-          output = "DP-2";
-          height = 1920;
-          width = 1080;
-          pos_x = 0;
-          pos_y = 0;
-          rate = 165;
-        }
-      ];
+      monitors = lib.singleton {
+        output = "DP-2";
+        height = 1920;
+        width = 1080;
+        pos_x = 0;
+        pos_y = 0;
+        rate = 165;
+      };
 
       shell = "fish";
       terminal = "wezterm";
@@ -48,13 +47,11 @@
     system = {
       configurations = {
         enable = true;
-        userConfig.users = [
-          {
-            hashedPasswordFile = config.age.secrets.sirius-user-passwd.path;
-            homeManager = true;
-            name = "user";
-          }
-        ];
+        userConfig.users = lib.singleton {
+          hashedPasswordFile = config.age.secrets.sirius-user-passwd.path;
+          homeManager = true;
+          name = "user";
+        };
       };
 
       programs.enable = true;

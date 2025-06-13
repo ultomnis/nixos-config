@@ -1,3 +1,5 @@
+{ lib, ... }:
+
 {
   imports = [
     ../../home/common
@@ -29,21 +31,17 @@
         graphical = {
           enable = true;
 
-          firefox.profiles = [
-            {
-              id = 0;
-              name = "default";
-            }
-          ];
+          firefox.profiles = lib.singleton {
+            id = 0;
+            name = "default";
+          };
 
           mangohud.enable = false;
 
-          thunderbird.profiles = [
-            {
-              isDefault = true;
-              name = "default";
-            }
-          ];
+          thunderbird.profiles = lib.singleton {
+            isDefault = true;
+            name = "default";
+          };
         };
 
         terminal = {

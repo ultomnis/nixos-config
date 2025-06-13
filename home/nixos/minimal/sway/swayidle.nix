@@ -29,12 +29,10 @@ in
         }
       ];
 
-      events = [
-        {
-          event = "before-sleep";
-          command = "${lib.getExe pkgs.swaylock} -f";
-        }
-      ];
+      events = lib.singleton {
+        event = "before-sleep";
+        command = "${lib.getExe pkgs.swaylock} -f";
+      };
     };
   };
 }

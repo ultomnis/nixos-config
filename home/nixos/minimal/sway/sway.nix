@@ -99,11 +99,9 @@ in
             "--locked XF86AudioStop" = "exec ${lib.getExe pkgs.playerctl} stop";
           };
 
-        bars = [
-          {
-            command = lib.getExe pkgs.waybar;
-          }
-        ];
+        bars = lib.singleton {
+          command = lib.getExe pkgs.waybar;
+        };
       };
     };
   };

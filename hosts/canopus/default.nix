@@ -1,4 +1,4 @@
-{ hostname, ... }:
+{ hostname, lib, ... }:
 
 {
   imports = [
@@ -33,13 +33,11 @@
     system = {
       configurations = {
         enable = true;
-        userConfig.users = [
-          {
-            homeManager = true;
-            name = "user";
-            uid = 501;
-          }
-        ];
+        userConfig.users = lib.singleton {
+          homeManager = true;
+          name = "user";
+          uid = 501;
+        };
       };
 
       programs.enable = true;
