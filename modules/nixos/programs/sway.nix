@@ -1,4 +1,9 @@
-{ config, lib, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 let
   cfg = config.luminosity.system.programs.sway;
@@ -9,6 +14,7 @@ in
     # Tiling Wayland compositor
     programs.sway = {
       enable = true;
+      package = pkgs.swayfx;
       wrapperFeatures.gtk = true;
       extraPackages = [ ];
     };

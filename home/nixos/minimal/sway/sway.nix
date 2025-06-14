@@ -18,7 +18,10 @@ in
   config = lib.mkIf cfg.enable {
     # Tiling Wayland compositor
     wayland.windowManager.sway = {
+      checkConfig = false;
       enable = true;
+      package = pkgs.swayfx;
+      wrapperFeatures.gtk = true;
 
       config = {
         modifier = "Mod4";
@@ -179,6 +182,15 @@ in
           command = lib.getExe pkgs.waybar;
         };
       };
+
+      extraConfig = ''
+        blur enable
+        blur_passes 4
+        blur_radius 3
+        layer_effects "launcher" blur enable
+        layer_effects "notifications" blur enable; blur_ignore_transparent enable
+        layer_effects "waybar" blur enable
+      '';
     };
   };
 }

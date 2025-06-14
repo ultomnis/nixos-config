@@ -32,7 +32,7 @@ in
         ${if (cfg.font.name != null) then "config.font = wezterm.font '${cfg.font.name}'" else ""}
         ${if (cfg.font.size != null) then "config.font_size = ${toString cfg.font.size}" else ""}
         config.front_end = 'WebGpu'
-        config.macos_window_background_blur = 50
+        config.macos_window_background_blur = 60
         config.max_fps = ${toString cfg.maxFPS}
         config.webgpu_power_preference = 'HighPerformance'
         config.window_background_opacity = 0.2

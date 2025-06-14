@@ -11,7 +11,7 @@ in
       enable = true;
 
       settings = {
-        background-color = "#000000ff";
+        background-color = "#00000033";
         border-size = 0;
         default-timeout = 5000;
       };
