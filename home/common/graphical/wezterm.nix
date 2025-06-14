@@ -20,7 +20,7 @@ in
       extraConfig = ''
         local config = wezterm.config_builder()
 
-        config.color_scheme = 'rose-pine-moon'
+        ${if (cfg.theme != null) then "config.color_scheme = '${cfg.theme}'" else ""}
 
         config.colors = {
           foreground = '#ffffff',

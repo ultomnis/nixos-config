@@ -135,6 +135,12 @@ in
         default = 60;
         description = "Maximum FPS for WezTerm.";
       };
+
+      theme = mkOption {
+        type = types.nullOr types.str;
+        default = "rose-pine-moon";
+        description = "Theme for WezTerm.";
+      };
     };
 
     zed-editor = mkGraphicalOption "Zed" {
