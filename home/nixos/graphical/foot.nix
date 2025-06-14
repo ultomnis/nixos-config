@@ -29,7 +29,7 @@ in
             cfg.font.name != null && cfg.font.size != null
           ) "${cfg.font.name}:size=${toString cfg.font.size}";
 
-          include = [
+          include = lib.optionals (cfg.theme != null) [
             "${pkgs.foot.themes}/share/foot/themes/rose-pine-moon"
           ];
 

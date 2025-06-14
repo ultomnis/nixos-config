@@ -72,6 +72,12 @@ in
           description = "Font size for foot.";
         };
       };
+
+      theme = {
+        type = types.nullOr types.str;
+        default = "rose-pine-moon";
+        description = "Theme for foot.";
+      };
     };
 
     keepassxc = mkGraphicalOption "KeePassXC" { };
