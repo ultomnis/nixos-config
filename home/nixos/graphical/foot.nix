@@ -18,18 +18,18 @@ in
       enable = true;
 
       settings = {
-        main = {
-          colors = {
-            alpha = 0.2;
-            foreground = "ffffff";
-            background = "000000";
-          };
+        colors = {
+          alpha = 0.2;
+          foreground = "ffffff";
+          background = "000000";
+        };
 
+        main = {
           font = lib.mkIf (
             cfg.font.name != null && cfg.font.size != null
           ) "${cfg.font.name}:size=${toString cfg.font.size}";
 
-          include = lib.optionals (cfg.theme != null) [
+          include = [
             "${pkgs.foot.themes}/share/foot/themes/rose-pine-moon"
           ];
 
