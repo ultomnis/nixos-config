@@ -40,7 +40,7 @@ in
       terminal = mkOption {
         inherit (selectionTypes.terminal) type;
         default = customConfig.luminosity.selections.terminal;
-        description = "Terminal for Aerospace.";
+        description = "Terminal for AeroSpace.";
       };
     };
 
@@ -91,7 +91,7 @@ in
       menuCommand = mkOption {
         type = types.nullOr types.str;
         default = null;
-        description = "Command to use when clicking menu";
+        description = "Command to use when clicking the menu.";
       };
     };
   };
