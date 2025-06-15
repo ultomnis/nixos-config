@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ customLib, lib, ... }:
 
 let
   inherit (lib)
@@ -6,113 +6,43 @@ let
     types
     ;
 
+  inherit (customLib) selectionTypes;
+
 in
 {
   options.luminosity.selections = {
     desktop = mkOption {
-      type = types.nullOr (
-        types.enum [
-          "aerospace"
-          "sway"
-        ]
-      );
-
+      inherit (selectionTypes.desktop) type;
       default = null;
       description = "Desktop environment selection.";
     };
 
     editor = mkOption {
-      type = types.nullOr (
-        types.enum [
-          "helix"
-          "zed-editor"
-        ]
-      );
-
+      inherit (selectionTypes.editor) type;
       default = null;
       description = "Default editor.";
     };
 
     gpu = mkOption {
-      type = types.nullOr (
-        types.enum [
-          "amd"
-        ]
-      );
-
+      inherit (selectionTypes.gpu) type;
       default = null;
       description = "System GPU.";
     };
 
     monitors = mkOption {
-      type = types.listOf (
-        types.submodule {
-          options = {
-            output = mkOption {
-              type = types.str;
-              description = "Display output.";
-            };
-
-            height = mkOption {
-              type = types.ints.positive;
-              description = "Monitor height in pixels.";
-            };
-
-            width = mkOption {
-              type = types.ints.positive;
-              description = "Monitor width in pixels.";
-            };
-
-            pos_x = mkOption {
-              type = types.int;
-              description = "Position on the x-axis.";
-            };
-
-            pos_y = mkOption {
-              type = types.int;
-              description = "Position on the y-axis.";
-            };
-
-            rate = mkOption {
-              type = types.ints.positive;
-              default = 60;
-              description = "Monitor refresh rate in Hz.";
-            };
-
-            scale = mkOption {
-              type = types.numbers.positive;
-              default = 1;
-              description = "Scale factor.";
-            };
-          };
-        }
-      );
-
+      inherit (selectionTypes.monitors) type;
       default = [ ];
       description = "Monitor configurations.";
     };
 
     shell = mkOption {
-      type = types.nullOr (
-        types.enum [
-          "bash"
-          "fish"
-          "zsh"
-        ]
-      );
-
+      inherit (selectionTypes.shell) type;
       default = null;
       description = "Default shell.";
     };
 
     terminal = mkOption {
-      type = types.nullOr (
-        types.enum [
-          "foot"
-          "wezterm"
-        ]
-      );
-
+      inherit (selectionTypes.terminal) type;
       default = null;
       description = "Default terminal emulator.";
     };

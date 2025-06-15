@@ -1,14 +1,12 @@
 {
   config,
   lib,
-  osConfig ? null,
   pkgs,
   ...
 }:
 
 let
   cfg = config.luminosity.home.desktop.minimal.aerospace;
-  nixConfig = if (osConfig != null) then osConfig else config;
 
 in
 {
@@ -38,8 +36,8 @@ in
 
         mode.main.binding = {
           alt-enter =
-            lib.mkIf (nixConfig.luminosity.selections.terminal != null)
-              "exec-and-forget open -na ${lib.getExe pkgs.${nixConfig.luminosity.selections.terminal}}";
+            lib.mkIf (cfg.terminal != null)
+              "exec-and-forget open -na ${lib.getExe pkgs.${cfg.terminal}}";
 
           alt-h = "focus --boundaries-action wrap-around-the-workspace left";
           alt-j = "focus --boundaries-action wrap-around-the-workspace down";

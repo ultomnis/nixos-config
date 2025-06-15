@@ -9,7 +9,6 @@
 
 let
   cfg = config.luminosity.system.configurations.userConfig;
-  inherit (config.luminosity.selections) shell;
   inherit (config.luminosity.system.programs) adb;
 
   inherit (config.luminosity.system.services)
@@ -30,7 +29,7 @@ in
             value =
               {
                 home = if (systemOS == "darwin") then "/Users/${user.name}" else "/home/${user.name}";
-                shell = lib.mkIf (shell != null) pkgs.${shell};
+                shell = lib.mkIf (user.shell != null) pkgs.${user.shell};
                 uid = lib.mkIf (user.uid != null) user.uid;
               }
               |> lib.recursiveUpdate (

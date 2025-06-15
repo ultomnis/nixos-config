@@ -1,5 +1,6 @@
 {
   config,
+  customLib,
   lib,
   osConfig ? null,
   ...
@@ -10,6 +11,10 @@ let
     mkOption
     types
     ;
+
+  inherit (customLib) selectionTypes;
+
+  customConfig = if (osConfig != null) then osConfig else config;
 
   mkMinimalOption =
     name: extraOptions:
@@ -22,16 +27,20 @@ let
     }
     |> lib.recursiveUpdate extraOptions;
 
-  nixConfig = if (osConfig != null) then osConfig else config;
-
 in
 {
   options.luminosity.home.desktop.minimal = {
     aerospace = {
       enable = mkOption {
         type = types.bool;
-        default = nixConfig.luminosity.selections.desktop == "aerospace";
+        default = customConfig.luminosity.selections.desktop == "aerospace";
         description = "Whether to enable AeroSpace.";
+      };
+
+      terminal = mkOption {
+        inherit (selectionTypes.terminal) type;
+        default = customConfig.luminosity.selections.terminal;
+        description = "Terminal for Aerospace.";
       };
     };
 
@@ -45,8 +54,36 @@ in
     sway = {
       enable = mkOption {
         type = types.bool;
-        default = nixConfig.luminosity.selections.desktop == "sway";
+        default = customConfig.luminosity.selections.desktop == "sway";
         description = "Whether to enable Sway.";
+      };
+
+      monitors = mkOption {
+        inherit (selectionTypes.monitors) type;
+        default = customConfig.luminosity.selections.monitors;
+        description = "Sway monitor configuration.";
+      };
+
+      terminal = mkOption {
+        inherit (selectionTypes.terminal) type;
+        default = customConfig.luminosity.selections.terminal;
+        description = "Terminal for Sway.";
+      };
+
+      wallpaper = mkOption {
+        type = types.nullOr types.path;
+        default = customConfig.luminosity.selections.wallpaper;
+        description = "Wallpaper for Sway.";
+      };
+    };
+
+    swayidle = mkMinimalOption "Swayidle" { };
+
+    swaylock = mkMinimalOption "Swaylock" {
+      wallpaper = mkOption {
+        type = types.nullOr types.path;
+        default = customConfig.luminosity.selections.wallpaper;
+        description = "Wallpaper for Swaylock.";
       };
     };
 

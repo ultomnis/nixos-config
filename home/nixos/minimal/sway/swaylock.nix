@@ -1,13 +1,7 @@
-{
-  config,
-  lib,
-  osConfig ? null,
-  ...
-}:
+{ config, lib, ... }:
 
 let
   cfg = config.luminosity.home.desktop.minimal.sway;
-  nixConfig = if (osConfig != null) then osConfig else config;
 
 in
 {
@@ -17,10 +11,7 @@ in
       enable = true;
 
       settings = {
-        image = lib.mkIf (
-          nixConfig.luminosity.selections.wallpaper != null
-        ) nixConfig.luminosity.selections.wallpaper;
-
+        image = lib.mkIf (cfg.wallpaper != null) cfg.wallpaper;
         show-failed-attempts = true;
       };
     };

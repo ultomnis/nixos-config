@@ -1,13 +1,15 @@
+{ inputs, ... }:
+
 {
   mkNixosConfig =
     {
       customLib,
-      inputs,
       hostname,
       systemArch,
       systemOS,
       extraModules ? [ ],
     }:
+
     let
       inherit (inputs) nixpkgs;
 
@@ -41,12 +43,12 @@
   mkDarwinConfig =
     {
       customLib,
-      inputs,
       hostname,
       systemArch,
       systemOS,
       extraModules ? [ ],
     }:
+
     let
       inherit (inputs) nix-darwin;
 
@@ -80,12 +82,12 @@
   mkHomeConfig =
     {
       customLib,
-      inputs,
       hostname,
       systemArch,
       systemOS,
       extraModules ? [ ],
     }:
+
     let
       inherit (inputs) home-manager nixpkgs;
 

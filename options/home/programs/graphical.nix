@@ -1,5 +1,6 @@
 {
   config,
+  customLib,
   lib,
   osConfig ? null,
   ...
@@ -12,6 +13,10 @@ let
     types
     ;
 
+  inherit (customLib) selectionTypes;
+
+  customConfig = if (osConfig != null) then osConfig else config;
+
   mkGraphicalOption =
     name: extraOptions:
     {
@@ -22,8 +27,6 @@ let
       };
     }
     |> lib.recursiveUpdate extraOptions;
-
-  nixConfig = if (osConfig != null) then osConfig else config;
 
 in
 {
@@ -56,7 +59,7 @@ in
     foot = {
       enable = mkOption {
         type = types.bool;
-        default = nixConfig.luminosity.selections.terminal == "foot";
+        default = customConfig.luminosity.selections.terminal == "foot";
         description = "Whether to enable foot.";
       };
 
@@ -72,6 +75,12 @@ in
           default = config.luminosity.home.desktop.environment.fonts.size;
           description = "Font size for foot.";
         };
+      };
+
+      shell = {
+        inherit (selectionTypes.shell) type;
+        default = customConfig.luminosity.selections.shell;
+        description = "Shell for foot.";
       };
 
       theme = {
@@ -118,7 +127,7 @@ in
     wezterm = {
       enable = mkOption {
         type = types.bool;
-        default = nixConfig.luminosity.selections.terminal == "wezterm";
+        default = customConfig.luminosity.selections.terminal == "wezterm";
         description = "Whether to enable WezTerm.";
       };
 
@@ -140,6 +149,12 @@ in
         type = types.ints.positive;
         default = 60;
         description = "Maximum FPS for WezTerm.";
+      };
+
+      shell = mkOption {
+        inherit (selectionTypes.shell) type;
+        default = customConfig.luminosity.selections.shell;
+        description = "Shell for WezTerm.";
       };
 
       theme = mkOption {

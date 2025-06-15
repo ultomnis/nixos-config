@@ -1,4 +1,9 @@
-{ config, lib, ... }:
+{
+  config,
+  customLib,
+  lib,
+  ...
+}:
 
 let
   inherit (lib)
@@ -6,6 +11,8 @@ let
     mkOption
     types
     ;
+
+  inherit (customLib) selectionTypes;
 
   mkConfigurationOption =
     name: extraOptions:
@@ -51,6 +58,12 @@ in
               name = mkOption {
                 type = types.str;
                 description = "The account username.";
+              };
+
+              shell = mkOption {
+                inherit (selectionTypes.shell) type;
+                default = config.luminosity.selections.shell;
+                description = "User shell.";
               };
 
               uid = mkOption {

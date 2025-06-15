@@ -29,6 +29,7 @@ in
       enable = mkOption {
         type = types.bool;
         default = config.luminosity.selections.desktop == "sway";
+        description = "Whether to enable Sway.";
       };
     };
 

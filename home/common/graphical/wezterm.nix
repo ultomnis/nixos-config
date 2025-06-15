@@ -1,14 +1,12 @@
 {
   config,
   lib,
-  osConfig ? null,
   pkgs,
   ...
 }:
 
 let
   cfg = config.luminosity.home.programs.graphical.wezterm;
-  nixConfig = if (osConfig != null) then osConfig else config;
 
 in
 {
@@ -27,12 +25,7 @@ in
           background = '#000000',
         }
 
-        ${
-          if (nixConfig.luminosity.selections.shell != null) then
-            "config.default_prog = { '${lib.getExe pkgs.${nixConfig.luminosity.selections.shell}}' }"
-          else
-            ""
-        }
+        ${if (cfg.shell != null) then "config.default_prog = { '${lib.getExe pkgs.${cfg.shell}}' }" else ""}
 
         config.enable_tab_bar = false
         ${if (cfg.font.name != null) then "config.font = wezterm.font '${cfg.font.name}'" else ""}

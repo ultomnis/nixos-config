@@ -2,14 +2,12 @@
   config,
   customLib,
   lib,
-  osConfig ? null,
   pkgs,
   ...
 }:
 
 let
   cfg = config.luminosity.home.desktop.minimal.sway;
-  nixConfig = if (osConfig != null) then osConfig else config;
 
 in
 {
@@ -23,11 +21,7 @@ in
 
       config = {
         modifier = "Mod4";
-
-        terminal = lib.mkIf (nixConfig.luminosity.selections.terminal != null) (
-          lib.getExe pkgs.${nixConfig.luminosity.selections.terminal}
-        );
-
+        terminal = lib.mkIf (cfg.terminal != null) (lib.getExe pkgs.${cfg.terminal});
         menu = lib.getExe pkgs.fuzzel;
         defaultWorkspace = "workspace number 1";
 
@@ -42,15 +36,11 @@ in
           {
             "*" = {
               allow_tearing = "yes";
-
-              bg = lib.mkIf (
-                nixConfig.luminosity.selections.wallpaper != null
-              ) "${nixConfig.luminosity.selections.wallpaper} fill";
-
+              bg = lib.mkIf (cfg.wallpaper != null) "${cfg.wallpaper} fill";
               max_render_time = "off";
             };
           }
-          |> lib.recursiveUpdate (customLib.mapSwayMonitors nixConfig.luminosity.selections.monitors);
+          |> lib.recursiveUpdate (customLib.mapSwayMonitors cfg.monitors);
 
         window = {
           titlebar = false;

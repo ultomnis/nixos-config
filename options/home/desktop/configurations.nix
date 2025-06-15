@@ -1,10 +1,20 @@
-{ config, lib, ... }:
+{
+  config,
+  customLib,
+  lib,
+  osConfig ? null,
+  ...
+}:
 
 let
   inherit (lib)
     mkOption
     types
     ;
+
+  inherit (customLib) selectionTypes;
+
+  customConfig = if (osConfig != null) then osConfig else config;
 
   mkConfigurationOption =
     name: extraOptions:
@@ -25,6 +35,12 @@ in
     unfree = mkConfigurationOption "unfree software" { };
 
     variables = mkConfigurationOption "environment variables configuration" {
+      editor = mkOption {
+        inherit (selectionTypes.editor) type;
+        default = customConfig.luminosity.selections.editor;
+        description = "EDITOR environment variable.";
+      };
+
       extraVariables = mkOption {
         type = types.lazyAttrsOf (
           types.oneOf [
@@ -37,6 +53,12 @@ in
 
         default = { };
         description = "Extra environment variables to set at login.";
+      };
+
+      terminal = mkOption {
+        inherit (selectionTypes.terminal) type;
+        default = customConfig.luminosity.selections.terminal;
+        description = "TERMINAL environment variable.";
       };
     };
   };
