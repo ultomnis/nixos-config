@@ -8,19 +8,18 @@
 
 let
   cfg = config.luminosity.home.desktop.configurations.variables;
-  editor = osConfig.luminosity.selections.editor or config.luminosity.selections.editor;
-  terminal = osConfig.luminosity.selections.terminal or config.luminosity.selections.terminal;
+  nixConfig = if (osConfig != null) then osConfig else config;
 
 in
 {
   config = lib.mkIf cfg.enable {
     home.sessionVariables =
-      lib.optionalAttrs (editor != null) {
-        EDITOR = lib.getExe pkgs.${editor};
+      lib.optionalAttrs (nixConfig.luminosity.selections.editor != null) {
+        EDITOR = lib.getExe pkgs.${nixConfig.luminosity.selections.editor};
       }
       |> lib.recursiveUpdate (
-        lib.optionalAttrs (terminal != null) {
-          TERMINAL = lib.getExe pkgs.${terminal};
+        lib.optionalAttrs (nixConfig.luminosity.selections.terminal != null) {
+          TERMINAL = lib.getExe pkgs.${nixConfig.luminosity.selections.terminal};
         }
       )
       |> lib.recursiveUpdate cfg.extraVariables;

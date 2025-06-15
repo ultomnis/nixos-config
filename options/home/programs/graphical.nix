@@ -23,6 +23,8 @@ let
     }
     |> lib.recursiveUpdate extraOptions;
 
+  nixConfig = if (osConfig != null) then osConfig else config;
+
 in
 {
   options.luminosity.home.programs.graphical = {
@@ -54,8 +56,7 @@ in
     foot = {
       enable = mkOption {
         type = types.bool;
-        default =
-          (osConfig.luminosity.selections.terminal or config.luminosity.selections.terminal) == "foot";
+        default = nixConfig.luminosity.selections.terminal == "foot";
         description = "Whether to enable foot.";
       };
 
@@ -117,8 +118,7 @@ in
     wezterm = {
       enable = mkOption {
         type = types.bool;
-        default =
-          (osConfig.luminosity.selections.terminal or config.luminosity.selections.terminal) == "wezterm";
+        default = nixConfig.luminosity.selections.terminal == "wezterm";
         description = "Whether to enable WezTerm.";
       };
 

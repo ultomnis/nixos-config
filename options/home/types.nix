@@ -12,6 +12,8 @@ let
     types
     ;
 
+  nixConfig = if (osConfig != null) then osConfig else config;
+
 in
 {
   options.luminosity.home = {
@@ -24,7 +26,7 @@ in
 
       environment.enable = mkOption {
         type = types.bool;
-        default = (osConfig.luminosity.selections.desktop or config.luminosity.selections.desktop) != null;
+        default = nixConfig.luminosity.selections.desktop != null;
         description = "Whether to enable desktop environment configurations.";
       };
 
@@ -32,7 +34,7 @@ in
         type = types.bool;
 
         default = (
-          builtins.elem (osConfig.luminosity.selections.desktop or config.luminosity.selections.desktop) [
+          builtins.elem nixConfig.luminosity.selections.desktop [
             "aerospace"
             "sway"
           ]

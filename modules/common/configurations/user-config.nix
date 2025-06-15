@@ -9,10 +9,13 @@
 
 let
   cfg = config.luminosity.system.configurations.userConfig;
-  adb = config.luminosity.system.programs.adb;
-  libvirtd = config.luminosity.system.services.libvirtd;
-  networkmanager = config.luminosity.system.services.networkmanager;
   inherit (config.luminosity.selections) shell;
+  inherit (config.luminosity.system.programs) adb;
+
+  inherit (config.luminosity.system.services)
+    libvirtd
+    networkmanager
+    ;
 
 in
 {
@@ -34,6 +37,7 @@ in
                 lib.optionalAttrs (systemOS == "linux") {
                   hashedPasswordFile = user.hashedPasswordFile;
                   isNormalUser = true;
+
                   extraGroups =
                     [
                       "wheel"

@@ -8,7 +8,7 @@
 
 let
   cfg = config.luminosity.home.programs.graphical.foot;
-  shell = osConfig.luminosity.selections.shell or config.luminosity.selections.shell;
+  nixConfig = if (osConfig != null) then osConfig else config;
 
 in
 {
@@ -34,7 +34,10 @@ in
           ];
 
           pad = "5x5";
-          shell = lib.mkIf (shell != null) (lib.getExe pkgs.${shell});
+
+          shell = lib.mkIf (nixConfig.luminosity.selections.shell != null) (
+            lib.getExe pkgs.${nixConfig.luminosity.selections.shell}
+          );
         };
 
         mouse = {

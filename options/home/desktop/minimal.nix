@@ -22,14 +22,15 @@ let
     }
     |> lib.recursiveUpdate extraOptions;
 
+  nixConfig = if (osConfig != null) then osConfig else config;
+
 in
 {
   options.luminosity.home.desktop.minimal = {
     aerospace = {
       enable = mkOption {
         type = types.bool;
-        default =
-          (osConfig.luminosity.selections.desktop or config.luminosity.selections.desktop) == "aerospace";
+        default = nixConfig.luminosity.selections.desktop == "aerospace";
         description = "Whether to enable AeroSpace.";
       };
     };
@@ -44,8 +45,7 @@ in
     sway = {
       enable = mkOption {
         type = types.bool;
-        default =
-          (osConfig.luminosity.selections.desktop or config.luminosity.selections.desktop) == "sway";
+        default = nixConfig.luminosity.selections.desktop == "sway";
         description = "Whether to enable Sway.";
       };
     };
