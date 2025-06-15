@@ -30,7 +30,7 @@ in
     fzf = mkTerminalOption "fzf" { };
 
     git = mkTerminalOption "Git" {
-      email = mkOption {
+      userEmail = mkOption {
         type = types.nullOr types.str;
         default = null;
         description = "Default email for Git.";
@@ -40,6 +40,18 @@ in
         type = types.nullOr types.str;
         default = null;
         description = "Default username for Git.";
+      };
+
+      githubEmail = mkOption {
+        type = types.nullOr types.str;
+        default = config.luminosity.home.programs.terminal.git.userEmail;
+        description = "Git email for the ~/GitHub directory.";
+      };
+
+      githubName = mkOption {
+        type = types.nullOr types.str;
+        default = config.luminosity.home.programs.terminal.git.userName;
+        description = "Git username for the ~/GitHub directory.";
       };
     };
 

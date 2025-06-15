@@ -48,7 +48,7 @@
           enable = true;
 
           git = {
-            email = "125839032+ultomnis@users.noreply.github.com";
+            userEmail = "125839032+ultomnis@users.noreply.github.com";
             userName = "ultomnis";
           };
         };

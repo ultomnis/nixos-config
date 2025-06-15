@@ -9,6 +9,7 @@ in
     # Distributed version control system
     programs.git = {
       enable = true;
+      userEmail = lib.mkIf (cfg.userEmail != null) cfg.userEmail;
       userName = lib.mkIf (cfg.userName != null) cfg.userName;
 
       # Syntax-highlighting pager
@@ -37,7 +38,8 @@ in
             gpg.format = "ssh";
 
             user = {
-              email = lib.mkIf (cfg.email != null) cfg.email;
+              email = lib.mkIf (cfg.githubEmail != null) cfg.githubEmail;
+              name = lib.mkIf (cfg.githubName != null) cfg.githubName;
               signingKey = "${config.home.homeDirectory}/.ssh/github.pub";
             };
           };
