@@ -24,6 +24,11 @@
           unfree.enable = false;
         };
 
+        environment = {
+          enable = true;
+          gtk.enable = false;
+        };
+
         minimal.ssh-agent.enable = true;
       };
 
