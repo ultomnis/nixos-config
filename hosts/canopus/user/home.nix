@@ -17,8 +17,16 @@
   programs.home-manager.enable = true;
 
   luminosity.home = {
-    desktop.environment = {
-      fonts.size = 13;
+    desktop = {
+      configurations = {
+        variables.extraVariables = {
+          HOMEBREW_NO_ANALYTICS = 1;
+        };
+      };
+
+      environment = {
+        fonts.size = 13;
+      };
     };
 
     programs = {
