@@ -16,7 +16,7 @@ in
       enable = true;
 
       settings = {
-        theme = "base16_transparent";
+        theme = "custom_transparent";
 
         editor = {
           cursor-shape = {
@@ -102,6 +102,13 @@ in
             ];
           }
         ];
+      };
+
+      themes = {
+        custom_transparent = {
+          "inherits" = lib.mkIf (cfg.theme != null) cfg.theme;
+          "ui.background" = { };
+        };
       };
     };
   };

@@ -22,7 +22,7 @@ in
         };
 
         colors = {
-          background = "00000033";
+          background = "00000099";
         };
       };
     };

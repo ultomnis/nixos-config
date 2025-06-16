@@ -55,7 +55,14 @@ in
       };
     };
 
-    helix = mkTerminalOption "Helix" { };
+    helix = mkTerminalOption "Helix" {
+      theme = mkOption {
+        type = types.nullOr types.str;
+        default = "rose_pine";
+        description = "Theme for Helix.";
+      };
+    };
+
     libqalculate = mkTerminalOption "libqalculate" { };
     mat2 = mkTerminalOption "mat2" { };
 

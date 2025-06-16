@@ -17,7 +17,7 @@ in
 
       settings = {
         colors = {
-          alpha = 0.2;
+          alpha = 0.6;
           foreground = "ffffff";
           background = "000000";
         };
@@ -28,7 +28,7 @@ in
           ) "${cfg.font.name}:size=${toString cfg.font.size}";
 
           include = lib.optionals (cfg.theme != null) [
-            "${pkgs.foot.themes}/share/foot/themes/rose-pine-moon"
+            "${pkgs.foot.themes}/share/foot/themes/${cfg.theme}"
           ];
 
           pad = "5x5";

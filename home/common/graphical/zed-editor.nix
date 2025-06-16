@@ -18,6 +18,7 @@ in
       extensions = [
         "nix"
         "qml"
+        "rose-pine-theme"
       ];
 
       userSettings = {
@@ -30,8 +31,8 @@ in
           version = "2";
         };
 
-        buffer_font_family = cfg.font.name;
-        buffer_font_size = cfg.font.size;
+        buffer_font_family = lib.mkIf (cfg.font.name != null) cfg.font.name;
+        buffer_font_size = lib.mkIf (cfg.font.size != null) cfg.font.size;
         cursor_blink = false;
         hour_format = "hour24";
 
@@ -134,22 +135,23 @@ in
           blinking = "off";
         };
 
+        theme = lib.mkIf (cfg.theme != null) cfg.theme;
         vim_mode = true;
 
         "experimental.theme_overrides" = {
-          "background" = "#00000033";
+          "background" = "#00000099";
           "background.appearance" = "blurred";
           "editor.active_line.background" = "#ffffff00";
           "editor.background" = "#ffffff00";
           "editor.gutter.background" = "#ffffff00";
-          "elevated_surface.background" = "#00000033";
-          "panel.background" = "#00000033";
-          "status_bar.background" = "#00000033";
+          "elevated_surface.background" = "#00000099";
+          "panel.background" = "#00000099";
+          "status_bar.background" = "#00000099";
           "tab_bar.background" = "#ffffff00";
-          "tab.active_background" = "#00000033";
+          "tab.active_background" = "#00000099";
           "tab.inactive_background" = "#ffffff00";
           "terminal.background" = "#ffffff00";
-          "title_bar.background" = "#00000033";
+          "title_bar.background" = "#00000099";
           "toolbar.background" = "#ffffff00";
         };
       };

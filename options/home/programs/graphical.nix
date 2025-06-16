@@ -85,7 +85,7 @@ in
 
       theme = {
         type = types.nullOr types.str;
-        default = "rose-pine-moon";
+        default = "rose-pine";
         description = "Theme for foot.";
       };
     };
@@ -159,7 +159,7 @@ in
 
       theme = mkOption {
         type = types.nullOr types.str;
-        default = "rose-pine-moon";
+        default = "rose-pine";
         description = "Theme for WezTerm.";
       };
     };
@@ -177,6 +177,12 @@ in
           default = config.luminosity.home.desktop.environment.fonts.size;
           description = "Font size for Zed.";
         };
+      };
+
+      theme = mkOption {
+        type = types.nullOr types.str;
+        default = "Rosé Pine";
+        description = "Theme for Zed.";
       };
     };
   };

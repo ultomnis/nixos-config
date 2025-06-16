@@ -34,7 +34,7 @@ in
         config.macos_window_background_blur = 60
         config.max_fps = ${toString cfg.maxFPS}
         config.webgpu_power_preference = 'HighPerformance'
-        config.window_background_opacity = 0.2
+        config.window_background_opacity = 0.6
 
         return config
       '';
