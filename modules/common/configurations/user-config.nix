@@ -1,6 +1,6 @@
 {
   config,
-  hostname,
+  hostName,
   lib,
   pkgs,
   systemOS,
@@ -24,7 +24,7 @@ in
         users =
           cfg.users
           |> map (user: {
-            name = user.name;
+            inherit (user) name;
 
             value =
               {
@@ -34,7 +34,7 @@ in
               }
               |> lib.recursiveUpdate (
                 lib.optionalAttrs (systemOS == "linux") {
-                  hashedPasswordFile = user.hashedPasswordFile;
+                  inherit (user) hashedPasswordFile;
                   isNormalUser = true;
 
                   extraGroups =
@@ -65,11 +65,11 @@ in
       cfg.users
       |> builtins.filter (user: user.homeManager)
       |> map (user: {
-        name = user.name;
+        inherit (user) name;
 
         value = {
           imports = [
-            ../../../hosts/${hostname}/${user.name}/home.nix
+            ../../../hosts/${hostName}/${user.name}/home.nix
           ];
         };
       })

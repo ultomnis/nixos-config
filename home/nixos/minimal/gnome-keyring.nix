@@ -1,12 +1,12 @@
-{ config, lib, ... }:
+{ config, ... }:
 
 let
   cfg = config.luminosity.home.desktop.minimal.gnome-keyring;
 
 in
 {
-  config = lib.mkIf cfg.enable {
-    # Secret Service provider
-    services.gnome-keyring.enable = true;
+  # Secret Service provider
+  services.gnome-keyring = {
+    inherit (cfg) enable;
   };
 }

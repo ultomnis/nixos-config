@@ -1,19 +1,17 @@
-{ config, lib, ... }:
+{ config, ... }:
 
 let
   cfg = config.luminosity.home.programs.terminal.tealdeer;
 
 in
 {
-  config = lib.mkIf cfg.enable {
-    # Fast implementation of tldr
-    programs.tealdeer = {
-      enable = true;
+  # Fast implementation of tldr
+  programs.tealdeer = {
+    inherit (cfg) enable;
 
-      settings = {
-        updates = {
-          auto_update = true;
-        };
+    settings = {
+      updates = {
+        auto_update = true;
       };
     };
   };

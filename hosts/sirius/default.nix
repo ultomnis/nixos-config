@@ -1,6 +1,6 @@
 {
   config,
-  hostname,
+  hostName,
   inputs,
   lib,
   ...
@@ -18,7 +18,9 @@
     ../../secrets/modules.nix
   ];
 
-  networking.hostName = hostname; # Define your hostname
+  networking = {
+    inherit hostName;
+  };
 
   # Do NOT change this value unless you have manually inspected all the changes it would make to your configuration,
   # and migrated your data accordingly.
@@ -31,7 +33,7 @@
       gpu = "amd";
 
       monitors = lib.singleton {
-        output = "DP-2";
+        name = "DP-2";
         height = 1920;
         width = 1080;
         pos_x = 0;

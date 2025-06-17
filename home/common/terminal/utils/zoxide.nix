@@ -1,18 +1,16 @@
-{ config, lib, ... }:
+{ config, ... }:
 
 let
   cfg = config.luminosity.home.programs.terminal.zoxide;
 
 in
 {
-  config = lib.mkIf cfg.enable {
-    # Alternative to cd
-    programs.zoxide = {
-      enable = true;
+  # Alternative to cd
+  programs.zoxide = {
+    inherit (cfg) enable;
 
-      options = [
-        "--cmd cd"
-      ];
-    };
+    options = [
+      "--cmd cd"
+    ];
   };
 }

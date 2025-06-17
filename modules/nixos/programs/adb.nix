@@ -1,12 +1,12 @@
-{ config, lib, ... }:
+{ config, ... }:
 
 let
   cfg = config.luminosity.system.programs.adb;
 
 in
 {
-  config = lib.mkIf cfg.enable {
-    # Android Debug Bridge
-    programs.adb.enable = true;
+  # Android Debug Bridge
+  programs.adb = {
+    inherit (cfg) enable;
   };
 }

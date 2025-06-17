@@ -1,12 +1,12 @@
-{ config, lib, ... }:
+{ config, ... }:
 
 let
   cfg = config.luminosity.system.programs.zsh;
 
 in
 {
-  config = lib.mkIf cfg.enable {
-    # Interactive login shell
-    programs.zsh.enable = true;
+  # Interactive login shell
+  programs.zsh = {
+    inherit (cfg) enable;
   };
 }

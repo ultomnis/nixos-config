@@ -61,7 +61,7 @@
       nixosConfigurations = {
         sirius = mkNixosConfig {
           inherit customLib;
-          hostname = "sirius";
+          hostName = "sirius";
           systemArch = "x86_64";
           systemOS = "linux";
 
@@ -76,7 +76,7 @@
       darwinConfigurations = {
         canopus = mkDarwinConfig {
           inherit customLib;
-          hostname = "canopus";
+          hostName = "canopus";
           systemArch = "aarch64";
           systemOS = "darwin";
 
@@ -90,7 +90,7 @@
       homeConfigurations = {
         "deck@alpha-centauri" = mkHomeConfig {
           inherit customLib;
-          hostname = "alpha-centauri";
+          hostName = "alpha-centauri";
           systemArch = "x86_64";
           systemOS = "linux";
           username = "deck";

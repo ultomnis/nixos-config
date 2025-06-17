@@ -4,7 +4,7 @@
   mkNixosConfig =
     {
       customLib,
-      hostname,
+      hostName,
       systemArch,
       systemOS,
       extraModules ? [ ],
@@ -16,7 +16,7 @@
       specialArgs = {
         inherit
           customLib
-          hostname
+          hostName
           inputs
           systemOS
           ;
@@ -30,7 +30,7 @@
       inherit specialArgs;
 
       modules = [
-        ../hosts/${hostname}
+        ../hosts/${hostName}
 
         {
           home-manager = {
@@ -45,7 +45,7 @@
   mkDarwinConfig =
     {
       customLib,
-      hostname,
+      hostName,
       systemArch,
       systemOS,
       extraModules ? [ ],
@@ -57,7 +57,7 @@
       specialArgs = {
         inherit
           customLib
-          hostname
+          hostName
           inputs
           systemOS
           ;
@@ -71,7 +71,7 @@
       inherit specialArgs;
 
       modules = [
-        ../hosts/${hostname}
+        ../hosts/${hostName}
 
         {
           home-manager = {
@@ -86,7 +86,7 @@
   mkHomeConfig =
     {
       customLib,
-      hostname,
+      hostName,
       systemArch,
       systemOS,
       username,
@@ -104,7 +104,7 @@
       extraSpecialArgs = {
         inherit
           customLib
-          hostname
+          hostName
           inputs
           systemOS
           username
@@ -112,7 +112,7 @@
       };
 
       modules = [
-        ../hosts/${hostname}/${username}
+        ../hosts/${hostName}/${username}
       ] ++ extraModules;
     };
 }

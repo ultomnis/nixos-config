@@ -1,21 +1,19 @@
-{ config, lib, ... }:
+{ config, ... }:
 
 let
   cfg = config.luminosity.home.programs.terminal.ripgrep;
 
 in
 {
-  config = lib.mkIf cfg.enable {
-    # Alternative to grep
-    programs.ripgrep = {
-      enable = true;
+  # Alternative to grep
+  programs.ripgrep = {
+    inherit (cfg) enable;
 
-      arguments = [
-        "--glob=!.git/"
-        "--max-columns=150"
-        "--max-columns-preview"
-        "--smart-case"
-      ];
-    };
+    arguments = [
+      "--glob=!.git/"
+      "--max-columns=150"
+      "--max-columns-preview"
+      "--smart-case"
+    ];
   };
 }

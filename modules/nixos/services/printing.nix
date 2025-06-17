@@ -1,15 +1,13 @@
-{ config, lib, ... }:
+{ config, ... }:
 
 let
   cfg = config.luminosity.system.services.printing;
 
 in
 {
-  config = lib.mkIf cfg.enable {
-    # Local print service
-    services.printing = {
-      enable = true;
-      stateless = true;
-    };
+  # Local print service
+  services.printing = {
+    inherit (cfg) enable;
+    stateless = true;
   };
 }

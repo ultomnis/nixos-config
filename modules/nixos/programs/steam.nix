@@ -1,4 +1,4 @@
-{ config, lib, ... }:
+{ config, ... }:
 
 let
   cfg = config.luminosity.system.programs.steam;
@@ -6,12 +6,10 @@ let
 
 in
 {
-  config = lib.mkIf (cfg.enable && unfree.enable) {
-    # Steam client
-    programs.steam = {
-      enable = true;
-      localNetworkGameTransfers.openFirewall = true;
-      remotePlay.openFirewall = true;
-    };
+  # Steam client
+  programs.steam = {
+    enable = cfg.enable && unfree.enable;
+    localNetworkGameTransfers.openFirewall = true;
+    remotePlay.openFirewall = true;
   };
 }

@@ -9,10 +9,13 @@ let
 
 in
 {
-  mapSwayMonitors = mapMonitors.mapSwayMonitors;
-  mkDarwinConfig = systemConfig.mkDarwinConfig;
-  mkHomeConfig = systemConfig.mkHomeConfig;
-  mkNixosConfig = systemConfig.mkNixosConfig;
+  inherit (mapMonitors) mapSwayMonitors;
+
+  inherit (systemConfig)
+    mkDarwinConfig
+    mkHomeConfig
+    mkNixosConfig
+    ;
 
   selectionTypes = import ./selectionTypes.nix {
     inherit lib;

@@ -10,15 +10,13 @@ let
 
 in
 {
-  config = lib.mkIf cfg.enable {
-    services.tailscale =
-      {
-        enable = true;
+  services.tailscale =
+    {
+      inherit (cfg) enable;
+    }
+    |> lib.recursiveUpdate (
+      lib.optionalAttrs (systemOS == "linux") {
+        useRoutingFeatures = cfg.useRoutingFeatures;
       }
-      |> lib.recursiveUpdate (
-        lib.optionalAttrs (systemOS == "linux") {
-          useRoutingFeatures = cfg.useRoutingFeatures;
-        }
-      );
-  };
+    );
 }

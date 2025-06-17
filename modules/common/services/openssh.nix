@@ -1,18 +1,16 @@
-{ config, lib, ... }:
+{ config, ... }:
 
 let
   cfg = config.luminosity.system.services.openssh;
 
 in
 {
-  config = lib.mkIf cfg.enable {
-    services.openssh = {
-      enable = true;
+  services.openssh = {
+    inherit (cfg) enable;
 
-      extraConfig = ''
-        PasswordAuthentication no
-        PermitRootLogin no
-      '';
-    };
+    extraConfig = ''
+      PasswordAuthentication no
+      PermitRootLogin no
+    '';
   };
 }

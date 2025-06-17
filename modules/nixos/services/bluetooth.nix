@@ -1,18 +1,16 @@
-{ config, lib, ... }:
+{ config, ... }:
 
 let
   cfg = config.luminosity.system.services.bluetooth;
 
 in
 {
-  config = lib.mkIf cfg.enable {
-    hardware.bluetooth = {
-      enable = true;
+  hardware.bluetooth = {
+    inherit (cfg) enable;
 
-      settings = {
-        General = {
-          FastConnectable = true;
-        };
+    settings = {
+      General = {
+        FastConnectable = true;
       };
     };
   };

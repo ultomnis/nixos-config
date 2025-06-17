@@ -1,12 +1,12 @@
-{ config, lib, ... }:
+{ config, ... }:
 
 let
   cfg = config.luminosity.system.programs.fish;
 
 in
 {
-  config = lib.mkIf cfg.enable {
-    # The friendly interactive shell
-    programs.fish.enable = true;
+  # The friendly interactive shell
+  programs.fish = {
+    inherit (cfg) enable;
   };
 }

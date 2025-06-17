@@ -1,22 +1,20 @@
-{ config, lib, ... }:
+{ config, ... }:
 
 let
   cfg = config.luminosity.home.programs.terminal.ssh;
 
 in
 {
-  config = lib.mkIf cfg.enable {
-    # Secure Shell
-    programs.ssh = {
-      enable = true;
+  # Secure Shell
+  programs.ssh = {
+    inherit (cfg) enable;
 
-      matchBlocks = {
-        "github" = {
-          user = "git";
-          hostname = "github.com";
-          identitiesOnly = true;
-          identityFile = "${config.home.homeDirectory}/.ssh/github";
-        };
+    matchBlocks = {
+      "github" = {
+        user = "git";
+        hostname = "github.com";
+        identitiesOnly = true;
+        identityFile = "${config.home.homeDirectory}/.ssh/github";
       };
     };
   };

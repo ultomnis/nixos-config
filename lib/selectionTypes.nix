@@ -31,7 +31,7 @@ in
   monitors.type = types.listOf (
     types.submodule {
       options = {
-        output = mkOption {
+        name = mkOption {
           type = types.str;
           description = "Display output.";
         };

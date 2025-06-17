@@ -3,7 +3,7 @@
     monitors:
     monitors
     |> map (monitor: {
-      name = monitor.output;
+      inherit (monitor) name;
 
       value = {
         mode = "${toString monitor.height}x${toString monitor.width}@${toString monitor.rate}Hz";

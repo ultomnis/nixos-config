@@ -1,20 +1,18 @@
-{ config, lib, ... }:
+{ config, ... }:
 
 let
   cfg = config.luminosity.home.programs.terminal.bat;
 
 in
 {
-  config = lib.mkIf cfg.enable {
-    # Alternative to cat
-    programs.bat = {
-      enable = true;
+  # Alternative to cat
+  programs.bat = {
+    inherit (cfg) enable;
 
-      config = {
-        theme = "base16";
-        squeeze-blank = true;
-        squeeze-limit = "1";
-      };
+    config = {
+      theme = "base16";
+      squeeze-blank = true;
+      squeeze-limit = "1";
     };
   };
 }

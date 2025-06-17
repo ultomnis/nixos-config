@@ -1,12 +1,12 @@
-{ config, lib, ... }:
+{ config, ... }:
 
 let
   cfg = config.luminosity.home.desktop.minimal.ssh-agent;
 
 in
 {
-  config = lib.mkIf cfg.enable {
-    # OpenSSH private key agent
-    services.ssh-agent.enable = true;
+  # OpenSSH private key agent
+  services.ssh-agent = {
+    inherit (cfg) enable;
   };
 }

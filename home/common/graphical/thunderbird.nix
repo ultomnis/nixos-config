@@ -1,42 +1,35 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
-}:
+{ config, pkgs, ... }:
 
 let
   cfg = config.luminosity.home.programs.graphical.thunderbird;
 
 in
 {
-  config = lib.mkIf cfg.enable {
-    # Email client
-    programs.thunderbird = {
-      enable = true;
+  # Email client
+  programs.thunderbird = {
+    inherit (cfg) enable;
 
-      package = pkgs.thunderbird.override {
-        extraPolicies = {
-          DisableTelemetry = true;
-        };
+    package = pkgs.thunderbird.override {
+      extraPolicies = {
+        DisableTelemetry = true;
       };
-
-      profiles =
-        cfg.profiles
-        |> map (profile: {
-          name = profile.name;
-
-          value = {
-            isDefault = profile.isDefault;
-
-            search = {
-              default = "ddg";
-              privateDefault = "ddg";
-              force = true;
-            };
-          };
-        })
-        |> builtins.listToAttrs;
     };
+
+    profiles =
+      cfg.profiles
+      |> map (profile: {
+        inherit (profile) name;
+
+        value = {
+          inherit (profile) isDefault;
+
+          search = {
+            default = "ddg";
+            privateDefault = "ddg";
+            force = true;
+          };
+        };
+      })
+      |> builtins.listToAttrs;
   };
 }

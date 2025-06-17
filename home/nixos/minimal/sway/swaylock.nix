@@ -5,15 +5,13 @@ let
 
 in
 {
-  config = lib.mkIf cfg.enable {
-    # Wayland screen locker
-    programs.swaylock = {
-      enable = true;
+  # Wayland screen locker
+  programs.swaylock = {
+    inherit (cfg) enable;
 
-      settings = {
-        image = lib.mkIf (cfg.wallpaper != null) cfg.wallpaper;
-        show-failed-attempts = true;
-      };
+    settings = {
+      image = lib.mkIf (cfg.wallpaper != null) cfg.wallpaper;
+      show-failed-attempts = true;
     };
   };
 }

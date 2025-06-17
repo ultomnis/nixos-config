@@ -1,12 +1,12 @@
-{ config, lib, ... }:
+{ config, ... }:
 
 let
   cfg = config.luminosity.system.services.libvirtd;
 
 in
 {
-  config = lib.mkIf cfg.enable {
-    # libvirt management daemon
-    virtualisation.libvirtd.enable = true;
+  # libvirt management daemon
+  virtualisation.libvirtd = {
+    inherit (cfg) enable;
   };
 }

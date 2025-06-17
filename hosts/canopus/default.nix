@@ -1,4 +1,4 @@
-{ hostname, lib, ... }:
+{ hostName, lib, ... }:
 
 {
   imports = [
@@ -11,8 +11,8 @@
   ];
 
   networking = {
-    computerName = hostname;
-    hostName = hostname; # Define your hostname
+    computerName = hostName;
+    inherit hostName;
   };
 
   # Do NOT change this value unless you have manually inspected all the changes it would make to your configuration,
