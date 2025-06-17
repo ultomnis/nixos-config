@@ -49,6 +49,7 @@ in
     gnome-keyring = mkMinimalOption "GNOME Keyring" { };
     mako = mkMinimalOption "mako" { };
     polkit-gnome = mkMinimalOption "Polkit GNOME" { };
+    quickshell = mkMinimalOption "Quickshell" { };
     ssh-agent = mkMinimalOption "SSH Agent" { };
 
     sway = {
