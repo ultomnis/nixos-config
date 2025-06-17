@@ -2,10 +2,10 @@
 
 {
   imports = [
-    ../../home/common
-    ../../home/nixos
-    ../../options/common
-    ../../options/home
+    ../../../home/common
+    ../../../home/nixos
+    ../../../options/common
+    ../../../options/home
   ];
 
   home = {
