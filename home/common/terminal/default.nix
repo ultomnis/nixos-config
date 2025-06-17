@@ -6,6 +6,7 @@
     ./ffmpeg.nix
     ./git.nix
     ./helix.nix
+    ./kew.nix
     ./libqalculate.nix
     ./mat2.nix
     ./ollama.nix

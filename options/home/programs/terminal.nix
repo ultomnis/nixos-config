@@ -63,6 +63,7 @@ in
       };
     };
 
+    kew = mkTerminalOption "kew" { };
     libqalculate = mkTerminalOption "libqalculate" { };
     mat2 = mkTerminalOption "mat2" { };
 
