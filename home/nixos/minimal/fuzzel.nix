@@ -1,8 +1,7 @@
-{ config, lib, ... }:
+{ config, ... }:
 
 let
   cfg = config.luminosity.home.desktop.minimal.fuzzel;
-  inherit (config.luminosity.home.desktop.environment) gtk;
 
 in
 {
@@ -11,10 +10,6 @@ in
     inherit (cfg) enable;
 
     settings = {
-      main = {
-        icon-theme = lib.mkIf (gtk.icon.name != null) gtk.icon.name;
-      };
-
       border = {
         width = 2;
         radius = 0;

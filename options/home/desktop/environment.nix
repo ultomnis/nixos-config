@@ -73,20 +73,6 @@ in
           description = "Font size for GTK.";
         };
       };
-
-      icon = {
-        package = mkOption {
-          type = types.nullOr types.package;
-          default = pkgs.papirus-icon-theme;
-          description = "Icon theme package.";
-        };
-
-        name = mkOption {
-          type = types.nullOr types.str;
-          default = "Papirus";
-          description = "Icon theme name.";
-        };
-      };
     };
 
     cursors = mkEnvironmentOption "Cursor configuration" {

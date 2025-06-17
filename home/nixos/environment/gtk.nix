@@ -20,10 +20,5 @@ in
     gtk4.extraConfig = {
       gtk-application-prefer-dark-theme = true;
     };
-
-    iconTheme = {
-      package = lib.mkIf (cfg.icon.package != null) cfg.icon.package;
-      name = lib.mkIf (cfg.icon.name != null) cfg.icon.name;
-    };
   };
 }
