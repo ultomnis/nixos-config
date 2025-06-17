@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ lib, username, ... }:
 
 {
   imports = [
@@ -9,8 +9,8 @@
   ];
 
   home = {
-    username = "deck";
-    homeDirectory = "/home/deck";
+    inherit username;
+    homeDirectory = "/home/${username}";
     stateVersion = "24.11";
   };
 

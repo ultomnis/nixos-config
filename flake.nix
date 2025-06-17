@@ -88,11 +88,12 @@
       };
 
       homeConfigurations = {
-        deck = mkHomeConfig {
+        "deck@alpha-centauri" = mkHomeConfig {
           inherit customLib;
           hostname = "alpha-centauri";
           systemArch = "x86_64";
           systemOS = "linux";
+          username = "deck";
         };
       };
     };

@@ -22,9 +22,11 @@
           ;
       };
 
+      system = "${systemArch}-${systemOS}";
+
     in
     nixpkgs.lib.nixosSystem {
-      system = "${systemArch}-${systemOS}";
+      inherit system;
       inherit specialArgs;
 
       modules = [
@@ -61,9 +63,11 @@
           ;
       };
 
+      system = "${systemArch}-${systemOS}";
+
     in
     nix-darwin.lib.darwinSystem {
-      system = "${systemArch}-${systemOS}";
+      inherit system;
       inherit specialArgs;
 
       modules = [
@@ -85,15 +89,17 @@
       hostname,
       systemArch,
       systemOS,
+      username,
       extraModules ? [ ],
     }:
 
     let
       inherit (inputs) home-manager nixpkgs;
+      system = "${systemArch}-${systemOS}";
 
     in
     home-manager.lib.homeManagerConfiguration {
-      pkgs = nixpkgs.legacyPackages."${systemArch}-${systemOS}";
+      pkgs = nixpkgs.legacyPackages.${system};
 
       extraSpecialArgs = {
         inherit
@@ -101,11 +107,12 @@
           hostname
           inputs
           systemOS
+          username
           ;
       };
 
       modules = [
-        ../hosts/${hostname}
+        ../hosts/${hostname}/${username}
       ] ++ extraModules;
     };
 }
