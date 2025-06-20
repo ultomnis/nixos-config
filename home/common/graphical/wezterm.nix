@@ -17,18 +17,18 @@ in
     extraConfig = ''
       local config = wezterm.config_builder()
 
-      ${if (cfg.theme != null) then "config.color_scheme = '${cfg.theme}'" else ""}
+      ${lib.optionalString (cfg.theme != null) "config.color_scheme = '${cfg.theme}'"}
 
       config.colors = {
         foreground = '#ffffff',
         background = '#000000',
       }
 
-      ${if (cfg.shell != null) then "config.default_prog = { '${lib.getExe pkgs.${cfg.shell}}' }" else ""}
+      ${lib.optionalString (cfg.shell != null) "config.default_prog = { '${lib.getExe pkgs.${cfg.shell}}' }"}
 
       config.enable_tab_bar = false
-      ${if (cfg.font.name != null) then "config.font = wezterm.font '${cfg.font.name}'" else ""}
-      ${if (cfg.font.size != null) then "config.font_size = ${toString cfg.font.size}" else ""}
+      ${lib.optionalString (cfg.font.name != null) "config.font = wezterm.font '${cfg.font.name}'"}
+      ${lib.optionalString (cfg.font.size != null) "config.font_size = ${toString cfg.font.size}"}
       config.front_end = 'WebGpu'
       config.macos_window_background_blur = 60
       config.max_fps = ${toString cfg.maxFPS}
