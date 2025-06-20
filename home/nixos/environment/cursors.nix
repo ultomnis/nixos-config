@@ -5,15 +5,10 @@ let
 
 in
 {
-  home.pointerCursor =
-    {
-      size = 24;
-      gtk.enable = true;
-    }
-    |> lib.recursiveUpdate (
-      lib.optionalAttrs (cfg.package != null && cfg.name != null) {
-        name = cfg.name;
-        package = cfg.package;
-      }
-    );
+  home.pointerCursor = {
+    name = lib.mkIf (cfg.name != null) cfg.name;
+    package = lib.mkIf (cfg.package != null) cfg.package;
+    size = 24;
+    gtk.enable = true;
+  };
 }

@@ -32,16 +32,11 @@ in
           "clock"
         ];
 
-        "custom/menu" =
-          {
-            format = "";
-            tooltip = false;
-          }
-          |> lib.recursiveUpdate (
-            lib.optionalAttrs (cfg.menuCommand != null) {
-              on-click = cfg.menuCommand;
-            }
-          );
+        "custom/menu" = {
+          format = "";
+          tooltip = false;
+          on-click = lib.mkIf (cfg.menuCommand != null) cfg.menuCommand;
+        };
 
         "sway/workspaces" = {
           format = "{icon}";

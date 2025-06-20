@@ -104,15 +104,10 @@ in
     };
 
     themes = {
-      custom_transparent =
-        {
-          "ui.background" = { };
-        }
-        |> lib.recursiveUpdate (
-          lib.optionalAttrs (cfg.theme != null) {
-            "inherits" = cfg.theme;
-          }
-        );
+      custom_transparent = {
+        "inherits" = lib.mkIf (cfg.theme != null) cfg.theme;
+        "ui.background" = { };
+      };
     };
   };
 }

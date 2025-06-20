@@ -8,15 +8,10 @@ in
   gtk = {
     inherit (cfg) enable;
 
-    font =
-      lib.optionalAttrs (cfg.font.name != null) {
-        name = cfg.font.name;
-      }
-      |> lib.recursiveUpdate (
-        lib.optionalAttrs (cfg.font.size != null) {
-          size = cfg.font.size;
-        }
-      );
+    font = {
+      name = lib.mkIf (cfg.font.name != null) cfg.font.name;
+      size = lib.mkIf (cfg.font.size != null) cfg.font.size;
+    };
 
     gtk3.extraConfig = {
       gtk-application-prefer-dark-theme = true;

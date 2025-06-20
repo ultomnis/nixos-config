@@ -9,14 +9,9 @@ in
   programs.swaylock = {
     inherit (cfg) enable;
 
-    settings =
-      {
-        show-failed-attempts = true;
-      }
-      |> lib.recursiveUpdate (
-        lib.optionalAttrs (cfg.wallpaper != null) {
-          image = cfg.wallpaper;
-        }
-      );
+    settings = {
+      image = lib.mkIf (cfg.wallpaper != null) cfg.wallpaper;
+      show-failed-attempts = true;
+    };
   };
 }

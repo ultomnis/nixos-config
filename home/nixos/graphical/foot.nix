@@ -21,21 +21,16 @@ in
         background = "000000";
       };
 
-      main =
-        {
-          include = lib.optional (cfg.theme != null) "${pkgs.foot.themes}/share/foot/themes/${cfg.theme}";
-          pad = "5x5";
-        }
-        |> lib.recursiveUpdate (
-          lib.optionalAttrs (cfg.font.name != null && cfg.font.size != null) {
-            font = "${cfg.font.name}:size=${toString cfg.font.size}";
-          }
-        )
-        |> lib.recursiveUpdate (
-          lib.optionalAttrs (cfg.shell != null) {
-            shell = lib.getExe pkgs.${cfg.shell};
-          }
-        );
+      main = {
+        font = lib.mkIf (
+          cfg.font.name != null && cfg.font.size != null
+        ) "${cfg.font.name}:size=${toString cfg.font.size}";
+
+        include = lib.optional (cfg.theme != null) "${pkgs.foot.themes}/share/foot/themes/${cfg.theme}";
+
+        pad = "5x5";
+        shell = lib.mkIf (cfg.shell != null) (lib.getExe pkgs.${cfg.shell});
+      };
 
       mouse = {
         hide-when-typing = "yes";

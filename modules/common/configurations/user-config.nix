@@ -29,17 +29,9 @@ in
             value =
               {
                 home = if (systemOS == "darwin") then "/Users/${user.name}" else "/home/${user.name}";
+                shell = lib.mkIf (user.shell != null) pkgs.${user.shell};
+                uid = lib.mkIf (user.uid != null) user.uid;
               }
-              |> lib.recursiveUpdate (
-                lib.optionalAttrs (user.shell != null) {
-                  shell = pkgs.${user.shell};
-                }
-              )
-              |> lib.recursiveUpdate (
-                lib.optionalAttrs (user.uid != null) {
-                  uid = user.uid;
-                }
-              )
               |> lib.recursiveUpdate (
                 lib.optionalAttrs (systemOS == "linux") {
                   inherit (user) hashedPasswordFile;
