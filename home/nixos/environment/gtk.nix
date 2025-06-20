@@ -5,26 +5,25 @@ let
 
 in
 {
-  gtk =
-    {
-      inherit (cfg) enable;
+  gtk = {
+    inherit (cfg) enable;
 
-      gtk3.extraConfig = {
-        gtk-application-prefer-dark-theme = true;
-      };
-
-      gtk4.extraConfig = {
-        gtk-application-prefer-dark-theme = true;
-      };
-    }
-    |> lib.recursiveUpdate (
+    font =
       lib.optionalAttrs (cfg.font.name != null) {
-        font.name = cfg.font.name;
+        name = cfg.font.name;
       }
-    )
-    |> lib.recursiveUpdate (
-      lib.optionalAttrs (cfg.font.size != null) {
-        font.size = cfg.font.size;
-      }
-    );
+      |> lib.recursiveUpdate (
+        lib.optionalAttrs (cfg.font.size != null) {
+          size = cfg.font.size;
+        }
+      );
+
+    gtk3.extraConfig = {
+      gtk-application-prefer-dark-theme = true;
+    };
+
+    gtk4.extraConfig = {
+      gtk-application-prefer-dark-theme = true;
+    };
+  };
 }
