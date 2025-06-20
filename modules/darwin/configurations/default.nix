@@ -1,11 +1,7 @@
 {
   imports = [
-    ./amdgpu.nix
-    ./boot.nix
-    ./locale.nix
     ./nix-config.nix
     ./security.nix
     ./user-config.nix
-    ./zram-swap.nix
   ];
 }

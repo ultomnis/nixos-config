@@ -6,10 +6,6 @@ let
 in
 {
   config = lib.mkIf cfg.enable {
-    security = {
-      sudo.extraConfig = ''
-        Defaults passprompt="What? Make it yourself:"
-      '';
-    };
+    security.pam.services.sudo_local.touchIdAuth = true;
   };
 }

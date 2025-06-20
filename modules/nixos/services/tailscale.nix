@@ -5,7 +5,5 @@ let
 
 in
 {
-  services.tailscale = {
-    inherit (cfg) enable;
-  };
+  services.tailscale.useRoutingFeatures = cfg.useRoutingFeatures;
 }

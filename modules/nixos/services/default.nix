@@ -10,5 +10,6 @@
     ./printing.nix
     ./ratbagd.nix
     ./rtkit.nix
+    ./tailscale.nix
   ];
 }

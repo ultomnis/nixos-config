@@ -5,8 +5,7 @@
     {
       customLib,
       hostName,
-      systemArch,
-      systemOS,
+      system,
       extraModules ? [ ],
     }:
 
@@ -18,11 +17,8 @@
           customLib
           hostName
           inputs
-          systemOS
           ;
       };
-
-      system = "${systemArch}-${systemOS}";
 
     in
     nixpkgs.lib.nixosSystem {
@@ -46,8 +42,7 @@
     {
       customLib,
       hostName,
-      systemArch,
-      systemOS,
+      system,
       extraModules ? [ ],
     }:
 
@@ -59,11 +54,8 @@
           customLib
           hostName
           inputs
-          systemOS
           ;
       };
-
-      system = "${systemArch}-${systemOS}";
 
     in
     nix-darwin.lib.darwinSystem {
@@ -87,15 +79,13 @@
     {
       customLib,
       hostName,
-      systemArch,
-      systemOS,
+      system,
       username,
       extraModules ? [ ],
     }:
 
     let
       inherit (inputs) home-manager nixpkgs;
-      system = "${systemArch}-${systemOS}";
 
     in
     home-manager.lib.homeManagerConfiguration {
@@ -106,7 +96,6 @@
           customLib
           hostName
           inputs
-          systemOS
           username
           ;
       };

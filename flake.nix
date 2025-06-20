@@ -62,8 +62,7 @@
         sirius = mkNixosConfig {
           inherit customLib;
           hostName = "sirius";
-          systemArch = "x86_64";
-          systemOS = "linux";
+          system = "x86_64-linux";
 
           extraModules = [
             agenix.nixosModules.default
@@ -77,8 +76,7 @@
         canopus = mkDarwinConfig {
           inherit customLib;
           hostName = "canopus";
-          systemArch = "aarch64";
-          systemOS = "darwin";
+          system = "aarch64-darwin";
 
           extraModules = [
             agenix.darwinModules.default
@@ -91,8 +89,7 @@
         "deck@alpha-centauri" = mkHomeConfig {
           inherit customLib;
           hostName = "alpha-centauri";
-          systemArch = "x86_64";
-          systemOS = "linux";
+          system = "x86_64-linux";
           username = "deck";
         };
       };
