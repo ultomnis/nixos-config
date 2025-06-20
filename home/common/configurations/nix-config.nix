@@ -12,7 +12,7 @@ let
 in
 {
   config = lib.mkIf cfg.enable {
-    nix =
+    nix = lib.mkMerge [
       {
         # Automated garbage collection for user-specific generations
         gc = {
@@ -21,18 +21,18 @@ in
           options = "--delete-older-than 30d";
         };
       }
-      |> lib.recursiveUpdate (
-        lib.optionalAttrs (osConfig == null) {
-          package = pkgs.nix;
 
-          settings = {
-            experimental-features = [
-              "flakes"
-              "nix-command"
-              "pipe-operators"
-            ];
-          };
-        }
-      );
+      (lib.mkIf (osConfig == null) {
+        package = pkgs.nix;
+
+        settings = {
+          experimental-features = [
+            "flakes"
+            "nix-command"
+            "pipe-operators"
+          ];
+        };
+      })
+    ];
   };
 }

@@ -31,7 +31,7 @@ in
         };
       };
 
-      output =
+      output = lib.mkMerge [
         {
           "*" = {
             allow_tearing = "yes";
@@ -39,7 +39,9 @@ in
             max_render_time = "off";
           };
         }
-        |> lib.recursiveUpdate (customLib.mapSwayMonitors cfg.monitors);
+
+        (customLib.mapSwayMonitors cfg.monitors)
+      ];
 
       window = {
         titlebar = false;

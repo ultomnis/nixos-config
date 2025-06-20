@@ -31,11 +31,14 @@ in
         let
           extensionSetting =
             extensionName: extraOptions:
-            {
-              installation_mode = "force_installed";
-              install_url = "https://addons.mozilla.org/firefox/downloads/latest/${extensionName}/latest.xpi";
-            }
-            |> lib.recursiveUpdate extraOptions;
+            lib.mkMerge [
+              {
+                installation_mode = "force_installed";
+                install_url = "https://addons.mozilla.org/firefox/downloads/latest/${extensionName}/latest.xpi";
+              }
+
+              extraOptions
+            ];
         in
         {
           "*" = {
