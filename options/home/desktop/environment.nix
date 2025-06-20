@@ -8,6 +8,7 @@
 let
   inherit (lib)
     mkOption
+    mkPackageOption
     types
     ;
 
@@ -28,10 +29,13 @@ in
     dconf = mkEnvironmentOption "dconf" { };
 
     fonts = mkEnvironmentOption "font configuration" {
-      extraPackages = mkOption {
-        type = types.listOf types.package;
-        default = [ ];
-        description = "Extra font packages to install.";
+      package = mkPackageOption pkgs "font" {
+        default = [
+          "nerd-fonts"
+          "hack"
+        ];
+
+        nullable = true;
       };
 
       regular = mkOption {
@@ -57,6 +61,12 @@ in
         default = 12;
         description = "Font size.";
       };
+
+      extraPackages = mkOption {
+        type = types.listOf types.package;
+        default = [ ];
+        description = "Extra font packages to install.";
+      };
     };
 
     gtk = mkEnvironmentOption "GTK configuration" {
@@ -76,16 +86,15 @@ in
     };
 
     cursors = mkEnvironmentOption "Cursor configuration" {
-      package = mkOption {
-        type = types.nullOr types.package;
-        default = pkgs.bibata-cursors;
-        description = "Cursor theme package.";
-      };
-
       name = mkOption {
         type = types.nullOr types.str;
         default = "Bibata-Modern-Ice";
         description = "Cursor theme name.";
+      };
+
+      package = mkPackageOption pkgs "cursor" {
+        default = "bibata-cursors";
+        nullable = true;
       };
     };
   };

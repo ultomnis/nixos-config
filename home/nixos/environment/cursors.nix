@@ -12,8 +12,8 @@ in
     }
     |> lib.recursiveUpdate (
       lib.optionalAttrs (cfg.package != null && cfg.name != null) {
-        package = cfg.package;
         name = cfg.name;
+        package = cfg.package;
       }
     );
 }

@@ -14,9 +14,11 @@ in
     # Allow fontconfig to discover fonts
     fonts.fontconfig.enable = true;
 
-    home.packages = [
-      pkgs.nerd-fonts.hack
-      pkgs.noto-fonts
-    ] ++ cfg.extraPackages;
+    home.packages =
+      [
+        pkgs.noto-fonts
+      ]
+      ++ lib.optional (cfg.package != null) cfg.package
+      ++ cfg.extraPackages;
   };
 }
