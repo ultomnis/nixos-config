@@ -23,10 +23,7 @@ in
 
       main =
         {
-          include = lib.optionals (cfg.theme != null) [
-            "${pkgs.foot.themes}/share/foot/themes/${cfg.theme}"
-          ];
-
+          include = lib.optional (cfg.theme != null) "${pkgs.foot.themes}/share/foot/themes/${cfg.theme}";
           pad = "5x5";
         }
         |> lib.recursiveUpdate (

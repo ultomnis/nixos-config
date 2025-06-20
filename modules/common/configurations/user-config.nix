@@ -49,15 +49,9 @@ in
                     [
                       "wheel"
                     ]
-                    ++ lib.optionals (adb.enable) [
-                      "adbusers"
-                    ]
-                    ++ lib.optionals (libvirtd.enable) [
-                      "libvirtd"
-                    ]
-                    ++ lib.optionals (networkmanager.enable) [
-                      "networkmanager"
-                    ];
+                    ++ lib.optional (adb.enable) "adbusers"
+                    ++ lib.optional (libvirtd.enable) "libvirtd"
+                    ++ lib.optional (networkmanager.enable) "networkmanager";
                 }
               );
           })
