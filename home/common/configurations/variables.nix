@@ -11,15 +11,16 @@ let
 in
 {
   config = lib.mkIf cfg.enable {
-    home.sessionVariables =
-      lib.optionalAttrs (cfg.editor != null) {
+    home.sessionVariables = lib.mkMerge [
+      (lib.mkIf (cfg.editor != null) {
         EDITOR = lib.getExe pkgs.${cfg.editor};
-      }
-      |> lib.recursiveUpdate (
-        lib.optionalAttrs (cfg.terminal != null) {
-          TERMINAL = lib.getExe pkgs.${cfg.terminal};
-        }
-      )
-      |> lib.recursiveUpdate cfg.extraVariables;
+      })
+
+      (lib.mkIf (cfg.terminal != null) {
+        TERMINAL = lib.getExe pkgs.${cfg.terminal};
+      })
+
+      cfg.extraVariables
+    ];
   };
 }
