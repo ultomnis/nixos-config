@@ -91,15 +91,15 @@ in
     };
 
     keepassxc = mkGraphicalOption "KeePassXC" { };
+    loupe = mkGraphicalOption "Loupe" { };
     mangohud = mkGraphicalOption "MangoHud" { };
     mpv = mkGraphicalOption "MPV" { };
     mullvad-browser = mkGraphicalOption "Mullvad Browser" { };
-    nautilus = mkGraphicalOption "GNOME Files" { };
+    nautilus = mkGraphicalOption "Nautilus" { };
     nexusmods-app = mkGraphicalOption "Nexus Mods App" { };
     obs-studio = mkGraphicalOption "OBS Studio" { };
     piper = mkGraphicalOption "Piper" { };
     pwvucontrol = mkGraphicalOption "pwvucontrol" { };
-    swayimg = mkGraphicalOption "swayimg" { };
 
     thunderbird = mkGraphicalOption "Thunderbird" {
       profiles = mkOption {

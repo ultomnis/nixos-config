@@ -2,6 +2,7 @@
   imports = [
     ./foot.nix
     ./keepassxc.nix
+    ./loupe.nix
     ./mangohud.nix
     ./mullvad-browser.nix
     ./nautilus.nix
@@ -9,7 +10,6 @@
     ./obs-studio.nix
     ./piper.nix
     ./pwvucontrol.nix
-    ./swayimg.nix
     ./tor-browser.nix
   ];
 }
