@@ -47,7 +47,7 @@ in
     fuzzel = mkMinimalOption "fuzzel" { };
     gammastep = mkMinimalOption "Gammastep" { };
     mako = mkMinimalOption "mako" { };
-    polkit-gnome = mkMinimalOption "Polkit GNOME" { };
+    polkit-kde-agent = mkMinimalOption "Polkit KDE Agent" { };
     quickshell = mkMinimalOption "Quickshell" { };
     ssh-agent = mkMinimalOption "SSH Agent" { };
 
