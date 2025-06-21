@@ -46,7 +46,6 @@ in
 
     fuzzel = mkMinimalOption "fuzzel" { };
     gammastep = mkMinimalOption "Gammastep" { };
-    gnome-keyring = mkMinimalOption "GNOME Keyring" { };
     mako = mkMinimalOption "mako" { };
     polkit-gnome = mkMinimalOption "Polkit GNOME" { };
     quickshell = mkMinimalOption "Quickshell" { };
