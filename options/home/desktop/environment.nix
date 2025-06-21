@@ -83,6 +83,20 @@ in
           description = "Font size for GTK.";
         };
       };
+
+      icon = {
+        name = mkOption {
+          type = types.nullOr types.str;
+          default = "Adwaita";
+          description = "Icon theme name.";
+        };
+
+        package = mkOption {
+          type = types.nullOr types.package;
+          default = pkgs.adwaita-icon-theme;
+          description = "Icon theme package.";
+        };
+      };
     };
 
     cursors = mkEnvironmentOption "Cursor configuration" {
