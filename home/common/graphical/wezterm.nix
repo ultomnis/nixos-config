@@ -24,7 +24,9 @@ in
         background = '#000000',
       }
 
-      ${lib.optionalString (cfg.shell != null) "config.default_prog = { '${lib.getExe pkgs.${cfg.shell}}' }"}
+      ${lib.optionalString (
+        cfg.shell != null
+      ) "config.default_prog = { '${lib.getExe pkgs.${cfg.shell}}' }"}
 
       config.enable_tab_bar = false
       ${lib.optionalString (cfg.font.name != null) "config.font = wezterm.font '${cfg.font.name}'"}
