@@ -28,6 +28,15 @@ in
     networkmanager = mkServiceOption "Network Manager" { };
     openssh = mkServiceOption "OpenSSH" { };
     pipewire = mkServiceOption "PipeWire" { };
+
+    plasma = {
+      enable = mkOption {
+        type = types.bool;
+        default = config.luminosity.selections.desktop == "plasma";
+        description = "Whether to enable KDE Plasma.";
+      };
+    };
+
     printing = mkServiceOption "printing support" { };
     ratbagd = mkServiceOption "ratbagd" { };
     rtkit = mkServiceOption "RealtimeKit" { };

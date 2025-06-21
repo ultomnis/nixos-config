@@ -11,6 +11,7 @@ in
   desktop.type = types.nullOr (
     types.enum [
       "aerospace"
+      "plasma"
       "sway"
     ]
   );
