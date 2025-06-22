@@ -93,7 +93,6 @@ in
 
     gimp = mkGraphicalOption "GNU Image Manipulation Program" { };
     godot = mkGraphicalOption "Godot" { };
-    grim = mkGraphicalOption "grim" { };
     keepassxc = mkGraphicalOption "KeePassXC" { };
     loupe = mkGraphicalOption "Loupe" { };
     mangohud = mkGraphicalOption "MangoHud" { };
@@ -104,7 +103,6 @@ in
     obs-studio = mkGraphicalOption "OBS Studio" { };
     piper = mkGraphicalOption "Piper" { };
     pwvucontrol = mkGraphicalOption "pwvucontrol" { };
-    slurp = mkGraphicalOption "slurp" { };
 
     thunderbird = mkGraphicalOption "Thunderbird" {
       profiles = mkOption {
