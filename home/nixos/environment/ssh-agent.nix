@@ -1,7 +1,7 @@
 { config, ... }:
 
 let
-  cfg = config.luminosity.home.desktop.minimal.ssh-agent;
+  cfg = config.luminosity.home.desktop.environment.ssh-agent;
 
 in
 {

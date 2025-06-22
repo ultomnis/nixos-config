@@ -26,6 +26,19 @@ let
 in
 {
   options.luminosity.home.desktop.environment = {
+    cursors = mkEnvironmentOption "cursor configuration" {
+      name = mkOption {
+        type = types.nullOr types.str;
+        default = "Bibata-Modern-Ice";
+        description = "Cursor theme name.";
+      };
+
+      package = mkPackageOption pkgs "cursor" {
+        default = "bibata-cursors";
+        nullable = true;
+      };
+    };
+
     dconf = mkEnvironmentOption "dconf" { };
 
     fonts = mkEnvironmentOption "font configuration" {
@@ -88,28 +101,16 @@ in
         name = mkOption {
           type = types.nullOr types.str;
           default = "Adwaita";
-          description = "Icon theme name.";
+          description = "Icon theme for GTK.";
         };
 
-        package = mkOption {
-          type = types.nullOr types.package;
-          default = pkgs.adwaita-icon-theme;
-          description = "Icon theme package.";
+        package = mkPackageOption pkgs "icon" {
+          default = "adwaita-icon-theme";
+          nullable = true;
         };
       };
     };
 
-    cursors = mkEnvironmentOption "Cursor configuration" {
-      name = mkOption {
-        type = types.nullOr types.str;
-        default = "Bibata-Modern-Ice";
-        description = "Cursor theme name.";
-      };
-
-      package = mkPackageOption pkgs "cursor" {
-        default = "bibata-cursors";
-        nullable = true;
-      };
-    };
+    ssh-agent = mkEnvironmentOption "SSH Agent" { };
   };
 }

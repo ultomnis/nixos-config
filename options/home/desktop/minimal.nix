@@ -49,7 +49,6 @@ in
     mako = mkMinimalOption "mako" { };
     polkit-kde-agent = mkMinimalOption "Polkit KDE Agent" { };
     quickshell = mkMinimalOption "Quickshell" { };
-    ssh-agent = mkMinimalOption "SSH Agent" { };
 
     sway = {
       enable = mkOption {
