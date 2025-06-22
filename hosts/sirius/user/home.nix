@@ -43,6 +43,8 @@
           isDefault = true;
           name = "default";
         };
+
+        zed-editor.font.size = 13;
       };
 
       terminal = {
