@@ -34,6 +34,7 @@ in
 
       buffer_font_family = lib.mkIf (cfg.font.name != null) cfg.font.name;
       buffer_font_size = lib.mkIf (cfg.font.size != null) cfg.font.size;
+      buffer_line_height = "standard";
       collaboration_panel.button = false;
       cursor_blink = false;
 
