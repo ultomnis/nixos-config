@@ -35,8 +35,10 @@ in
         kate
         khelpcenter
         konsole
+        krdp
         okular
         plasma-browser-integration
+        xwaylandvideobridge
         ;
     };
   };
