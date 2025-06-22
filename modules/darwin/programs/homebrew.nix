@@ -22,6 +22,7 @@ in
 
     casks = [
       "gimp"
+      "godot"
       "keepassxc"
       "mullvad-browser"
       "steam"
