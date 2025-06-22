@@ -21,6 +21,7 @@ in
     };
 
     casks = [
+      "gimp"
       "keepassxc"
       "mullvad-browser"
       "steam"

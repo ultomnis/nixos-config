@@ -90,6 +90,7 @@ in
       };
     };
 
+    gimp = mkGraphicalOption "GNU Image Manipulation Program" { };
     grim = mkGraphicalOption "grim" { };
     keepassxc = mkGraphicalOption "KeePassXC" { };
     loupe = mkGraphicalOption "Loupe" { };

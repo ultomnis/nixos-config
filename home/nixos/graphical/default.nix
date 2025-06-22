@@ -1,6 +1,7 @@
 {
   imports = [
     ./foot.nix
+    ./gimp.nix
     ./grim.nix
     ./keepassxc.nix
     ./loupe.nix
