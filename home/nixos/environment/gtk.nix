@@ -13,6 +13,8 @@ in
       size = lib.mkIf (cfg.font.size != null) cfg.font.size;
     };
 
+    gtk2.force = true;
+
     gtk3.extraConfig = {
       gtk-application-prefer-dark-theme = true;
     };
