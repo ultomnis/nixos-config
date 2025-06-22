@@ -14,6 +14,10 @@ in
   programs.helix = {
     inherit (cfg) enable;
 
+    extraPackages = builtins.attrValues {
+      inherit (pkgs) lldb_20;
+    };
+
     settings = {
       theme = "custom_transparent";
 
@@ -31,17 +35,11 @@ in
 
     languages = {
       language-server = {
-        marksman = {
-          command = lib.getExe pkgs.marksman;
-        };
-
-        nixd = {
-          command = lib.getExe pkgs.nixd;
-        };
-
-        pylsp = {
-          command = lib.getExe pkgs.python313Packages.python-lsp-server;
-        };
+        clangd.command = lib.getExe' pkgs.clang-tools "clangd";
+        jdtls.command = lib.getExe pkgs.jdt-language-server;
+        marksman.command = lib.getExe pkgs.marksman;
+        nixd.command = lib.getExe pkgs.nixd;
+        pylsp.command = lib.getExe pkgs.python313Packages.python-lsp-server;
 
         qmlls = {
           command = lib.getExe' pkgs.kdePackages.qtdeclarative "qmlls";
@@ -50,6 +48,9 @@ in
             "-E"
           ];
         };
+
+        rust-analyzer.command = lib.getExe pkgs.rust-analyzer;
+        texlab.command = lib.getExe pkgs.texlab;
 
         typescript-language-server = {
           command = lib.getExe pkgs.typescript-language-server;
@@ -70,34 +71,17 @@ in
         }
         {
           name = "nix";
+          formatter.command = lib.getExe pkgs.nixfmt-rfc-style;
 
           language-servers = [
             "nixd"
           ];
-
-          formatter = {
-            command = lib.getExe pkgs.nixfmt-rfc-style;
-          };
         }
         {
           name = "python";
 
           language-servers = [
             "pylsp"
-          ];
-        }
-        {
-          name = "qml";
-
-          language-servers = [
-            "qmlls"
-          ];
-        }
-        {
-          name = "typescript";
-
-          language-servers = [
-            "typescript-language-server"
           ];
         }
       ];

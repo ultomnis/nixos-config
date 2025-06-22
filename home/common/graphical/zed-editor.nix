@@ -15,6 +15,8 @@ in
     inherit (cfg) enable;
 
     extensions = [
+      "java"
+      "latex"
       "nix"
       "qml"
       "rose-pine-theme"
@@ -42,23 +44,11 @@ in
       hour_format = "hour24";
 
       lsp = {
-        marksman = {
-          binary = {
-            path = lib.getExe pkgs.marksman;
-          };
-        };
-
-        nixd = {
-          binary = {
-            path = lib.getExe pkgs.nixd;
-          };
-        };
-
-        pylsp = {
-          binary = {
-            path = lib.getExe pkgs.python313Packages.python-lsp-server;
-          };
-        };
+        clangd.binary.path = lib.getExe' pkgs.clang-tools "clangd";
+        jdtls.binary.path = lib.getExe pkgs.jdt-language-server;
+        marksman.binary.path = lib.getExe pkgs.marksman;
+        nixd.binary.path = lib.getExe pkgs.nixd;
+        pylsp.binary.path = lib.getExe pkgs.python313Packages.python-lsp-server;
 
         qmljs = {
           binary = {
@@ -69,6 +59,9 @@ in
             ];
           };
         };
+
+        rust-analyzer.binary.path = lib.getExe pkgs.rust-analyzer;
+        texlab.binary.path = lib.getExe pkgs.texlab;
 
         typescript-language-server = {
           binary = {
@@ -95,11 +88,7 @@ in
         };
 
         "Nix" = {
-          formatter = {
-            external = {
-              command = lib.getExe pkgs.nixfmt-rfc-style;
-            };
-          };
+          formatter.external.command = lib.getExe pkgs.nixfmt-rfc-style;
 
           language_servers = [
             "nixd"
@@ -109,12 +98,6 @@ in
         "Python" = {
           language_servers = [
             "pylsp"
-          ];
-        };
-
-        "QML" = {
-          language_servers = [
-            "qmljs"
           ];
         };
 
