@@ -1,6 +1,7 @@
 {
   imports = [
     ./foot.nix
+    ./grim.nix
     ./keepassxc.nix
     ./loupe.nix
     ./mangohud.nix
@@ -10,6 +11,7 @@
     ./obs-studio.nix
     ./piper.nix
     ./pwvucontrol.nix
+    ./slurp.nix
     ./tor-browser.nix
   ];
 }
