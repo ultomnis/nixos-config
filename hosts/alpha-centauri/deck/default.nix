@@ -28,8 +28,6 @@
           enable = true;
           gtk.enable = false;
         };
-
-        minimal.ssh-agent.enable = true;
       };
 
       programs = {
