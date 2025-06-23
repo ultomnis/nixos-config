@@ -37,6 +37,13 @@ in
       config.webgpu_power_preference = 'HighPerformance'
       config.window_background_opacity = 0.6
 
+      config.window_padding = {
+        left = 5,
+        right = 5,
+        top = 5,
+        bottom = 5,
+      }
+
       return config
     '';
   };
