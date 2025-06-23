@@ -28,7 +28,6 @@ in
       "obs"
       "steam"
       "tor-browser"
-      "vmware-fusion"
     ];
   };
 }
