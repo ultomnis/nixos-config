@@ -91,6 +91,40 @@ in
       };
     };
 
+    ghostty = {
+      enable = mkOption {
+        type = types.bool;
+        default = customConfig.luminosity.selections.terminal == "ghostty";
+        description = "Whether to enable Ghostty.";
+      };
+
+      font = {
+        name = mkOption {
+          type = types.nullOr types.str;
+          default = config.luminosity.home.desktop.environment.fonts.mono;
+          description = "Font for Ghostty.";
+        };
+
+        size = mkOption {
+          type = types.nullOr types.int;
+          default = config.luminosity.home.desktop.environment.fonts.size;
+          description = "Font size for Ghostty.";
+        };
+      };
+
+      shell = mkOption {
+        inherit (selectionTypes.shell) type;
+        default = customConfig.luminosity.selections.shell;
+        description = "Shell for Ghostty";
+      };
+
+      theme = mkOption {
+        type = types.nullOr types.str;
+        default = "rose-pine";
+        description = "Theme for Ghostty.";
+      };
+    };
+
     gimp = mkGraphicalOption "GNU Image Manipulation Program" { };
     godot = mkGraphicalOption "Godot" { };
     keepassxc = mkGraphicalOption "KeePassXC" { };
