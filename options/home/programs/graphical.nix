@@ -78,13 +78,13 @@ in
         };
       };
 
-      shell = {
+      shell = mkOption {
         inherit (selectionTypes.shell) type;
         default = customConfig.luminosity.selections.shell;
         description = "Shell for foot.";
       };
 
-      theme = {
+      theme = mkOption {
         type = types.nullOr types.str;
         default = "rose-pine";
         description = "Theme for foot.";
