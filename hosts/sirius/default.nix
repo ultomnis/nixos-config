@@ -42,7 +42,7 @@
       };
 
       shell = "fish";
-      terminal = "wezterm";
+      terminal = "foot";
       wallpaper = inputs.self + "/assets/wallpapers/bence-balla-schottner-zwAevXBnEN0-unsplash.jpg";
     };
 
