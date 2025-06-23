@@ -25,6 +25,7 @@ in
       "godot"
       "keepassxc"
       "mullvad-browser"
+      "obs"
       "steam"
       "tor-browser"
       "vmware-fusion"
