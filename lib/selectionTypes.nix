@@ -19,6 +19,7 @@ in
   editor.type = types.nullOr (
     types.enum [
       "helix"
+      "micro"
       "zed-editor"
     ]
   );

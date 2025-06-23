@@ -66,6 +66,7 @@ in
     kew = mkTerminalOption "kew" { };
     libqalculate = mkTerminalOption "libqalculate" { };
     mat2 = mkTerminalOption "mat2" { };
+    micro = mkTerminalOption "micro" { };
 
     ollama = mkTerminalOption "Ollama" {
       environmentVariables = mkOption {
