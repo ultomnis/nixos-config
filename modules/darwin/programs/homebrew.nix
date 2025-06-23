@@ -11,13 +11,9 @@ in
 
     # Behavior of brew bundle command during system activation
     onActivation = {
+      autoUpdate = true;
       cleanup = "zap";
       upgrade = true;
-    };
-
-    # Behavior of manually invoked Homebrew commands
-    global = {
-      autoUpdate = false;
     };
 
     casks = [
