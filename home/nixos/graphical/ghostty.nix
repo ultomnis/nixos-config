@@ -30,7 +30,8 @@ in
       resize-overlay = "never";
       shell-integration-features = "no-cursor";
       theme = lib.mkIf (cfg.theme != null) cfg.theme;
-      window-padding-x = 4;
+      window-padding-x = 5;
+      window-padding-y = 5;
     };
   };
 }
