@@ -33,7 +33,6 @@ in
       };
     };
 
-    virt-manager = mkProgramOption "Virtual Machine Manager" { };
     zsh = mkProgramOption "Zsh" { };
   };
 }
