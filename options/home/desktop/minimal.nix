@@ -48,7 +48,6 @@ in
     gammastep = mkMinimalOption "Gammastep" { };
     mako = mkMinimalOption "mako" { };
     polkit-kde-agent = mkMinimalOption "Polkit KDE Agent" { };
-    quickshell = mkMinimalOption "Quickshell" { };
 
     sway = {
       enable = mkOption {

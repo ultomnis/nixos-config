@@ -6,7 +6,6 @@
     ./gammastep.nix
     ./mako.nix
     ./polkit-kde-agent.nix
-    ./quickshell.nix
     ./waybar.nix
   ];
 }
