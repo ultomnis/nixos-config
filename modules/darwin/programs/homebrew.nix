@@ -20,7 +20,6 @@ in
       "godot"
       "keepassxc"
       "krita"
-      "mullvad-browser"
       "obs"
       "steam"
     ];

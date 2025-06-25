@@ -131,7 +131,6 @@ in
     loupe = mkGraphicalOption "Loupe" { };
     mangohud = mkGraphicalOption "MangoHud" { };
     mpv = mkGraphicalOption "MPV" { };
-    mullvad-browser = mkGraphicalOption "Mullvad Browser" { };
     nautilus = mkGraphicalOption "Nautilus" { };
     nexusmods-app = mkGraphicalOption "Nexus Mods App" { };
     obs-studio = mkGraphicalOption "OBS Studio" { };

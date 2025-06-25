@@ -7,7 +7,6 @@
     ./krita.nix
     ./loupe.nix
     ./mangohud.nix
-    ./mullvad-browser.nix
     ./nautilus.nix
     ./nexusmods-app.nix
     ./obs-studio.nix
