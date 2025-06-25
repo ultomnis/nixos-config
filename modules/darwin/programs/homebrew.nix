@@ -23,7 +23,6 @@ in
       "mullvad-browser"
       "obs"
       "steam"
-      "tor-browser"
     ];
   };
 }

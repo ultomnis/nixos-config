@@ -158,7 +158,6 @@ in
       };
     };
 
-    tor-browser = mkGraphicalOption "Tor Browser" { };
     utm = mkGraphicalOption "UTM" { };
 
     wezterm = {

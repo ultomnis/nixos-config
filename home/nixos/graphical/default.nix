@@ -13,6 +13,5 @@
     ./obs-studio.nix
     ./piper.nix
     ./pwvucontrol.nix
-    ./tor-browser.nix
   ];
 }
