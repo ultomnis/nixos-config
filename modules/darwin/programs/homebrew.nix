@@ -18,7 +18,6 @@ in
 
     casks = [
       "godot"
-      "keepassxc"
       "krita"
       "obs"
       "qview"
