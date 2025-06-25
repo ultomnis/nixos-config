@@ -11,5 +11,6 @@
     ./nexusmods-app.nix
     ./obs-studio.nix
     ./pwvucontrol.nix
+    ./qview.nix
   ];
 }

@@ -21,6 +21,7 @@ in
       "keepassxc"
       "krita"
       "obs"
+      "qview"
       "steam"
     ];
   };

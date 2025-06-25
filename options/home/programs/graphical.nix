@@ -78,6 +78,7 @@ in
     nexusmods-app = mkGraphicalOption "Nexus Mods App" { };
     obs-studio = mkGraphicalOption "OBS Studio" { };
     pwvucontrol = mkGraphicalOption "pwvucontrol" { };
+    qview = mkGraphicalOption "qView" { };
     utm = mkGraphicalOption "UTM" { };
 
     wezterm = {
