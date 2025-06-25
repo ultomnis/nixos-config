@@ -4,6 +4,7 @@
     ./ghostty.nix
     ./godot.nix
     ./keepassxc.nix
+    ./krita.nix
     ./loupe.nix
     ./mangohud.nix
     ./mullvad-browser.nix

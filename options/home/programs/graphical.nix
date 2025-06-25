@@ -127,6 +127,7 @@ in
 
     godot = mkGraphicalOption "Godot" { };
     keepassxc = mkGraphicalOption "KeePassXC" { };
+    krita = mkGraphicalOption "Krita" { };
     loupe = mkGraphicalOption "Loupe" { };
     mangohud = mkGraphicalOption "MangoHud" { };
     mpv = mkGraphicalOption "MPV" { };
