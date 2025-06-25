@@ -80,6 +80,7 @@ in
       };
     };
 
+    kvantum = mkEnvironmentOption "Kvantum" { };
     ssh-agent = mkEnvironmentOption "SSH Agent" { };
   };
 }
