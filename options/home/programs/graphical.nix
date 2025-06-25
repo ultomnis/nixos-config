@@ -125,7 +125,6 @@ in
       };
     };
 
-    gimp = mkGraphicalOption "GNU Image Manipulation Program" { };
     godot = mkGraphicalOption "Godot" { };
     keepassxc = mkGraphicalOption "KeePassXC" { };
     loupe = mkGraphicalOption "Loupe" { };

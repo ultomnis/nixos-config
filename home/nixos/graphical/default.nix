@@ -2,7 +2,6 @@
   imports = [
     ./foot.nix
     ./ghostty.nix
-    ./gimp.nix
     ./godot.nix
     ./keepassxc.nix
     ./loupe.nix
