@@ -85,13 +85,5 @@ in
         description = "Wallpaper for Swaylock.";
       };
     };
-
-    waybar = mkMinimalOption "Waybar" {
-      menuCommand = mkOption {
-        type = types.nullOr types.str;
-        default = null;
-        description = "Command to use when clicking the menu.";
-      };
-    };
   };
 }

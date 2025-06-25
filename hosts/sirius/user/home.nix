@@ -1,10 +1,4 @@
 {
-  lib,
-  pkgs,
-  ...
-}:
-
-{
   imports = [
     ../../../home/common
     ../../../home/nixos
@@ -23,10 +17,6 @@
     desktop = {
       environment = {
         fonts.size = 10;
-      };
-
-      minimal = {
-        waybar.menuCommand = "${lib.getExe pkgs.fuzzel} --anchor top-left";
       };
     };
 

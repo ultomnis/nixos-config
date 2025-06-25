@@ -7,6 +7,5 @@
     ./mako.nix
     ./polkit-kde-agent.nix
     ./qtct.nix
-    ./waybar.nix
   ];
 }

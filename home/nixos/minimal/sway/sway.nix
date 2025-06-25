@@ -171,10 +171,6 @@ in
           "Escape" = "mode default";
         };
       };
-
-      bars = lib.singleton {
-        command = lib.getExe pkgs.waybar;
-      };
     };
   };
 }
