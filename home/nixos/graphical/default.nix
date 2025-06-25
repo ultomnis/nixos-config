@@ -2,7 +2,6 @@
   imports = [
     ./falkon.nix
     ./foot.nix
-    ./ghostty.nix
     ./godot.nix
     ./keepassxc.nix
     ./krita.nix
