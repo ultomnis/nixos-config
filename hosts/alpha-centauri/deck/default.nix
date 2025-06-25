@@ -37,11 +37,6 @@
           };
 
           mangohud.enable = false;
-
-          thunderbird.profiles = lib.singleton {
-            isDefault = true;
-            name = "default";
-          };
         };
 
         terminal = {

@@ -39,11 +39,6 @@
           name = "default";
         };
 
-        thunderbird.profiles = lib.singleton {
-          isDefault = true;
-          name = "default";
-        };
-
         zed-editor.font.size = 13;
       };
 

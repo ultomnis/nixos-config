@@ -38,11 +38,6 @@
           name = "default";
         };
 
-        thunderbird.profiles = lib.singleton {
-          isDefault = true;
-          name = "default";
-        };
-
         wezterm.maxFPS = 120;
       };
 

@@ -8,7 +8,6 @@
 
 let
   inherit (lib)
-    mkEnableOption
     mkOption
     types
     ;
@@ -136,27 +135,6 @@ in
     obs-studio = mkGraphicalOption "OBS Studio" { };
     piper = mkGraphicalOption "Piper" { };
     pwvucontrol = mkGraphicalOption "pwvucontrol" { };
-
-    thunderbird = mkGraphicalOption "Thunderbird" {
-      profiles = mkOption {
-        type = types.listOf (
-          types.submodule {
-            options = {
-              isDefault = mkEnableOption "Whether the profile is the default profile.";
-
-              name = mkOption {
-                type = types.str;
-                description = "Profile name.";
-              };
-            };
-          }
-        );
-
-        default = [ ];
-        description = "List of Thunderbird profiles.";
-      };
-    };
-
     utm = mkGraphicalOption "UTM" { };
 
     wezterm = {
