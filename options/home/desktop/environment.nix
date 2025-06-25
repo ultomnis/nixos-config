@@ -39,8 +39,6 @@ in
       };
     };
 
-    dconf = mkEnvironmentOption "dconf" { };
-
     fonts = mkEnvironmentOption "font configuration" {
       package = mkPackageOption pkgs "font" {
         default = [
