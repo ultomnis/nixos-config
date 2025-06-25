@@ -74,7 +74,6 @@ in
     krita = mkGraphicalOption "Krita" { };
     mangohud = mkGraphicalOption "MangoHud" { };
     mpv = mkGraphicalOption "MPV" { };
-    nautilus = mkGraphicalOption "Nautilus" { };
     nexusmods-app = mkGraphicalOption "Nexus Mods App" { };
     obs-studio = mkGraphicalOption "OBS Studio" { };
     pwvucontrol = mkGraphicalOption "pwvucontrol" { };

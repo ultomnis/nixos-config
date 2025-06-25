@@ -7,7 +7,6 @@
     ./keepassxc.nix
     ./krita.nix
     ./mangohud.nix
-    ./nautilus.nix
     ./nexusmods-app.nix
     ./obs-studio.nix
     ./pwvucontrol.nix
