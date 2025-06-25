@@ -53,7 +53,7 @@ in
           {
             command = "floating enable, move position center";
             criteria = {
-              app_id = "pwvucontrol";
+              app_id = "org.kde.kmix";
             };
           }
         ];

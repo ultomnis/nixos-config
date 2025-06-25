@@ -71,12 +71,12 @@ in
 
     godot = mkGraphicalOption "Godot" { };
     keepassxc = mkGraphicalOption "KeePassXC" { };
+    kmix = mkGraphicalOption "KMix" { };
     krita = mkGraphicalOption "Krita" { };
     mangohud = mkGraphicalOption "MangoHud" { };
     mpv = mkGraphicalOption "MPV" { };
     nexusmods-app = mkGraphicalOption "Nexus Mods App" { };
     obs-studio = mkGraphicalOption "OBS Studio" { };
-    pwvucontrol = mkGraphicalOption "pwvucontrol" { };
     qview = mkGraphicalOption "qView" { };
     utm = mkGraphicalOption "UTM" { };
 
