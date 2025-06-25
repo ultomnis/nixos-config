@@ -23,7 +23,6 @@ in
     avahi = mkServiceOption "Avahi" { };
     bluetooth = mkServiceOption "Bluetooth" { };
     geoclue2 = mkServiceOption "GeoClue 2" { };
-    gvfs = mkServiceOption "GVfs" { };
     libvirtd = mkServiceOption "libvirtd" { };
     networkmanager = mkServiceOption "Network Manager" { };
     openssh = mkServiceOption "OpenSSH" { };
