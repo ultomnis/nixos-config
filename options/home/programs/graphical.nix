@@ -32,6 +32,7 @@ in
   options.luminosity.home.programs.graphical = {
     anki = mkGraphicalOption "Anki" { };
     blender = mkGraphicalOption "Blender" { };
+    dolphin = mkGraphicalOption "Dolphin" { };
     falkon = mkGraphicalOption "Falkon" { };
 
     foot = {
