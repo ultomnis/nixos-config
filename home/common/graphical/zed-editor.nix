@@ -134,7 +134,6 @@ in
 
       "experimental.theme_overrides" = {
         "background" = "#00000099";
-        "background.appearance" = "blurred";
         "border" = "#ffffff99";
         "border.variant" = "#ffffff00";
         "editor.active_line.background" = "#ffffff00";

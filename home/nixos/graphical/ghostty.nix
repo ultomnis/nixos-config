@@ -17,7 +17,6 @@ in
     settings = {
       background = "000000";
       background-opacity = 0.6;
-      background-blur = 60;
       command = lib.mkIf (cfg.shell != null) (lib.getExe pkgs.${cfg.shell});
       cursor-style = "block";
       cursor-style-blink = false;
