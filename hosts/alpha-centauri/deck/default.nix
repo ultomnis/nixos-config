@@ -24,10 +24,7 @@
           unfree.enable = false;
         };
 
-        environment = {
-          enable = true;
-          gtk.enable = false;
-        };
+        environment.enable = true;
       };
 
       programs = {

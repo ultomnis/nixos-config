@@ -82,35 +82,6 @@ in
       };
     };
 
-    gtk = mkEnvironmentOption "GTK configuration" {
-      font = {
-        name = mkOption {
-          type = types.nullOr types.str;
-          default = config.luminosity.home.desktop.environment.fonts.propo;
-          description = "Font for GTK.";
-        };
-
-        size = mkOption {
-          type = types.nullOr types.int;
-          default = config.luminosity.home.desktop.environment.fonts.size;
-          description = "Font size for GTK.";
-        };
-      };
-
-      icon = {
-        name = mkOption {
-          type = types.nullOr types.str;
-          default = "Adwaita";
-          description = "Icon theme for GTK.";
-        };
-
-        package = mkPackageOption pkgs "icon" {
-          default = "adwaita-icon-theme";
-          nullable = true;
-        };
-      };
-    };
-
     ssh-agent = mkEnvironmentOption "SSH Agent" { };
   };
 }
