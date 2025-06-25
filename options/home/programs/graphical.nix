@@ -111,7 +111,6 @@ in
     nautilus = mkGraphicalOption "Nautilus" { };
     nexusmods-app = mkGraphicalOption "Nexus Mods App" { };
     obs-studio = mkGraphicalOption "OBS Studio" { };
-    piper = mkGraphicalOption "Piper" { };
     pwvucontrol = mkGraphicalOption "pwvucontrol" { };
     utm = mkGraphicalOption "UTM" { };
 

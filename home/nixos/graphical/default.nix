@@ -11,7 +11,6 @@
     ./nautilus.nix
     ./nexusmods-app.nix
     ./obs-studio.nix
-    ./piper.nix
     ./pwvucontrol.nix
   ];
 }
