@@ -1,4 +1,4 @@
-{ lib, username, ... }:
+{ username, ... }:
 
 {
   imports = [
@@ -30,12 +30,6 @@
       programs = {
         graphical = {
           enable = true;
-
-          firefox.profiles = lib.singleton {
-            id = 0;
-            name = "default";
-          };
-
           mangohud.enable = false;
         };
 

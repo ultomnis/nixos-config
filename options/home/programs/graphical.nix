@@ -34,29 +34,6 @@ in
     blender = mkGraphicalOption "Blender" { };
     falkon = mkGraphicalOption "Falkon" { };
 
-    firefox = mkGraphicalOption "Firefox" {
-      profiles = mkOption {
-        type = types.listOf (
-          types.submodule {
-            options = {
-              id = mkOption {
-                type = types.ints.unsigned;
-                description = "Profile ID.";
-              };
-
-              name = mkOption {
-                type = types.str;
-                description = "Profile name.";
-              };
-            };
-          }
-        );
-
-        default = [ ];
-        description = "List of Firefox profiles.";
-      };
-    };
-
     foot = {
       enable = mkOption {
         type = types.bool;

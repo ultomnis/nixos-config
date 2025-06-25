@@ -1,5 +1,3 @@
-{ lib, ... }:
-
 {
   imports = [
     ../../../home/common
@@ -32,12 +30,6 @@
     programs = {
       graphical = {
         enable = true;
-
-        firefox.profiles = lib.singleton {
-          id = 0;
-          name = "default";
-        };
-
         wezterm.maxFPS = 120;
       };
 

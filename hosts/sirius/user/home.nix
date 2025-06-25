@@ -33,12 +33,6 @@
     programs = {
       graphical = {
         enable = true;
-
-        firefox.profiles = lib.singleton {
-          id = 0;
-          name = "default";
-        };
-
         zed-editor.font.size = 13;
       };
 
