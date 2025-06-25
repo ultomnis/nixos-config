@@ -9,6 +9,5 @@ in
     name = lib.mkIf (cfg.name != null) cfg.name;
     package = lib.mkIf (cfg.package != null) cfg.package;
     size = 24;
-    gtk.enable = true;
   };
 }

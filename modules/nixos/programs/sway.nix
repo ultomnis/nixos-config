@@ -9,7 +9,6 @@ in
   programs.sway = {
     inherit (cfg) enable;
     package = pkgs.swayfx;
-    wrapperFeatures.gtk = true;
     extraPackages = [ ];
   };
 }

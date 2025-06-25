@@ -16,7 +16,6 @@ in
     inherit (cfg) enable;
     checkConfig = false;
     package = pkgs.swayfx;
-    wrapperFeatures.gtk = true;
 
     config = {
       modifier = "Mod4";
