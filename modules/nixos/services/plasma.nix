@@ -26,18 +26,18 @@ in
     environment.plasma6.excludePackages = builtins.attrValues {
       inherit (pkgs.kdePackages)
         ark
-        baloo-widgets
+        aurorae
         elisa
-        dolphin
-        dolphin-plugins
-        ffmpegthumbs
         gwenview
         kate
         khelpcenter
         konsole
         krdp
+        ktexteditor
+        kwin-x11
         okular
         plasma-browser-integration
+        plasma-workspace-wallpapers
         xwaylandvideobridge
         ;
     };
