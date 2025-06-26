@@ -51,6 +51,7 @@ in
     mako = mkMinimalOption "mako" { };
     polkit-kde-agent = mkMinimalOption "Polkit KDE Agent" { };
     qtct = mkMinimalOption "Qt Configuration Tool" { };
+    qtsvg = mkMinimalOption "Qt SVG" { };
 
     sway = {
       enable = mkOption {

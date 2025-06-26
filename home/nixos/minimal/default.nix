@@ -8,5 +8,6 @@
     ./gammastep.nix
     ./mako.nix
     ./polkit-kde-agent.nix
+    ./qtsvg.nix
   ];
 }
