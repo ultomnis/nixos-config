@@ -44,6 +44,7 @@ in
       };
     };
 
+    dconf = mkMinimalOption "dconf" { };
     fuzzel = mkMinimalOption "fuzzel" { };
     gammastep = mkMinimalOption "Gammastep" { };
     mako = mkMinimalOption "mako" { };
