@@ -19,11 +19,7 @@
   luminosity = {
     home = {
       desktop = {
-        configurations = {
-          enable = true;
-          unfree.enable = false;
-        };
-
+        configurations.enable = true;
         environment.enable = true;
       };
 
@@ -31,6 +27,7 @@
         graphical = {
           enable = true;
           mangohud.enable = false;
+          nexusmods-app.enable = false;
         };
 
         terminal = {
