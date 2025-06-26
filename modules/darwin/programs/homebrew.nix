@@ -20,7 +20,6 @@ in
       "godot"
       "krita"
       "obs"
-      "qview"
       "steam"
     ];
   };

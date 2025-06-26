@@ -10,6 +10,5 @@
     ./nexusmods-app.nix
     ./obs-studio.nix
     ./qtsvg.nix
-    ./qview.nix
   ];
 }
