@@ -70,7 +70,6 @@ in
 
     godot = mkGraphicalOption "Godot" { };
     keepassxc = mkGraphicalOption "KeePassXC" { };
-    kmix = mkGraphicalOption "KMix" { };
     krita = mkGraphicalOption "Krita" { };
     mangohud = mkGraphicalOption "MangoHud" { };
     mpv = mkGraphicalOption "MPV" { };
