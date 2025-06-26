@@ -70,6 +70,7 @@ in
     };
 
     godot = mkGraphicalOption "Godot" { };
+    gwenview = mkGraphicalOption "Gwenview" { };
     keepassxc = mkGraphicalOption "KeePassXC" { };
     krita = mkGraphicalOption "Krita" { };
     mangohud = mkGraphicalOption "MangoHud" { };
