@@ -47,6 +47,7 @@ in
     dconf = mkMinimalOption "dconf" { };
     fuzzel = mkMinimalOption "fuzzel" { };
     gammastep = mkMinimalOption "Gammastep" { };
+    i3status-rust = mkMinimalOption "i3status-rust" { };
     mako = mkMinimalOption "mako" { };
     polkit-kde-agent = mkMinimalOption "Polkit KDE Agent" { };
 
@@ -55,6 +56,22 @@ in
         type = types.bool;
         default = customConfig.luminosity.selections.desktop == "sway";
         description = "Whether to enable Sway.";
+      };
+
+      bar = {
+        font = {
+          name = mkOption {
+            type = types.nullOr types.str;
+            default = config.luminosity.home.desktop.environment.fonts.propo;
+            description = "Font for Swaybar.";
+          };
+
+          size = mkOption {
+            type = types.nullOr types.int;
+            default = config.luminosity.home.desktop.environment.fonts.size;
+            description = "Font size for Swaybar.";
+          };
+        };
       };
 
       monitors = mkOption {

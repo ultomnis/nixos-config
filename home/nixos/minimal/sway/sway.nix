@@ -165,6 +165,28 @@ in
           "Escape" = "mode default";
         };
       };
+
+      bars = lib.singleton {
+        command = lib.getExe' pkgs.sway "swaybar";
+        position = "top";
+        statusCommand = "${lib.getExe pkgs.i3status-rust} config-status.toml";
+
+        colors = {
+          background = "#00000099";
+          separator = "#ffffff";
+
+          inactiveWorkspace = {
+            background = "#00000099";
+            border = "#00000099";
+            text = "#ffffff";
+          };
+        };
+
+        fonts = {
+          names = lib.optional (cfg.bar.font.name != null) cfg.bar.font.name;
+          size = lib.mkIf (cfg.bar.font.size != null) (toString cfg.bar.font.size);
+        };
+      };
     };
   };
 }
