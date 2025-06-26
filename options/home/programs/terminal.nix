@@ -80,6 +80,7 @@ in
     ssh = mkTerminalOption "SSH" { };
     tealdeer = mkTerminalOption "tealdeer" { };
     unar = mkTerminalOption "unar" { };
+    wiremix = mkTerminalOption "wiremix" { };
     yazi = mkTerminalOption "Yazi" { };
     yt-dlp = mkTerminalOption "yt-dlp" { };
     zoxide = mkTerminalOption "zoxide" { };
