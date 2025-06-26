@@ -32,6 +32,7 @@ in
   options.luminosity.home.programs.graphical = {
     anki = mkGraphicalOption "Anki" { };
     blender = mkGraphicalOption "Blender" { };
+    dolphin = mkGraphicalOption "Dolphin" { };
     falkon = mkGraphicalOption "Falkon" { };
 
     foot = {
@@ -75,6 +76,7 @@ in
     mpv = mkGraphicalOption "MPV" { };
     nexusmods-app = mkGraphicalOption "Nexus Mods App" { };
     obs-studio = mkGraphicalOption "OBS Studio" { };
+    qtsvg = mkGraphicalOption "Qt SVG" { };
     qview = mkGraphicalOption "qView" { };
     utm = mkGraphicalOption "UTM" { };
 

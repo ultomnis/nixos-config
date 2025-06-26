@@ -6,7 +6,7 @@
 }:
 
 let
-  cfg = config.luminosity.home.desktop.minimal.dolphin;
+  cfg = config.luminosity.home.programs.graphical.dolphin;
 
 in
 {
@@ -19,7 +19,6 @@ in
         ffmpegthumbs
         kio-fuse
         kio-extras
-        qtsvg
         ;
     };
   };

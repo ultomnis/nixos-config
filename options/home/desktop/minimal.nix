@@ -45,12 +45,10 @@ in
     };
 
     dconf = mkMinimalOption "dconf" { };
-    dolphin = mkMinimalOption "Dolphin" { };
     fuzzel = mkMinimalOption "fuzzel" { };
     gammastep = mkMinimalOption "Gammastep" { };
     mako = mkMinimalOption "mako" { };
     polkit-kde-agent = mkMinimalOption "Polkit KDE Agent" { };
-    qtsvg = mkMinimalOption "Qt SVG" { };
 
     sway = {
       enable = mkOption {

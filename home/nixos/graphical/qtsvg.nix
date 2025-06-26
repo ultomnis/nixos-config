@@ -6,7 +6,7 @@
 }:
 
 let
-  cfg = config.luminosity.home.desktop.minimal.qtsvg;
+  cfg = config.luminosity.home.programs.graphical.qtsvg;
 
 in
 {
