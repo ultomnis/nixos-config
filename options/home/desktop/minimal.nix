@@ -45,6 +45,7 @@ in
     };
 
     dconf = mkMinimalOption "dconf" { };
+    dolphin = mkMinimalOption "Dolphin" { };
     fuzzel = mkMinimalOption "fuzzel" { };
     gammastep = mkMinimalOption "Gammastep" { };
     mako = mkMinimalOption "mako" { };

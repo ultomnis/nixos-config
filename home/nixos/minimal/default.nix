@@ -3,6 +3,7 @@
     ./sway
 
     ./dconf.nix
+    ./dolphin.nix
     ./fuzzel.nix
     ./gammastep.nix
     ./mako.nix
