@@ -50,6 +50,12 @@ in
               class = "cs2";
             };
           }
+          {
+            command = "floating enable, move position center";
+            criteria = {
+              app_id = "wiremix";
+            };
+          }
         ];
       };
 

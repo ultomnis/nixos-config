@@ -47,7 +47,15 @@ in
     dconf = mkMinimalOption "dconf" { };
     fuzzel = mkMinimalOption "fuzzel" { };
     gammastep = mkMinimalOption "Gammastep" { };
-    i3status-rust = mkMinimalOption "i3status-rust" { };
+
+    i3status-rust = mkMinimalOption "i3status-rust" {
+      terminal = mkOption {
+        inherit (selectionTypes.terminal) type;
+        default = customConfig.luminosity.selections.terminal;
+        description = "Terminal for i3status-rust.";
+      };
+    };
+
     mako = mkMinimalOption "mako" { };
     polkit-kde-agent = mkMinimalOption "Polkit KDE Agent" { };
 
