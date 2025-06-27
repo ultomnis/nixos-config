@@ -8,6 +8,7 @@
 
 let
   inherit (lib)
+    mkEnableOption
     mkOption
     types
     ;
@@ -49,6 +50,8 @@ in
     gammastep = mkMinimalOption "Gammastep" { };
 
     i3status-rust = mkMinimalOption "i3status-rust" {
+      battery = mkEnableOption "Whether to enable battery block for i3status-rust.";
+
       terminal = mkOption {
         inherit (selectionTypes.terminal) type;
         default = customConfig.luminosity.selections.terminal;
