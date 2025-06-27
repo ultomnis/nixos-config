@@ -27,6 +27,7 @@
         graphical = {
           enable = true;
           dolphin.enable = false;
+          gwenview.enable = false;
           mangohud.enable = false;
           nexusmods-app.enable = false;
         };
