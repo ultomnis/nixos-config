@@ -19,6 +19,14 @@ in
           id = "H76G6KI-QPUKUJB-PIV7ACP-MCUHQU3-NWHMLJA-QXVRI3L-3VNRPBM-ZROJIAU";
         };
 
+        canopus = {
+          addresses = [
+            "tcp://canopus"
+          ];
+
+          id = "UZVL5ZY-ESPYKYK-P2UCUWR-EVNJMKQ-B3OOBIU-NGY5TXN-EHL65C5-GO64NQL";
+        };
+
         sirius = {
           addresses = [
             "tcp://sirius"
@@ -32,6 +40,7 @@ in
         "Sesame" = {
           devices = [
             "arcturus"
+            "canopus"
             "sirius"
           ];
 
