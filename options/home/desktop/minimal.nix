@@ -113,5 +113,7 @@ in
         description = "Wallpaper for Swaylock.";
       };
     };
+
+    xdg-desktop-portal = mkMinimalOption "XDG Desktop Portal" { };
   };
 }
