@@ -78,6 +78,7 @@ in
 
     ripgrep = mkTerminalOption "ripgrep" { };
     ssh = mkTerminalOption "SSH" { };
+    syncthing = mkTerminalOption "Syncthing" { };
     tealdeer = mkTerminalOption "tealdeer" { };
     unar = mkTerminalOption "unar" { };
     wiremix = mkTerminalOption "wiremix" { };

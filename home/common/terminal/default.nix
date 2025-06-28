@@ -12,6 +12,7 @@
     ./micro.nix
     ./ollama.nix
     ./ssh.nix
+    ./syncthing.nix
     ./unar.nix
     ./yazi.nix
     ./yt-dlp.nix
