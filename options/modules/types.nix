@@ -7,9 +7,9 @@ in
 {
   options.luminosity = {
     system = {
-      configurations.enable = mkEnableOption "Whether to enable system configurations.";
-      programs.enable = mkEnableOption "Whether to enable system-level programs.";
-      services.enable = mkEnableOption "Whether to enable system-level services.";
+      configurations.enable = mkEnableOption "system configurations";
+      programs.enable = mkEnableOption "system-level programs";
+      services.enable = mkEnableOption "system-level services";
     };
   };
 }

@@ -52,7 +52,7 @@ in
                 description = "File that contains hash of the user's password.";
               };
 
-              homeManager = mkEnableOption "Whether to import user-specific Home Manager configurations.";
+              homeManager = mkEnableOption "user-specific Home Manager configurations";
 
               name = mkOption {
                 type = types.str;

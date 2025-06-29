@@ -4,7 +4,6 @@
   imports = [
     ../../../home/common
     ../../../home/nixos
-    ../../../options/common
     ../../../options/home
   ];
 
@@ -43,10 +42,10 @@
           syncthing.enable = false;
         };
       };
-    };
 
-    selections = {
-      editor = "helix";
+      selections = {
+        editor = "helix";
+      };
     };
   };
 }

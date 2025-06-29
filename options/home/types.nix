@@ -1,9 +1,4 @@
-{
-  config,
-  lib,
-  osConfig ? null,
-  ...
-}:
+{ config, lib, ... }:
 
 let
   inherit (lib)
@@ -12,21 +7,15 @@ let
     types
     ;
 
-  customConfig = if (osConfig != null) then osConfig else config;
-
 in
 {
   options.luminosity.home = {
     desktop = {
-      configurations.enable = mkOption {
-        type = types.bool;
-        default = osConfig.luminosity.system.configurations.enable or false;
-        description = "Whether to enable home configurations.";
-      };
+      configurations.enable = mkEnableOption "home configurations";
 
       environment.enable = mkOption {
         type = types.bool;
-        default = customConfig.luminosity.selections.desktop != null;
+        default = config.luminosity.home.selections.desktop != null;
         description = "Whether to enable desktop environment configurations.";
       };
 
@@ -34,7 +23,7 @@ in
         type = types.bool;
 
         default = (
-          builtins.elem customConfig.luminosity.selections.desktop [
+          builtins.elem config.luminosity.home.selections.desktop [
             "aerospace"
             "sway"
           ]
@@ -45,8 +34,8 @@ in
     };
 
     programs = {
-      graphical.enable = mkEnableOption "Whether to enable graphical programs.";
-      terminal.enable = mkEnableOption "Whether to enable terminal programs.";
+      graphical.enable = mkEnableOption "graphical programs";
+      terminal.enable = mkEnableOption "terminal programs";
     };
   };
 }

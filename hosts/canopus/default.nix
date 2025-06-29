@@ -4,7 +4,6 @@
   imports = [
     ../../modules/common
     ../../modules/darwin
-    ../../options/common
     ../../options/modules
 
     ../../secrets/modules.nix
@@ -25,9 +24,7 @@
   luminosity = {
     selections = {
       desktop = "aerospace";
-      editor = "helix";
       shell = "fish";
-      terminal = "wezterm";
     };
 
     system = {

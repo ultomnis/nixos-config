@@ -2,7 +2,6 @@
   config,
   customLib,
   lib,
-  osConfig ? null,
   ...
 }:
 
@@ -13,8 +12,6 @@ let
     ;
 
   inherit (customLib) selectionTypes;
-
-  customConfig = if (osConfig != null) then osConfig else config;
 
   mkConfigurationOption =
     name:
@@ -36,7 +33,7 @@ in
 
       editor = mkOption {
         inherit (selectionTypes.editor) type;
-        default = customConfig.luminosity.selections.editor;
+        default = config.luminosity.home.selections.editor;
         description = "EDITOR environment variable.";
       };
 
@@ -56,7 +53,7 @@ in
 
       terminal = mkOption {
         inherit (selectionTypes.terminal) type;
-        default = customConfig.luminosity.selections.terminal;
+        default = config.luminosity.home.selections.terminal;
         description = "TERMINAL environment variable.";
       };
     };

@@ -2,7 +2,6 @@
   config,
   customLib,
   lib,
-  osConfig ? null,
   ...
 }:
 
@@ -13,8 +12,6 @@ let
     ;
 
   inherit (customLib) selectionTypes;
-
-  customConfig = if (osConfig != null) then osConfig else config;
 
   mkGraphicalOption =
     name:
@@ -35,7 +32,7 @@ in
     foot = {
       enable = mkOption {
         type = types.bool;
-        default = customConfig.luminosity.selections.terminal == "foot";
+        default = config.luminosity.home.selections.terminal == "foot";
         description = "Whether to enable foot.";
       };
 
@@ -55,7 +52,7 @@ in
 
       shell = mkOption {
         inherit (selectionTypes.shell) type;
-        default = customConfig.luminosity.selections.shell;
+        default = config.luminosity.home.selections.shell;
         description = "Shell for foot.";
       };
 
@@ -80,7 +77,7 @@ in
     wezterm = {
       enable = mkOption {
         type = types.bool;
-        default = customConfig.luminosity.selections.terminal == "wezterm";
+        default = config.luminosity.home.selections.terminal == "wezterm";
         description = "Whether to enable WezTerm.";
       };
 
@@ -106,7 +103,7 @@ in
 
       shell = mkOption {
         inherit (selectionTypes.shell) type;
-        default = customConfig.luminosity.selections.shell;
+        default = config.luminosity.home.selections.shell;
         description = "Shell for WezTerm.";
       };
 

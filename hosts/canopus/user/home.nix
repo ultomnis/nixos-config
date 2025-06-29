@@ -1,3 +1,5 @@
+{ osConfig, ... }:
+
 {
   imports = [
     ../../../home/common
@@ -17,6 +19,8 @@
   luminosity.home = {
     desktop = {
       configurations = {
+        enable = true;
+
         variables.extraVariables = {
           HOMEBREW_NO_ANALYTICS = 1;
         };
@@ -41,6 +45,13 @@
           userName = "ultomnis";
         };
       };
+    };
+
+    selections = {
+      desktop = osConfig.luminosity.selections.desktop;
+      editor = "helix";
+      shell = osConfig.luminosity.selections.shell;
+      terminal = "wezterm";
     };
   };
 }

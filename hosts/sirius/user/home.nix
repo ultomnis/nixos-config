@@ -1,4 +1,11 @@
 {
+  inputs,
+  lib,
+  osConfig,
+  ...
+}:
+
+{
   imports = [
     ../../../home/common
     ../../../home/nixos
@@ -15,6 +22,8 @@
 
   luminosity.home = {
     desktop = {
+      configurations.enable = true;
+
       environment = {
         fonts.size = 10;
       };
@@ -40,6 +49,24 @@
           };
         };
       };
+    };
+
+    selections = {
+      desktop = osConfig.luminosity.selections.desktop;
+      editor = "helix";
+
+      monitors = lib.singleton {
+        name = "DP-2";
+        height = 1920;
+        width = 1080;
+        pos_x = 0;
+        pos_y = 0;
+        rate = 165;
+      };
+
+      shell = osConfig.luminosity.selections.shell;
+      terminal = "foot";
+      wallpaper = inputs.self + "/assets/wallpapers/bence-balla-schottner-zwAevXBnEN0-unsplash.jpg";
     };
   };
 }

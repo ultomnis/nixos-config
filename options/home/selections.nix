@@ -10,7 +10,7 @@ let
 
 in
 {
-  options.luminosity.selections = {
+  options.luminosity.home.selections = {
     desktop = mkOption {
       inherit (selectionTypes.desktop) type;
       default = null;
@@ -21,12 +21,6 @@ in
       inherit (selectionTypes.editor) type;
       default = null;
       description = "Default editor.";
-    };
-
-    gpu = mkOption {
-      inherit (selectionTypes.gpu) type;
-      default = null;
-      description = "System GPU.";
     };
 
     monitors = mkOption {

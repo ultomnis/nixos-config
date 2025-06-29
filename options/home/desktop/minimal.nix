@@ -2,7 +2,6 @@
   config,
   customLib,
   lib,
-  osConfig ? null,
   ...
 }:
 
@@ -14,8 +13,6 @@ let
     ;
 
   inherit (customLib) selectionTypes;
-
-  customConfig = if (osConfig != null) then osConfig else config;
 
   mkMinimalOption =
     name:
@@ -31,13 +28,13 @@ in
     aerospace = {
       enable = mkOption {
         type = types.bool;
-        default = customConfig.luminosity.selections.desktop == "aerospace";
+        default = config.luminosity.home.selections.desktop == "aerospace";
         description = "Whether to enable AeroSpace.";
       };
 
       terminal = mkOption {
         inherit (selectionTypes.terminal) type;
-        default = customConfig.luminosity.selections.terminal;
+        default = config.luminosity.home.selections.terminal;
         description = "Terminal for AeroSpace.";
       };
     };
@@ -49,11 +46,11 @@ in
     i3status-rust = {
       enable = mkMinimalOption "i3status-rust";
 
-      battery = mkEnableOption "Whether to enable battery block for i3status-rust.";
+      battery = mkEnableOption "battery block for i3status-rust";
 
       terminal = mkOption {
         inherit (selectionTypes.terminal) type;
-        default = customConfig.luminosity.selections.terminal;
+        default = config.luminosity.home.selections.terminal;
         description = "Terminal for i3status-rust.";
       };
     };
@@ -64,7 +61,7 @@ in
     sway = {
       enable = mkOption {
         type = types.bool;
-        default = customConfig.luminosity.selections.desktop == "sway";
+        default = config.luminosity.home.selections.desktop == "sway";
         description = "Whether to enable Sway.";
       };
 
@@ -86,19 +83,19 @@ in
 
       monitors = mkOption {
         inherit (selectionTypes.monitors) type;
-        default = customConfig.luminosity.selections.monitors;
+        default = config.luminosity.home.selections.monitors;
         description = "Sway monitor configuration.";
       };
 
       terminal = mkOption {
         inherit (selectionTypes.terminal) type;
-        default = customConfig.luminosity.selections.terminal;
+        default = config.luminosity.home.selections.terminal;
         description = "Terminal for Sway.";
       };
 
       wallpaper = mkOption {
         type = types.nullOr types.path;
-        default = customConfig.luminosity.selections.wallpaper;
+        default = config.luminosity.home.selections.wallpaper;
         description = "Wallpaper for Sway.";
       };
     };
@@ -110,7 +107,7 @@ in
 
       wallpaper = mkOption {
         type = types.nullOr types.path;
-        default = customConfig.luminosity.selections.wallpaper;
+        default = config.luminosity.home.selections.wallpaper;
         description = "Wallpaper for Swaylock.";
       };
     };
