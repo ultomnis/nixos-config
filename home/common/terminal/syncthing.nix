@@ -37,6 +37,40 @@ in
       };
 
       folders = {
+        "Media" = {
+          devices = [
+            "arcturus"
+            "canopus"
+            "sirius"
+          ];
+
+          path = "${config.home.homeDirectory}/Sync/Media";
+
+          versioning = {
+            type = "trashcan";
+            params.cleanoutDays = "14";
+          };
+        };
+
+        "Notes" = {
+          devices = [
+            "arcturus"
+            "canopus"
+            "sirius"
+          ];
+
+          path = "${config.home.homeDirectory}/Sync/Notes";
+
+          versioning = {
+            type = "simple";
+
+            params = {
+              cleanoutDays = "14";
+              keep = "5";
+            };
+          };
+        };
+
         "Sesame" = {
           devices = [
             "arcturus"
