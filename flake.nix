@@ -1,5 +1,5 @@
 {
-  description = "ultomnis' NixOS and nix-darwin configurations";
+  description = "ultomnis' Nix configurations";
 
   inputs = {
     agenix = {
@@ -74,20 +74,6 @@
       forEachSystem = nixpkgs.lib.genAttrs includedSystems;
       formatter = self.forEachSystem (system: nixpkgs.legacyPackages.${system}.nixfmt-tree);
 
-      nixosConfigurations = {
-        sirius = mkNixosConfig {
-          inherit customLib;
-          hostName = "sirius";
-          system = "x86_64-linux";
-
-          extraModules = [
-            agenix.nixosModules.default
-            disko.nixosModules.disko
-            home-manager.nixosModules.home-manager
-          ];
-        };
-      };
-
       darwinConfigurations = {
         canopus = mkDarwinConfig {
           inherit customLib;
@@ -107,6 +93,20 @@
           hostName = "alpha-centauri";
           system = "x86_64-linux";
           username = "deck";
+        };
+      };
+
+      nixosConfigurations = {
+        sirius = mkNixosConfig {
+          inherit customLib;
+          hostName = "sirius";
+          system = "x86_64-linux";
+
+          extraModules = [
+            agenix.nixosModules.default
+            disko.nixosModules.disko
+            home-manager.nixosModules.home-manager
+          ];
         };
       };
 

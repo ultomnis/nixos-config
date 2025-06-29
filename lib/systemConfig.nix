@@ -1,43 +1,6 @@
 { inputs, ... }:
 
 {
-  mkNixosConfig =
-    {
-      customLib,
-      hostName,
-      system,
-      extraModules ? [ ],
-    }:
-
-    let
-      inherit (inputs) nixpkgs;
-
-      specialArgs = {
-        inherit
-          customLib
-          hostName
-          inputs
-          ;
-      };
-
-    in
-    nixpkgs.lib.nixosSystem {
-      inherit system;
-      inherit specialArgs;
-
-      modules = [
-        ../hosts/${hostName}
-
-        {
-          home-manager = {
-            useGlobalPkgs = true;
-            useUserPackages = true;
-            extraSpecialArgs = specialArgs;
-          };
-        }
-      ] ++ extraModules;
-    };
-
   mkDarwinConfig =
     {
       customLib,
@@ -105,6 +68,43 @@
       ] ++ extraModules;
     };
 
+  mkNixosConfig =
+    {
+      customLib,
+      hostName,
+      system,
+      extraModules ? [ ],
+    }:
+
+    let
+      inherit (inputs) nixpkgs;
+
+      specialArgs = {
+        inherit
+          customLib
+          hostName
+          inputs
+          ;
+      };
+
+    in
+    nixpkgs.lib.nixosSystem {
+      inherit system;
+      inherit specialArgs;
+
+      modules = [
+        ../hosts/${hostName}
+
+        {
+          home-manager = {
+            useGlobalPkgs = true;
+            useUserPackages = true;
+            extraSpecialArgs = specialArgs;
+          };
+        }
+      ] ++ extraModules;
+    };
+
   mkSystemConfig =
     {
       customLib,
@@ -123,12 +123,15 @@
           customLib
           hostName
           inputs
-          system
           ;
       };
 
       modules = [
         ../hosts/${hostName}
+
+        {
+          nixpkgs.hostPlatform = system;
+        }
       ] ++ extraModules;
     };
 }
