@@ -29,6 +29,7 @@
           gwenview.enable = false;
           mangohud.enable = false;
           nexusmods-app.enable = false;
+          wezterm.font.size = 11;
         };
 
         terminal = {
@@ -45,6 +46,8 @@
 
       selections = {
         editor = "helix";
+        shell = "fish";
+        terminal = "wezterm";
       };
     };
   };
