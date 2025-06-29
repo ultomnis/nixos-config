@@ -15,6 +15,7 @@ in
     mkDarwinConfig
     mkHomeConfig
     mkNixosConfig
+    mkSystemConfig
     ;
 
   selectionTypes = import ./selectionTypes.nix {

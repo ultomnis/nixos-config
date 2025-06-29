@@ -101,7 +101,34 @@
       };
 
       modules = [
-        ../hosts/${hostName}/${username}
+        ../hosts/${hostName}/${username}/home.nix
+      ] ++ extraModules;
+    };
+
+  mkSystemConfig =
+    {
+      customLib,
+      hostName,
+      system,
+      extraModules ? [ ],
+    }:
+
+    let
+      inherit (inputs) system-manager;
+
+    in
+    system-manager.lib.makeSystemConfig {
+      extraSpecialArgs = {
+        inherit
+          customLib
+          hostName
+          inputs
+          system
+          ;
+      };
+
+      modules = [
+        ../hosts/${hostName}
       ] ++ extraModules;
     };
 }

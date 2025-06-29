@@ -28,6 +28,16 @@
       url = "git+ssh://git@github.com/ultomnis/nix-secrets.git?ref=main";
       flake = false;
     };
+
+    nix-system-graphics = {
+      url = "github:soupglasses/nix-system-graphics";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    system-manager = {
+      url = "github:numtide/system-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -37,6 +47,7 @@
       disko,
       home-manager,
       nixpkgs,
+      nix-system-graphics,
       ...
     }@inputs:
 
@@ -51,7 +62,12 @@
         inherit (nixpkgs) lib;
       };
 
-      inherit (customLib) mkNixosConfig mkDarwinConfig mkHomeConfig;
+      inherit (customLib)
+        mkDarwinConfig
+        mkHomeConfig
+        mkNixosConfig
+        mkSystemConfig
+        ;
 
     in
     {
@@ -91,6 +107,18 @@
           hostName = "alpha-centauri";
           system = "x86_64-linux";
           username = "deck";
+        };
+      };
+
+      systemConfigs = {
+        alpha-centauri = mkSystemConfig {
+          inherit customLib;
+          hostName = "alpha-centauri";
+          system = "x86_64-linux";
+
+          extraModules = [
+            nix-system-graphics.systemModules.default
+          ];
         };
       };
     };
