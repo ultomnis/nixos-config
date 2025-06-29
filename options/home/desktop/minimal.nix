@@ -18,15 +18,12 @@ let
   customConfig = if (osConfig != null) then osConfig else config;
 
   mkMinimalOption =
-    name: extraOptions:
-    {
-      enable = mkOption {
-        type = types.bool;
-        default = config.luminosity.home.desktop.minimal.enable;
-        description = "Whether to enable " + name + ".";
-      };
-    }
-    |> lib.recursiveUpdate extraOptions;
+    name:
+    mkOption {
+      type = types.bool;
+      default = config.luminosity.home.desktop.minimal.enable;
+      description = "Whether to enable " + name + ".";
+    };
 
 in
 {
@@ -45,11 +42,13 @@ in
       };
     };
 
-    dconf = mkMinimalOption "dconf" { };
-    fuzzel = mkMinimalOption "fuzzel" { };
-    gammastep = mkMinimalOption "Gammastep" { };
+    dconf.enable = mkMinimalOption "dconf";
+    fuzzel.enable = mkMinimalOption "fuzzel";
+    gammastep.enable = mkMinimalOption "Gammastep";
 
-    i3status-rust = mkMinimalOption "i3status-rust" {
+    i3status-rust = {
+      enable = mkMinimalOption "i3status-rust";
+
       battery = mkEnableOption "Whether to enable battery block for i3status-rust.";
 
       terminal = mkOption {
@@ -59,8 +58,8 @@ in
       };
     };
 
-    mako = mkMinimalOption "mako" { };
-    polkit-kde-agent = mkMinimalOption "Polkit KDE Agent" { };
+    mako.enable = mkMinimalOption "mako";
+    polkit-kde-agent.enable = mkMinimalOption "Polkit KDE Agent";
 
     sway = {
       enable = mkOption {
@@ -104,9 +103,11 @@ in
       };
     };
 
-    swayidle = mkMinimalOption "Swayidle" { };
+    swayidle.enable = mkMinimalOption "Swayidle";
 
-    swaylock = mkMinimalOption "Swaylock" {
+    swaylock = {
+      enable = mkMinimalOption "Swaylock";
+
       wallpaper = mkOption {
         type = types.nullOr types.path;
         default = customConfig.luminosity.selections.wallpaper;
@@ -114,6 +115,6 @@ in
       };
     };
 
-    xdg-desktop-portal = mkMinimalOption "XDG Desktop Portal" { };
+    xdg-desktop-portal.enable = mkMinimalOption "XDG Desktop Portal";
   };
 }

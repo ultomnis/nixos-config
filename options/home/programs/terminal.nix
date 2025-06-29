@@ -7,29 +7,28 @@ let
     ;
 
   mkTerminalOption =
-    name: extraOptions:
-    {
-      enable = mkOption {
-        type = types.bool;
-        default = config.luminosity.home.programs.terminal.enable;
-        description = "Whether to enable " + name + ".";
-      };
-    }
-    |> lib.recursiveUpdate extraOptions;
+    name:
+    mkOption {
+      type = types.bool;
+      default = config.luminosity.home.programs.terminal.enable;
+      description = "Whether to enable " + name + ".";
+    };
 
 in
 {
   options.luminosity.home.programs.terminal = {
-    bash = mkTerminalOption "bash" { };
-    bat = mkTerminalOption "bat" { };
-    btop = mkTerminalOption "btop" { };
-    eza = mkTerminalOption "eza" { };
-    fd = mkTerminalOption "fd" { };
-    ffmpeg = mkTerminalOption "ffmpeg" { };
-    fish = mkTerminalOption "fish" { };
-    fzf = mkTerminalOption "fzf" { };
+    bash.enable = mkTerminalOption "bash";
+    bat.enable = mkTerminalOption "bat";
+    btop.enable = mkTerminalOption "btop";
+    eza.enable = mkTerminalOption "eza";
+    fd.enable = mkTerminalOption "fd";
+    ffmpeg.enable = mkTerminalOption "ffmpeg";
+    fish.enable = mkTerminalOption "fish";
+    fzf.enable = mkTerminalOption "fzf";
 
-    git = mkTerminalOption "Git" {
+    git = {
+      enable = mkTerminalOption "Git";
+
       userEmail = mkOption {
         type = types.nullOr types.str;
         default = null;
@@ -55,7 +54,9 @@ in
       };
     };
 
-    helix = mkTerminalOption "Helix" {
+    helix = {
+      enable = mkTerminalOption "Helix";
+
       theme = mkOption {
         type = types.nullOr types.str;
         default = "rose_pine";
@@ -63,12 +64,14 @@ in
       };
     };
 
-    kew = mkTerminalOption "kew" { };
-    libqalculate = mkTerminalOption "libqalculate" { };
-    mat2 = mkTerminalOption "mat2" { };
-    micro = mkTerminalOption "micro" { };
+    kew.enable = mkTerminalOption "kew";
+    libqalculate.enable = mkTerminalOption "libqalculate";
+    mat2.enable = mkTerminalOption "mat2";
+    micro.enable = mkTerminalOption "micro";
 
-    ollama = mkTerminalOption "Ollama" {
+    ollama = {
+      enable = mkTerminalOption "Ollama";
+
       environmentVariables = mkOption {
         type = types.attrsOf types.str;
         default = { };
@@ -76,15 +79,15 @@ in
       };
     };
 
-    ripgrep = mkTerminalOption "ripgrep" { };
-    ssh = mkTerminalOption "SSH" { };
-    syncthing = mkTerminalOption "Syncthing" { };
-    tealdeer = mkTerminalOption "tealdeer" { };
-    unar = mkTerminalOption "unar" { };
-    wiremix = mkTerminalOption "wiremix" { };
-    yazi = mkTerminalOption "Yazi" { };
-    yt-dlp = mkTerminalOption "yt-dlp" { };
-    zoxide = mkTerminalOption "zoxide" { };
-    zsh = mkTerminalOption "zsh" { };
+    ripgrep.enable = mkTerminalOption "ripgrep";
+    ssh.enable = mkTerminalOption "SSH";
+    syncthing.enable = mkTerminalOption "Syncthing";
+    tealdeer.enable = mkTerminalOption "tealdeer";
+    unar.enable = mkTerminalOption "unar";
+    wiremix.enable = mkTerminalOption "wiremix";
+    yazi.enable = mkTerminalOption "Yazi";
+    yt-dlp.enable = mkTerminalOption "yt-dlp";
+    zoxide.enable = mkTerminalOption "zoxide";
+    zsh.enable = mkTerminalOption "zsh";
   };
 }

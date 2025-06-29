@@ -15,15 +15,12 @@ let
   inherit (customLib) selectionTypes;
 
   mkConfigurationOption =
-    name: extraOptions:
-    {
-      enable = mkOption {
-        type = types.bool;
-        default = config.luminosity.system.configurations.enable;
-        description = "Whether to enable " + name + ".";
-      };
-    }
-    |> lib.recursiveUpdate extraOptions;
+    name:
+    mkOption {
+      type = types.bool;
+      default = config.luminosity.system.configurations.enable;
+      description = "Whether to enable " + name + ".";
+    };
 
 in
 {
@@ -36,13 +33,15 @@ in
       };
     };
 
-    boot = mkConfigurationOption "boot configuration" { };
-    locale = mkConfigurationOption "locale configuration" { };
-    nixConfig = mkConfigurationOption "Nix settings" { };
-    security = mkConfigurationOption "security configuration" { };
-    unfree = mkConfigurationOption "unfree software" { };
+    boot.enable = mkConfigurationOption "boot configuration";
+    locale.enable = mkConfigurationOption "locale configuration";
+    nixConfig.enable = mkConfigurationOption "Nix settings";
+    security.enable = mkConfigurationOption "security configuration";
+    unfree.enable = mkConfigurationOption "unfree software";
 
-    userConfig = mkConfigurationOption "user configuration" {
+    userConfig = {
+      enable = mkConfigurationOption "user configuration";
+
       users = mkOption {
         type = types.listOf (
           types.submodule {
@@ -80,6 +79,6 @@ in
       };
     };
 
-    zramSwap = mkConfigurationOption "zram swap space" { };
+    zramSwap.enable = mkConfigurationOption "zram swap space";
   };
 }

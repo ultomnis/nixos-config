@@ -7,26 +7,23 @@ let
     ;
 
   mkServiceOption =
-    name: extraOptions:
-    {
-      enable = mkOption {
-        type = types.bool;
-        default = config.luminosity.system.services.enable;
-        description = "Whether to enable " + name + ".";
-      };
-    }
-    |> lib.recursiveUpdate extraOptions;
+    name:
+    mkOption {
+      type = types.bool;
+      default = config.luminosity.system.services.enable;
+      description = "Whether to enable " + name + ".";
+    };
 
 in
 {
   options.luminosity.system.services = {
-    avahi = mkServiceOption "Avahi" { };
-    bluetooth = mkServiceOption "Bluetooth" { };
-    geoclue2 = mkServiceOption "GeoClue 2" { };
-    libvirtd = mkServiceOption "libvirtd" { };
-    networkmanager = mkServiceOption "Network Manager" { };
-    openssh = mkServiceOption "OpenSSH" { };
-    pipewire = mkServiceOption "PipeWire" { };
+    avahi.enable = mkServiceOption "Avahi";
+    bluetooth.enable = mkServiceOption "Bluetooth";
+    geoclue2.enable = mkServiceOption "GeoClue 2";
+    libvirtd.enable = mkServiceOption "libvirtd";
+    networkmanager.enable = mkServiceOption "Network Manager";
+    openssh.enable = mkServiceOption "OpenSSH";
+    pipewire.enable = mkServiceOption "PipeWire";
 
     plasma = {
       enable = mkOption {
@@ -36,11 +33,13 @@ in
       };
     };
 
-    printing = mkServiceOption "printing support" { };
-    ratbagd = mkServiceOption "ratbagd" { };
-    rtkit = mkServiceOption "RealtimeKit" { };
+    printing.enable = mkServiceOption "printing support";
+    ratbagd.enable = mkServiceOption "ratbagd";
+    rtkit.enable = mkServiceOption "RealtimeKit";
 
-    tailscale = mkServiceOption "Tailscale" {
+    tailscale = {
+      enable = mkServiceOption "Tailscale";
+
       useRoutingFeatures = mkOption {
         type = types.enum [
           "none"

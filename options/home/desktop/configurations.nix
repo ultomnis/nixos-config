@@ -17,24 +17,23 @@ let
   customConfig = if (osConfig != null) then osConfig else config;
 
   mkConfigurationOption =
-    name: extraOptions:
-    {
-      enable = mkOption {
-        type = types.bool;
-        default = config.luminosity.home.desktop.configurations.enable;
-        description = "Whether to enable " + name + ".";
-      };
-    }
-    |> lib.recursiveUpdate extraOptions;
+    name:
+    mkOption {
+      type = types.bool;
+      default = config.luminosity.home.desktop.configurations.enable;
+      description = "Whether to enable " + name + ".";
+    };
 
 in
 {
   options.luminosity.home.desktop.configurations = {
-    darwinDefaults = mkConfigurationOption "macOS user defaults" { };
-    nixConfig = mkConfigurationOption "user-specific Nix settings" { };
-    unfree = mkConfigurationOption "unfree software" { };
+    darwinDefaults.enable = mkConfigurationOption "macOS user defaults";
+    nixConfig.enable = mkConfigurationOption "user-specific Nix settings";
+    unfree.enable = mkConfigurationOption "unfree software";
 
-    variables = mkConfigurationOption "environment variables configuration" {
+    variables = {
+      enable = mkConfigurationOption "environment variables configuration";
+
       editor = mkOption {
         inherit (selectionTypes.editor) type;
         default = customConfig.luminosity.selections.editor;

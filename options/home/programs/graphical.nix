@@ -17,23 +17,20 @@ let
   customConfig = if (osConfig != null) then osConfig else config;
 
   mkGraphicalOption =
-    name: extraOptions:
-    {
-      enable = mkOption {
-        type = types.bool;
-        default = config.luminosity.home.programs.graphical.enable;
-        description = "Whether to enable " + name + ".";
-      };
-    }
-    |> lib.recursiveUpdate extraOptions;
+    name:
+    mkOption {
+      type = types.bool;
+      default = config.luminosity.home.programs.graphical.enable;
+      description = "Whether to enable " + name + ".";
+    };
 
 in
 {
   options.luminosity.home.programs.graphical = {
-    anki = mkGraphicalOption "Anki" { };
-    blender = mkGraphicalOption "Blender" { };
-    dolphin = mkGraphicalOption "Dolphin" { };
-    falkon = mkGraphicalOption "Falkon" { };
+    anki.enable = mkGraphicalOption "Anki";
+    blender.enable = mkGraphicalOption "Blender";
+    dolphin.enable = mkGraphicalOption "Dolphin";
+    falkon.enable = mkGraphicalOption "Falkon";
 
     foot = {
       enable = mkOption {
@@ -69,16 +66,16 @@ in
       };
     };
 
-    godot = mkGraphicalOption "Godot" { };
-    gwenview = mkGraphicalOption "Gwenview" { };
-    keepassxc = mkGraphicalOption "KeePassXC" { };
-    krita = mkGraphicalOption "Krita" { };
-    mangohud = mkGraphicalOption "MangoHud" { };
-    mpv = mkGraphicalOption "MPV" { };
-    nexusmods-app = mkGraphicalOption "Nexus Mods App" { };
-    obs-studio = mkGraphicalOption "OBS Studio" { };
-    qtsvg = mkGraphicalOption "Qt SVG" { };
-    utm = mkGraphicalOption "UTM" { };
+    godot.enable = mkGraphicalOption "Godot";
+    gwenview.enable = mkGraphicalOption "Gwenview";
+    keepassxc.enable = mkGraphicalOption "KeePassXC";
+    krita.enable = mkGraphicalOption "Krita";
+    mangohud.enable = mkGraphicalOption "MangoHud";
+    mpv.enable = mkGraphicalOption "MPV";
+    nexusmods-app.enable = mkGraphicalOption "Nexus Mods App";
+    obs-studio.enable = mkGraphicalOption "OBS Studio";
+    qtsvg.enable = mkGraphicalOption "Qt SVG";
+    utm.enable = mkGraphicalOption "UTM";
 
     wezterm = {
       enable = mkOption {
@@ -120,7 +117,9 @@ in
       };
     };
 
-    zed-editor = mkGraphicalOption "Zed" {
+    zed-editor = {
+      enable = mkGraphicalOption "Zed";
+
       font = {
         name = mkOption {
           type = types.nullOr types.str;

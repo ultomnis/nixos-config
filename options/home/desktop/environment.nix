@@ -13,20 +13,19 @@ let
     ;
 
   mkEnvironmentOption =
-    name: extraOptions:
-    {
-      enable = mkOption {
-        type = types.bool;
-        default = config.luminosity.home.desktop.environment.enable;
-        description = "Whether to enable " + name + ".";
-      };
-    }
-    |> lib.recursiveUpdate extraOptions;
+    name:
+    mkOption {
+      type = types.bool;
+      default = config.luminosity.home.desktop.environment.enable;
+      description = "Whether to enable " + name + ".";
+    };
 
 in
 {
   options.luminosity.home.desktop.environment = {
-    cursors = mkEnvironmentOption "cursor configuration" {
+    cursors = {
+      enable = mkEnvironmentOption "cursor configuration";
+
       name = mkOption {
         type = types.nullOr types.str;
         default = "Bibata-Modern-Ice";
@@ -39,7 +38,9 @@ in
       };
     };
 
-    fonts = mkEnvironmentOption "font configuration" {
+    fonts = {
+      enable = mkEnvironmentOption "font configuration";
+
       package = mkPackageOption pkgs "font" {
         default = [
           "nerd-fonts"
@@ -80,6 +81,6 @@ in
       };
     };
 
-    ssh-agent = mkEnvironmentOption "SSH Agent" { };
+    ssh-agent.enable = mkEnvironmentOption "SSH Agent";
   };
 }
