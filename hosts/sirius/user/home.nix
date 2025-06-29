@@ -66,7 +66,7 @@
 
       shell = osConfig.luminosity.selections.shell;
       terminal = "foot";
-      wallpaper = inputs.self + "/assets/wallpapers/bence-balla-schottner-zwAevXBnEN0-unsplash.jpg";
+      wallpaper = "${inputs.self}/assets/wallpapers/bence-balla-schottner-zwAevXBnEN0-unsplash.jpg";
     };
   };
 }

@@ -17,7 +17,7 @@ let
     mkOption {
       type = types.bool;
       default = config.luminosity.home.desktop.environment.enable;
-      description = "Whether to enable " + name + ".";
+      description = "Whether to enable ${name}.";
     };
 
 in

@@ -18,7 +18,7 @@ let
     mkOption {
       type = types.bool;
       default = config.luminosity.home.programs.graphical.enable;
-      description = "Whether to enable " + name + ".";
+      description = "Whether to enable ${name}.";
     };
 
 in

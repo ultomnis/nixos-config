@@ -11,7 +11,7 @@ let
     mkOption {
       type = types.bool;
       default = config.luminosity.home.programs.terminal.enable;
-      description = "Whether to enable " + name + ".";
+      description = "Whether to enable ${name}.";
     };
 
 in

@@ -19,7 +19,7 @@ let
     mkOption {
       type = types.bool;
       default = config.luminosity.home.desktop.minimal.enable;
-      description = "Whether to enable " + name + ".";
+      description = "Whether to enable ${name}.";
     };
 
 in
