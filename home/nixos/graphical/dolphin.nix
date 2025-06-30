@@ -13,12 +13,11 @@ in
   config = lib.mkIf cfg.enable {
     home.packages = builtins.attrValues {
       inherit (pkgs.kdePackages)
-        baloo-widgets
         dolphin
         dolphin-plugins
         ffmpegthumbs
-        kio-fuse
         kio-extras
+        kio-fuse
         ;
     };
   };
