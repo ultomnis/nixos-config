@@ -83,7 +83,6 @@ in
     ssh.enable = mkTerminalOption "SSH";
     syncthing.enable = mkTerminalOption "Syncthing";
     tealdeer.enable = mkTerminalOption "tealdeer";
-    unar.enable = mkTerminalOption "unar";
     wiremix.enable = mkTerminalOption "wiremix";
     yazi.enable = mkTerminalOption "Yazi";
     yt-dlp.enable = mkTerminalOption "yt-dlp";
