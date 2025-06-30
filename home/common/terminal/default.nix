@@ -3,6 +3,7 @@
     ./shells
     ./utils
 
+    ./7zz.nix
     ./ffmpeg.nix
     ./git.nix
     ./helix.nix

@@ -17,6 +17,7 @@ let
 in
 {
   options.luminosity.home.programs.terminal = {
+    _7zz.enable = mkTerminalOption "7-Zip";
     bash.enable = mkTerminalOption "bash";
     bat.enable = mkTerminalOption "bat";
     btop.enable = mkTerminalOption "btop";
