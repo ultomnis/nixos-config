@@ -64,7 +64,6 @@ in
     };
 
     godot.enable = mkGraphicalOption "Godot";
-    gwenview.enable = mkGraphicalOption "Gwenview";
     keepassxc.enable = mkGraphicalOption "KeePassXC";
     krita.enable = mkGraphicalOption "Krita";
     mangohud.enable = mkGraphicalOption "MangoHud";
