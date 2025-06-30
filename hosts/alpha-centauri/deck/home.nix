@@ -28,6 +28,7 @@
           dolphin.enable = false;
           mangohud.enable = false;
           nexusmods-app.enable = false;
+          okular.enable = false;
           wezterm.font.size = 11;
         };
 

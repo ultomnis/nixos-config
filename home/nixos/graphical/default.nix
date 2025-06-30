@@ -9,6 +9,7 @@
     ./mangohud.nix
     ./nexusmods-app.nix
     ./obs-studio.nix
+    ./okular.nix
     ./qtsvg.nix
   ];
 }
