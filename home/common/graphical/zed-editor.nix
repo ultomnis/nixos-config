@@ -12,7 +12,7 @@ in
 {
   # Code editor
   programs.zed-editor = {
-    #inherit (cfg) enable;
+    inherit (cfg) enable;
 
     extensions = [
       "java"
