@@ -25,7 +25,6 @@
       programs = {
         graphical = {
           enable = true;
-          dolphin.enable = false;
           mangohud.enable = false;
           nexusmods-app.enable = false;
           okular.enable = false;

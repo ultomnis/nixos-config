@@ -27,7 +27,11 @@ in
       inherit (pkgs.kdePackages)
         ark
         aurorae
+        baloo-widgets
+        dolphin
+        dolphin-plugins
         elisa
+        ffmpegthumbs
         gwenview
         kate
         khelpcenter

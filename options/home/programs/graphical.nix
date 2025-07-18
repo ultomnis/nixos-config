@@ -26,7 +26,6 @@ in
   options.luminosity.home.programs.graphical = {
     anki.enable = mkGraphicalOption "Anki";
     blender.enable = mkGraphicalOption "Blender";
-    dolphin.enable = mkGraphicalOption "Dolphin";
 
     foot = {
       enable = mkOption {

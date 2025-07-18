@@ -1,6 +1,5 @@
 {
   imports = [
-    ./dolphin.nix
     ./foot.nix
     ./godot.nix
     ./koko.nix
