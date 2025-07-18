@@ -21,18 +21,13 @@ in
       config.sway = {
         default = [
           "wlr"
-          "gtk"
         ];
 
         "org.freedesktop.impl.portal.FileChooser" = "kde";
       };
 
       extraPortals = builtins.attrValues {
-        inherit (pkgs)
-          xdg-desktop-portal-gtk
-          xdg-desktop-portal-wlr
-          ;
-
+        inherit (pkgs) xdg-desktop-portal-wlr;
         inherit (pkgs.kdePackages) xdg-desktop-portal-kde;
       };
     })
