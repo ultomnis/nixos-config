@@ -39,6 +39,7 @@ in
         krdp
         ktexteditor
         kwin-x11
+        okular
         plasma-browser-integration
         plasma-workspace-wallpapers
         xwaylandvideobridge
