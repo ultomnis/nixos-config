@@ -27,7 +27,6 @@ in
     anki.enable = mkGraphicalOption "Anki";
     blender.enable = mkGraphicalOption "Blender";
     dolphin.enable = mkGraphicalOption "Dolphin";
-    falkon.enable = mkGraphicalOption "Falkon";
 
     foot = {
       enable = mkOption {
