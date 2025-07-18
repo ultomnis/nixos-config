@@ -63,7 +63,6 @@ in
 
     godot.enable = mkGraphicalOption "Godot";
     keepassxc.enable = mkGraphicalOption "KeePassXC";
-    koko.enable = mkGraphicalOption "Koko";
     krita.enable = mkGraphicalOption "Krita";
     mangohud.enable = mkGraphicalOption "MangoHud";
     mpv.enable = mkGraphicalOption "MPV";
