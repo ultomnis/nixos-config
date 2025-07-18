@@ -73,6 +73,7 @@ in
     obs-studio.enable = mkGraphicalOption "OBS Studio";
     okular.enable = mkGraphicalOption "Okular";
     qtsvg.enable = mkGraphicalOption "Qt SVG";
+    qutebrowser.enable = mkGraphicalOption "qutebrowser";
     utm.enable = mkGraphicalOption "UTM";
 
     wezterm = {
