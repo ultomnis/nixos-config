@@ -21,6 +21,13 @@ in
       menu = lib.getExe pkgs.fuzzel;
       defaultWorkspace = "workspace number 1";
 
+      startup = [
+        {
+          always = true;
+          command = "${lib.getExe pkgs.darkman} set dark";
+        }
+      ];
+
       input = {
         "type:pointer" = {
           accel_profile = "flat";

@@ -39,6 +39,7 @@ in
       };
     };
 
+    darkman.enable = mkMinimalOption "darkman";
     fuzzel.enable = mkMinimalOption "fuzzel";
     gammastep.enable = mkMinimalOption "Gammastep";
 

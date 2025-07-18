@@ -24,6 +24,7 @@ in
         ];
 
         "org.freedesktop.impl.portal.FileChooser" = "kde";
+        "org.freedesktop.impl.portal.Settings" = "darkman";
       };
 
       extraPortals = builtins.attrValues {

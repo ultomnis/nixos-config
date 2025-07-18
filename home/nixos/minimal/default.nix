@@ -2,6 +2,7 @@
   imports = [
     ./sway
 
+    ./darkman.nix
     ./fuzzel.nix
     ./gammastep.nix
     ./i3status-rust.nix
