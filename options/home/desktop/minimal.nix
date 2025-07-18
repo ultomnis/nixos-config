@@ -39,7 +39,6 @@ in
       };
     };
 
-    dconf.enable = mkMinimalOption "dconf";
     fuzzel.enable = mkMinimalOption "fuzzel";
     gammastep.enable = mkMinimalOption "Gammastep";
 
