@@ -68,7 +68,6 @@ in
     mpv.enable = mkGraphicalOption "MPV";
     nexusmods-app.enable = mkGraphicalOption "Nexus Mods App";
     obs-studio.enable = mkGraphicalOption "OBS Studio";
-    photoqt.enable = mkGraphicalOption "PhotoQt";
     qutebrowser.enable = mkGraphicalOption "qutebrowser";
     utm.enable = mkGraphicalOption "UTM";
 
