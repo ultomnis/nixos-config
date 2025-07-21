@@ -68,6 +68,7 @@ in
     kew.enable = mkTerminalOption "kew";
     libqalculate.enable = mkTerminalOption "libqalculate";
     mat2.enable = mkTerminalOption "mat2";
+    mcat.enable = mkTerminalOption "mcat";
     micro.enable = mkTerminalOption "micro";
 
     ollama = {
