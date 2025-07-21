@@ -112,8 +112,6 @@ in
       };
     };
 
-    zathura.enable = mkGraphicalOption "zathura";
-
     zed-editor = {
       enable = mkGraphicalOption "Zed";
 
