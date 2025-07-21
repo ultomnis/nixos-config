@@ -81,6 +81,7 @@ in
       };
     };
 
+    poppler-utils.enable = mkTerminalOption "poppler-utils";
     ripgrep.enable = mkTerminalOption "ripgrep";
     ssh.enable = mkTerminalOption "SSH";
     syncthing.enable = mkTerminalOption "Syncthing";

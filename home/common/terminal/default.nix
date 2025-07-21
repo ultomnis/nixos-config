@@ -12,6 +12,7 @@
     ./mat2.nix
     ./micro.nix
     ./ollama.nix
+    ./poppler-utils.nix
     ./ssh.nix
     ./syncthing.nix
     ./yazi.nix
