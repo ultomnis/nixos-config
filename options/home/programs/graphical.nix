@@ -66,7 +66,6 @@ in
     krita.enable = mkGraphicalOption "Krita";
     mangohud.enable = mkGraphicalOption "MangoHud";
     mpv.enable = mkGraphicalOption "MPV";
-    nexusmods-app.enable = mkGraphicalOption "Nexus Mods App";
     obs-studio.enable = mkGraphicalOption "OBS Studio";
     qutebrowser.enable = mkGraphicalOption "qutebrowser";
     utm.enable = mkGraphicalOption "UTM";

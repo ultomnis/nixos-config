@@ -26,7 +26,6 @@
         graphical = {
           enable = true;
           mangohud.enable = false;
-          nexusmods-app.enable = false;
           wezterm.font.size = 11;
         };
 

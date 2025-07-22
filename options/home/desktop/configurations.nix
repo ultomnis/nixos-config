@@ -26,7 +26,6 @@ in
   options.luminosity.home.desktop.configurations = {
     darwinDefaults.enable = mkConfigurationOption "macOS user defaults";
     nixConfig.enable = mkConfigurationOption "user-specific Nix settings";
-    unfree.enable = mkConfigurationOption "unfree software";
 
     variables = {
       enable = mkConfigurationOption "environment variables configuration";
