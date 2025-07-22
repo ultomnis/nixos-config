@@ -42,6 +42,7 @@ in
         edit_prediction_provider = "none";
       };
 
+      helix_mode = true;
       hour_format = "hour24";
 
       lsp = {
@@ -130,7 +131,6 @@ in
 
       theme = lib.mkIf (cfg.theme != null) cfg.theme;
       title_bar.show_sign_in = false;
-      vim_mode = true;
 
       "experimental.theme_overrides" = {
         "background" = "#00000099";
