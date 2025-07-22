@@ -28,6 +28,7 @@ in
           select = "underline";
         };
 
+        cursorline = true;
         indent-guides.render = true;
         line-number = "relative";
       };
@@ -89,8 +90,15 @@ in
 
     themes = {
       custom_transparent = {
-        "inherits" = lib.mkIf (cfg.theme != null) cfg.theme;
-        "ui.background" = { };
+        "inherits" = "base16_transparent";
+
+        "ui.cursorline.primary" = {
+          bg = "black";
+        };
+
+        "ui.cursorline.secondary" = {
+          bg = "black";
+        };
       };
     };
   };
