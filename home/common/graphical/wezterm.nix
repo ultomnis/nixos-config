@@ -20,7 +20,6 @@ in
       ${lib.optionalString (cfg.theme != null) "config.color_scheme = '${cfg.theme}'"}
 
       config.colors = {
-        foreground = '#ffffff',
         background = '#000000',
       }
 
@@ -34,7 +33,7 @@ in
       config.front_end = 'WebGpu'
       config.max_fps = ${toString cfg.maxFPS}
       config.webgpu_power_preference = 'HighPerformance'
-      config.window_background_opacity = 0.6
+      config.window_background_opacity = 0.8
 
       config.window_padding = {
         left = 5,
