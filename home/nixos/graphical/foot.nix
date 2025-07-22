@@ -15,7 +15,7 @@ in
     inherit (cfg) enable;
 
     settings = {
-      colors.alpha = 0.6;
+      colors.alpha = 0.8;
 
       main = {
         font = lib.mkIf (
@@ -27,7 +27,6 @@ in
             foot-colors = pkgs.writeText "foot-colors.ini" ''
               [colors]
               background=000000
-              foreground=ffffff
             '';
           in
           lib.optional (cfg.theme != null) "${pkgs.foot.themes}/share/foot/themes/${cfg.theme}"
