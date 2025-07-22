@@ -185,12 +185,12 @@ in
         statusCommand = "${lib.getExe pkgs.i3status-rust} config-status.toml";
 
         colors = {
-          background = "#00000099";
+          background = "#000000cc";
           separator = "#ffffff";
 
           inactiveWorkspace = {
-            background = "#00000099";
-            border = "#00000099";
+            background = "#000000cc";
+            border = "#000000cc";
             text = "#ffffff";
           };
         };

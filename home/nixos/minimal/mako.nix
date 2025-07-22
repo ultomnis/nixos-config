@@ -10,7 +10,7 @@ in
     inherit (cfg) enable;
 
     settings = {
-      background-color = "#00000099";
+      background-color = "#000000cc";
       border-size = 0;
       default-timeout = 5000;
     };

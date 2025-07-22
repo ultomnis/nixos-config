@@ -16,7 +16,7 @@ in
       };
 
       colors = {
-        background = "00000099";
+        background = "000000cc";
       };
     };
   };
