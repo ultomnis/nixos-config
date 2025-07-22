@@ -64,7 +64,6 @@ in
     godot.enable = mkGraphicalOption "Godot";
     keepassxc.enable = mkGraphicalOption "KeePassXC";
     krita.enable = mkGraphicalOption "Krita";
-    mangohud.enable = mkGraphicalOption "MangoHud";
     mpv.enable = mkGraphicalOption "MPV";
     obs-studio.enable = mkGraphicalOption "OBS Studio";
     qutebrowser.enable = mkGraphicalOption "qutebrowser";
