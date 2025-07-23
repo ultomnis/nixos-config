@@ -25,6 +25,7 @@
       programs = {
         graphical = {
           enable = true;
+          mangohud.enable = false;
           wezterm.font.size = 11;
         };
 
