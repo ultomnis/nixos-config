@@ -30,7 +30,10 @@
     };
 
     programs = {
-      graphical.enable = true;
+      graphical = {
+        enable = true;
+        zed-editor.font.size = 13;
+      };
 
       terminal = {
         enable = true;

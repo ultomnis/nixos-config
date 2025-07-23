@@ -6,5 +6,6 @@
     ./mpv.nix
     ./qutebrowser.nix
     ./wezterm.nix
+    ./zed-editor.nix
   ];
 }

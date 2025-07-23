@@ -108,5 +108,29 @@ in
         description = "Theme for WezTerm.";
       };
     };
+
+    zed-editor = {
+      enable = mkGraphicalOption "Zed";
+
+      font = {
+        name = mkOption {
+          type = types.nullOr types.str;
+          default = config.luminosity.home.desktop.environment.fonts.mono;
+          description = "Font for Zed.";
+        };
+
+        size = mkOption {
+          type = types.nullOr types.int;
+          default = config.luminosity.home.desktop.environment.fonts.size;
+          description = "Font size for Zed.";
+        };
+      };
+
+      theme = mkOption {
+        type = types.nullOr types.str;
+        default = "Rosé Pine";
+        description = "Theme for Zed.";
+      };
+    };
   };
 }

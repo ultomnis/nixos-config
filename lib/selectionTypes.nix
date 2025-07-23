@@ -20,6 +20,7 @@ in
     types.enum [
       "helix"
       "micro"
+      "zed-editor"
     ]
   );
 
