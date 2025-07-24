@@ -135,14 +135,18 @@ in
       "experimental.theme_overrides" = {
         "background" = "#000000cc";
         "background.appearance" = "transparent";
-        "editor.background" = "#ffffff00";
-        "editor.gutter.background" = "#ffffff00";
+        "editor.background" = "#00000000";
+        "editor.gutter.background" = "#00000000";
+        "elevated_surface.background" = "#000000cc";
+        "ghost_element.background" = "#00000000";
+        "panel.background" = "#00000000";
         "status_bar.background" = "#000000cc";
-        "tab_bar.background" = "#ffffff00";
-        "tab.active_background" = "#ffffff00";
-        "tab.inactive_background" = "#ffffff00";
+        "tab_bar.background" = "#00000000";
+        "tab.active_background" = "#00000000";
+        "tab.inactive_background" = "#00000000";
+        "terminal.background" = "#00000000";
         "title_bar.background" = "#000000cc";
-        "toolbar.background" = "#ffffff00";
+        "toolbar.background" = "#00000000";
       };
     };
   };
