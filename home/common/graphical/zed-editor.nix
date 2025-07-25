@@ -132,6 +132,11 @@ in
       theme = lib.mkIf (cfg.theme != null) cfg.theme;
       title_bar.show_sign_in = false;
 
+      toolbar = {
+        breadcrumbs = false;
+        quick_actions = false;
+      };
+
       "experimental.theme_overrides" = {
         "background" = "#000000cc";
         "background.appearance" = "transparent";
