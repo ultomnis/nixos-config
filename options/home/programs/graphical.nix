@@ -68,7 +68,25 @@ in
     mpv.enable = mkGraphicalOption "MPV";
     nexusmods-app.enable = mkGraphicalOption "Nexus Mods App";
     obs-studio.enable = mkGraphicalOption "OBS Studio";
-    qutebrowser.enable = mkGraphicalOption "qutebrowser";
+
+    qutebrowser = {
+      enable = mkGraphicalOption "qutebrowser";
+
+      font = {
+        name = mkOption {
+          type = types.nullOr types.str;
+          default = config.luminosity.home.desktop.environment.fonts.mono;
+          description = "Font for qutebrowser.";
+        };
+
+        size = mkOption {
+          type = types.nullOr types.int;
+          default = config.luminosity.home.desktop.environment.fonts.size;
+          description = "Font size for qutebrowser.";
+        };
+      };
+    };
+
     utm.enable = mkGraphicalOption "UTM";
 
     wezterm = {
