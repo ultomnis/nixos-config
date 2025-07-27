@@ -38,14 +38,14 @@ in
           description = "Display output.";
         };
 
-        height = mkOption {
-          type = types.ints.positive;
-          description = "Monitor height in pixels.";
-        };
-
         width = mkOption {
           type = types.ints.positive;
           description = "Monitor width in pixels.";
+        };
+
+        height = mkOption {
+          type = types.ints.positive;
+          description = "Monitor height in pixels.";
         };
 
         pos_x = mkOption {

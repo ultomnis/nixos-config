@@ -57,8 +57,8 @@
 
       monitors = lib.singleton {
         name = "DP-2";
-        height = 1920;
-        width = 1080;
+        width = 1920;
+        height = 1080;
         pos_x = 0;
         pos_y = 0;
         rate = 165;
