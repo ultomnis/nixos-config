@@ -10,26 +10,14 @@ in
     inherit (cfg) enable;
 
     config = {
-      # Program behavior
-      profile = "high-quality";
-
-      # Video
-      vo = "gpu-next";
-
-      # Audio
-      volume = 80;
-
-      # Window
-      keep-open = "yes";
-
-      # OSD
-      osd-bar = "no";
-
-      # GPU renderer options
+      image-display-duration = "inf";
       interpolation = "yes";
-
-      # Miscellaneous
+      keep-open = "yes";
+      osd-bar = "no";
+      profile = "high-quality";
       video-sync = "display-resample";
+      vo = "gpu-next";
+      volume = 80;
     };
   };
 }
