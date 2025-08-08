@@ -35,7 +35,8 @@
             extraSpecialArgs = specialArgs;
           };
         }
-      ] ++ extraModules;
+      ]
+      ++ extraModules;
     };
 
   mkHomeConfig =
@@ -65,7 +66,8 @@
 
       modules = [
         ../hosts/${hostName}/${username}/home.nix
-      ] ++ extraModules;
+      ]
+      ++ extraModules;
     };
 
   mkNixosConfig =
@@ -102,7 +104,8 @@
             extraSpecialArgs = specialArgs;
           };
         }
-      ] ++ extraModules;
+      ]
+      ++ extraModules;
     };
 
   mkSystemConfig =
@@ -132,6 +135,7 @@
         {
           nixpkgs.hostPlatform = system;
         }
-      ] ++ extraModules;
+      ]
+      ++ extraModules;
     };
 }

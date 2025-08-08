@@ -33,13 +33,12 @@ in
               uid
               ;
 
-            extraGroups =
-              [
-                "wheel"
-              ]
-              ++ lib.optional (adb.enable) "adbusers"
-              ++ lib.optional (libvirtd.enable) "libvirtd"
-              ++ lib.optional (networkmanager.enable) "networkmanager";
+            extraGroups = [
+              "wheel"
+            ]
+            ++ lib.optional (adb.enable) "adbusers"
+            ++ lib.optional (libvirtd.enable) "libvirtd"
+            ++ lib.optional (networkmanager.enable) "networkmanager";
           };
         })
         |> builtins.listToAttrs;
