@@ -1,4 +1,9 @@
-{ config, lib, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 let
   cfg = config.luminosity.home.desktop.minimal.i3status-rust;
@@ -20,6 +25,21 @@ in
             {
               block = "net";
               format = " $icon ";
+
+              click = [
+                {
+                  button = "left";
+                  cmd =
+                    "${lib.getExe pkgs.iwmenu} -l custom"
+                    + " --launcher-command \"${lib.getExe pkgs.fuzzel} --anchor top-right\"";
+                }
+                {
+                  button = "right";
+                  cmd =
+                    "${lib.getExe pkgs.bzmenu} -l custom"
+                    + " --launcher-command \"${lib.getExe pkgs.fuzzel} --anchor top-right\"";
+                }
+              ];
             }
             {
               block = "sound";
