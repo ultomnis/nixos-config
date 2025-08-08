@@ -61,7 +61,6 @@ in
       };
     };
 
-    godot.enable = mkGraphicalOption "Godot";
     keepassxc.enable = mkGraphicalOption "KeePassXC";
     mangohud.enable = mkGraphicalOption "MangoHud";
     mpv.enable = mkGraphicalOption "MPV";
