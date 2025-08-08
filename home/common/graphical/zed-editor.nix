@@ -19,7 +19,6 @@ in
       "latex"
       "nix"
       "qml"
-      "rose-pine-theme"
     ];
 
     userSettings = {
@@ -32,8 +31,6 @@ in
         version = "2";
       };
 
-      buffer_font_family = lib.mkIf (cfg.font.name != null) cfg.font.name;
-      buffer_font_size = lib.mkIf (cfg.font.size != null) cfg.font.size;
       buffer_line_height = "standard";
       collaboration_panel.button = false;
       cursor_blink = false;
@@ -129,29 +126,11 @@ in
         toolbar.breadcrumbs = false;
       };
 
-      theme = lib.mkIf (cfg.theme != null) cfg.theme;
       title_bar.show_sign_in = false;
 
       toolbar = {
         breadcrumbs = false;
         quick_actions = false;
-      };
-
-      "experimental.theme_overrides" = {
-        "background" = "#000000cc";
-        "background.appearance" = "transparent";
-        "editor.background" = "#00000000";
-        "editor.gutter.background" = "#00000000";
-        "elevated_surface.background" = "#000000cc";
-        "ghost_element.background" = "#00000000";
-        "panel.background" = "#00000000";
-        "status_bar.background" = "#000000cc";
-        "tab_bar.background" = "#00000000";
-        "tab.active_background" = "#00000000";
-        "tab.inactive_background" = "#00000000";
-        "terminal.background" = "#00000000";
-        "title_bar.background" = "#000000cc";
-        "toolbar.background" = "#00000000";
       };
     };
   };

@@ -1,11 +1,7 @@
 { customLib, lib, ... }:
 
 let
-  inherit (lib)
-    mkOption
-    types
-    ;
-
+  inherit (lib) mkOption;
   inherit (customLib) selectionTypes;
 
 in
@@ -39,12 +35,6 @@ in
       inherit (selectionTypes.terminal) type;
       default = null;
       description = "Default terminal emulator.";
-    };
-
-    wallpaper = mkOption {
-      type = types.nullOr types.path;
-      default = null;
-      description = "Path to the wallpaper.";
     };
   };
 }

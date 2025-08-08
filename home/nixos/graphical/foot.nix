@@ -15,23 +15,7 @@ in
     inherit (cfg) enable;
 
     settings = {
-      colors.alpha = 0.8;
-
       main = {
-        font = lib.mkIf (
-          cfg.font.name != null && cfg.font.size != null
-        ) "${cfg.font.name}:size=${toString cfg.font.size}";
-
-        include =
-          let
-            foot-colors = pkgs.writeText "foot-colors.ini" ''
-              [colors]
-              background=000000
-            '';
-          in
-          lib.optional (cfg.theme != null) "${pkgs.foot.themes}/share/foot/themes/${cfg.theme}"
-          ++ lib.singleton (toString foot-colors);
-
         pad = "5x5";
         shell = lib.mkIf (cfg.shell != null) (lib.getExe pkgs.${cfg.shell});
       };

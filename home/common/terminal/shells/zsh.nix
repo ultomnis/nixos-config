@@ -9,19 +9,8 @@ in
   programs.zsh = {
     inherit (cfg) enable;
     autocd = true;
-
-    autosuggestion = {
-      enable = true;
-      highlight = "fg=magenta";
-    };
-
-    syntaxHighlighting = {
-      enable = true;
-
-      styles = {
-        arg0 = "fg=cyan";
-      };
-    };
+    autosuggestion.enable = true;
+    syntaxHighlighting.enable = true;
 
     history = {
       ignoreAllDups = true;

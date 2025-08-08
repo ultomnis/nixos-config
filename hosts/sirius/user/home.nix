@@ -1,9 +1,4 @@
-{
-  inputs,
-  lib,
-  osConfig,
-  ...
-}:
+{ lib, osConfig, ... }:
 
 {
   imports = [
@@ -23,17 +18,10 @@
   luminosity.home = {
     desktop = {
       configurations.enable = true;
-
-      environment = {
-        fonts.size = 10;
-      };
     };
 
     programs = {
-      graphical = {
-        enable = true;
-        zed-editor.font.size = 13;
-      };
+      graphical.enable = true;
 
       terminal = {
         enable = true;
@@ -66,7 +54,6 @@
 
       shell = osConfig.luminosity.selections.shell;
       terminal = "foot";
-      wallpaper = "${inputs.self}/assets/wallpapers/bence-balla-schottner-zwAevXBnEN0-unsplash.jpg";
     };
   };
 }

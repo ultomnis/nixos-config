@@ -1,6 +1,7 @@
 {
   config,
   hostName,
+  inputs,
   lib,
   ...
 }:
@@ -10,6 +11,7 @@
     ../../modules/common
     ../../modules/nixos
     ../../options/modules
+    ../../shared
 
     ./disk-config.nix
     ./hardware-configuration.nix
@@ -29,6 +31,19 @@
       desktop = "sway";
       gpu = "amd";
       shell = "fish";
+    };
+
+    stylix = {
+      enable = true;
+
+      fonts = {
+        applicationSize = 10;
+        desktopSize = 10;
+        popupSize = 10;
+        terminalSize = 10;
+      };
+
+      image = "${inputs.self}/assets/wallpapers/bence-balla-schottner-zwAevXBnEN0-unsplash.jpg";
     };
 
     system = {

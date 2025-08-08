@@ -37,7 +37,6 @@ in
         {
           "*" = {
             allow_tearing = "yes";
-            bg = lib.mkIf (cfg.wallpaper != null) "${cfg.wallpaper} fill";
             max_render_time = "off";
           };
         }
@@ -171,22 +170,6 @@ in
         command = lib.getExe' pkgs.sway "swaybar";
         position = "top";
         statusCommand = "${lib.getExe pkgs.i3status-rust} config-status.toml";
-
-        colors = {
-          background = "#000000cc";
-          separator = "#ffffff";
-
-          inactiveWorkspace = {
-            background = "#000000cc";
-            border = "#000000cc";
-            text = "#ffffff";
-          };
-        };
-
-        fonts = {
-          names = lib.optional (cfg.bar.font.name != null) cfg.bar.font.name;
-          size = lib.mkIf (cfg.bar.font.size != null) (toString cfg.bar.font.size);
-        };
       };
     };
   };

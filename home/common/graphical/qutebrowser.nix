@@ -36,11 +36,6 @@ in
         pdfjs = true;
       };
 
-      fonts = {
-        default_family = lib.mkIf (cfg.font.name != null) cfg.font.name;
-        default_size = lib.mkIf (cfg.font.size != null) (toString cfg.font.size + "pt");
-      };
-
       scrolling = {
         smooth = true;
       };

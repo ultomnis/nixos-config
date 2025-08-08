@@ -21,9 +21,6 @@ in
 
     interactiveShellInit = ''
       set fish_greeting # Disable greeting
-      set fish_color_autosuggestion magenta
-      set fish_color_command cyan
-      set fish_color_param normal
     '';
   };
 }

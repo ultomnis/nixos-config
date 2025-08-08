@@ -5,6 +5,7 @@
     ../../modules/common
     ../../modules/darwin
     ../../options/modules
+    ../../shared
 
     ../../secrets/modules.nix
   ];
@@ -25,6 +26,17 @@
     selections = {
       desktop = "aerospace";
       shell = "fish";
+    };
+
+    stylix = {
+      enable = true;
+
+      fonts = {
+        applicationSize = 13;
+        desktopSize = 13;
+        popupSize = 13;
+        terminalSize = 13;
+      };
     };
 
     system = {

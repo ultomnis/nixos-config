@@ -2,6 +2,7 @@
   config,
   customLib,
   lib,
+  pkgs,
   ...
 }:
 
@@ -9,6 +10,7 @@ let
   inherit (lib)
     mkEnableOption
     mkOption
+    mkPackageOption
     types
     ;
 
@@ -34,6 +36,27 @@ in
     };
 
     boot.enable = mkConfigurationOption "boot configuration";
+
+    cursor = {
+      package = mkPackageOption pkgs "cursor" {
+        default = [
+          "bibata-cursors"
+        ];
+      };
+
+      name = mkOption {
+        type = types.str;
+        default = "Bibata-Modern-Ice";
+        description = "Cursor name.";
+      };
+
+      size = mkOption {
+        type = types.ints.positive;
+        default = 24;
+        description = "Cursor size.";
+      };
+    };
+
     locale.enable = mkConfigurationOption "locale configuration";
     nixConfig.enable = mkConfigurationOption "Nix settings";
     security.enable = mkConfigurationOption "security configuration";

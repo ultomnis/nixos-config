@@ -10,7 +10,6 @@ in
     inherit (cfg) enable;
 
     config = {
-      theme = "base16";
       squeeze-blank = true;
       squeeze-limit = "1";
     };

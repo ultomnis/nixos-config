@@ -23,61 +23,47 @@ let
 in
 {
   options.luminosity.home.desktop.environment = {
-    cursors = {
-      enable = mkEnvironmentOption "cursor configuration";
+    cursor = {
+      package = mkPackageOption pkgs "cursor" {
+        default = [
+          "bibata-cursors"
+        ];
+      };
 
       name = mkOption {
-        type = types.nullOr types.str;
+        type = types.str;
         default = "Bibata-Modern-Ice";
-        description = "Cursor theme name.";
-      };
-
-      package = mkPackageOption pkgs "cursor" {
-        default = "bibata-cursors";
-        nullable = true;
-      };
-    };
-
-    fonts = {
-      enable = mkEnvironmentOption "font configuration";
-
-      package = mkPackageOption pkgs "font" {
-        default = [
-          "nerd-fonts"
-          "hack"
-        ];
-
-        nullable = true;
-      };
-
-      regular = mkOption {
-        type = types.nullOr types.str;
-        default = "Hack Nerd Font";
-        description = "Regular font name.";
-      };
-
-      mono = mkOption {
-        type = types.nullOr types.str;
-        default = "Hack Nerd Font Mono";
-        description = "Monospace font name.";
-      };
-
-      propo = mkOption {
-        type = types.nullOr types.str;
-        default = "Hack Nerd Font Propo";
-        description = "Proportional font name.";
+        description = "Cursor name.";
       };
 
       size = mkOption {
-        type = types.nullOr types.int;
-        default = 12;
-        description = "Font size.";
+        type = types.ints.positive;
+        default = 24;
+        description = "Cursor size.";
+      };
+    };
+
+    fonts.enable = mkEnvironmentOption "font configuration";
+
+    icons = {
+      enable = mkEnvironmentOption "Stylix home configuration";
+
+      package = mkPackageOption pkgs "icon" {
+        default = [
+          "papirus-icon-theme"
+        ];
       };
 
-      extraPackages = mkOption {
-        type = types.listOf types.package;
-        default = [ ];
-        description = "Extra font packages to install.";
+      dark = mkOption {
+        type = types.str;
+        default = "Papirus-Dark";
+        description = "Dark icon theme name.";
+      };
+
+      light = mkOption {
+        type = types.str;
+        default = "Papirus-Light";
+        description = "Light icon theme name.";
       };
     };
 

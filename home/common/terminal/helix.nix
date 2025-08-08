@@ -19,8 +19,6 @@ in
     };
 
     settings = {
-      theme = "custom_transparent";
-
       editor = {
         cursor-shape = {
           normal = "block";
@@ -86,20 +84,6 @@ in
           ];
         }
       ];
-    };
-
-    themes = {
-      custom_transparent = {
-        "inherits" = "base16_transparent";
-
-        "ui.cursorline.primary" = {
-          bg = "black";
-        };
-
-        "ui.cursorline.secondary" = {
-          bg = "black";
-        };
-      };
     };
   };
 }

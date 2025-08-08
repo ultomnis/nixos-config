@@ -65,22 +65,6 @@ in
         description = "Whether to enable Sway.";
       };
 
-      bar = {
-        font = {
-          name = mkOption {
-            type = types.nullOr types.str;
-            default = config.luminosity.home.desktop.environment.fonts.propo;
-            description = "Font for Swaybar.";
-          };
-
-          size = mkOption {
-            type = types.nullOr types.int;
-            default = config.luminosity.home.desktop.environment.fonts.size;
-            description = "Font size for Swaybar.";
-          };
-        };
-      };
-
       monitors = mkOption {
         inherit (selectionTypes.monitors) type;
         default = config.luminosity.home.selections.monitors;
@@ -92,26 +76,10 @@ in
         default = config.luminosity.home.selections.terminal;
         description = "Terminal for Sway.";
       };
-
-      wallpaper = mkOption {
-        type = types.nullOr types.path;
-        default = config.luminosity.home.selections.wallpaper;
-        description = "Wallpaper for Sway.";
-      };
     };
 
     swayidle.enable = mkMinimalOption "Swayidle";
-
-    swaylock = {
-      enable = mkMinimalOption "Swaylock";
-
-      wallpaper = mkOption {
-        type = types.nullOr types.path;
-        default = config.luminosity.home.selections.wallpaper;
-        description = "Wallpaper for Swaylock.";
-      };
-    };
-
+    swaylock.enable = mkMinimalOption "Swaylock";
     xdg-desktop-portal.enable = mkMinimalOption "XDG Desktop Portal";
   };
 }

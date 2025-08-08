@@ -1,4 +1,9 @@
-{ config, lib, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 let
   cfg = config.luminosity.home.programs.terminal.git;
@@ -16,8 +21,9 @@ in
       enable = true;
 
       options = {
+        pager = "${lib.getExe pkgs.less} -+X";
         navigate = true;
-        syntax-theme = "base16";
+        syntax-theme = "base16-stylix";
       };
     };
 

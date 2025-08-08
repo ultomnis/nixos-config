@@ -1,6 +1,7 @@
 {
   imports = [
-    ./cursors.nix
+    ./cursor.nix
+    ./icons.nix
     ./ssh-agent.nix
   ];
 }

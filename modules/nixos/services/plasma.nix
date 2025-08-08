@@ -45,5 +45,7 @@ in
         xwaylandvideobridge
         ;
     };
+
+    stylix.targets.qt.enable = false;
   };
 }

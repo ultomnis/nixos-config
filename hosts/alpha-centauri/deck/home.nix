@@ -5,6 +5,7 @@
     ../../../home/common
     ../../../home/nixos
     ../../../options/home
+    ../../../shared
   ];
 
   home = {
@@ -14,6 +15,7 @@
   };
 
   programs.home-manager.enable = true;
+  stylix.targets.qt.enable = false;
 
   luminosity = {
     home = {
@@ -26,7 +28,6 @@
         graphical = {
           enable = true;
           mangohud.enable = false;
-          wezterm.font.size = 11;
         };
 
         terminal = {
@@ -43,6 +44,17 @@
         editor = "helix";
         shell = "fish";
         terminal = "wezterm";
+      };
+    };
+
+    stylix = {
+      enable = true;
+
+      fonts = {
+        applicationSize = 11;
+        desktopSize = 11;
+        popupSize = 11;
+        terminalSize = 11;
       };
     };
   };

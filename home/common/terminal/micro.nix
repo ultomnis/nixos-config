@@ -10,7 +10,6 @@ in
     inherit (cfg) enable;
 
     settings = {
-      colorscheme = "cmc-16";
       diffgutter = true;
       relativeruler = true;
     };

@@ -34,6 +34,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    stylix = {
+      url = "github:nix-community/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     system-manager = {
       url = "github:numtide/system-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -48,6 +53,7 @@
       home-manager,
       nixpkgs,
       nix-system-graphics,
+      stylix,
       ...
     }@inputs:
 
@@ -83,6 +89,7 @@
           extraModules = [
             agenix.darwinModules.default
             home-manager.darwinModules.home-manager
+            stylix.darwinModules.stylix
           ];
         };
       };
@@ -93,6 +100,10 @@
           hostName = "alpha-centauri";
           system = "x86_64-linux";
           username = "deck";
+
+          extraModules = [
+            stylix.homeModules.stylix
+          ];
         };
       };
 
@@ -106,6 +117,7 @@
             agenix.nixosModules.default
             disko.nixosModules.disko
             home-manager.nixosModules.home-manager
+            stylix.nixosModules.stylix
           ];
         };
       };

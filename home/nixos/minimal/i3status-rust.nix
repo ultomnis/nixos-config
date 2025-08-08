@@ -53,20 +53,6 @@ in
               interval = 1;
             }
           ];
-
-        settings = {
-          theme = {
-            theme = "native";
-
-            overrides = {
-              critical_fg = "#ff0000";
-              good_fg = "#00ff00";
-              idle_fg = "#ffffff";
-              info_fg = "#ffffff";
-              warning_fg = "#ffff00";
-            };
-          };
-        };
       };
     };
   };

@@ -1,7 +1,7 @@
-{ config, lib, ... }:
+{ config, ... }:
 
 let
-  cfg = config.luminosity.home.desktop.minimal.sway;
+  cfg = config.luminosity.home.desktop.minimal.swaylock;
 
 in
 {
@@ -10,7 +10,6 @@ in
     inherit (cfg) enable;
 
     settings = {
-      image = lib.mkIf (cfg.wallpaper != null) cfg.wallpaper;
       show-failed-attempts = true;
     };
   };
