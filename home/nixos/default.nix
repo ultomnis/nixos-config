@@ -3,6 +3,5 @@
     ./environment
     ./graphical
     ./minimal
-    ./terminal
   ];
 }

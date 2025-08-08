@@ -21,12 +21,10 @@ in
       menu = lib.getExe pkgs.fuzzel;
       defaultWorkspace = "workspace number 1";
 
-      startup = [
-        {
-          always = true;
-          command = "${lib.getExe pkgs.darkman} set dark";
-        }
-      ];
+      startup = lib.singleton {
+        always = true;
+        command = "${lib.getExe pkgs.darkman} set dark";
+      };
 
       input = {
         "type:pointer" = {
@@ -50,20 +48,10 @@ in
       window = {
         titlebar = false;
 
-        commands = [
-          {
-            command = "allow_tearing yes";
-            criteria = {
-              class = "cs2";
-            };
-          }
-          {
-            command = "floating enable, move position center";
-            criteria = {
-              app_id = "wiremix";
-            };
-          }
-        ];
+        commands = lib.singleton {
+          command = "allow_tearing yes";
+          criteria.class = "cs2";
+        };
       };
 
       floating = {
