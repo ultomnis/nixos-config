@@ -63,7 +63,6 @@ in
     keepassxc.enable = mkGraphicalOption "KeePassXC";
     mangohud.enable = mkGraphicalOption "MangoHud";
     mpv.enable = mkGraphicalOption "MPV";
-    nexusmods-app.enable = mkGraphicalOption "Nexus Mods App";
     obs-studio.enable = mkGraphicalOption "OBS Studio";
 
     qutebrowser = {
