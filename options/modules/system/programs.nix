@@ -19,7 +19,6 @@ in
   options.luminosity.system.programs = {
     adb.enable = mkProgramOption "Android Debug Bridge";
     fish.enable = mkProgramOption "fish";
-    homebrew.enable = mkProgramOption "Homebrew";
     steam.enable = mkProgramOption "Steam";
 
     sway = {

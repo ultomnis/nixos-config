@@ -20,10 +20,6 @@
     desktop = {
       configurations = {
         enable = true;
-
-        variables.extraVariables = {
-          HOMEBREW_NO_ANALYTICS = 1;
-        };
       };
 
       environment = {
