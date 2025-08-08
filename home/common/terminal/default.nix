@@ -11,6 +11,7 @@
     ./libqalculate.nix
     ./mat2.nix
     ./micro.nix
+    ./mpv.nix
     ./ollama.nix
     ./poppler-utils.nix
     ./ssh.nix

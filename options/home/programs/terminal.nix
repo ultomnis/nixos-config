@@ -60,6 +60,7 @@ in
     mat2.enable = mkTerminalOption "mat2";
     mcat.enable = mkTerminalOption "mcat";
     micro.enable = mkTerminalOption "micro";
+    mpv.enable = mkTerminalOption "MPV";
 
     ollama = {
       enable = mkTerminalOption "Ollama";
