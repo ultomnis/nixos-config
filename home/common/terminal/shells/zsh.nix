@@ -12,14 +12,14 @@ in
 
     autosuggestion = {
       enable = true;
-      highlight = "fg=blue";
+      highlight = "fg=magenta";
     };
 
     syntaxHighlighting = {
       enable = true;
 
       styles = {
-        arg0 = "fg=magenta";
+        arg0 = "fg=cyan";
       };
     };
 
