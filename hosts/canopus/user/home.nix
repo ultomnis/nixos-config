@@ -18,9 +18,7 @@
 
   luminosity.home = {
     desktop = {
-      configurations = {
-        enable = true;
-      };
+      configurations.enable = true;
 
       environment = {
         fonts.size = 13;
