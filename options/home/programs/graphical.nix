@@ -63,7 +63,6 @@ in
 
     godot.enable = mkGraphicalOption "Godot";
     keepassxc.enable = mkGraphicalOption "KeePassXC";
-    krita.enable = mkGraphicalOption "Krita";
     mangohud.enable = mkGraphicalOption "MangoHud";
     mpv.enable = mkGraphicalOption "MPV";
     nexusmods-app.enable = mkGraphicalOption "Nexus Mods App";
