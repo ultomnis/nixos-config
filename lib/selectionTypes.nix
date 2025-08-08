@@ -75,7 +75,6 @@ in
 
   shell.type = types.nullOr (
     types.enum [
-      "bash"
       "fish"
       "zsh"
     ]
