@@ -66,7 +66,5 @@ in
         description = "Light icon theme name.";
       };
     };
-
-    ssh-agent.enable = mkHybridOption "SSH Agent";
   };
 }

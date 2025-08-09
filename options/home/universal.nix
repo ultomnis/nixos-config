@@ -26,6 +26,7 @@ in
   options.luminosity.home.universal = {
     darwinDefaults.enable = mkUniversalOption "macOS user defaults";
     nixConfig.enable = mkUniversalOption "user-specific Nix settings";
+    ssh-agent.enable = mkUniversalOption "SSH Agent";
 
     variables = {
       enable = mkUniversalOption "environment variables configuration";
