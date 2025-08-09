@@ -13,22 +13,22 @@ let
 
   inherit (customLib) selectionTypes;
 
-  mkConfigurationOption =
+  mkUniversalOption =
     name:
     mkOption {
       type = types.bool;
-      default = config.luminosity.home.desktop.configurations.enable;
+      default = config.luminosity.home.desktop.universal.enable;
       description = "Whether to enable ${name}.";
     };
 
 in
 {
-  options.luminosity.home.desktop.configurations = {
-    darwinDefaults.enable = mkConfigurationOption "macOS user defaults";
-    nixConfig.enable = mkConfigurationOption "user-specific Nix settings";
+  options.luminosity.home.desktop.universal = {
+    darwinDefaults.enable = mkUniversalOption "macOS user defaults";
+    nixConfig.enable = mkUniversalOption "user-specific Nix settings";
 
     variables = {
-      enable = mkConfigurationOption "environment variables configuration";
+      enable = mkUniversalOption "environment variables configuration";
 
       editor = mkOption {
         inherit (selectionTypes.editor) type;

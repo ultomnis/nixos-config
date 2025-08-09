@@ -17,7 +17,7 @@
 
   luminosity.home = {
     desktop = {
-      configurations.enable = true;
+      universal.enable = true;
     };
 
     programs = {

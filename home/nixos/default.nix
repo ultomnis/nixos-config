@@ -1,7 +1,8 @@
 {
   imports = [
-    ./environment
     ./gui
+    ./hybrid
     ./minimal
+    ./universal
   ];
 }

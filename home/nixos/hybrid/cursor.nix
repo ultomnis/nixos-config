@@ -1,7 +1,7 @@
 { config, lib, ... }:
 
 let
-  cfg = config.luminosity.desktop.environment.cursor;
+  cfg = config.luminosity.desktop.hybrid.cursor;
 
 in
 {

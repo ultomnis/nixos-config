@@ -11,12 +11,10 @@ in
 {
   options.luminosity.home = {
     desktop = {
-      configurations.enable = mkEnableOption "home configurations";
-
-      environment.enable = mkOption {
+      hybrid.enable = mkOption {
         type = types.bool;
         default = config.luminosity.home.selections.desktop != null;
-        description = "Whether to enable desktop environment configurations.";
+        description = "Whether to enable configurations for compositors and desktop environments.";
       };
 
       minimal.enable = mkOption {
@@ -29,8 +27,10 @@ in
           ]
         );
 
-        description = "Whether to enable window manager configurations.";
+        description = "Whether to enable configurations for minimal compositors.";
       };
+
+      universal.enable = mkEnableOption "configurations for any environment";
     };
 
     programs = {

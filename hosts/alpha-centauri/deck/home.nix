@@ -20,8 +20,8 @@
   luminosity = {
     home = {
       desktop = {
-        configurations.enable = true;
-        environment.enable = true;
+        hybrid.enable = true;
+        universal.enable = true;
       };
 
       programs = {

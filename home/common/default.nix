@@ -1,9 +1,9 @@
 {
   imports = [
     ./cli
-    ./configurations
-    ./environment
     ./gui
+    ./hybrid
     ./tui
+    ./universal
   ];
 }

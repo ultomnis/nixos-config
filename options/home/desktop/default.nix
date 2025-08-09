@@ -1,7 +1,7 @@
 {
   imports = [
-    ./configurations.nix
-    ./environment.nix
+    ./hybrid.nix
     ./minimal.nix
+    ./universal.nix
   ];
 }

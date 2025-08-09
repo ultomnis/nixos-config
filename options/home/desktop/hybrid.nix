@@ -12,17 +12,17 @@ let
     types
     ;
 
-  mkEnvironmentOption =
+  mkHybridOption =
     name:
     mkOption {
       type = types.bool;
-      default = config.luminosity.home.desktop.environment.enable;
+      default = config.luminosity.home.desktop.hybrid.enable;
       description = "Whether to enable ${name}.";
     };
 
 in
 {
-  options.luminosity.home.desktop.environment = {
+  options.luminosity.home.desktop.hybrid = {
     cursor = {
       package = mkPackageOption pkgs "cursor" {
         default = [
@@ -43,10 +43,10 @@ in
       };
     };
 
-    fonts.enable = mkEnvironmentOption "font configuration";
+    fonts.enable = mkHybridOption "font configuration";
 
     icons = {
-      enable = mkEnvironmentOption "Stylix home configuration";
+      enable = mkHybridOption "Stylix home configuration";
 
       package = mkPackageOption pkgs "icon" {
         default = [
@@ -67,6 +67,6 @@ in
       };
     };
 
-    ssh-agent.enable = mkEnvironmentOption "SSH Agent";
+    ssh-agent.enable = mkHybridOption "SSH Agent";
   };
 }

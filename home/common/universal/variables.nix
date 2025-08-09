@@ -6,7 +6,7 @@
 }:
 
 let
-  cfg = config.luminosity.home.desktop.configurations.variables;
+  cfg = config.luminosity.home.desktop.universal.variables;
 
 in
 {

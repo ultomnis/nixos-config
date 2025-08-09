@@ -1,7 +1,7 @@
 { config, ... }:
 
 let
-  cfg = config.luminosity.home.desktop.environment.icons;
+  cfg = config.luminosity.home.desktop.hybrid.icons;
 
 in
 {
