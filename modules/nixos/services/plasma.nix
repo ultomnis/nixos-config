@@ -46,6 +46,9 @@ in
         ;
     };
 
-    stylix.targets.qt.enable = false;
+    stylix.targets = {
+      gtk.enable = false;
+      qt.enable = false;
+    };
   };
 }

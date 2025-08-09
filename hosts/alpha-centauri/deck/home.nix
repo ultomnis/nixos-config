@@ -15,7 +15,11 @@
   };
 
   programs.home-manager.enable = true;
-  stylix.targets.qt.enable = false;
+
+  stylix.targets = {
+    gtk.enable = false;
+    qt.enable = false;
+  };
 
   luminosity = {
     home = {
