@@ -1,6 +1,7 @@
 {
   imports = [
-    ./graphical.nix
-    ./terminal.nix
+    ./cli.nix
+    ./gui.nix
+    ./tui.nix
   ];
 }

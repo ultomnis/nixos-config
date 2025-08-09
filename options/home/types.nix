@@ -34,8 +34,9 @@ in
     };
 
     programs = {
-      graphical.enable = mkEnableOption "graphical programs";
-      terminal.enable = mkEnableOption "terminal programs";
+      cli.enable = mkEnableOption "CLI programs";
+      gui.enable = mkEnableOption "GUI programs";
+      tui.enable = mkEnableOption "TUI programs";
     };
   };
 }

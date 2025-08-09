@@ -1,0 +1,71 @@
+{
+  config,
+  customLib,
+  lib,
+  ...
+}:
+
+let
+  inherit (lib)
+    mkOption
+    types
+    ;
+
+  inherit (customLib) selectionTypes;
+
+  mkGuiOption =
+    name:
+    mkOption {
+      type = types.bool;
+      default = config.luminosity.home.programs.gui.enable;
+      description = "Whether to enable ${name}.";
+    };
+
+in
+{
+  options.luminosity.home.programs.gui = {
+    anki.enable = mkGuiOption "Anki";
+
+    foot = {
+      enable = mkOption {
+        type = types.bool;
+        default = config.luminosity.home.selections.terminal == "foot";
+        description = "Whether to enable foot.";
+      };
+
+      shell = mkOption {
+        inherit (selectionTypes.shell) type;
+        default = config.luminosity.home.selections.shell;
+        description = "Shell for foot.";
+      };
+    };
+
+    keepassxc.enable = mkGuiOption "KeePassXC";
+    mangohud.enable = mkGuiOption "MangoHud";
+    obs-studio.enable = mkGuiOption "OBS Studio";
+    qutebrowser.enable = mkGuiOption "qutebrowser";
+    utm.enable = mkGuiOption "UTM";
+
+    wezterm = {
+      enable = mkOption {
+        type = types.bool;
+        default = config.luminosity.home.selections.terminal == "wezterm";
+        description = "Whether to enable WezTerm.";
+      };
+
+      maxFPS = mkOption {
+        type = types.ints.positive;
+        default = 60;
+        description = "Maximum FPS for WezTerm.";
+      };
+
+      shell = mkOption {
+        inherit (selectionTypes.shell) type;
+        default = config.luminosity.home.selections.shell;
+        description = "Shell for WezTerm.";
+      };
+    };
+
+    zed-editor.enable = mkGuiOption "Zed";
+  };
+}

@@ -22,12 +22,7 @@
     };
 
     programs = {
-      graphical = {
-        enable = true;
-        wezterm.maxFPS = 120;
-      };
-
-      terminal = {
+      cli = {
         enable = true;
 
         git = {
@@ -35,6 +30,13 @@
           userName = "ultomnis";
         };
       };
+
+      gui = {
+        enable = true;
+        wezterm.maxFPS = 120;
+      };
+
+      tui.enable = true;
     };
 
     selections = {

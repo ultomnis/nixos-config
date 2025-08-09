@@ -1,8 +1,9 @@
 {
   imports = [
+    ./cli
     ./configurations
     ./environment
-    ./graphical
-    ./terminal
+    ./gui
+    ./tui
   ];
 }

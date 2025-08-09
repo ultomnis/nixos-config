@@ -25,12 +25,7 @@
       };
 
       programs = {
-        graphical = {
-          enable = true;
-          mangohud.enable = false;
-        };
-
-        terminal = {
+        cli = {
           enable = true;
 
           git = {
@@ -38,6 +33,13 @@
             userName = "ultomnis";
           };
         };
+
+        gui = {
+          enable = true;
+          mangohud.enable = false;
+        };
+
+        tui.enable = true;
       };
 
       selections = {

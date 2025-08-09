@@ -1,7 +1,7 @@
 {
   imports = [
     ./configurations
-    ./graphical
+    ./gui
     ./minimal
   ];
 }

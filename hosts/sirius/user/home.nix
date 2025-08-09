@@ -21,9 +21,7 @@
     };
 
     programs = {
-      graphical.enable = true;
-
-      terminal = {
+      cli = {
         enable = true;
 
         git = {
@@ -37,6 +35,9 @@
           };
         };
       };
+
+      gui.enable = true;
+      tui.enable = true;
     };
 
     selections = {
