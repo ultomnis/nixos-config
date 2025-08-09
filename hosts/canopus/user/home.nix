@@ -40,9 +40,9 @@
     };
 
     selections = {
-      desktop = osConfig.luminosity.selections.desktop;
+      desktop = osConfig.luminosity.modules.selections.desktop;
       editor = "helix";
-      shell = osConfig.luminosity.selections.shell;
+      shell = osConfig.luminosity.modules.selections.shell;
       terminal = "wezterm";
     };
   };

@@ -5,7 +5,7 @@ let
 
 in
 {
-  options.luminosity = {
+  options.luminosity.modules = {
     system = {
       configurations.enable = mkEnableOption "system configurations";
       programs.enable = mkEnableOption "system-level programs";

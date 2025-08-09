@@ -1,7 +1,7 @@
 { config, ... }:
 
 let
-  cfg = config.luminosity.system.services.bluetooth;
+  cfg = config.luminosity.modules.system.services.bluetooth;
 
 in
 {

@@ -6,7 +6,7 @@ let
 
 in
 {
-  options.luminosity.selections = {
+  options.luminosity.modules.selections = {
     desktop = mkOption {
       inherit (selectionTypes.desktop) type;
       default = null;

@@ -6,10 +6,10 @@
 }:
 
 let
-  cfg = config.luminosity.system.configurations.userConfig;
-  inherit (config.luminosity.system.programs) adb;
+  cfg = config.luminosity.modules.system.configurations.userConfig;
+  inherit (config.luminosity.modules.system.programs) adb;
 
-  inherit (config.luminosity.system.services)
+  inherit (config.luminosity.modules.system.services)
     libvirtd
     networkmanager
     ;

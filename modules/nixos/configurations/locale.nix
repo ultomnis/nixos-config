@@ -1,7 +1,7 @@
 { config, lib, ... }:
 
 let
-  cfg = config.luminosity.system.configurations.locale;
+  cfg = config.luminosity.modules.system.configurations.locale;
 
 in
 {

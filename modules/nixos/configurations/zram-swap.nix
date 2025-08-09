@@ -1,7 +1,7 @@
 { config, ... }:
 
 let
-  cfg = config.luminosity.system.configurations.zramSwap;
+  cfg = config.luminosity.modules.system.configurations.zramSwap;
 
 in
 {

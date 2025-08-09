@@ -1,7 +1,7 @@
 { config, ... }:
 
 let
-  cfg = config.luminosity.system.programs.adb;
+  cfg = config.luminosity.modules.system.programs.adb;
 
 in
 {

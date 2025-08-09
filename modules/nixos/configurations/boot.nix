@@ -6,7 +6,7 @@
 }:
 
 let
-  cfg = config.luminosity.system.configurations.boot;
+  cfg = config.luminosity.modules.system.configurations.boot;
 
 in
 {

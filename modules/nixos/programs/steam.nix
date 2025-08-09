@@ -1,8 +1,8 @@
 { config, ... }:
 
 let
-  cfg = config.luminosity.system.programs.steam;
-  inherit (config.luminosity.system.configurations) unfree;
+  cfg = config.luminosity.modules.system.programs.steam;
+  inherit (config.luminosity.modules.system.configurations) unfree;
 
 in
 {

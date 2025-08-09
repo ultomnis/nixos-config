@@ -10,13 +10,13 @@ let
     name:
     mkOption {
       type = types.bool;
-      default = config.luminosity.system.services.enable;
+      default = config.luminosity.modules.system.services.enable;
       description = "Whether to enable ${name}.";
     };
 
 in
 {
-  options.luminosity.system.services = {
+  options.luminosity.modules.system.services = {
     avahi.enable = mkServiceOption "Avahi";
     bluetooth.enable = mkServiceOption "Bluetooth";
     geoclue2.enable = mkServiceOption "GeoClue 2";
@@ -28,7 +28,7 @@ in
     plasma = {
       enable = mkOption {
         type = types.bool;
-        default = config.luminosity.selections.desktop == "plasma";
+        default = config.luminosity.modules.selections.desktop == "plasma";
         description = "Whether to enable KDE Plasma.";
       };
     };

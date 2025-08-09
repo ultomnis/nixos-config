@@ -1,7 +1,7 @@
 { config, ... }:
 
 let
-  cfg = config.luminosity.system.services.tailscale;
+  cfg = config.luminosity.modules.system.services.tailscale;
 
 in
 {

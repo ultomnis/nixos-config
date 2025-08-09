@@ -23,9 +23,26 @@
   };
 
   luminosity = {
-    selections = {
-      desktop = "aerospace";
-      shell = "fish";
+    modules = {
+      selections = {
+        desktop = "aerospace";
+        shell = "fish";
+      };
+
+      system = {
+        configurations = {
+          enable = true;
+
+          userConfig.users = lib.singleton {
+            homeManager = true;
+            name = "user";
+            uid = 501;
+          };
+        };
+
+        programs.enable = true;
+        services.enable = true;
+      };
     };
 
     stylix = {
@@ -37,21 +54,6 @@
         popupSize = 13;
         terminalSize = 13;
       };
-    };
-
-    system = {
-      configurations = {
-        enable = true;
-
-        userConfig.users = lib.singleton {
-          homeManager = true;
-          name = "user";
-          uid = 501;
-        };
-      };
-
-      programs.enable = true;
-      services.enable = true;
     };
   };
 }

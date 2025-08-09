@@ -27,10 +27,31 @@
   system.stateVersion = "24.05";
 
   luminosity = {
-    selections = {
-      desktop = "sway";
-      gpu = "amd";
-      shell = "fish";
+    modules = {
+      selections = {
+        desktop = "sway";
+        gpu = "amd";
+        shell = "fish";
+      };
+
+      system = {
+        configurations = {
+          enable = true;
+
+          userConfig.users = lib.singleton {
+            hashedPasswordFile = config.age.secrets.sirius-user-passwd.path;
+            homeManager = true;
+            name = "user";
+          };
+        };
+
+        programs.enable = true;
+
+        services = {
+          enable = true;
+          tailscale.useRoutingFeatures = "client";
+        };
+      };
     };
 
     stylix = {
@@ -44,25 +65,6 @@
       };
 
       image = "${inputs.self}/assets/wallpapers/bence-balla-schottner-zwAevXBnEN0-unsplash.jpg";
-    };
-
-    system = {
-      configurations = {
-        enable = true;
-
-        userConfig.users = lib.singleton {
-          hashedPasswordFile = config.age.secrets.sirius-user-passwd.path;
-          homeManager = true;
-          name = "user";
-        };
-      };
-
-      programs.enable = true;
-
-      services = {
-        enable = true;
-        tailscale.useRoutingFeatures = "client";
-      };
     };
   };
 }

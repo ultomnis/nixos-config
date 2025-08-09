@@ -1,7 +1,7 @@
 { config, ... }:
 
 let
-  cfg = config.luminosity.system.services.avahi;
+  cfg = config.luminosity.modules.system.services.avahi;
 
 in
 {

@@ -20,17 +20,17 @@ let
     name:
     mkOption {
       type = types.bool;
-      default = config.luminosity.system.configurations.enable;
+      default = config.luminosity.modules.system.configurations.enable;
       description = "Whether to enable ${name}.";
     };
 
 in
 {
-  options.luminosity.system.configurations = {
+  options.luminosity.modules.system.configurations = {
     amdgpu = {
       enable = mkOption {
         type = types.bool;
-        default = config.luminosity.selections.gpu == "amd";
+        default = config.luminosity.modules.selections.gpu == "amd";
         description = "Whether to enable AMD GPU configuration.";
       };
     };
@@ -84,7 +84,7 @@ in
 
               shell = mkOption {
                 inherit (selectionTypes.shell) type;
-                default = config.luminosity.selections.shell;
+                default = config.luminosity.modules.selections.shell;
                 description = "User shell.";
               };
 

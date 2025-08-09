@@ -41,7 +41,7 @@
     };
 
     selections = {
-      desktop = osConfig.luminosity.selections.desktop;
+      desktop = osConfig.luminosity.modules.selections.desktop;
       editor = "helix";
 
       monitors = lib.singleton {
@@ -53,7 +53,7 @@
         rate = 165;
       };
 
-      shell = osConfig.luminosity.selections.shell;
+      shell = osConfig.luminosity.modules.selections.shell;
       terminal = "foot";
     };
   };

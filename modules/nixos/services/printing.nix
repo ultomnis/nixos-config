@@ -1,7 +1,7 @@
 { config, ... }:
 
 let
-  cfg = config.luminosity.system.services.printing;
+  cfg = config.luminosity.modules.system.services.printing;
 
 in
 {

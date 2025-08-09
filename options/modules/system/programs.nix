@@ -10,13 +10,13 @@ let
     name:
     mkOption {
       type = types.bool;
-      default = config.luminosity.system.programs.enable;
+      default = config.luminosity.modules.system.programs.enable;
       description = "Whether to enable ${name}.";
     };
 
 in
 {
-  options.luminosity.system.programs = {
+  options.luminosity.modules.system.programs = {
     adb.enable = mkProgramOption "Android Debug Bridge";
     fish.enable = mkProgramOption "fish";
     steam.enable = mkProgramOption "Steam";
@@ -24,7 +24,7 @@ in
     sway = {
       enable = mkOption {
         type = types.bool;
-        default = config.luminosity.selections.desktop == "sway";
+        default = config.luminosity.modules.selections.desktop == "sway";
         description = "Whether to enable Sway.";
       };
     };

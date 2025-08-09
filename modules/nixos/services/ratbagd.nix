@@ -1,7 +1,7 @@
 { config, ... }:
 
 let
-  cfg = config.luminosity.system.services.ratbagd;
+  cfg = config.luminosity.modules.system.services.ratbagd;
 
 in
 {

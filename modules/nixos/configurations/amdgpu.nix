@@ -1,7 +1,7 @@
 { config, lib, ... }:
 
 let
-  cfg = config.luminosity.system.configurations.amdgpu;
+  cfg = config.luminosity.modules.system.configurations.amdgpu;
 
 in
 {
