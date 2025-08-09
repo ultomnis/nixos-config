@@ -6,7 +6,7 @@
 }:
 
 let
-  cfg = config.luminosity.modules.system.configurations.userConfig;
+  cfg = config.luminosity.modules.configurations.userConfig;
 
 in
 {

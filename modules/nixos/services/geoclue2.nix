@@ -1,7 +1,7 @@
 { config, ... }:
 
 let
-  cfg = config.luminosity.modules.system.services.geoclue2;
+  cfg = config.luminosity.modules.services.geoclue2;
 
 in
 {

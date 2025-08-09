@@ -24,25 +24,24 @@
 
   luminosity = {
     modules = {
+      configurations = {
+        enable = true;
+
+        userConfig.users = lib.singleton {
+          homeManager = true;
+          name = "user";
+          uid = 501;
+        };
+      };
+
+      programs.enable = true;
+
       selections = {
         desktop = "aerospace";
         shell = "fish";
       };
 
-      system = {
-        configurations = {
-          enable = true;
-
-          userConfig.users = lib.singleton {
-            homeManager = true;
-            name = "user";
-            uid = 501;
-          };
-        };
-
-        programs.enable = true;
-        services.enable = true;
-      };
+      services.enable = true;
     };
 
     stylix = {

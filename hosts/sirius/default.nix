@@ -28,29 +28,27 @@
 
   luminosity = {
     modules = {
+      configurations = {
+        enable = true;
+
+        userConfig.users = lib.singleton {
+          hashedPasswordFile = config.age.secrets.sirius-user-passwd.path;
+          homeManager = true;
+          name = "user";
+        };
+      };
+
+      programs.enable = true;
+
       selections = {
         desktop = "sway";
         gpu = "amd";
         shell = "fish";
       };
 
-      system = {
-        configurations = {
-          enable = true;
-
-          userConfig.users = lib.singleton {
-            hashedPasswordFile = config.age.secrets.sirius-user-passwd.path;
-            homeManager = true;
-            name = "user";
-          };
-        };
-
-        programs.enable = true;
-
-        services = {
-          enable = true;
-          tailscale.useRoutingFeatures = "client";
-        };
+      services = {
+        enable = true;
+        tailscale.useRoutingFeatures = "client";
       };
     };
 

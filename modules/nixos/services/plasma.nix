@@ -6,7 +6,7 @@
 }:
 
 let
-  cfg = config.luminosity.modules.system.services.plasma;
+  cfg = config.luminosity.modules.services.plasma;
 
 in
 {

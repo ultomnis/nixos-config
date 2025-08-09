@@ -1,7 +1,7 @@
 { config, ... }:
 
 let
-  cfg = config.luminosity.modules.system.services.libvirtd;
+  cfg = config.luminosity.modules.services.libvirtd;
 
 in
 {

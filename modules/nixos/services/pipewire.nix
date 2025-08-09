@@ -1,7 +1,7 @@
 { config, ... }:
 
 let
-  cfg = config.luminosity.modules.system.services.pipewire;
+  cfg = config.luminosity.modules.services.pipewire;
 
 in
 {

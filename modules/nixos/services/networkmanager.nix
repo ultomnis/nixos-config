@@ -1,7 +1,7 @@
 { config, ... }:
 
 let
-  cfg = config.luminosity.modules.system.services.networkmanager;
+  cfg = config.luminosity.modules.services.networkmanager;
 
 in
 {

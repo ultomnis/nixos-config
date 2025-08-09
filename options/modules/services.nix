@@ -10,13 +10,13 @@ let
     name:
     mkOption {
       type = types.bool;
-      default = config.luminosity.modules.system.services.enable;
+      default = config.luminosity.modules.services.enable;
       description = "Whether to enable ${name}.";
     };
 
 in
 {
-  options.luminosity.modules.system.services = {
+  options.luminosity.modules.services = {
     avahi.enable = mkServiceOption "Avahi";
     bluetooth.enable = mkServiceOption "Bluetooth";
     geoclue2.enable = mkServiceOption "GeoClue 2";

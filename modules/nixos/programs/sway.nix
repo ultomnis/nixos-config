@@ -1,7 +1,7 @@
 { config, ... }:
 
 let
-  cfg = config.luminosity.modules.system.programs.sway;
+  cfg = config.luminosity.modules.programs.sway;
 
 in
 {

@@ -20,13 +20,13 @@ let
     name:
     mkOption {
       type = types.bool;
-      default = config.luminosity.modules.system.configurations.enable;
+      default = config.luminosity.modules.configurations.enable;
       description = "Whether to enable ${name}.";
     };
 
 in
 {
-  options.luminosity.modules.system.configurations = {
+  options.luminosity.modules.configurations = {
     amdgpu = {
       enable = mkOption {
         type = types.bool;

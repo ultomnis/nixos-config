@@ -1,7 +1,7 @@
 { config, lib, ... }:
 
 let
-  cfg = config.luminosity.modules.system.configurations.cursor;
+  cfg = config.luminosity.modules.configurations.cursor;
 
 in
 {

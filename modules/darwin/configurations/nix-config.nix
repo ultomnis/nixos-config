@@ -1,7 +1,7 @@
 { config, lib, ... }:
 
 let
-  cfg = config.luminosity.modules.system.configurations.nixConfig;
+  cfg = config.luminosity.modules.configurations.nixConfig;
 
 in
 {

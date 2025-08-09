@@ -1,7 +1,7 @@
 { config, ... }:
 
 let
-  cfg = config.luminosity.modules.system.services.openssh;
+  cfg = config.luminosity.modules.services.openssh;
 
 in
 {

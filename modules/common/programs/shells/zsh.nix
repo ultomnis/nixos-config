@@ -1,7 +1,7 @@
 { config, ... }:
 
 let
-  cfg = config.luminosity.modules.system.programs.zsh;
+  cfg = config.luminosity.modules.programs.zsh;
 
 in
 {

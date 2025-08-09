@@ -1,8 +1,9 @@
 {
   imports = [
-    ./system
+    ./meta
 
-    ./selections.nix
-    ./types.nix
+    ./configurations.nix
+    ./programs.nix
+    ./services.nix
   ];
 }
