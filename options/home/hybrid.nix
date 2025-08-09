@@ -24,6 +24,8 @@ in
 {
   options.luminosity.home.hybrid = {
     cursor = {
+      enable = mkHybridOption "Stylix cursor configuration";
+
       package = mkPackageOption pkgs "cursor" {
         default = [
           "bibata-cursors"
@@ -46,7 +48,7 @@ in
     fonts.enable = mkHybridOption "font configuration";
 
     icons = {
-      enable = mkHybridOption "Stylix home configuration";
+      enable = mkHybridOption "Stylix icon configuration";
 
       package = mkPackageOption pkgs "icon" {
         default = [

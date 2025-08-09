@@ -38,6 +38,8 @@ in
     boot.enable = mkConfigurationOption "boot configuration";
 
     cursor = {
+      enable = mkConfigurationOption "Stylix cursor configuration";
+
       package = mkPackageOption pkgs "cursor" {
         default = [
           "bibata-cursors"
