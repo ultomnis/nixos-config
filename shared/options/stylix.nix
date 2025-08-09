@@ -12,7 +12,7 @@ in
 {
   options.luminosity = {
     stylix = {
-      enable = mkEnableOption "Whether to enable Stylix.";
+      enable = mkEnableOption "Stylix";
 
       base16 = mkOption {
         type = types.oneOf [
