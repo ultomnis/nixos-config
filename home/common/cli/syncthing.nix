@@ -1,7 +1,7 @@
 { config, ... }:
 
 let
-  cfg = config.luminosity.home.programs.cli.syncthing;
+  cfg = config.luminosity.home.cli.syncthing;
 
 in
 {

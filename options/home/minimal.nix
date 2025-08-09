@@ -18,13 +18,13 @@ let
     name:
     mkOption {
       type = types.bool;
-      default = config.luminosity.home.desktop.minimal.enable;
+      default = config.luminosity.home.minimal.enable;
       description = "Whether to enable ${name}.";
     };
 
 in
 {
-  options.luminosity.home.desktop.minimal = {
+  options.luminosity.home.minimal = {
     aerospace = {
       enable = mkOption {
         type = types.bool;

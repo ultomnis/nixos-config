@@ -1,7 +1,7 @@
 { config, ... }:
 
 let
-  cfg = config.luminosity.home.programs.cli.fd;
+  cfg = config.luminosity.home.cli.fd;
 
 in
 {

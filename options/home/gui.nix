@@ -17,13 +17,13 @@ let
     name:
     mkOption {
       type = types.bool;
-      default = config.luminosity.home.programs.gui.enable;
+      default = config.luminosity.home.gui.enable;
       description = "Whether to enable ${name}.";
     };
 
 in
 {
-  options.luminosity.home.programs.gui = {
+  options.luminosity.home.gui = {
     anki.enable = mkGuiOption "Anki";
 
     foot = {

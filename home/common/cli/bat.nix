@@ -1,7 +1,7 @@
 { config, ... }:
 
 let
-  cfg = config.luminosity.home.programs.cli.bat;
+  cfg = config.luminosity.home.cli.bat;
 
 in
 {

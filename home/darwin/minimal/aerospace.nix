@@ -6,7 +6,7 @@
 }:
 
 let
-  cfg = config.luminosity.home.desktop.minimal.aerospace;
+  cfg = config.luminosity.home.minimal.aerospace;
 
 in
 {

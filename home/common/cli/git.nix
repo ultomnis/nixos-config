@@ -6,7 +6,7 @@
 }:
 
 let
-  cfg = config.luminosity.home.programs.cli.git;
+  cfg = config.luminosity.home.cli.git;
 
 in
 {

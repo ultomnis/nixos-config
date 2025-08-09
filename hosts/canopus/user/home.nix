@@ -17,26 +17,18 @@
   programs.home-manager.enable = true;
 
   luminosity.home = {
-    desktop = {
-      universal.enable = true;
+    cli = {
+      enable = true;
+
+      git = {
+        userEmail = "125839032+ultomnis@users.noreply.github.com";
+        userName = "ultomnis";
+      };
     };
 
-    programs = {
-      cli = {
-        enable = true;
-
-        git = {
-          userEmail = "125839032+ultomnis@users.noreply.github.com";
-          userName = "ultomnis";
-        };
-      };
-
-      gui = {
-        enable = true;
-        wezterm.maxFPS = 120;
-      };
-
-      tui.enable = true;
+    gui = {
+      enable = true;
+      wezterm.maxFPS = 120;
     };
 
     selections = {
@@ -45,5 +37,8 @@
       shell = osConfig.luminosity.modules.selections.shell;
       terminal = "wezterm";
     };
+
+    tui.enable = true;
+    universal.enable = true;
   };
 }

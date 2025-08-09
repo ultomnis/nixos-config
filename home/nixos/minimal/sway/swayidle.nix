@@ -6,8 +6,8 @@
 }:
 
 let
-  cfg = config.luminosity.home.desktop.minimal.swayidle;
-  inherit (config.luminosity.home.desktop.minimal) sway;
+  cfg = config.luminosity.home.minimal.swayidle;
+  inherit (config.luminosity.home.minimal) sway;
 
 in
 {

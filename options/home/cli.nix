@@ -10,13 +10,13 @@ let
     name:
     mkOption {
       type = types.bool;
-      default = config.luminosity.home.programs.cli.enable;
+      default = config.luminosity.home.cli.enable;
       description = "Whether to enable ${name}.";
     };
 
 in
 {
-  options.luminosity.home.programs.cli = {
+  options.luminosity.home.cli = {
     _7zz.enable = mkCliOption "7-Zip";
     bat.enable = mkCliOption "bat";
     eza.enable = mkCliOption "eza";
@@ -42,13 +42,13 @@ in
 
       githubEmail = mkOption {
         type = types.nullOr types.str;
-        default = config.luminosity.home.programs.cli.git.userEmail;
+        default = config.luminosity.home.cli.git.userEmail;
         description = "Git email for the ~/GitHub directory.";
       };
 
       githubName = mkOption {
         type = types.nullOr types.str;
-        default = config.luminosity.home.programs.cli.git.userName;
+        default = config.luminosity.home.cli.git.userName;
         description = "Git username for the ~/GitHub directory.";
       };
     };

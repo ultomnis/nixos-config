@@ -1,7 +1,7 @@
 { config, ... }:
 
 let
-  cfg = config.luminosity.home.programs.cli.fish;
+  cfg = config.luminosity.home.cli.fish;
 
 in
 {

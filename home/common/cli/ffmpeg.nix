@@ -6,7 +6,7 @@
 }:
 
 let
-  cfg = config.luminosity.home.programs.cli.ffmpeg;
+  cfg = config.luminosity.home.cli.ffmpeg;
 
 in
 {

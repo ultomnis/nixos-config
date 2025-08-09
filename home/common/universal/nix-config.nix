@@ -7,7 +7,7 @@
 }:
 
 let
-  cfg = config.luminosity.home.desktop.universal.nixConfig;
+  cfg = config.luminosity.home.universal.nixConfig;
 
 in
 {

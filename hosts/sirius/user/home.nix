@@ -16,29 +16,22 @@
   programs.home-manager.enable = true;
 
   luminosity.home = {
-    desktop = {
-      universal.enable = true;
-    };
+    cli = {
+      enable = true;
 
-    programs = {
-      cli = {
-        enable = true;
-
-        git = {
-          userEmail = "125839032+ultomnis@users.noreply.github.com";
-          userName = "ultomnis";
-        };
-
-        ollama = {
-          environmentVariables = {
-            HSA_OVERRIDE_GFX_VERSION = "11.0.1";
-          };
-        };
+      git = {
+        userEmail = "125839032+ultomnis@users.noreply.github.com";
+        userName = "ultomnis";
       };
 
-      gui.enable = true;
-      tui.enable = true;
+      ollama = {
+        environmentVariables = {
+          HSA_OVERRIDE_GFX_VERSION = "11.0.1";
+        };
+      };
     };
+
+    gui.enable = true;
 
     selections = {
       desktop = osConfig.luminosity.modules.selections.desktop;
@@ -56,5 +49,8 @@
       shell = osConfig.luminosity.modules.selections.shell;
       terminal = "foot";
     };
+
+    tui.enable = true;
+    universal.enable = true;
   };
 }

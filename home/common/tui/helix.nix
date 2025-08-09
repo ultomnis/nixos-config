@@ -6,7 +6,7 @@
 }:
 
 let
-  cfg = config.luminosity.home.programs.tui.helix;
+  cfg = config.luminosity.home.tui.helix;
 
 in
 {

@@ -1,7 +1,7 @@
 { config, ... }:
 
 let
-  cfg = config.luminosity.home.programs.gui.mangohud;
+  cfg = config.luminosity.home.gui.mangohud;
 
 in
 {

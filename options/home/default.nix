@@ -1,9 +1,12 @@
 {
   imports = [
-    ./desktop
-    ./programs
+    ./meta
 
-    ./selections.nix
-    ./types.nix
+    ./cli.nix
+    ./gui.nix
+    ./hybrid.nix
+    ./minimal.nix
+    ./tui.nix
+    ./universal.nix
   ];
 }

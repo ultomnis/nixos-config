@@ -16,13 +16,13 @@ let
     name:
     mkOption {
       type = types.bool;
-      default = config.luminosity.home.desktop.hybrid.enable;
+      default = config.luminosity.home.hybrid.enable;
       description = "Whether to enable ${name}.";
     };
 
 in
 {
-  options.luminosity.home.desktop.hybrid = {
+  options.luminosity.home.hybrid = {
     cursor = {
       package = mkPackageOption pkgs "cursor" {
         default = [

@@ -1,7 +1,7 @@
 { config, ... }:
 
 let
-  cfg = config.luminosity.home.desktop.minimal.fuzzel;
+  cfg = config.luminosity.home.minimal.fuzzel;
 
 in
 {

@@ -1,7 +1,7 @@
 { config, ... }:
 
 let
-  cfg = config.luminosity.home.desktop.minimal.gammastep;
+  cfg = config.luminosity.home.minimal.gammastep;
 
 in
 {

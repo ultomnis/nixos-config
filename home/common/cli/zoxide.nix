@@ -1,7 +1,7 @@
 { config, ... }:
 
 let
-  cfg = config.luminosity.home.programs.cli.zoxide;
+  cfg = config.luminosity.home.cli.zoxide;
 
 in
 {

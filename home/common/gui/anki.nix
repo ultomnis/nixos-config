@@ -6,7 +6,7 @@
 }:
 
 let
-  cfg = config.luminosity.home.programs.gui.anki;
+  cfg = config.luminosity.home.gui.anki;
 
 in
 {

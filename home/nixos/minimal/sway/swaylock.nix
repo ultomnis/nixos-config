@@ -1,7 +1,7 @@
 { config, ... }:
 
 let
-  cfg = config.luminosity.home.desktop.minimal.swaylock;
+  cfg = config.luminosity.home.minimal.swaylock;
 
 in
 {

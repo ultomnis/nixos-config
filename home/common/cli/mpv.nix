@@ -1,7 +1,7 @@
 { config, ... }:
 
 let
-  cfg = config.luminosity.home.programs.cli.mpv;
+  cfg = config.luminosity.home.cli.mpv;
 
 in
 {

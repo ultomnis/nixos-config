@@ -1,7 +1,7 @@
 { config, ... }:
 
 let
-  cfg = config.luminosity.home.desktop.minimal.darkman;
+  cfg = config.luminosity.home.minimal.darkman;
 
 in
 {

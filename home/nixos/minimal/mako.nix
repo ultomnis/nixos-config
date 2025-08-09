@@ -1,7 +1,7 @@
 { config, ... }:
 
 let
-  cfg = config.luminosity.home.desktop.minimal.mako;
+  cfg = config.luminosity.home.minimal.mako;
 
 in
 {

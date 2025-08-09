@@ -1,7 +1,7 @@
 { config, ... }:
 
 let
-  cfg = config.luminosity.home.programs.gui.obs-studio;
+  cfg = config.luminosity.home.gui.obs-studio;
 
 in
 {

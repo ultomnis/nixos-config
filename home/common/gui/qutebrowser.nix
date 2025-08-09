@@ -6,7 +6,7 @@
 }:
 
 let
-  cfg = config.luminosity.home.programs.gui.qutebrowser;
+  cfg = config.luminosity.home.gui.qutebrowser;
 
 in
 {

@@ -6,7 +6,7 @@
 }:
 
 let
-  cfg = config.luminosity.home.programs.cli.mcat;
+  cfg = config.luminosity.home.cli.mcat;
 
 in
 {

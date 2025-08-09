@@ -6,7 +6,7 @@
 }:
 
 let
-  cfg = config.luminosity.home.programs.gui.zed-editor;
+  cfg = config.luminosity.home.gui.zed-editor;
 
 in
 {

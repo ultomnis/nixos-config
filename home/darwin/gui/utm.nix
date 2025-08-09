@@ -6,7 +6,7 @@
 }:
 
 let
-  cfg = config.luminosity.home.programs.gui.utm;
+  cfg = config.luminosity.home.gui.utm;
 
 in
 {

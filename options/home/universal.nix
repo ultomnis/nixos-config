@@ -17,13 +17,13 @@ let
     name:
     mkOption {
       type = types.bool;
-      default = config.luminosity.home.desktop.universal.enable;
+      default = config.luminosity.home.universal.enable;
       description = "Whether to enable ${name}.";
     };
 
 in
 {
-  options.luminosity.home.desktop.universal = {
+  options.luminosity.home.universal = {
     darwinDefaults.enable = mkUniversalOption "macOS user defaults";
     nixConfig.enable = mkUniversalOption "user-specific Nix settings";
 

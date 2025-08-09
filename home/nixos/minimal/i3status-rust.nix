@@ -6,7 +6,7 @@
 }:
 
 let
-  cfg = config.luminosity.home.desktop.minimal.i3status-rust;
+  cfg = config.luminosity.home.minimal.i3status-rust;
 
 in
 {

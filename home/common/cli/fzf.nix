@@ -6,7 +6,7 @@
 }:
 
 let
-  cfg = config.luminosity.home.programs.cli.fzf;
+  cfg = config.luminosity.home.cli.fzf;
 
 in
 {

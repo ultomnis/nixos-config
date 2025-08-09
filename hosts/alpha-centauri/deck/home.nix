@@ -19,34 +19,30 @@
 
   luminosity = {
     home = {
-      desktop = {
-        hybrid.enable = true;
-        universal.enable = true;
+      cli = {
+        enable = true;
+
+        git = {
+          userEmail = "125839032+ultomnis@users.noreply.github.com";
+          userName = "ultomnis";
+        };
       };
 
-      programs = {
-        cli = {
-          enable = true;
-
-          git = {
-            userEmail = "125839032+ultomnis@users.noreply.github.com";
-            userName = "ultomnis";
-          };
-        };
-
-        gui = {
-          enable = true;
-          mangohud.enable = false;
-        };
-
-        tui.enable = true;
+      gui = {
+        enable = true;
+        mangohud.enable = false;
       };
+
+      hybrid.enable = true;
 
       selections = {
         editor = "helix";
         shell = "fish";
         terminal = "wezterm";
       };
+
+      tui.enable = true;
+      universal.enable = true;
     };
 
     stylix = {

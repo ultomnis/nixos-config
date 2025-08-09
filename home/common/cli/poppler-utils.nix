@@ -6,7 +6,7 @@
 }:
 
 let
-  cfg = config.luminosity.home.programs.cli.poppler-utils;
+  cfg = config.luminosity.home.cli.poppler-utils;
 
 in
 {

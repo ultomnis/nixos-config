@@ -1,7 +1,7 @@
 { config, ... }:
 
 let
-  cfg = config.luminosity.home.programs.cli.ripgrep;
+  cfg = config.luminosity.home.cli.ripgrep;
 
 in
 {

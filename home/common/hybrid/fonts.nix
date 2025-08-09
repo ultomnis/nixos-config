@@ -6,7 +6,7 @@
 }:
 
 let
-  cfg = config.luminosity.home.desktop.hybrid.fonts;
+  cfg = config.luminosity.home.hybrid.fonts;
 
 in
 {

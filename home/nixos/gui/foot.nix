@@ -6,7 +6,7 @@
 }:
 
 let
-  cfg = config.luminosity.home.programs.gui.foot;
+  cfg = config.luminosity.home.gui.foot;
 
 in
 {

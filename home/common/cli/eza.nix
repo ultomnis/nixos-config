@@ -1,7 +1,7 @@
 { config, ... }:
 
 let
-  cfg = config.luminosity.home.programs.cli.eza;
+  cfg = config.luminosity.home.cli.eza;
 
 in
 {

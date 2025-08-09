@@ -1,7 +1,7 @@
 { config, ... }:
 
 let
-  cfg = config.luminosity.home.programs.tui.yazi;
+  cfg = config.luminosity.home.tui.yazi;
 
 in
 {

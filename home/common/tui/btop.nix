@@ -1,7 +1,7 @@
 { config, ... }:
 
 let
-  cfg = config.luminosity.home.programs.tui.btop;
+  cfg = config.luminosity.home.tui.btop;
 
 in
 {

@@ -1,7 +1,7 @@
 { config, ... }:
 
 let
-  cfg = config.luminosity.home.programs.tui.micro;
+  cfg = config.luminosity.home.tui.micro;
 
 in
 {

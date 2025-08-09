@@ -6,7 +6,7 @@
 }:
 
 let
-  cfg = config.luminosity.home.desktop.minimal.polkit-kde-agent;
+  cfg = config.luminosity.home.minimal.polkit-kde-agent;
 
 in
 {

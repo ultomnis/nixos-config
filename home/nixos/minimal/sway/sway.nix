@@ -7,7 +7,7 @@
 }:
 
 let
-  cfg = config.luminosity.home.desktop.minimal.sway;
+  cfg = config.luminosity.home.minimal.sway;
 
 in
 {

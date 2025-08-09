@@ -6,7 +6,7 @@
 }:
 
 let
-  cfg = config.luminosity.home.programs.tui.kew;
+  cfg = config.luminosity.home.tui.kew;
 
 in
 {

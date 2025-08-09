@@ -1,7 +1,7 @@
 { config, ... }:
 
 let
-  cfg = config.luminosity.home.programs.cli.yt-dlp;
+  cfg = config.luminosity.home.cli.yt-dlp;
 
 in
 {

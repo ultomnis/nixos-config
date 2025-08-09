@@ -6,7 +6,7 @@
 }:
 
 let
-  cfg = config.luminosity.home.programs.gui.wezterm;
+  cfg = config.luminosity.home.gui.wezterm;
 
 in
 {

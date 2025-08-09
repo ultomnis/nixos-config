@@ -6,7 +6,7 @@
 }:
 
 let
-  cfg = config.luminosity.home.programs.gui.keepassxc;
+  cfg = config.luminosity.home.gui.keepassxc;
 
 in
 {
