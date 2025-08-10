@@ -45,10 +45,5 @@ in
         xwaylandvideobridge
         ;
     };
-
-    stylix.targets = {
-      gtk.enable = false;
-      qt.enable = false;
-    };
   };
 }
