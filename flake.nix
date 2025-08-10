@@ -85,12 +85,6 @@
           inherit customLib;
           hostName = "canopus";
           system = "aarch64-darwin";
-
-          extraModules = [
-            agenix.darwinModules.default
-            home-manager.darwinModules.home-manager
-            stylix.darwinModules.stylix
-          ];
         };
       };
 
@@ -100,10 +94,6 @@
           hostName = "alpha-centauri";
           system = "x86_64-linux";
           username = "deck";
-
-          extraModules = [
-            stylix.homeModules.stylix
-          ];
         };
       };
 
@@ -114,10 +104,7 @@
           system = "x86_64-linux";
 
           extraModules = [
-            agenix.nixosModules.default
             disko.nixosModules.disko
-            home-manager.nixosModules.home-manager
-            stylix.nixosModules.stylix
           ];
         };
       };
@@ -127,10 +114,6 @@
           inherit customLib;
           hostName = "alpha-centauri";
           system = "x86_64-linux";
-
-          extraModules = [
-            nix-system-graphics.systemModules.default
-          ];
         };
       };
     };

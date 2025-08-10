@@ -10,7 +10,12 @@
     }:
 
     let
-      inherit (inputs) nix-darwin;
+      inherit (inputs)
+        agenix
+        home-manager
+        nix-darwin
+        stylix
+        ;
 
       specialArgs = {
         inherit
@@ -35,6 +40,10 @@
             extraSpecialArgs = specialArgs;
           };
         }
+
+        agenix.darwinModules.default
+        home-manager.darwinModules.home-manager
+        stylix.darwinModules.stylix
       ]
       ++ extraModules;
     };
@@ -49,7 +58,11 @@
     }:
 
     let
-      inherit (inputs) home-manager nixpkgs;
+      inherit (inputs)
+        home-manager
+        nixpkgs
+        stylix
+        ;
 
     in
     home-manager.lib.homeManagerConfiguration {
@@ -66,6 +79,8 @@
 
       modules = [
         ../hosts/${hostName}/${username}/home.nix
+
+        stylix.homeModules.stylix
       ]
       ++ extraModules;
     };
@@ -79,7 +94,12 @@
     }:
 
     let
-      inherit (inputs) nixpkgs;
+      inherit (inputs)
+        agenix
+        home-manager
+        nixpkgs
+        stylix
+        ;
 
       specialArgs = {
         inherit
@@ -104,6 +124,10 @@
             extraSpecialArgs = specialArgs;
           };
         }
+
+        agenix.nixosModules.default
+        home-manager.nixosModules.home-manager
+        stylix.nixosModules.stylix
       ]
       ++ extraModules;
     };
@@ -117,7 +141,10 @@
     }:
 
     let
-      inherit (inputs) system-manager;
+      inherit (inputs)
+        nix-system-graphics
+        system-manager
+        ;
 
     in
     system-manager.lib.makeSystemConfig {
@@ -135,6 +162,8 @@
         {
           nixpkgs.hostPlatform = system;
         }
+
+        nix-system-graphics.systemModules.default
       ]
       ++ extraModules;
     };
