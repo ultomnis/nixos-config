@@ -73,86 +73,88 @@ in
           term = config.wayland.windowManager.sway.config.terminal;
 
         in
-        {
-          "${mod}+Return" = "exec ${term}";
-          "${mod}+Shift+q" = "kill";
-          "${mod}+d" = "exec ${menu}";
-          "${mod}+Shift+c" = "reload";
+        lib.mkMerge [
+          {
+            "${mod}+Return" = "exec ${term}";
+            "${mod}+Shift+q" = "kill";
+            "${mod}+d" = "exec ${menu}";
+            "${mod}+Shift+c" = "reload";
 
-          "${mod}+h" = "focus left";
-          "${mod}+j" = "focus down";
-          "${mod}+k" = "focus up";
-          "${mod}+l" = "focus right";
+            "${mod}+h" = "focus left";
+            "${mod}+j" = "focus down";
+            "${mod}+k" = "focus up";
+            "${mod}+l" = "focus right";
 
-          "${mod}+Shift+h" = "move left";
-          "${mod}+Shift+j" = "move down";
-          "${mod}+Shift+k" = "move up";
-          "${mod}+Shift+l" = "move right";
+            "${mod}+Shift+h" = "move left";
+            "${mod}+Shift+j" = "move down";
+            "${mod}+Shift+k" = "move up";
+            "${mod}+Shift+l" = "move right";
 
-          "${mod}+1" = "workspace number 1";
-          "${mod}+2" = "workspace number 2";
-          "${mod}+3" = "workspace number 3";
-          "${mod}+4" = "workspace number 4";
-          "${mod}+5" = "workspace number 5";
-          "${mod}+6" = "workspace number 6";
-          "${mod}+7" = "workspace number 7";
-          "${mod}+8" = "workspace number 8";
-          "${mod}+9" = "workspace number 9";
-          "${mod}+0" = "workspace number 10";
+            "${mod}+b" = "splith";
+            "${mod}+v" = "splitv";
 
-          "${mod}+Shift+1" = "move container to workspace number 1";
-          "${mod}+Shift+2" = "move container to workspace number 2";
-          "${mod}+Shift+3" = "move container to workspace number 3";
-          "${mod}+Shift+4" = "move container to workspace number 4";
-          "${mod}+Shift+5" = "move container to workspace number 5";
-          "${mod}+Shift+6" = "move container to workspace number 6";
-          "${mod}+Shift+7" = "move container to workspace number 7";
-          "${mod}+Shift+8" = "move container to workspace number 8";
-          "${mod}+Shift+9" = "move container to workspace number 9";
-          "${mod}+Shift+0" = "move container to workspace number 10";
+            "${mod}+s" = "layout stacking";
+            "${mod}+w" = "layout tabbed";
+            "${mod}+e" = "layout toggle split";
 
-          "${mod}+b" = "splith";
-          "${mod}+v" = "splitv";
+            "${mod}+f" = "fullscreen";
 
-          "${mod}+s" = "layout stacking";
-          "${mod}+w" = "layout tabbed";
-          "${mod}+e" = "layout toggle split";
+            "${mod}+Shift+space" = "floating toggle";
 
-          "${mod}+f" = "fullscreen";
+            "${mod}+space" = "focus mode_toggle";
 
-          "${mod}+Shift+space" = "floating toggle";
+            "${mod}+a" = "focus parent";
 
-          "${mod}+space" = "focus mode_toggle";
+            "${mod}+Shift+minus" = "move scratchpad";
+            "${mod}+minus" = "scratchpad show";
 
-          "${mod}+a" = "focus parent";
+            "${mod}+r" = "mode resize";
 
-          "${mod}+Shift+minus" = "move scratchpad";
-          "${mod}+minus" = "scratchpad show";
+            "${mod}+Escape" = "exec ${lib.getExe pkgs.swaylock} -f";
 
-          "${mod}+r" = "mode resize";
+            "--locked XF86AudioMute" =
+              "exec ${lib.getExe' pkgs.wireplumber "wpctl"} set-mute @DEFAULT_AUDIO_SINK@ toggle";
+            "--locked XF86AudioLowerVolume" =
+              "exec ${lib.getExe' pkgs.wireplumber "wpctl"} set-volume @DEFAULT_AUDIO_SINK@ 5%-";
+            "--locked XF86AudioRaiseVolume" =
+              "exec ${lib.getExe' pkgs.wireplumber "wpctl"} set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+";
+            "--locked XF86AudioMicMute" =
+              "exec ${lib.getExe' pkgs.wireplumber "wpctl"} set-mute @DEFAULT_AUDIO_SOURCE@ toggle";
 
-          "${mod}+Escape" = "exec ${lib.getExe pkgs.swaylock} -f";
+            "--locked XF86AudioPrev" = "exec ${lib.getExe pkgs.playerctl} previous";
+            "--locked XF86AudioNext" = "exec ${lib.getExe pkgs.playerctl} next";
+            "--locked XF86AudioPlay" = "exec ${lib.getExe pkgs.playerctl} play-pause";
+            "--locked XF86AudioPause" = "exec ${lib.getExe pkgs.playerctl} play-pause";
+            "--locked XF86AudioStop" = "exec ${lib.getExe pkgs.playerctl} stop";
 
-          "--locked XF86AudioMute" =
-            "exec ${lib.getExe' pkgs.wireplumber "wpctl"} set-mute @DEFAULT_AUDIO_SINK@ toggle";
-          "--locked XF86AudioLowerVolume" =
-            "exec ${lib.getExe' pkgs.wireplumber "wpctl"} set-volume @DEFAULT_AUDIO_SINK@ 5%-";
-          "--locked XF86AudioRaiseVolume" =
-            "exec ${lib.getExe' pkgs.wireplumber "wpctl"} set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+";
-          "--locked XF86AudioMicMute" =
-            "exec ${lib.getExe' pkgs.wireplumber "wpctl"} set-mute @DEFAULT_AUDIO_SOURCE@ toggle";
+            "--locked XF86MonBrightnessDown" = "exec ${lib.getExe pkgs.brightnessctl} set 5%-";
+            "--locked XF86MonBrightnessUp" = "exec ${lib.getExe pkgs.brightnessctl} set 5%+";
 
-          "--locked XF86AudioPrev" = "exec ${lib.getExe pkgs.playerctl} previous";
-          "--locked XF86AudioNext" = "exec ${lib.getExe pkgs.playerctl} next";
-          "--locked XF86AudioPlay" = "exec ${lib.getExe pkgs.playerctl} play-pause";
-          "--locked XF86AudioPause" = "exec ${lib.getExe pkgs.playerctl} play-pause";
-          "--locked XF86AudioStop" = "exec ${lib.getExe pkgs.playerctl} stop";
+            "--no-repeat ${mod}+Print" = ''exec ${lib.getExe pkgs.grim} -g "$(${lib.getExe pkgs.slurp})"'';
+          }
 
-          "--locked XF86MonBrightnessDown" = "exec ${lib.getExe pkgs.brightnessctl} set 5%-";
-          "--locked XF86MonBrightnessUp" = "exec ${lib.getExe pkgs.brightnessctl} set 5%+";
+          (
+            (builtins.genList (x: x + 1) 10)
+            |> builtins.concatMap (
+              num:
+              let
+                key = if (num == 10) then "0" else toString num;
 
-          "--no-repeat ${mod}+Print" = ''exec ${lib.getExe pkgs.grim} -g "$(${lib.getExe pkgs.slurp})"'';
-        };
+              in
+              [
+                {
+                  name = "${mod}+${key}";
+                  value = "workspace number ${toString num}";
+                }
+                {
+                  name = "${mod}+Shift+${key}";
+                  value = "move container to workspace number ${toString num}";
+                }
+              ]
+            )
+            |> builtins.listToAttrs
+          )
+        ];
 
       modes = {
         resize = {
