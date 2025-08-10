@@ -48,12 +48,8 @@
   outputs =
     {
       self,
-      agenix,
       disko,
-      home-manager,
       nixpkgs,
-      nix-system-graphics,
-      stylix,
       ...
     }@inputs:
 
