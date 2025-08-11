@@ -13,7 +13,6 @@
     ./mat2.nix
     ./mcat.nix
     ./mpv.nix
-    ./ollama.nix
     ./poppler-utils.nix
     ./ripgrep.nix
     ./ssh.nix

@@ -25,12 +25,6 @@
           userEmail = "125839032+ultomnis@users.noreply.github.com";
           userName = "ultomnis";
         };
-
-        ollama = {
-          environmentVariables = {
-            HSA_OVERRIDE_GFX_VERSION = "11.0.1";
-          };
-        };
       };
 
       gui.enable = true;

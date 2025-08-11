@@ -57,17 +57,6 @@ in
     mat2.enable = mkCliOption "mat2";
     mcat.enable = mkCliOption "mcat";
     mpv.enable = mkCliOption "MPV";
-
-    ollama = {
-      enable = mkCliOption "Ollama";
-
-      environmentVariables = mkOption {
-        type = types.attrsOf types.str;
-        default = { };
-        description = "Set environment variables for Ollama.";
-      };
-    };
-
     poppler-utils.enable = mkCliOption "poppler-utils";
     ripgrep.enable = mkCliOption "ripgrep";
     ssh.enable = mkCliOption "SSH";

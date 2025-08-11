@@ -22,15 +22,6 @@ in
     ];
 
     userSettings = {
-      agent = {
-        default_model = {
-          provider = "ollama";
-          model = "deepseek-r1:latest";
-        };
-
-        version = "2";
-      };
-
       buffer_line_height = "standard";
       collaboration_panel.button = false;
       cursor_blink = false;
