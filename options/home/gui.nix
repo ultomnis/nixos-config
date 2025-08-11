@@ -66,7 +66,5 @@ in
         description = "Shell for WezTerm.";
       };
     };
-
-    zed-editor.enable = mkGuiOption "Zed";
   };
 }
