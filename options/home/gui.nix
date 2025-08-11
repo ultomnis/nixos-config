@@ -41,6 +41,7 @@ in
     };
 
     keepassxc.enable = mkGuiOption "KeePassXC";
+    koboldcpp.enable = mkGuiOption "KoboldCpp";
     mangohud.enable = mkGuiOption "MangoHud";
     obs-studio.enable = mkGuiOption "OBS Studio";
     qutebrowser.enable = mkGuiOption "qutebrowser";
