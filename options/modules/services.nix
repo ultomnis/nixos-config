@@ -19,7 +19,6 @@ in
   options.luminosity.modules.services = {
     avahi.enable = mkServiceOption "Avahi";
     bluetooth.enable = mkServiceOption "Bluetooth";
-    geoclue2.enable = mkServiceOption "GeoClue 2";
     libvirtd.enable = mkServiceOption "libvirtd";
     networkmanager.enable = mkServiceOption "Network Manager";
     openssh.enable = mkServiceOption "OpenSSH";
