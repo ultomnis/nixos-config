@@ -1,4 +1,9 @@
-{ lib, osConfig, ... }:
+{
+  lib,
+  osConfig,
+  pkgs,
+  ...
+}:
 
 {
   imports = [
@@ -28,6 +33,15 @@
       };
 
       gui.enable = true;
+
+      minimal = {
+        sway = {
+          keybinds = {
+            brightnessDown = "${lib.getExe pkgs.ddcutil} setvcp 10 - 5";
+            brightnessUp = "${lib.getExe pkgs.ddcutil} setvcp 10 + 5";
+          };
+        };
+      };
 
       selections = {
         desktop = osConfig.luminosity.modules.selections.desktop;
