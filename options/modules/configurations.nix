@@ -59,6 +59,7 @@ in
       };
     };
 
+    i2c.enable = mkConfigurationOption "Inter-Integrated Circuit";
     locale.enable = mkConfigurationOption "locale configuration";
     nixConfig.enable = mkConfigurationOption "Nix settings";
     security.enable = mkConfigurationOption "security configuration";
