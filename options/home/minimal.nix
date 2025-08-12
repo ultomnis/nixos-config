@@ -2,6 +2,7 @@
   config,
   customLib,
   lib,
+  pkgs,
   ...
 }:
 
@@ -63,6 +64,20 @@ in
         type = types.bool;
         default = config.luminosity.home.selections.desktop == "sway";
         description = "Whether to enable Sway.";
+      };
+
+      keybinds = {
+        brightnessDown = mkOption {
+          type = types.str;
+          default = "exec ${lib.getExe pkgs.brightnessctl} set 5%-";
+          description = "Brightness down keybind for Sway.";
+        };
+
+        brightnessUp = mkOption {
+          type = types.str;
+          default = "exec ${lib.getExe pkgs.brightnessctl} set 5%+";
+          description = "Brightness up keybind for Sway.";
+        };
       };
 
       monitors = mkOption {

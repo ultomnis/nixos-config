@@ -127,8 +127,8 @@ in
             "--locked XF86AudioPause" = "exec ${lib.getExe pkgs.playerctl} play-pause";
             "--locked XF86AudioStop" = "exec ${lib.getExe pkgs.playerctl} stop";
 
-            "--locked XF86MonBrightnessDown" = "exec ${lib.getExe pkgs.brightnessctl} set 5%-";
-            "--locked XF86MonBrightnessUp" = "exec ${lib.getExe pkgs.brightnessctl} set 5%+";
+            "--locked XF86MonBrightnessDown" = cfg.keybinds.brightnessDown;
+            "--locked XF86MonBrightnessUp" = cfg.keybinds.brightnessUp;
 
             "--no-repeat ${mod}+Print" = ''exec ${lib.getExe pkgs.grim} -g "$(${lib.getExe pkgs.slurp})"'';
           }
