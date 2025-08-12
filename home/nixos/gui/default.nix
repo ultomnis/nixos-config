@@ -1,5 +1,6 @@
 {
   imports = [
+    ./blender.nix
     ./foot.nix
     ./godot.nix
     ./krita.nix

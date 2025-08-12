@@ -17,6 +17,7 @@ in
     };
 
     casks = [
+      "blender"
       "godot"
       "krita"
       "obs"

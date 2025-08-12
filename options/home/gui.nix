@@ -25,6 +25,7 @@ in
 {
   options.luminosity.home.gui = {
     anki.enable = mkGuiOption "Anki";
+    blender.enable = mkGuiOption "Blender";
 
     foot = {
       enable = mkOption {
