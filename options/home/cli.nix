@@ -53,6 +53,7 @@ in
       };
     };
 
+    grim.enable = mkCliOption "grim";
     libqalculate.enable = mkCliOption "libqalculate";
     mat2.enable = mkCliOption "mat2";
     mcat.enable = mkCliOption "mcat";
