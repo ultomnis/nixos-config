@@ -20,6 +20,7 @@ in
     _7zz.enable = mkCliOption "7-Zip";
     bat.enable = mkCliOption "bat";
     brightnessctl.enable = mkCliOption "brightnessctl";
+    ddcutil.enable = mkCliOption "ddcutil";
     eza.enable = mkCliOption "eza";
     fd.enable = mkCliOption "fd";
     ffmpeg.enable = mkCliOption "ffmpeg";
