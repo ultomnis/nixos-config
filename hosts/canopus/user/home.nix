@@ -41,7 +41,14 @@
       };
 
       tui.enable = true;
-      universal.enable = true;
+
+      universal = {
+        enable = true;
+
+        variables.extraVariables = {
+          HOMEBREW_NO_ANALYTICS = 1;
+        };
+      };
     };
 
     stylix = osConfig.luminosity.stylix;
