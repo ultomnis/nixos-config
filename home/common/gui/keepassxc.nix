@@ -1,18 +1,11 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
-}:
+{ config, ... }:
 
 let
   cfg = config.luminosity.home.gui.keepassxc;
 
 in
 {
-  config = lib.mkIf cfg.enable {
-    home.packages = [
-      pkgs.keepassxc
-    ];
+  programs.keepassxc = {
+    inherit (cfg) enable;
   };
 }
