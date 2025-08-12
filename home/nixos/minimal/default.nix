@@ -4,7 +4,6 @@
 
     ./darkman.nix
     ./fuzzel.nix
-    ./gammastep.nix
     ./i3status-rust.nix
     ./mako.nix
     ./polkit-kde-agent.nix

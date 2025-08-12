@@ -42,7 +42,6 @@ in
 
     darkman.enable = mkMinimalOption "darkman";
     fuzzel.enable = mkMinimalOption "fuzzel";
-    gammastep.enable = mkMinimalOption "Gammastep";
 
     i3status-rust = {
       enable = mkMinimalOption "i3status-rust";
