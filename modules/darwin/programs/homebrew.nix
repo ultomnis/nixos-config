@@ -17,6 +17,7 @@ in
     };
 
     casks = [
+      "krita"
       "obs"
       "steam"
     ];
