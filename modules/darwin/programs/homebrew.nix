@@ -17,6 +17,7 @@ in
     };
 
     casks = [
+      "godot"
       "krita"
       "obs"
       "steam"

@@ -40,6 +40,7 @@ in
       };
     };
 
+    godot.enable = mkGuiOption "Godot";
     keepassxc.enable = mkGuiOption "KeePassXC";
     koboldcpp.enable = mkGuiOption "KoboldCpp";
     krita.enable = mkGuiOption "Krita";
