@@ -42,6 +42,12 @@ in
               ];
             }
             {
+              block = "hueshift";
+              hue_shifter = "wl_gammarelay_rs";
+              max_temp = 7000;
+              min_temp = 3000;
+            }
+            {
               block = "sound";
               format = " $icon {$volume.eng(w:1) |}";
               max_vol = 100;

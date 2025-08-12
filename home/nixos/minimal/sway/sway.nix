@@ -21,10 +21,15 @@ in
       menu = lib.getExe pkgs.fuzzel;
       defaultWorkspace = "workspace number 1";
 
-      startup = lib.singleton {
-        always = true;
-        command = "${lib.getExe pkgs.darkman} set dark";
-      };
+      startup = [
+        {
+          always = true;
+          command = "${lib.getExe pkgs.darkman} set dark";
+        }
+        {
+          command = "${pkgs.wl-gammarelay-rs}/bin/wl-gammarelay-rs";
+        }
+      ];
 
       input = {
         "type:pointer" = {
@@ -131,6 +136,11 @@ in
             "--locked XF86MonBrightnessUp" = cfg.keybinds.brightnessUp;
 
             "--no-repeat ${mod}+Print" = ''exec ${lib.getExe pkgs.grim} -g "$(${lib.getExe pkgs.slurp})"'';
+
+            "${mod}+Shift+m" =
+              "exec ${pkgs.systemd}/bin/busctl --user set-property rs.wl-gammarelay / rs.wl.gammarelay Temperature q 6500";
+            "${mod}+Shift+n" =
+              "exec ${pkgs.systemd}/bin/busctl --user set-property rs.wl-gammarelay / rs.wl.gammarelay Temperature q 3400";
           }
 
           (
