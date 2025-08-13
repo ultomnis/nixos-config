@@ -64,7 +64,6 @@ in
     ripgrep.enable = mkCliOption "ripgrep";
     slurp.enable = mkCliOption "slurp";
     ssh.enable = mkCliOption "SSH";
-    syncthing.enable = mkCliOption "Syncthing";
     tealdeer.enable = mkCliOption "tealdeer";
     yt-dlp.enable = mkCliOption "yt-dlp";
     zoxide.enable = mkCliOption "zoxide";
