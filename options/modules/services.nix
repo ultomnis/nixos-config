@@ -35,21 +35,5 @@ in
     printing.enable = mkServiceOption "printing support";
     ratbagd.enable = mkServiceOption "ratbagd";
     rtkit.enable = mkServiceOption "RealtimeKit";
-
-    tailscale = {
-      enable = mkServiceOption "Tailscale";
-
-      useRoutingFeatures = mkOption {
-        type = types.enum [
-          "none"
-          "server"
-          "client"
-          "both"
-        ];
-
-        default = "none";
-        description = "Routing features for Tailscale.";
-      };
-    };
   };
 }

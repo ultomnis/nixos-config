@@ -46,10 +46,7 @@
         shell = "fish";
       };
 
-      services = {
-        enable = true;
-        tailscale.useRoutingFeatures = "client";
-      };
+      services.enable = true;
     };
 
     stylix = {
