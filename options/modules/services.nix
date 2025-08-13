@@ -20,6 +20,7 @@ in
     avahi.enable = mkServiceOption "Avahi";
     bluetooth.enable = mkServiceOption "Bluetooth";
     libvirtd.enable = mkServiceOption "libvirtd";
+    mullvad-vpn.enable = mkServiceOption "Mullvad VPN";
     networkmanager.enable = mkServiceOption "Network Manager";
     openssh.enable = mkServiceOption "OpenSSH";
     pipewire.enable = mkServiceOption "PipeWire";

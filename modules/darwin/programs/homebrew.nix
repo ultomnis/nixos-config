@@ -20,6 +20,7 @@ in
       "blender"
       "godot"
       "krita"
+      "mullvad-vpn"
       "obs"
       "steam"
     ];
