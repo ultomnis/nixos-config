@@ -82,6 +82,7 @@ in
   terminal.type = types.nullOr (
     types.enum [
       "foot"
+      "rio"
       "wezterm"
     ]
   );

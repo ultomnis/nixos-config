@@ -49,6 +49,21 @@ in
     mangohud.enable = mkGuiOption "MangoHud";
     obs-studio.enable = mkGuiOption "OBS Studio";
     qutebrowser.enable = mkGuiOption "qutebrowser";
+
+    rio = {
+      enable = mkOption {
+        type = types.bool;
+        default = config.luminosity.home.selections.terminal == "rio";
+        description = "Whether to enable Rio.";
+      };
+
+      shell = mkOption {
+        inherit (selectionTypes.shell) type;
+        default = config.luminosity.home.selections.shell;
+        description = "Shell for Rio.";
+      };
+    };
+
     utm.enable = mkGuiOption "UTM";
 
     wezterm = {
