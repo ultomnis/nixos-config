@@ -17,6 +17,7 @@
     ./ripgrep.nix
     ./ssh.nix
     ./tealdeer.nix
+    ./wireguard-tools.nix
     ./yt-dlp.nix
     ./zoxide.nix
   ];

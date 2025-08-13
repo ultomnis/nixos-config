@@ -65,6 +65,7 @@ in
     slurp.enable = mkCliOption "slurp";
     ssh.enable = mkCliOption "SSH";
     tealdeer.enable = mkCliOption "tealdeer";
+    wireguard-tools.enable = mkCliOption "wireguard-tools";
     yt-dlp.enable = mkCliOption "yt-dlp";
     zoxide.enable = mkCliOption "zoxide";
     zsh.enable = mkCliOption "zsh";
