@@ -45,6 +45,7 @@ in
     keepassxc.enable = mkGuiOption "KeePassXC";
     koboldcpp.enable = mkGuiOption "KoboldCpp";
     krita.enable = mkGuiOption "Krita";
+    localsend.enable = mkGuiOption "LocalSend";
     mangohud.enable = mkGuiOption "MangoHud";
     obs-studio.enable = mkGuiOption "OBS Studio";
     qutebrowser.enable = mkGuiOption "qutebrowser";
