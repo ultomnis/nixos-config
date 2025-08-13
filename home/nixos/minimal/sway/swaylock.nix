@@ -13,4 +13,8 @@ in
       show-failed-attempts = true;
     };
   };
+
+  stylix.targets.swaylock = {
+    inherit (cfg) enable;
+  };
 }

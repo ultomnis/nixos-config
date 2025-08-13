@@ -21,5 +21,9 @@ in
         efi.canTouchEfiVariables = true;
       };
     };
+
+    stylix.targets.console = {
+      inherit (cfg) enable;
+    };
   };
 }

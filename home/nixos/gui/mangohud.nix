@@ -14,4 +14,8 @@ in
       gpu_temp = true;
     };
   };
+
+  stylix.targets.mangohud = {
+    inherit (cfg) enable;
+  };
 }

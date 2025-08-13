@@ -27,4 +27,8 @@ in
       window.decorations = "Transparent";
     };
   };
+
+  stylix.targets.rio = {
+    inherit (cfg) enable;
+  };
 }

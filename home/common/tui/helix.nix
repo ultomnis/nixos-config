@@ -86,4 +86,8 @@ in
       ];
     };
   };
+
+  stylix.targets.helix = {
+    inherit (cfg) enable;
+  };
 }

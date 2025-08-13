@@ -14,5 +14,15 @@ in
     home.packages = [
       pkgs.noto-fonts
     ];
+
+    stylix.targets = {
+      fontconfig = {
+        inherit (cfg) enable;
+      };
+
+      font-packages = {
+        inherit (cfg) enable;
+      };
+    };
   };
 }

@@ -185,4 +185,8 @@ in
       };
     };
   };
+
+  stylix.targets.sway = {
+    inherit (cfg) enable;
+  };
 }

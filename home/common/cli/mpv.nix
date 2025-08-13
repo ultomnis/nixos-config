@@ -20,4 +20,8 @@ in
       volume = 80;
     };
   };
+
+  stylix.targets.mpv = {
+    inherit (cfg) enable;
+  };
 }

@@ -14,4 +14,8 @@ in
       vim_keys = true;
     };
   };
+
+  stylix.targets.btop = {
+    inherit (cfg) enable;
+  };
 }

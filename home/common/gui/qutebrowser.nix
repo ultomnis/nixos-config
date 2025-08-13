@@ -46,4 +46,8 @@ in
       };
     };
   };
+
+  stylix.targets.qutebrowser = {
+    inherit (cfg) enable;
+  };
 }

@@ -25,4 +25,8 @@ in
       };
     };
   };
+
+  stylix.targets.foot = {
+    inherit (cfg) enable;
+  };
 }

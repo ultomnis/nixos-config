@@ -16,4 +16,8 @@ in
       };
     };
   };
+
+  stylix.targets.yazi = {
+    inherit (cfg) enable;
+  };
 }

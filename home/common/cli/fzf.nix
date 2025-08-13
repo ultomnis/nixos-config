@@ -31,4 +31,8 @@ in
       "--preview '${lib.getExe pkgs.eza} --tree --level=3 --color=always --icons=always {}'"
     ];
   };
+
+  stylix.targets.fzf = {
+    inherit (cfg) enable;
+  };
 }

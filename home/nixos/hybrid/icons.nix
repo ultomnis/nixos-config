@@ -5,10 +5,16 @@ let
 
 in
 {
-  stylix.icons = {
-    inherit (cfg) enable;
-    package = cfg.package;
-    dark = cfg.dark;
-    light = cfg.light;
+  stylix = {
+    icons = {
+      inherit (cfg) enable;
+      package = cfg.package;
+      dark = cfg.dark;
+      light = cfg.light;
+    };
+
+    targets.nixos-icons = {
+      inherit (cfg) enable;
+    };
   };
 }

@@ -14,4 +14,8 @@ in
       relativeruler = true;
     };
   };
+
+  stylix.targets.micro = {
+    inherit (cfg) enable;
+  };
 }

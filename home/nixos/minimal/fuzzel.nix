@@ -16,4 +16,8 @@ in
       };
     };
   };
+
+  stylix.targets.fuzzel = {
+    inherit (cfg) enable;
+  };
 }

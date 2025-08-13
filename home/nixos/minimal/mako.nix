@@ -14,4 +14,8 @@ in
       default-timeout = 5000;
     };
   };
+
+  stylix.targets.mako = {
+    inherit (cfg) enable;
+  };
 }

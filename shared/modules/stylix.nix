@@ -7,6 +7,7 @@ in
 {
   stylix = {
     inherit (cfg) enable;
+    autoEnable = false;
     base16Scheme = cfg.base16;
 
     fonts = {

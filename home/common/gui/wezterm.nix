@@ -36,4 +36,8 @@ in
       return config
     '';
   };
+
+  stylix.targets.wezterm = {
+    inherit (cfg) enable;
+  };
 }

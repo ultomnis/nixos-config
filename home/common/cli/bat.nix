@@ -14,4 +14,8 @@ in
       squeeze-limit = "1";
     };
   };
+
+  stylix.targets.bat = {
+    inherit (cfg) enable;
+  };
 }

@@ -23,4 +23,8 @@ in
       set fish_greeting # Disable greeting
     '';
   };
+
+  stylix.targets.fish = {
+    inherit (cfg) enable;
+  };
 }

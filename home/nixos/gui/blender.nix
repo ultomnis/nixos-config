@@ -14,5 +14,9 @@ in
     home.packages = [
       pkgs.blender
     ];
+
+    stylix.targets.blender = {
+      inherit (cfg) enable;
+    };
   };
 }
