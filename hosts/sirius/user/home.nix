@@ -11,6 +11,8 @@
     ../../../home/nixos
     ../../../options/home
     ../../../shared
+
+    ../../../secrets/home.nix
   ];
 
   home = {

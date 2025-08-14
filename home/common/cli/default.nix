@@ -15,6 +15,7 @@
     ./poppler-utils.nix
     ./ripgrep.nix
     ./ssh.nix
+    ./syncthing.nix
     ./tealdeer.nix
     ./wireguard-tools.nix
     ./yt-dlp.nix

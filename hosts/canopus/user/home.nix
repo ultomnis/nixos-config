@@ -6,6 +6,8 @@
     ../../../home/darwin
     ../../../options/home
     ../../../shared
+
+    ../../../secrets/home.nix
   ];
 
   home = {
