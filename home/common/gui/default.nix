@@ -1,6 +1,5 @@
 {
   imports = [
-    ./anki.nix
     ./keepassxc.nix
     ./koboldcpp.nix
     ./localsend.nix
