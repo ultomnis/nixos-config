@@ -10,7 +10,6 @@
     ./fzf.nix
     ./git.nix
     ./libqalculate.nix
-    ./mat2.nix
     ./mcat.nix
     ./mpv.nix
     ./poppler-utils.nix

@@ -57,7 +57,6 @@ in
 
     grim.enable = mkCliOption "grim";
     libqalculate.enable = mkCliOption "libqalculate";
-    mat2.enable = mkCliOption "mat2";
     mcat.enable = mkCliOption "mcat";
     mpv.enable = mkCliOption "MPV";
     poppler-utils.enable = mkCliOption "poppler-utils";
