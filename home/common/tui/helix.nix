@@ -48,7 +48,7 @@ in
           ];
         };
 
-        #rust-analyzer.command = lib.getExe pkgs.rust-analyzer;
+        rust-analyzer.command = lib.getExe pkgs.rust-analyzer;
         texlab.command = lib.getExe pkgs.texlab;
 
         typescript-language-server = {
