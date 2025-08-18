@@ -24,15 +24,6 @@ in
     networkmanager.enable = mkServiceOption "Network Manager";
     openssh.enable = mkServiceOption "OpenSSH";
     pipewire.enable = mkServiceOption "PipeWire";
-
-    plasma = {
-      enable = mkOption {
-        type = types.bool;
-        default = config.luminosity.modules.selections.desktop == "plasma";
-        description = "Whether to enable KDE Plasma.";
-      };
-    };
-
     printing.enable = mkServiceOption "printing support";
     ratbagd.enable = mkServiceOption "ratbagd";
     rtkit.enable = mkServiceOption "RealtimeKit";
