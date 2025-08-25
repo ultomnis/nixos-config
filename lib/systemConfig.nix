@@ -27,7 +27,6 @@
 
     in
     nix-darwin.lib.darwinSystem {
-      inherit system;
       inherit specialArgs;
 
       modules = [
@@ -39,6 +38,8 @@
             useUserPackages = true;
             extraSpecialArgs = specialArgs;
           };
+
+          nixpkgs.hostPlatform = system;
         }
 
         agenix.darwinModules.default
@@ -89,7 +90,6 @@
     {
       customLib,
       hostName,
-      system,
       extraModules ? [ ],
     }:
 
@@ -111,7 +111,6 @@
 
     in
     nixpkgs.lib.nixosSystem {
-      inherit system;
       inherit specialArgs;
 
       modules = [

@@ -97,7 +97,6 @@
         sirius = mkNixosConfig {
           inherit customLib;
           hostName = "sirius";
-          system = "x86_64-linux";
 
           extraModules = [
             disko.nixosModules.disko
