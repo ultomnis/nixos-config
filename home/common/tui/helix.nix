@@ -16,7 +16,6 @@ in
 
     extraPackages = builtins.attrValues {
       inherit (pkgs)
-        astro-language-server
         lldb_20
         lua-language-server
         ;
