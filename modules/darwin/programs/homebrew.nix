@@ -17,7 +17,6 @@ in
     };
 
     casks = [
-      "blender"
       "godot"
       "krita"
       "mullvad-vpn"
