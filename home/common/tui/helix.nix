@@ -15,10 +15,7 @@ in
     inherit (cfg) enable;
 
     extraPackages = builtins.attrValues {
-      inherit (pkgs)
-        lldb_20
-        lua-language-server
-        ;
+      inherit (pkgs) lldb_21;
     };
 
     settings = {
@@ -39,6 +36,7 @@ in
       language-server = {
         clangd.command = lib.getExe' pkgs.clang-tools "clangd";
         jdtls.command = lib.getExe pkgs.jdt-language-server;
+        lua-language-server.command = lib.getExe pkgs.lua-language-server;
         marksman.command = lib.getExe pkgs.marksman;
         nixd.command = lib.getExe pkgs.nixd;
         pylsp.command = lib.getExe pkgs.python313Packages.python-lsp-server;
