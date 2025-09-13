@@ -1,6 +1,5 @@
 {
   config,
-  customLib,
   lib,
   pkgs,
   ...
@@ -41,21 +40,27 @@ in
       output = lib.mkMerge [
         {
           "*" = {
-            allow_tearing = "yes";
-            max_render_time = "off";
+            adaptive_sync = "on";
           };
         }
 
-        (customLib.mapSwayMonitors cfg.monitors)
+        (
+          cfg.monitors
+          |> map (monitor: {
+            inherit (monitor) name;
+
+            value = {
+              mode = "${toString monitor.width}x${toString monitor.height}@${toString monitor.rate}Hz";
+              pos = "${toString monitor.pos_x} ${toString monitor.pos_y}";
+              scale = toString monitor.scale;
+            };
+          })
+          |> builtins.listToAttrs
+        )
       ];
 
       window = {
         titlebar = false;
-
-        commands = lib.singleton {
-          command = "allow_tearing yes";
-          criteria.class = "cs2";
-        };
       };
 
       floating = {

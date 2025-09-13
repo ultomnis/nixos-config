@@ -1,7 +1,9 @@
 { inputs, lib, ... }:
 
 let
-  mapMonitors = import ./mapMonitors.nix;
+  selectionTypes = import ./selectionTypes.nix {
+    inherit lib;
+  };
 
   systemConfig = import ./systemConfig.nix {
     inherit inputs;
@@ -9,7 +11,7 @@ let
 
 in
 {
-  inherit (mapMonitors) mapSwayMonitors;
+  inherit selectionTypes;
 
   inherit (systemConfig)
     mkDarwinConfig
@@ -17,8 +19,4 @@ in
     mkNixosConfig
     mkSystemConfig
     ;
-
-  selectionTypes = import ./selectionTypes.nix {
-    inherit lib;
-  };
 }
